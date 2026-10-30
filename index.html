@@ -5,6 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Story of Nature | Geleneksel İlikli Kemik Suyu & Fonksiyonel Bitki Çayları</title>
   
+  <!-- SEO & OpenGraph Meta Tags -->
+  <meta name="description" content="28 saat kısık ateşte ağır demlenen, katkısız, jel kıvamında %100 doğal ilikli kemik suyu ve şifalı bitki çayları.">
+  <meta property="og:title" content="Story of Nature | Geleneksel İlikli Kemik Suyu & Fonksiyonel Çaylar">
+  <meta property="og:description" content="Doğanın en saf hali, en sabırlı reçetelerle. Jel kolajen ve fonksiyonel harmanlar.">
+  <meta property="og:url" content="https://storyofnature.com.tr">
+  <meta property="og:type" content="website">
+
+  <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Story of Nature - Pure Essence İlikli Kemik Suyu",
+    "image": "https://storyofnature.com.tr/assets/kemik-suyu.jpg",
+    "description": "28 saat kısık ateşte demlenmiş, katkısız, jel kıvamında %100 doğal Tip 1 & 3 kolajen kaynağı.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Story of Nature"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://storyofnature.com.tr",
+      "priceCurrency": "TRY",
+      "price": "220.00",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "142"
+    }
+  }
+  </script>
+
   <!-- Fonts: Apple-grade editorial serif & ultra-clean sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +64,7 @@
       
       --color-green-trust: #228b4a;
       --color-whatsapp: #25d366;
+      --color-pulse: #e53e3e;
       
       --border-light: rgba(20, 26, 22, 0.08);
       --border-dark: rgba(255, 255, 255, 0.1);
@@ -59,7 +94,7 @@
       padding-bottom: 70px; /* Mobile sticky bar space */
     }
 
-    /* 1. TOP TICKER (Trendyol Conversion + Coupon) */
+    /* 1. TOP TICKER */
     .top-banner {
       background: var(--bg-dark);
       color: #dfbe74;
@@ -143,13 +178,8 @@
       transition: var(--transition);
       position: relative;
     }
-    nav.desktop-nav a:hover {
-      color: var(--text-primary);
-    }
-    nav.desktop-nav a.highlight {
-      color: var(--accent-gold);
-      font-weight: 600;
-    }
+    nav.desktop-nav a:hover { color: var(--text-primary); }
+    nav.desktop-nav a.highlight { color: var(--accent-gold); font-weight: 600; }
 
     .header-right {
       display: flex;
@@ -234,7 +264,34 @@
       max-width: 490px;
     }
 
-    /* Trendyol Delivery Urgency Box */
+    /* Scarcity Pulse Badge */
+    .scarcity-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff5f5;
+      border: 1px solid #fed7d7;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 700;
+      color: #c53030;
+      margin-bottom: 24px;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #e53e3e;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.7);
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(229, 62, 62, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(229, 62, 62, 0); }
+    }
+
     .delivery-urgency {
       display: flex;
       align-items: center;
@@ -247,24 +304,11 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.03);
       max-width: 480px;
     }
-    .delivery-icon {
-      font-size: 22px;
-      line-height: 1;
-    }
-    .delivery-text {
-      font-size: 12px;
-      color: var(--text-secondary);
-    }
-    .delivery-text strong {
-      color: var(--color-green-trust);
-      font-weight: 700;
-    }
+    .delivery-icon { font-size: 22px; line-height: 1; }
+    .delivery-text { font-size: 12px; color: var(--text-secondary); }
+    .delivery-text strong { color: var(--color-green-trust); font-weight: 700; }
 
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-    }
+    .hero-actions { display: flex; gap: 14px; align-items: center; }
     .btn-cta {
       background: var(--bg-dark);
       color: var(--text-on-dark);
@@ -352,46 +396,61 @@
       border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    /* Interactive Jelly Demo Module */
-    .jelly-interaction-card {
+    /* DUAL STATE INTERACTIVE JELLY / LIQUID VISUALIZER */
+    .dual-state-card {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: var(--radius-md);
-      padding: 20px;
+      padding: 22px;
       margin-bottom: 28px;
       backdrop-filter: blur(10px);
     }
-    .jelly-toggle-header {
+    .state-toggle-buttons {
+      display: flex;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 4px;
+      border-radius: var(--radius-full);
+      margin-bottom: 14px;
+    }
+    .state-tab-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .state-tab-btn.active {
+      background: var(--accent-gold);
+      color: var(--bg-dark);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+    .state-display-box {
+      min-height: 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .state-indicator {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      font-size: 11px;
+      color: #dfbe74;
+      font-weight: 700;
+      margin-bottom: 6px;
     }
-    .jelly-state-pill {
-      background: var(--accent-gold);
-      color: var(--bg-dark);
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    .jelly-visual-meter {
-      height: 6px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 4px;
-      overflow: hidden;
-      margin: 10px 0;
-    }
-    .jelly-visual-fill {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, #c29948, #e5ca8a);
-    }
-    .jelly-explanation {
+    .state-desc {
       font-size: 12px;
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.85);
       line-height: 1.5;
     }
 
@@ -402,22 +461,9 @@
       padding-top: 18px;
       border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
-    .monolith-price {
-      display: flex;
-      flex-direction: column;
-    }
-    .monolith-price .old {
-      font-size: 13px;
-      text-decoration: line-through;
-      color: rgba(255, 255, 255, 0.45);
-    }
-    .monolith-price .current {
-      font-family: var(--font-serif);
-      font-size: 32px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1;
-    }
+    .monolith-price { display: flex; flex-direction: column; }
+    .monolith-price .old { font-size: 13px; text-decoration: line-through; color: rgba(255, 255, 255, 0.45); }
+    .monolith-price .current { font-family: var(--font-serif); font-size: 32px; font-weight: 700; color: #fff; line-height: 1; }
     .btn-buy-monolith {
       background: var(--accent-gold);
       color: var(--bg-dark);
@@ -435,7 +481,7 @@
       transform: translateY(-2px);
     }
 
-    /* 4. INTERACTIVE GOAL SELECTOR (Apple-Style Filter) */
+    /* 4. INTERACTIVE GOAL SELECTOR */
     .goal-selector-section {
       max-width: 1200px;
       margin: 0 auto;
@@ -477,22 +523,15 @@
       transform: translateY(-1px);
     }
 
-    /* 5. 28-SAATLİK ZANAAT YOLCULUĞU (Apple-Style Production Showcase) */
+    /* 5. 28-SAATLİK ZANAAT YOLCULUĞU */
     .craft-journey {
       background: var(--bg-dark);
       color: #fff;
       padding: 90px 24px;
       margin: 40px 0;
     }
-    .craft-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .craft-header {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 60px;
-    }
+    .craft-inner { max-width: 1200px; margin: 0 auto; }
+    .craft-header { text-align: center; max-width: 640px; margin: 0 auto 60px; }
     .craft-header span {
       font-size: 11px;
       letter-spacing: 3px;
@@ -502,17 +541,8 @@
       display: block;
       margin-bottom: 10px;
     }
-    .craft-header h2 {
-      font-family: var(--font-serif);
-      font-size: 42px;
-      font-weight: 700;
-      line-height: 1.15;
-    }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
+    .craft-header h2 { font-family: var(--font-serif); font-size: 42px; font-weight: 700; line-height: 1.15; }
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
     .step-card {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -526,25 +556,9 @@
       border-color: var(--accent-gold);
       transform: translateY(-4px);
     }
-    .step-num {
-      font-family: var(--font-serif);
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--accent-gold);
-      margin-bottom: 12px;
-      line-height: 1;
-    }
-    .step-title {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #fff;
-    }
-    .step-desc {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.6;
-    }
+    .step-num { font-family: var(--font-serif); font-size: 32px; font-weight: 700; color: var(--accent-gold); margin-bottom: 12px; line-height: 1; }
+    .step-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #fff; }
+    .step-desc { font-size: 13px; color: rgba(255, 255, 255, 0.7); line-height: 1.6; }
 
     /* 6. TRUST STRIP */
     .trust-strip {
@@ -553,18 +567,8 @@
       border-bottom: 1px solid var(--border-light);
       padding: 24px;
     }
-    .trust-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-    .trust-cell {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
+    .trust-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .trust-cell { display: flex; align-items: center; gap: 14px; }
     .trust-icon {
       width: 42px;
       height: 42px;
@@ -577,28 +581,12 @@
       flex-shrink: 0;
       color: var(--bg-dark);
     }
-    .trust-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-    .trust-desc {
-      font-size: 11px;
-      color: var(--text-secondary);
-      line-height: 1.4;
-    }
+    .trust-title { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+    .trust-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
 
     /* 7. PRODUCT CATALOG */
-    .catalog-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-    .section-intro {
-      text-align: center;
-      max-width: 620px;
-      margin: 0 auto 50px;
-    }
+    .catalog-section { max-width: 1200px; margin: 0 auto; padding: 80px 24px; }
+    .section-intro { text-align: center; max-width: 620px; margin: 0 auto 50px; }
     .section-intro .category-tag {
       font-size: 11px;
       letter-spacing: 3px;
@@ -608,23 +596,10 @@
       margin-bottom: 8px;
       display: block;
     }
-    .section-intro h2 {
-      font-family: var(--font-serif);
-      font-size: 42px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 12px;
-    }
-    .section-intro p {
-      font-size: 15px;
-      color: var(--text-secondary);
-    }
+    .section-intro h2 { font-family: var(--font-serif); font-size: 42px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
+    .section-intro p { font-size: 15px; color: var(--text-secondary); }
 
-    .catalog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
+    .catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .item-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-light);
@@ -656,53 +631,30 @@
     .badge-immunity { background: #e0f2fe; color: #0369a1; }
     .badge-sleep { background: #f3e8ff; color: #6b21a8; }
 
-    .item-code {
-      font-size: 10px;
-      letter-spacing: 2px;
-      font-weight: 700;
+    .item-code { font-size: 10px; letter-spacing: 2px; font-weight: 700; color: var(--accent-gold); margin-bottom: 6px; }
+    .item-name { font-family: var(--font-serif); font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; line-height: 1.2; }
+    .item-rating { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #f59e0b; margin-bottom: 14px; }
+    .item-rating span.count { color: var(--text-tertiary); font-size: 11px; }
+    .item-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+    
+    .btn-quick-view {
+      background: none;
+      border: none;
       color: var(--accent-gold);
-      margin-bottom: 6px;
-    }
-    .item-name {
-      font-family: var(--font-serif);
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 8px;
-      line-height: 1.2;
-    }
-    .item-rating {
-      display: flex;
-      align-items: center;
-      gap: 6px;
       font-size: 12px;
-      color: #f59e0b;
-      margin-bottom: 14px;
-    }
-    .item-rating span.count {
-      color: var(--text-tertiary);
-      font-size: 11px;
-    }
-    .item-desc {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.6;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 0;
       margin-bottom: 20px;
+      text-align: left;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
-    .item-specs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 24px;
-    }
-    .spec-pill {
-      font-size: 11px;
-      padding: 3px 8px;
-      background: var(--bg-surface-subtle);
-      border-radius: 6px;
-      color: var(--text-secondary);
-      font-weight: 500;
-    }
+    .btn-quick-view:hover { text-decoration: underline; color: var(--accent-gold-hover); }
+
+    .item-specs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+    .spec-pill { font-size: 11px; padding: 3px 8px; background: var(--bg-surface-subtle); border-radius: 6px; color: var(--text-secondary); font-weight: 500; }
 
     .item-card-bottom {
       display: flex;
@@ -711,12 +663,7 @@
       padding-top: 16px;
       border-top: 1px solid var(--border-light);
     }
-    .item-price {
-      font-family: var(--font-serif);
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
+    .item-price { font-family: var(--font-serif); font-size: 26px; font-weight: 700; color: var(--text-primary); }
     .btn-add-item {
       background: var(--bg-dark);
       color: var(--text-on-dark);
@@ -731,10 +678,7 @@
       align-items: center;
       gap: 6px;
     }
-    .btn-add-item:hover {
-      background: var(--accent-gold);
-      color: var(--bg-dark);
-    }
+    .btn-add-item:hover { background: var(--accent-gold); color: var(--bg-dark); }
 
     /* 8. SIGNATURE BUNDLE */
     .bundle-module {
@@ -750,37 +694,11 @@
       border: 1px solid rgba(194, 153, 72, 0.35);
       position: relative;
     }
-    .bundle-eyebrow {
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: var(--accent-gold);
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .bundle-name {
-      font-family: var(--font-serif);
-      font-size: 38px;
-      font-weight: 700;
-      margin-bottom: 14px;
-      line-height: 1.15;
-    }
-    .bundle-includes {
-      list-style: none;
-      margin: 20px 0 28px;
-    }
-    .bundle-includes li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      margin-bottom: 8px;
-      color: rgba(255, 255, 255, 0.9);
-    }
-    .bundle-includes li span.check {
-      color: #9ae6b4;
-      font-weight: 700;
-    }
+    .bundle-eyebrow { font-size: 11px; letter-spacing: 2px; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+    .bundle-name { font-family: var(--font-serif); font-size: 38px; font-weight: 700; margin-bottom: 14px; line-height: 1.15; }
+    .bundle-includes { list-style: none; margin: 20px 0 28px; }
+    .bundle-includes li { display: flex; align-items: center; gap: 10px; font-size: 14px; margin-bottom: 8px; color: rgba(255, 255, 255, 0.9); }
+    .bundle-includes li span.check { color: #9ae6b4; font-weight: 700; }
 
     .bundle-card-box {
       background: rgba(255, 255, 255, 0.08);
@@ -790,29 +708,9 @@
       text-align: center;
       backdrop-filter: blur(12px);
     }
-    .bundle-price-old {
-      font-size: 16px;
-      text-decoration: line-through;
-      color: rgba(255, 255, 255, 0.5);
-    }
-    .bundle-price-current {
-      font-family: var(--font-serif);
-      font-size: 48px;
-      font-weight: 700;
-      color: #dfbe74;
-      line-height: 1;
-      margin: 6px 0;
-    }
-    .bundle-saving-tag {
-      display: inline-block;
-      background: rgba(154, 230, 180, 0.2);
-      color: #9ae6b4;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: var(--radius-full);
-      margin-bottom: 20px;
-    }
+    .bundle-price-old { font-size: 16px; text-decoration: line-through; color: rgba(255, 255, 255, 0.5); }
+    .bundle-price-current { font-family: var(--font-serif); font-size: 48px; font-weight: 700; color: #dfbe74; line-height: 1; margin: 6px 0; }
+    .bundle-saving-tag { display: inline-block; background: rgba(154, 230, 180, 0.2); color: #9ae6b4; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: var(--radius-full); margin-bottom: 20px; }
     .btn-buy-bundle {
       width: 100%;
       background: #dfbe74;
@@ -826,10 +724,7 @@
       transition: var(--transition);
       letter-spacing: 0.5px;
     }
-    .btn-buy-bundle:hover {
-      background: #eed8a5;
-      transform: translateY(-2px);
-    }
+    .btn-buy-bundle:hover { background: #eed8a5; transform: translateY(-2px); }
 
     /* 9. REVIEWS */
     .reviews-section {
@@ -837,13 +732,7 @@
       padding: 80px 24px;
       border-top: 1px solid var(--border-light);
     }
-    .reviews-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
+    .reviews-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .review-card {
       background: var(--bg-surface);
       border-radius: var(--radius-md);
@@ -851,38 +740,13 @@
       border: 1px solid var(--border-light);
       box-shadow: 0 2px 10px rgba(0,0,0,0.03);
     }
-    .review-stars {
-      color: #f59e0b;
-      margin-bottom: 12px;
-      font-size: 13px;
-    }
-    .review-quote {
-      font-size: 13px;
-      color: var(--text-primary);
-      line-height: 1.6;
-      margin-bottom: 16px;
-      font-style: italic;
-    }
-    .review-author {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-    }
-    .author-name {
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-    .author-verified {
-      color: var(--color-green-trust);
-      font-size: 11px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
+    .review-stars { color: #f59e0b; margin-bottom: 12px; font-size: 13px; }
+    .review-quote { font-size: 13px; color: var(--text-primary); line-height: 1.6; margin-bottom: 16px; font-style: italic; }
+    .review-author { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+    .author-name { font-weight: 700; color: var(--text-primary); }
+    .author-verified { color: var(--color-green-trust); font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
 
-    /* 10. SLIDE-OUT CART */
+    /* 10. DYNAMIC SLIDE-OUT CART WITH STEPPERS */
     .drawer-overlay {
       position: fixed;
       inset: 0;
@@ -893,10 +757,7 @@
       pointer-events: none;
       transition: var(--transition);
     }
-    .drawer-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
+    .drawer-overlay.active { opacity: 1; pointer-events: auto; }
     .cart-drawer {
       position: fixed;
       top: 0;
@@ -921,18 +782,8 @@
       padding-bottom: 16px;
       border-bottom: 1px solid var(--border-light);
     }
-    .cart-drawer-top h3 {
-      font-family: var(--font-serif);
-      font-size: 24px;
-      font-weight: 700;
-    }
-    .btn-close-drawer {
-      background: none;
-      border: none;
-      font-size: 24px;
-      cursor: pointer;
-      color: var(--text-secondary);
-    }
+    .cart-drawer-top h3 { font-family: var(--font-serif); font-size: 24px; font-weight: 700; }
+    .btn-close-drawer { background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-secondary); }
 
     /* Free Shipping Progress */
     .shipping-bar-box {
@@ -942,38 +793,14 @@
       padding: 12px 14px;
       margin: 14px 0 8px;
     }
-    .shipping-bar-text {
-      font-size: 12px;
-      color: var(--text-secondary);
-      margin-bottom: 6px;
-    }
-    .shipping-bar-text strong {
-      color: var(--accent-gold);
-    }
-    .shipping-progress-track {
-      height: 6px;
-      background: var(--bg-surface-subtle);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .shipping-progress-fill {
-      height: 100%;
-      background: var(--color-green-trust);
-      width: 0%;
-      transition: width 0.3s ease;
-    }
+    .shipping-bar-text { font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; }
+    .shipping-bar-text strong { color: var(--accent-gold); }
+    .shipping-progress-track { height: 6px; background: var(--bg-surface-subtle); border-radius: 4px; overflow: hidden; }
+    .shipping-progress-fill { height: 100%; background: var(--color-green-trust); width: 0%; transition: width 0.3s ease; }
 
-    .cart-body-items {
-      flex: 1;
-      overflow-y: auto;
-      padding: 16px 0;
-    }
-    .cart-empty-state {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text-secondary);
-      font-size: 14px;
-    }
+    .cart-body-items { flex: 1; overflow-y: auto; padding: 16px 0; }
+    .cart-empty-state { text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 14px; }
+    
     .cart-row {
       display: flex;
       justify-content: space-between;
@@ -984,32 +811,36 @@
       padding: 12px 14px;
       margin-bottom: 10px;
     }
-    .cart-row-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-    .cart-row-sub {
-      font-size: 11px;
-      color: var(--text-tertiary);
-    }
-    .cart-row-price {
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--bg-dark);
-    }
-
-    .cart-drawer-bottom {
-      border-top: 1px solid var(--border-light);
-      padding-top: 16px;
-    }
-    .cart-summary-line {
+    .cart-row-info { flex: 1; }
+    .cart-row-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
+    .cart-row-price { font-weight: 700; font-size: 13px; color: var(--accent-gold); }
+    
+    .cart-stepper {
       display: flex;
-      justify-content: space-between;
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 14px;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-surface-subtle);
+      border-radius: var(--radius-full);
+      padding: 4px 10px;
+      margin-left: 14px;
     }
+    .cart-stepper-btn {
+      background: none;
+      border: none;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-primary);
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cart-stepper-qty { font-size: 12px; font-weight: 700; }
+
+    .cart-drawer-bottom { border-top: 1px solid var(--border-light); padding-top: 16px; }
+    .cart-summary-line { display: flex; justify-content: space-between; font-size: 16px; font-weight: 700; margin-bottom: 14px; }
     .btn-complete-order {
       width: 100%;
       background: var(--bg-dark);
@@ -1026,12 +857,67 @@
       justify-content: center;
       gap: 8px;
     }
-    .btn-complete-order:hover {
-      background: var(--accent-gold);
-      color: var(--bg-dark);
-    }
+    .btn-complete-order:hover { background: var(--accent-gold); color: var(--bg-dark); }
 
-    /* 11. FLOATING WHATSAPP BUTTON (High Trust Turkish E-Commerce) */
+    /* 11. QUICK VIEW MODAL (Apple Style Nutrition & Usage) */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(13, 26, 18, 0.7);
+      backdrop-filter: blur(8px);
+      z-index: 300;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.active { opacity: 1; pointer-events: auto; }
+    .modal-box {
+      background: var(--bg-canvas);
+      border-radius: var(--radius-lg);
+      max-width: 580px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 36px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      border: 1px solid var(--border-light);
+      position: relative;
+      transform: translateY(20px);
+      transition: var(--transition);
+    }
+    .modal-overlay.active .modal-box { transform: translateY(0); }
+    .btn-close-modal {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-secondary);
+    }
+    .modal-title { font-family: var(--font-serif); font-size: 32px; font-weight: 700; margin-bottom: 6px; }
+    .modal-subtitle { font-size: 13px; color: var(--accent-gold); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
+    .modal-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      font-size: 13px;
+    }
+    .modal-table th, .modal-table td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .modal-table th { background: var(--bg-surface-subtle); color: var(--text-secondary); font-weight: 700; }
+    .modal-section-title { font-size: 14px; font-weight: 700; margin: 18px 0 8px; color: var(--text-primary); }
+    .modal-text { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+
+    /* 12. FLOATING WHATSAPP BUTTON */
     .floating-whatsapp {
       position: fixed;
       bottom: 85px;
@@ -1055,7 +941,7 @@
       box-shadow: 0 14px 30px rgba(37, 211, 102, 0.45);
     }
 
-    /* 12. MOBILE STICKY NAVIGATION BAR */
+    /* 13. MOBILE STICKY NAVIGATION BAR */
     .mobile-bar {
       display: none;
       position: fixed;
@@ -1068,11 +954,7 @@
       z-index: 99;
       box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
     }
-    .mobile-bar-inner {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
+    .mobile-bar-inner { display: flex; justify-content: space-around; align-items: center; }
     .mobile-bar-item {
       display: flex;
       flex-direction: column;
@@ -1106,32 +988,11 @@
       padding-bottom: 40px;
       margin-bottom: 24px;
     }
-    .footer-brand .f-title {
-      font-family: var(--font-serif);
-      font-size: 24px;
-      color: #dfbe74;
-      font-weight: 700;
-    }
-    .footer-brand .f-desc {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.6);
-      max-width: 380px;
-      margin-top: 6px;
-    }
-    .footer-contact {
-      text-align: right;
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.8);
-    }
-    .footer-contact span {
-      color: #dfbe74;
-      font-weight: 600;
-    }
-    .footer-copy {
-      text-align: center;
-      font-size: 11px;
-      color: rgba(255, 255, 255, 0.4);
-    }
+    .footer-brand .f-title { font-family: var(--font-serif); font-size: 24px; color: #dfbe74; font-weight: 700; }
+    .footer-brand .f-desc { font-size: 12px; color: rgba(255, 255, 255, 0.6); max-width: 380px; margin-top: 6px; }
+    .footer-contact { text-align: right; font-size: 13px; color: rgba(255, 255, 255, 0.8); }
+    .footer-contact span { color: #dfbe74; font-weight: 600; }
+    .footer-copy { text-align: center; font-size: 11px; color: rgba(255, 255, 255, 0.4); }
 
     @media (max-width: 860px) {
       .hero { grid-template-columns: 1fr; padding-top: 36px; }
@@ -1189,6 +1050,13 @@
       <div class="hero-eyebrow">
         ✨ 28 Saat Ağır Demleme • Sıfır Katkı
       </div>
+
+      <!-- Scarcity Live Pulse Indicator -->
+      <div class="scarcity-badge">
+        <span class="pulse-dot"></span>
+        <span>Bugünkü Taze Partiden Kalan: Son 11 Kavanoz</span>
+      </div>
+
       <h1>Doğanın En Saf Hali, <i>En Sabırlı</i> Reçetelerle.</h1>
       <p class="hero-lead">
         Yerel çiftlik kemiklerini kısık ateşte ağır ağır demleyerek geleneksel jel kıvamında kolajen üretiyoruz. Koruyucu yok, yapay aroma yok. Sadece saf doğa şifası.
@@ -1208,7 +1076,7 @@
       </div>
     </div>
 
-    <!-- Apple-Style Monolith Product Card -->
+    <!-- Apple-Style Monolith Product Card With Dual State Switcher -->
     <div class="hero-monolith">
       <div class="monolith-glow"></div>
       <div class="monolith-header">
@@ -1216,20 +1084,29 @@
           <span class="monolith-series">İmza Ürün • No. 01</span>
           <div class="monolith-title">Pure Essence Kemik Suyu</div>
         </div>
-        <span class="monolith-badge">✓ Jel Kıvam Testi</span>
+        <span class="monolith-badge">✓ Doğal Jel Testi</span>
       </div>
 
-      <div class="jelly-interaction-card">
-        <div class="jelly-toggle-header">
-          <span style="font-size: 11px; letter-spacing: 1px; font-weight: 700; color: #dfbe74;">DOĞAL KOLAJEN YOĞUNLUĞU</span>
-          <span class="jelly-state-pill">100% Jel Kıvamı</span>
+      <!-- Tactile Dual State Switcher -->
+      <div class="dual-state-card">
+        <div class="state-toggle-buttons">
+          <button class="state-tab-btn active" id="btnStateCold" onclick="switchBrothState('cold')">
+            🧊 Buzdolabı (+4°C Taş Jel)
+          </button>
+          <button class="state-tab-btn" id="btnStateWarm" onclick="switchBrothState('warm')">
+            ☕ Isıtılmış (60°C Şifa Suyu)
+          </button>
         </div>
-        <div class="jelly-visual-meter">
-          <div class="jelly-visual-fill"></div>
+
+        <div class="state-display-box" id="stateDisplayBox">
+          <div class="state-indicator">
+            <span id="stateTitleText">KOLAJEN YOĞUNLUĞU: %100 SAF JEL</span>
+            <span id="stateTempBadge">Sert Jöle Kıvamı</span>
+          </div>
+          <p class="state-desc" id="stateDescText">
+            Buzdolabında taş gibi sallanan kalıp jöleye dönüşür. Kaşık batırıldığında ayrılır; çünkü hiçbir su seyreltmesi veya kimyasal koyulaştırıcı içermez.
+          </p>
         </div>
-        <p class="jelly-explanation">
-          Buzdolabında (+4°C) taş gibi jöleleşir; çünkü içerisinde hiçbir su seyreltmesi veya kimyasal koyulaştırıcı yoktur. Isıtıldığında altın sarısı berrak şifaya dönüşür.
-        </p>
       </div>
 
       <div class="monolith-footer">
@@ -1244,7 +1121,7 @@
     </div>
   </section>
 
-  <!-- Interactive Goal Selector (Apple-Style Filter) -->
+  <!-- Interactive Goal Selector -->
   <section class="goal-selector-section">
     <div class="goal-selector-title">İhtiyacınıza Göre Doğal Çözüm</div>
     <div class="goal-buttons">
@@ -1256,7 +1133,7 @@
     </div>
   </section>
 
-  <!-- 28-Saatlik Zanaat Yolculuğu (Apple Process Showcase) -->
+  <!-- 28-Saatlik Zanaat Yolculuğu -->
   <section class="craft-journey" id="zanaat">
     <div class="craft-inner">
       <div class="craft-header">
@@ -1293,7 +1170,7 @@
     </div>
   </section>
 
-  <!-- Trendyol Trust Pillars -->
+  <!-- Trust Pillars -->
   <section class="trust-strip">
     <div class="trust-grid">
       <div class="trust-cell">
@@ -1348,6 +1225,9 @@
           <p class="item-desc">
             Dana kaval kemiği, organik elma sirkesi ve taze sebzelerle 28 saat demlendi. Bebek ek gıdası, çorbalar ve sabah aç karnına şifa shot'ı için kokusuz.
           </p>
+          <button class="btn-quick-view" onclick="openProductModal('no01')">
+            🔍 Besin & Aminoasit Profilini İncele →
+          </button>
           <div class="item-specs">
             <span class="spec-pill">300 ml Cam Kavanoz</span>
             <span class="spec-pill">Tip 1 & 3 Kolajen</span>
@@ -1374,6 +1254,9 @@
           <p class="item-desc">
             Saf ilikli kemik suyuna taze zencefil, kök zerdeçal ve limon ilave edildi. İltihap savar, bağışıklık ve bağırsak bariyeri dostu.
           </p>
+          <button class="btn-quick-view" onclick="openProductModal('no02')">
+            🔍 Besin & İçerik Profilini İncele →
+          </button>
           <div class="item-specs">
             <span class="spec-pill">300 ml Cam Kavanoz</span>
             <span class="spec-pill">Taze Zencefil & Zerdeçal</span>
@@ -1400,6 +1283,9 @@
           <p class="item-desc">
             Tıbbi papatya, melisa, lavanta tomurcuğu ve pasiflora. Zihinsel stresi arındırıp deliksiz ve derin bir uykuya hazırlayan doğal harman.
           </p>
+          <button class="btn-quick-view" onclick="openProductModal('no03')">
+            🔍 Bitki Harmanını & Demleme Detayını İncele →
+          </button>
           <div class="item-specs">
             <span class="spec-pill">80 gr Kraft Doypack</span>
             <span class="spec-pill">Melisa & Lavanta</span>
@@ -1496,7 +1382,7 @@
     </div>
   </footer>
 
-  <!-- Slide Cart Drawer -->
+  <!-- DYNAMIC SLIDE-OUT CART WITH QUANTITY STEPPERS -->
   <div class="drawer-overlay" id="drawerOverlay" onclick="toggleCartDrawer()"></div>
   <div class="cart-drawer" id="cartDrawer">
     <div>
@@ -1525,13 +1411,51 @@
         <span>Sepet Tutarı:</span>
         <span id="cartSubtotalText">0 TL</span>
       </div>
-      <button class="btn-complete-order" onclick="proceedToCheckout()">
-        Güvenli Siparişi Tamamla (Shopier) →
+      <button class="btn-complete-order" onclick="openCheckoutModal()">
+        Güvenli Siparişi Tamamla →
       </button>
     </div>
   </div>
 
-  <!-- Floating WhatsApp Order & Advice Button -->
+  <!-- QUICK VIEW NUTRITION & INFO MODAL -->
+  <div class="modal-overlay" id="productModal" onclick="closeProductModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="btn-close-modal" onclick="closeProductModal()">✕</button>
+      <div id="modalContent">
+        <!-- Content will be injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL (Shopier / WhatsApp Direct) -->
+  <div class="modal-overlay" id="checkoutModal" onclick="closeCheckoutModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="btn-close-modal" onclick="closeCheckoutModal()">✕</button>
+      <h3 class="modal-title" style="font-size: 26px;">Siparişi Tamamla</h3>
+      <p class="modal-text">Story of Nature siparişiniz taze parti olarak özenle paketlenip tarafınıza ulaştırılacaktır.</p>
+      
+      <div style="background: var(--bg-surface); padding: 18px; border-radius: 12px; border: 1px solid var(--border-light); margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 8px;">
+          <span>Ödenecek Tutar:</span>
+          <span id="checkoutTotalText" style="color: var(--accent-gold); font-size: 18px;">0 TL</span>
+        </div>
+        <div style="font-size: 12px; color: var(--color-green-trust); font-weight: 600;">
+          ✓ Korumalı Kargo & Kırılma Sigortası Dahil
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <button class="btn-cta" style="width: 100%; justify-content: center; background: #228b4a;" onclick="finishOrderWhatsApp()">
+          💬 WhatsApp ile Hızlı Sipariş Ver
+        </button>
+        <button class="btn-cta" style="width: 100%; justify-content: center;" onclick="alert('Shopier mağaza ödeme linki yönlendiriliyor...')">
+          💳 Kredi Kartı ile Güvenli Öde (Shopier)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Button -->
   <a href="https://wa.me/905330849027?text=Merhaba,%20Story%20of%20Nature%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="floating-whatsapp">
     <span>💬</span>
     <span>Uzmana Danış / WhatsApp</span>
@@ -1560,8 +1484,52 @@
   </div>
 
   <script>
-    let cart = [];
+    // Cart state with item grouping
+    let cart = {};
     const FREE_SHIPPING_THRESHOLD = 750;
+
+    const PRODUCT_DETAILS = {
+      no01: {
+        title: "Pure Essence İlikli Kemik Suyu",
+        subtitle: "No. 01 • The Bone Broth Chapter",
+        desc: "Seçilmiş dana kaval kemikleri, organik elma sirkesi ve taze aromatik sebzelerle 28 saat boyunca kısık ateşte ağır ağır demlendi. Sıfır katkı, sıfır koruyucu.",
+        price: 220,
+        table: [
+          ["Protein (100 ml)", "12.4 g"],
+          ["Doğal Kolajen (Tip 1 & 3)", "7.800 mg"],
+          ["Glisin & Prolin Aminoasitleri", "Zengin Bağırsak Bariyeri Desteği"],
+          ["Tuz Oranı", "< 0.3 g (Doğal Kaya Tuzu)"],
+          ["Katkı & Koruyucu", "0% (Sıfır Kimyasal)"]
+        ],
+        usage: "Sabahları aç karnına fincanda hafifçe ısıtıp limon damlatarak tüketebilir ya da bebek çorbalarına 2-3 yemek kaşığı doğrudan ilave edebilirsiniz."
+      },
+      no02: {
+        title: "Golden Immunity Zencefil & Zerdeçal",
+        subtitle: "No. 02 • Immunity Chapter",
+        desc: "Saf ilikli kemik suyuna taze kök zencefil, tane zerdeçal ve taze limon suyu ilave edildi. Vücuttaki iltihabı azaltıcı ve sindirimi kuvvetlendirici güçlü kış kürü.",
+        price: 240,
+        table: [
+          ["Protein (100 ml)", "11.8 g"],
+          ["Aktif Kurkumin", "Doğal Biyo-yararlanım"],
+          ["Zencefil Ekstresi", "Mide & Sindirim Rahatlatıcı"],
+          ["C Vitamini", "Doğal Limon Katkısı"]
+        ],
+        usage: "Mevsim geçişlerinde ve bağışıklık düşüklüğünde sabah aç karnına fincanda sıcak shot olarak tüketilmesi tavsiye edilir."
+      },
+      no03: {
+        title: "Night Story Sakinleşme Çayı",
+        subtitle: "No. 03 • The Herbal Chapter",
+        desc: "Tıbbi papatya (Chamomilla), oğul otu (melisa), lavanta tomurcuğu ve pasiflora. Zihinsel karmaşayı yatıştıran, deliksiz uykuya hazırlayan botanik harman.",
+        price: 240,
+        table: [
+          ["Net Ağırlık", "80 gr Kilitli Doypack"],
+          ["İçindekiler", "%100 Tıbbi Bitkiler (Kurutulmuş)"],
+          ["Kafein", "0% (Kafeinsiz)"],
+          ["Porsiyon", "Yaklaşık 35-40 Fincan"]
+        ],
+        usage: "1 fincan taze kaynamış suya 1 tatlı kaşığı harman ekleyip kapağı kapalı 7-8 dakika demleyiniz. Uykudan 45 dakika önce süzüp içiniz."
+      }
+    };
 
     function toggleCartDrawer() {
       const drawer = document.getElementById('cartDrawer');
@@ -1571,9 +1539,22 @@
     }
 
     function addToCart(name, price) {
-      cart.push({ name, price });
+      if (cart[name]) {
+        cart[name].qty += 1;
+      } else {
+        cart[name] = { price: price, qty: 1 };
+      }
       renderCart();
       toggleCartDrawer();
+    }
+
+    function updateQty(name, delta) {
+      if (!cart[name]) return;
+      cart[name].qty += delta;
+      if (cart[name].qty <= 0) {
+        delete cart[name];
+      }
+      renderCart();
     }
 
     function renderCart() {
@@ -1585,12 +1566,20 @@
       const shippingText = document.getElementById('shippingBarText');
       const shippingFill = document.getElementById('shippingProgressFill');
 
-      const count = cart.length;
-      countHeader.textContent = count;
-      countTotal.textContent = count;
-      mobileCount.textContent = count;
+      const itemNames = Object.keys(cart);
+      let totalQty = 0;
+      let subtotal = 0;
 
-      if (count === 0) {
+      itemNames.forEach(name => {
+        totalQty += cart[name].qty;
+        subtotal += cart[name].price * cart[name].qty;
+      });
+
+      countHeader.textContent = totalQty;
+      countTotal.textContent = totalQty;
+      mobileCount.textContent = totalQty;
+
+      if (totalQty === 0) {
         container.innerHTML = '<div class="cart-empty-state">Sepetiniz henüz boş.<br>Doğanın şifasını keşfedin!</div>';
         subtotalEl.textContent = '0 TL';
         shippingFill.style.width = '0%';
@@ -1598,18 +1587,21 @@
         return;
       }
 
-      let subtotal = 0;
       container.innerHTML = '';
-      cart.forEach((item, index) => {
-        subtotal += item.price;
+      itemNames.forEach(name => {
+        const item = cart[name];
         const row = document.createElement('div');
         row.className = 'cart-row';
         row.innerHTML = `
-          <div>
-            <div class="cart-row-title">${item.name}</div>
-            <div class="cart-row-sub">Zanaatkar Üretim</div>
+          <div class="cart-row-info">
+            <div class="cart-row-title">${name}</div>
+            <div class="cart-row-price">${item.price * item.qty} TL <small style="color: var(--text-tertiary); font-weight: 400;">(${item.price} TL/ad)</small></div>
           </div>
-          <div class="cart-row-price">${item.price} TL</div>
+          <div class="cart-stepper">
+            <button class="cart-stepper-btn" onclick="updateQty('${name}', -1)">−</button>
+            <span class="cart-stepper-qty">${item.qty}</span>
+            <button class="cart-stepper-btn" onclick="updateQty('${name}', 1)">+</button>
+          </div>
         `;
         container.appendChild(row);
       });
@@ -1619,13 +1611,101 @@
       // Update free shipping bar
       if (subtotal >= FREE_SHIPPING_THRESHOLD) {
         shippingFill.style.width = '100%';
-        shippingText.innerHTML = `<strong style="color: var(--color-green-trust);">Tebrikler! Kargo Bedava kazandınız.</strong>`;
+        shippingText.innerHTML = `<strong style="color: var(--color-green-trust);">🎉 Tebrikler! Ücretsiz Kargo Kazandınız.</strong>`;
       } else {
         const remaining = FREE_SHIPPING_THRESHOLD - subtotal;
         const pct = Math.min((subtotal / FREE_SHIPPING_THRESHOLD) * 100, 100);
         shippingFill.style.width = pct + '%';
         shippingText.innerHTML = `Kargo bedava için <strong>${remaining} TL</strong> daha ürün ekleyin!`;
       }
+    }
+
+    // Dual-state Switcher logic
+    function switchBrothState(state) {
+      const btnCold = document.getElementById('btnStateCold');
+      const btnWarm = document.getElementById('btnStateWarm');
+      const title = document.getElementById('stateTitleText');
+      const badge = document.getElementById('stateTempBadge');
+      const desc = document.getElementById('stateDescText');
+
+      if (state === 'cold') {
+        btnCold.classList.add('active');
+        btnWarm.classList.remove('active');
+        title.textContent = 'KOLAJEN YOĞUNLUĞU: %100 SAF JEL';
+        badge.textContent = 'Sert Jöle Kıvamı';
+        desc.textContent = 'Buzdolabında taş gibi sallanan kalıp jöleye dönüşür. Kaşık batırıldığında ayrılır; çünkü hiçbir su seyreltmesi veya kimyasal koyulaştırıcı içermez.';
+      } else {
+        btnWarm.classList.add('active');
+        btnCold.classList.remove('active');
+        title.textContent = 'ISITILMIŞ HALİ: ALTIN SARISI İKSİR';
+        badge.textContent = 'Akıcı & Berrak Şifa';
+        desc.textContent = 'Isıtıldığında 15 saniyede berrak, ipeksi ve aromatik altın suyuna dönüşür. Fincanda limon damlatarak kolayca içilebilir, vücut tarafından dakikalar içinde emilir.';
+      }
+    }
+
+    // Quick View Modal
+    function openProductModal(key) {
+      const data = PRODUCT_DETAILS[key];
+      if (!data) return;
+
+      let tableHtml = data.table.map(row => `<tr><th>${row[0]}</th><td>${row[1]}</td></tr>`).join('');
+
+      const content = `
+        <div class="modal-subtitle">${data.subtitle}</div>
+        <h3 class="modal-title">${data.title}</h3>
+        <p class="modal-text">${data.desc}</p>
+
+        <div class="modal-section-title">Besin & Kalite Değerleri</div>
+        <table class="modal-table">
+          <tbody>${tableHtml}</tbody>
+        </table>
+
+        <div class="modal-section-title">Nasıl Tüketilir?</div>
+        <p class="modal-text">${data.usage}</p>
+
+        <button class="btn-cta" style="width: 100%; justify-content: center; margin-top: 10px;" onclick="addToCart('${data.title}', ${data.price}); closeProductModal();">
+          Bu Ürünü Sepete Ekle — ${data.price} TL
+        </button>
+      `;
+
+      document.getElementById('modalContent').innerHTML = content;
+      document.getElementById('productModal').classList.add('active');
+    }
+
+    function closeProductModal(e) {
+      document.getElementById('productModal').classList.remove('active');
+    }
+
+    // Checkout Modal
+    function openCheckoutModal() {
+      let subtotal = 0;
+      Object.keys(cart).forEach(name => {
+        subtotal += cart[name].price * cart[name].qty;
+      });
+
+      if (subtotal === 0) {
+        alert('Sepetiniz boş. Lütfen önce ürün ekleyin.');
+        return;
+      }
+
+      document.getElementById('checkoutTotalText').textContent = subtotal + ' TL';
+      document.getElementById('checkoutModal').classList.add('active');
+      toggleCartDrawer();
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.remove('active');
+    }
+
+    function finishOrderWhatsApp() {
+      let summary = "Merhaba Story of Nature! Siparişim:%0A";
+      let subtotal = 0;
+      Object.keys(cart).forEach(name => {
+        summary += `- ${name} (x${cart[name].qty}) : ${cart[name].price * cart[name].qty} TL%0A`;
+        subtotal += cart[name].price * cart[name].qty;
+      });
+      summary += `%0AToplam Tutar: ${subtotal} TL%0AKargo adresimi iletmek ve siparişimi onaylamak istiyorum.`;
+      window.open(`https://wa.me/905330849027?text=${summary}`, '_blank');
     }
 
     function filterGoal(btn, category) {
@@ -1645,10 +1725,6 @@
           }
         }
       });
-    }
-
-    function proceedToCheckout() {
-      alert('Sipariş ve ödeme altyapısı Shopier üzerinden güvenle açılacaktır!');
     }
   </script>
 </body>
