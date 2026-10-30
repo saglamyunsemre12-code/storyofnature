@@ -538,8 +538,10 @@
       color: rgba(250, 247, 242, 0.7);
     }
   </style>
+  <link rel="stylesheet" href="assets/visual-system.css">
+  <script src="assets/visual-system.js" defer></script>
 </head>
-<body>
+<body class="pdp-page">
 
   <!-- TOP BANNER -->
   <div class="top-banner">
@@ -557,8 +559,8 @@
         <span class="leaf">🌿</span> STORY OF NATURE
       </a>
       <div class="header-nav">
-        <a href="index.html#urunler">Koleksiyon</a>
-        <a href="index.html#felsefe">Felsefemiz</a>
+        <a href="index.html#katalog">Koleksiyon</a>
+        <a href="index.html#neden-kokusuz">Felsefemiz</a>
         <a href="index.html#tarifler">Gurme Tarifler</a>
         <button class="btn-menu-trigger" onclick="toggleMiniMenu()">
           <span>Menü & Ürünler</span>
@@ -594,7 +596,7 @@
   <div class="breadcrumbs">
     <a href="index.html">Ana Sayfa</a>
     <span>›</span>
-    <a href="index.html#urunler">İlikli Kemik Suları</a>
+    <a href="index.html#katalog">İlikli Kemik Suları</a>
     <span>›</span>
     <span style="color: var(--color-dark); font-weight: 600;">No. 01 Pure Essence İlikli Kemik Suyu</span>
   </div>
@@ -715,7 +717,7 @@
         <ul class="highlights-list">
           <li>Çift Ön Haşlama Teknolojisi: Sıfır hayvansal ağır koku, kadifemsi berrak içim.</li>
 <li>Taş Jöle Garantisi: Buzdolabında (+4°C) jöleleşmezse %100 para iadesi.</li>
-<li>3 Kademeli Soğuk Filtrasyon: <%0.2 yağ oranı, sindirimi yormaz.</li>
+<li>3 Kademeli Soğuk Filtrasyon: &lt;%0.2 yağ oranı, sindirimi yormaz.</li>
 <li>Acıbadem Standardında 7.800 mg Tip 1 & 3 Biyoaktif Kolajen.</li>
 <li>121°C Otoklav Basınçlı Cam Kapama: Katkısız 6 ay oda sıcaklığında raf ömrü.</li>
         </ul>
@@ -744,7 +746,7 @@
 <tr><td>Doğal Kolajen (Tip 1 & 3)</td><td>7.800 mg Konsantrasyon</td></tr>
 <tr><td>Glisin & Prolin Aminoasitleri</td><td>Zengin Bağırsak Bariyeri & Mukoza Desteği</td></tr>
 <tr><td>İlave Tuz / Bulyon / MSG</td><td>%0.0 (Kesinlikle Katkısız)</td></tr>
-<tr><td>Yağ Oranı</td><td><%0.2 (Doymuş Yağdan Arındırılmış)</td></tr>
+<tr><td>Yağ Oranı</td><td>&lt;%0.2 (Doymuş Yağdan Arındırılmış)</td></tr>
 <tr><td>Sterilizasyon</td><td>121°C Otoklav Basınçlı Cam Kapama</td></tr>
 <tr><td>Saklama</td><td>Açılmadan 6 Ay Oda Sıcaklığı / Açıldıktan Sonra +4°C 48 Saat veya Buzlukta 6 Ay</td></tr>
         </tbody>
@@ -822,16 +824,13 @@
       const pill = document.getElementById("galleryPill");
       const caption = document.getElementById("galleryCaption");
 
-      img.style.opacity = "0.4";
-      setTimeout(() => {
-        img.src = slide.src;
-        pill.textContent = slide.pill;
-        caption.textContent = slide.label;
-        img.style.opacity = "1";
-      }, 150);
+      setProductVisual(img, slide.src, slide.label);
+      pill.textContent = slide.pill;
+      caption.textContent = slide.label;
 
       document.querySelectorAll(".thumb-btn").forEach((btn, idx) => {
         btn.classList.toggle("active", idx === index);
+        btn.setAttribute("aria-pressed", String(idx === index));
       });
     }
 
@@ -860,9 +859,7 @@
     });
 
     function handlePdpAddCart(productName, price) {
-      alert("✦ " + productName + " (" + price + " TL) sepetinize eklendi!
-
-Siparişinizi tamamlamak için Ana Sayfadaki Sepetim sekmesine geçebilirsiniz.");
+      alert("✦ " + productName + " (" + price + " TL) sepetinize eklendi!\n\nSiparişinizi tamamlamak için Ana Sayfadaki Sepetim sekmesine geçebilirsiniz.");
     }
   </script>
 </body>

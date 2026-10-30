@@ -538,8 +538,10 @@
       color: rgba(250, 247, 242, 0.7);
     }
   </style>
+  <link rel="stylesheet" href="assets/visual-system.css">
+  <script src="assets/visual-system.js" defer></script>
 </head>
-<body>
+<body class="pdp-page">
 
   <!-- TOP BANNER -->
   <div class="top-banner">
@@ -557,8 +559,8 @@
         <span class="leaf">🌿</span> STORY OF NATURE
       </a>
       <div class="header-nav">
-        <a href="index.html#urunler">Koleksiyon</a>
-        <a href="index.html#felsefe">Felsefemiz</a>
+        <a href="index.html#katalog">Koleksiyon</a>
+        <a href="index.html#neden-kokusuz">Felsefemiz</a>
         <a href="index.html#tarifler">Gurme Tarifler</a>
         <button class="btn-menu-trigger" onclick="toggleMiniMenu()">
           <span>Menü & Ürünler</span>
@@ -594,7 +596,7 @@
   <div class="breadcrumbs">
     <a href="index.html">Ana Sayfa</a>
     <span>›</span>
-    <a href="index.html#urunler">İlikli Kemik Suları</a>
+    <a href="index.html#katalog">İlikli Kemik Suları</a>
     <span>›</span>
     <span style="color: var(--color-dark); font-weight: 600;">No. 05 Rosemary Collagen Elixir</span>
   </div>
@@ -744,7 +746,7 @@
 <tr><td>Doğal Kolajen</td><td>7.900 mg Tip 1 & 3 Kolajen</td></tr>
 <tr><td>Bitkisel Ekstraktlar</td><td>Yabani Biberiye, Dağ Kekiği, Defne Yaprağı</td></tr>
 <tr><td>İlave Tuz & Şeker</td><td>%0.0 (Doğal Aromatik)</td></tr>
-<tr><td>Yağ Oranı</td><td><%0.2 (Arındırılmış Hafif İçim)</td></tr>
+<tr><td>Yağ Oranı</td><td>&lt;%0.2 (Arındırılmış Hafif İçim)</td></tr>
 <tr><td>Sterilizasyon</td><td>121°C Otoklav</td></tr>
 <tr><td>Saklama</td><td>Açılmadan 6 Ay / Açıldıktan Sonra +4°C 48 Saat</td></tr>
         </tbody>
@@ -814,16 +816,13 @@
       const pill = document.getElementById("galleryPill");
       const caption = document.getElementById("galleryCaption");
 
-      img.style.opacity = "0.4";
-      setTimeout(() => {
-        img.src = slide.src;
-        pill.textContent = slide.pill;
-        caption.textContent = slide.label;
-        img.style.opacity = "1";
-      }, 150);
+      setProductVisual(img, slide.src, slide.label);
+      pill.textContent = slide.pill;
+      caption.textContent = slide.label;
 
       document.querySelectorAll(".thumb-btn").forEach((btn, idx) => {
         btn.classList.toggle("active", idx === index);
+        btn.setAttribute("aria-pressed", String(idx === index));
       });
     }
 
@@ -852,9 +851,7 @@
     });
 
     function handlePdpAddCart(productName, price) {
-      alert("✦ " + productName + " (" + price + " TL) sepetinize eklendi!
-
-Siparişinizi tamamlamak için Ana Sayfadaki Sepetim sekmesine geçebilirsiniz.");
+      alert("✦ " + productName + " (" + price + " TL) sepetinize eklendi!\n\nSiparişinizi tamamlamak için Ana Sayfadaki Sepetim sekmesine geçebilirsiniz.");
     }
   </script>
 </body>

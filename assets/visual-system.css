@@ -1,0 +1,87 @@
+/* Shared geometry: reserve the same frame before any image has loaded. */
+.card-img-box, .main-view-box, .texture-visual {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  overflow: hidden;
+  background: #f3efe6;
+  isolation: isolate;
+}
+.card-img-box > .card-img-link { position: absolute; inset: 0; }
+.card-img-box img, .main-view-box > img, .texture-visual > img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 240ms ease, transform 600ms cubic-bezier(.16,1,.3,1);
+}
+.product-card { background: #fff; padding: 18px 18px 24px; transition: transform 300ms ease, box-shadow 300ms ease; min-width: 0; }
+.product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,40,29,.08); }
+.card-quick-tabs { flex-wrap: wrap; }
+.card-tab-btn { min-height: 32px; }
+.card-tab-btn:focus-visible, .state-tab:focus-visible, .thumb-btn:focus-visible, .card-img-link:focus-visible { outline: 2px solid #9b7738; outline-offset: -3px; }
+.fond-hero-title { font-size: clamp(2.5rem, 5vw, 5rem); }
+.product-title { font-size: clamp(2.125rem, 3.6vw, 3.5rem); }
+.catalog-header h2, .reddit-sol-title, .recipes-header h2 { font-size: clamp(2rem, 3.7vw, 3.25rem); }
+.fond-hero-title, .product-title, .catalog-header h2, .texture-copy h2 { font-family: 'Cormorant Garamond', Georgia, serif; line-height: 1.08; letter-spacing: -.02em; }
+.fond-hero-lead { font-size: clamp(1rem, 1.3vw, 1.2rem); line-height: 1.65; }
+.texture-experience { max-width: 1192px; margin: 0 auto 64px; display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; gap: clamp(24px, 5vw, 72px); }
+.texture-copy { min-width: 0; }
+.texture-eyebrow { font-size: .65rem; letter-spacing: .15em; color: #556258; }
+.texture-copy h2 { font-size: clamp(2.25rem, 4vw, 4rem); margin: 16px 0; color: #14281d; }
+.texture-copy p { font-size: .9rem; line-height: 1.65; color: #556258; margin: 12px 0 24px; }
+.texture-copy .state-toggle-tabs { margin: 24px 0; border-radius: 999px; }
+.texture-copy .state-tab { min-height: 44px; font-size: .8rem; padding: 10px; }
+#texturePanel { min-height: 120px; }
+.texture-visual { border-radius: 16px; }
+@media (max-width: 700px) {
+  .texture-experience { grid-template-columns: 1fr; gap: 24px; }
+  .texture-visual { grid-row: 1; }
+  .product-card { padding: 18px 18px 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .product-card, .card-img-box img, .main-view-box > img, .texture-visual > img, .state-tab { transition: none; }
+  .product-card:hover, .product-card:hover .card-img-box img { transform: none; }
+}
+.texture-comparison { display: grid; grid-template-columns: 1fr 1.08fr; gap: 28px; align-items: stretch; }
+.texture-comparison > div { min-width: 0; }
+.sticky-info { min-width: 0; }
+.sticky-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 700px) {
+  .texture-comparison { grid-template-columns: 1fr; }
+  .sticky-atc-bar .sticky-thumb { flex: 0 0 40px; width: 40px; height: 40px; }
+  .sticky-atc-bar .btn-sticky-action { flex-shrink: 0; padding: 10px 12px; font-size: 11px; }
+  .sticky-price { font-size: 10px; }
+}
+@media (max-width: 960px) {
+  .pdp-header .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px 24px; }
+  .pdp-header .header-nav { width: 100%; flex-wrap: wrap; gap: 12px; font-size: .75rem; }
+  .pdp-header .btn-menu-trigger { margin-left: auto; font-size: .75rem; }
+  .pdp-tabs-nav { flex-wrap: wrap; gap: 4px; }
+  .pdp-tab-trigger { flex: 1 1 140px; min-width: 0; padding: 12px; font-size: .8rem; }
+}
+@media (max-width: 700px) {
+  .header-container { gap: 10px; }
+  .brand-mark { flex-shrink: 0; width: 112px; }
+  .brand-mark .title { font-size: 22px; line-height: 1.05; }
+  .brand-mark .sub { font-size: 7px; letter-spacing: 2px; }
+  .floating-whatsapp { bottom: 156px; right: 16px; width: 44px; height: 44px; padding: 13px; gap: 0; }
+  .floating-whatsapp > span:last-child { display: none; }
+}
+@media (max-width: 700px) {
+  .header-container { padding: 14px 16px; }
+  .header-right { gap: 8px; }
+  .btn-header-cart, .btn-menu-window-trigger { padding: 10px 12px; }
+}
+@media (max-width: 700px) {
+  .pdp-page .top-banner { display: block; padding: 10px 20px; font-size: .65rem; }
+  .pdp-page .top-banner > span:not(:first-child) { display: none; }
+}
