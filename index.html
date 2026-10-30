@@ -239,6 +239,26 @@
       addToCart(data.productName, data.price);
     }
 
+  
+    function toggleMiniMenu(e) {
+      if (e) e.stopPropagation();
+      const menu = document.getElementById('miniMenuWindow');
+      if (menu) menu.classList.toggle('open');
+    }
+    function closeMiniMenu() {
+      const menu = document.getElementById('miniMenuWindow');
+      if (menu) menu.classList.remove('open');
+    }
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('miniMenuWindow');
+      const btn = document.querySelector('.btn-header-menu');
+      if (menu && menu.classList.contains('open')) {
+        if (!menu.contains(e.target) && (!btn || !btn.contains(e.target))) {
+          menu.classList.remove('open');
+        }
+      }
+    });
+
   </script>
 
   <!-- Typography: Apple SF / Plus Jakarta Sans & Cormorant Garamond Serif -->
@@ -1898,6 +1918,82 @@
       .social-toast { display: none; }
     }
 
+  
+    /* Card Title & Image Link Enhancements */
+    .card-img-link { display: block; text-decoration: none; cursor: pointer; }
+    .title-link { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+    .title-link:hover { color: var(--gold-champagne, #C5A059); }
+    
+    /* Header Mini-Menu Window Popover */
+    .mini-menu-window {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 1.5rem;
+      width: 320px;
+      background: #FFFFFF;
+      border: 1px solid rgba(197, 160, 89, 0.4);
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(20, 40, 29, 0.12);
+      padding: 1.25rem;
+      display: none;
+      z-index: 500;
+    }
+    .mini-menu-window.open {
+      display: block;
+      animation: menuFadeIn 0.22s ease forwards;
+    }
+    @keyframes menuFadeIn {
+      from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .menu-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(20, 40, 29, 0.08);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #14281D;
+    }
+    .menu-list { list-style: none; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.35rem; }
+    .menu-list-item a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.45rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #141D17;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .menu-list-item a:hover { background: #F3EFE6; color: #A8833E; }
+    .menu-badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: #FAF7F2;
+      color: #556258;
+    }
+    .btn-header-menu {
+      background: #FAF7F2;
+      border: 1px solid rgba(20, 40, 29, 0.15);
+      border-radius: 8px;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #14281D;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+    .btn-header-menu:hover { border-color: #C5A059; background: #FFFFFF; }
+
   </style>
 <style>
     /* FOND Bone Broth & Luxury Apothecary Aesthetics */
@@ -2258,7 +2354,83 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-</style>
+
+    /* Card Title & Image Link Enhancements */
+    .card-img-link { display: block; text-decoration: none; cursor: pointer; }
+    .title-link { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+    .title-link:hover { color: var(--gold-champagne, #C5A059); }
+    
+    /* Header Mini-Menu Window Popover */
+    .mini-menu-window {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 1.5rem;
+      width: 320px;
+      background: #FFFFFF;
+      border: 1px solid rgba(197, 160, 89, 0.4);
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(20, 40, 29, 0.12);
+      padding: 1.25rem;
+      display: none;
+      z-index: 500;
+    }
+    .mini-menu-window.open {
+      display: block;
+      animation: menuFadeIn 0.22s ease forwards;
+    }
+    @keyframes menuFadeIn {
+      from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .menu-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(20, 40, 29, 0.08);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #14281D;
+    }
+    .menu-list { list-style: none; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.35rem; }
+    .menu-list-item a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.45rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #141D17;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .menu-list-item a:hover { background: #F3EFE6; color: #A8833E; }
+    .menu-badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: #FAF7F2;
+      color: #556258;
+    }
+    .btn-header-menu {
+      background: #FAF7F2;
+      border: 1px solid rgba(20, 40, 29, 0.15);
+      border-radius: 8px;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #14281D;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+    .btn-header-menu:hover { border-color: #C5A059; background: #FFFFFF; }
+
+  </style>
 <style>
     /* ========================================================
        RECIPES & CULINARY CHAPTER (Mutfaktan Şifa Reçeteleri)
@@ -2468,7 +2640,83 @@
     .recipe-atc-btn:hover {
       background: #1e3a27;
     }
-</style>
+
+    /* Card Title & Image Link Enhancements */
+    .card-img-link { display: block; text-decoration: none; cursor: pointer; }
+    .title-link { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+    .title-link:hover { color: var(--gold-champagne, #C5A059); }
+    
+    /* Header Mini-Menu Window Popover */
+    .mini-menu-window {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 1.5rem;
+      width: 320px;
+      background: #FFFFFF;
+      border: 1px solid rgba(197, 160, 89, 0.4);
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(20, 40, 29, 0.12);
+      padding: 1.25rem;
+      display: none;
+      z-index: 500;
+    }
+    .mini-menu-window.open {
+      display: block;
+      animation: menuFadeIn 0.22s ease forwards;
+    }
+    @keyframes menuFadeIn {
+      from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .menu-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(20, 40, 29, 0.08);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #14281D;
+    }
+    .menu-list { list-style: none; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.35rem; }
+    .menu-list-item a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.45rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #141D17;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .menu-list-item a:hover { background: #F3EFE6; color: #A8833E; }
+    .menu-badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: #FAF7F2;
+      color: #556258;
+    }
+    .btn-header-menu {
+      background: #FAF7F2;
+      border: 1px solid rgba(20, 40, 29, 0.15);
+      border-radius: 8px;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #14281D;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+    .btn-header-menu:hover { border-color: #C5A059; background: #FFFFFF; }
+
+  </style>
 <style>
     /* ========================================================
        DIVERSIFIED BOTANICAL PALETTE & MINI MENU WINDOW
@@ -2703,7 +2951,83 @@
       color: #fff;
       border-color: var(--color-dark);
     }
-</style>
+
+    /* Card Title & Image Link Enhancements */
+    .card-img-link { display: block; text-decoration: none; cursor: pointer; }
+    .title-link { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+    .title-link:hover { color: var(--gold-champagne, #C5A059); }
+    
+    /* Header Mini-Menu Window Popover */
+    .mini-menu-window {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 1.5rem;
+      width: 320px;
+      background: #FFFFFF;
+      border: 1px solid rgba(197, 160, 89, 0.4);
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(20, 40, 29, 0.12);
+      padding: 1.25rem;
+      display: none;
+      z-index: 500;
+    }
+    .mini-menu-window.open {
+      display: block;
+      animation: menuFadeIn 0.22s ease forwards;
+    }
+    @keyframes menuFadeIn {
+      from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .menu-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(20, 40, 29, 0.08);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #14281D;
+    }
+    .menu-list { list-style: none; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.35rem; }
+    .menu-list-item a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.45rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #141D17;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .menu-list-item a:hover { background: #F3EFE6; color: #A8833E; }
+    .menu-badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: #FAF7F2;
+      color: #556258;
+    }
+    .btn-header-menu {
+      background: #FAF7F2;
+      border: 1px solid rgba(20, 40, 29, 0.15);
+      border-radius: 8px;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #14281D;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+    .btn-header-menu:hover { border-color: #C5A059; background: #FFFFFF; }
+
+  </style>
 </head>
 <body>
 
@@ -3102,35 +3426,37 @@
     </div>
 
     <div class="catalog-grid">
-      <!-- Ürün 1: Pure Essence -->
+<!-- Ürün 1: Pure Essence -->
       <div class="product-card" data-category="kemik bebek kolajen">
-        <span class="card-trendyol-pill">✦ ÇOK SATAN #1</span>
+        <span class="card-trendyol-pill">✦ EN ÇOK SATAN #1</span>
         <span class="card-vol-pill">300 ml Cam</span>
-        <div class="card-img-box" id="cardBox_no01">
-          <img src="assets/gallery_no01_01_hero.jpg" alt="Pure Essence İlikli Kemik Suyu" loading="lazy" id="cardImg_no01">
-          <div class="card-quick-tabs">
-            <button class="card-tab-btn active" onclick="switchCardImage('no01', 'assets/gallery_no01_01_hero.jpg', this)">Ürün</button>
-            <button class="card-tab-btn" onclick="switchCardImage('no01', 'assets/gallery_no01_05_texture.jpg', this)">Doku (Jöle)</button>
-            <button class="card-tab-btn" onclick="switchCardImage('no01', 'assets/gallery_no01_02_ingredients.jpg', this)">İçerik</button>
-            <button class="card-tab-btn" onclick="switchCardImage('no01', 'assets/gallery_no01_04_clinical.jpg', this)">Klinik</button>
+        <a href="pure-essence.html" class="card-img-link" title="Pure Essence Ürün Sayfasına Git">
+          <div class="card-img-box" id="cardBox_no01">
+            <img src="assets/product_no01_bone_broth.jpg" alt="No. 01 Pure Essence İlikli Kemik Suyu" loading="lazy" id="cardImg_no01">
+            <div class="card-quick-tabs">
+              <button type="button" class="card-tab-btn active" onclick="event.preventDefault(); switchCardImage('no01', 'assets/product_no01_bone_broth.jpg', this)">Kavanoz</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no01', 'assets/hero_collagen_jelly.jpg', this)">Taş Jöle</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no01', 'assets/photo_01_morning_pour.jpg', this)">Sabah İksiri</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no01', 'assets/photo_03_gourmet_soup.jpg', this)">Çorba</button>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="card-content">
-          <div class="card-series">NO. 01 • BONE BROTH</div>
-          <h3 class="card-name">Pure Essence Kemik Suyu</h3>
+          <div class="card-series">ZANAATKAR İLİKLİ KEMİK SUYU SERİSİ • 300 ML</div>
+          <h3 class="card-name"><a href="pure-essence.html" class="title-link">No. 01 Pure Essence Kemik Suyu</a></h3>
           <div class="card-rating">
-            <span>★★★★★</span> <span class="count">(142 değerlendirme • Acıbadem Standart)</span>
+            <span>★★★★★</span> <span class="count">(218 değerlendirme • Acıbadem Standart)</span>
           </div>
           <p class="card-desc">
-            Dana kaval kemiği, organik elma sirkesi ve taze sebzelerle 28 saat demlendi. Buzdolabında taş gibi jöle kıvamı, 60°C'de berrak altın sarısı içim iksiri.
+            Dana kaval kemikleri, organik elma sirkesi ve taze sebzelerle 28 saat demlendi. Çift ön haşlama ile sıfır ağır koku; buzdolabında kaşık dik duran doğal taş jöle kıvamı.
           </p>
           <div class="card-actions-row">
             <button class="btn-quick-look" style="margin:0; flex:1;" onclick="openProductModal('no01')">Hızlı İncele ↗</button>
             <a href="pure-essence.html" class="btn-card-pdp">Ürün Sayfası →</a>
           </div>
           <div class="card-specs">
-            <span class="spec-pill">300 ml Cam Kavanoz</span>
-            <span class="spec-pill">Tip 1 & 3 Kolajen</span>
+            <span class="spec-pill">Taş Jöle Garantisi</span>
+            <span class="spec-pill">7.800 mg Kolajen</span>
             <span class="spec-pill">0 İlave Tuz & Katkısız</span>
           </div>
         </div>
@@ -3145,34 +3471,36 @@
 
       <!-- Ürün 2: Golden Immunity -->
       <div class="product-card" data-category="kemik bagisiklik kolajen">
-        <span class="card-trendyol-pill">✦ BAĞIŞIKLIK KÜRÜ</span>
+        <span class="card-trendyol-pill" style="background:#FEF3C7; color:#8B4513;">✦ BAĞIŞIKLIK & ANTİOKSİDAN</span>
         <span class="card-vol-pill">300 ml Cam</span>
-        <div class="card-img-box" id="cardBox_no02">
-          <img src="assets/gallery_no02_01_hero.jpg" alt="Golden Immunity Zencefil" loading="lazy" id="cardImg_no02">
-          <div class="card-quick-tabs">
-            <button class="card-tab-btn active" onclick="switchCardImage('no02', 'assets/gallery_no02_01_hero.jpg', this)">Ürün</button>
-            <button class="card-tab-btn" onclick="switchCardImage('no02', 'assets/gallery_no02_02_ingredients.jpg', this)">İçerik</button>
-            <button class="card-tab-btn" onclick="switchCardImage('no02', 'assets/gallery_no01_05_texture.jpg', this)">Doku</button>
-            <button class="card-tab-btn" onclick="switchCardImage('no02', 'assets/gallery_no01_06_how_to_use.jpg', this)">Kullanım</button>
+        <a href="golden-immunity.html" class="card-img-link" title="Golden Immunity Ürün Sayfasına Git">
+          <div class="card-img-box" id="cardBox_no02">
+            <img src="assets/product_no02_golden_immunity.jpg" alt="No. 02 Golden Immunity Zencefil" loading="lazy" id="cardImg_no02">
+            <div class="card-quick-tabs">
+              <button type="button" class="card-tab-btn active" onclick="event.preventDefault(); switchCardImage('no02', 'assets/product_no02_golden_immunity.jpg', this)">Kavanoz</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no02', 'assets/photo_01_morning_pour.jpg', this)">Altın İksir</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no02', 'assets/photo_02_ingredients_flatlay.jpg', this)">Zencefil</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no02', 'assets/hero_collagen_jelly.jpg', this)">Taş Jöle</button>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="card-content">
-          <div class="card-series">NO. 02 • BONE BROTH</div>
-          <h3 class="card-name">Golden Immunity Zencefil</h3>
+          <div class="card-series">ZANAATKAR İLİKLİ KEMİK SUYU SERİSİ • 300 ML</div>
+          <h3 class="card-name"><a href="golden-immunity.html" class="title-link">No. 02 Golden Immunity Zencefil</a></h3>
           <div class="card-rating">
-            <span>★★★★★</span> <span class="count">(89 değerlendirme)</span>
+            <span>★★★★★</span> <span class="count">(184 değerlendirme • %2000 Emilim)</span>
           </div>
           <p class="card-desc">
-            Saf ilikli kemik suyuna taze zencefil, kök zerdeçal, tane karabiber ve limon ilave edildi. %2000 piperin emilimi ile mevsim geçişlerinde doğal kalkan.
+            Taze kök zencefil, taze zerdeçal ve tane karabiberin piperin katalizörüyle harmanlandı. Güçlü antioksidan savunma, boğaz yatıştırıcı sıcak içim.
           </p>
           <div class="card-actions-row">
             <button class="btn-quick-look" style="margin:0; flex:1;" onclick="openProductModal('no02')">Hızlı İncele ↗</button>
             <a href="golden-immunity.html" class="btn-card-pdp">Ürün Sayfası →</a>
           </div>
           <div class="card-specs">
-            <span class="spec-pill">Kök Zerdeçal & Zencefil</span>
-            <span class="spec-pill">Piperin Katalizörü</span>
-            <span class="spec-pill">Bağışıklık Kürü</span>
+            <span class="spec-pill">Taze Zerdeçal & Zencefil</span>
+            <span class="spec-pill">8.200 mg Kolajen</span>
+            <span class="spec-pill">Kış Kalkanı</span>
           </div>
         </div>
         <div class="card-footer-row">
@@ -3184,40 +3512,43 @@
         </div>
       </div>
 
-      <!-- Ürün 3: Night Story Çay -->
+      <!-- Ürün 3: Night Story -->
       <div class="product-card" id="caylar" data-category="cay">
-        <span class="card-trendyol-pill">✦ DERİN UYKU</span>
+        <span class="card-trendyol-pill" style="background:#F3E8FF; color:#4A3B69;">✦ DERİN UYKU & KAFEİNSİZ</span>
         <span class="card-vol-pill">75 gr Kraft</span>
-        <div class="card-img-box" id="cardBox_no03">
-          <img src="assets/gallery_no03_01_hero.jpg" alt="Night Story Sakinleşme Çayı" loading="lazy" id="cardImg_no03">
-          <div class="card-quick-tabs">
-            <button class="card-tab-btn active" onclick="switchCardImage('no03', 'assets/gallery_no03_01_hero.jpg', this)">Paket</button>
-            <button class="card-tab-btn" onclick="switchCardImage('no03', 'assets/product_no03_night_tea.jpg', this)">Demlik</button>
-            <button class="card-tab-btn" onclick="switchCardImage('no03', 'assets/gallery_no01_03_who_can_use.jpg', this)">Uyku</button>
+        <a href="gece-masali.html" class="card-img-link" title="Night Story Ürün Sayfasına Git">
+          <div class="card-img-box" id="cardBox_no03">
+            <img src="assets/product_no03_night_tea.jpg" alt="No. 03 Night Story Sakinleşme Çayı" loading="lazy" id="cardImg_no03">
+            <div class="card-quick-tabs">
+              <button type="button" class="card-tab-btn active" onclick="event.preventDefault(); switchCardImage('no03', 'assets/product_no03_night_tea.jpg', this)">Pouch</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no03', 'assets/photo_01_morning_pour.jpg', this)">Fincan</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no03', 'assets/photo_02_ingredients_flatlay.jpg', this)">Bitkiler</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no03', 'assets/bundle_14day_box.jpg', this)">Kür Seti</button>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="card-content">
-          <div class="card-series">NO. 03 • BOTANICAL BLEND</div>
-          <h3 class="card-name">Night Story Sakinleşme Çayı</h3>
+          <div class="card-series">FONKSİYONEL BOTANİK ÇAY SERİSİ • 75 GR</div>
+          <h3 class="card-name"><a href="gece-masali.html" class="title-link">No. 03 Night Story Sakinleşme Çayı</a></h3>
           <div class="card-rating">
-            <span>★★★★★</span> <span class="count">(114 değerlendirme)</span>
+            <span>★★★★★</span> <span class="count">(97 değerlendirme • %100 Kafeinsiz)</span>
           </div>
           <p class="card-desc">
-            Organik Fransız lavantası, tıbbi papatya ve melisa yaprağı. Kemik suyundaki glisin amino asidi ile birlikte derin REM uykusu ve nörolojik dinlenme sağlar.
+            Organik Fransız lavantası, tıbbi papatya çiçekleri ve melisa yaprakları. Gece kortizolü düşürerek REM uykusuna pürüzsüz geçiş sağlayan akşam ritüeli.
           </p>
           <div class="card-actions-row">
             <button class="btn-quick-look" style="margin:0; flex:1;" onclick="openProductModal('no03')">Hızlı İncele ↗</button>
             <a href="gece-masali.html" class="btn-card-pdp">Ürün Sayfası →</a>
           </div>
           <div class="card-specs">
-            <span class="spec-pill">%100 Kafeinsiz</span>
-            <span class="spec-pill">Fransız Lavantası</span>
-            <span class="spec-pill">Melisa & Papatya</span>
+            <span class="spec-pill">Bütün Çiçek Başçıkları</span>
+            <span class="spec-pill">0 Kafein</span>
+            <span class="spec-pill">~40 Fincan</span>
           </div>
         </div>
         <div class="card-footer-row">
-          <div class="card-price">240 TL</div>
-          <button class="btn-add-cart" onclick="addToCart('No.03 Night Story Sakinleşme Çayı', 240)">
+          <div class="card-price">195 TL</div>
+          <button class="btn-add-cart" onclick="addToCart('No.03 Night Story Sakinleşme Çayı', 195)">
             <span class="icon" style="width: 14px; height: 14px;"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
             <span>Sepete Ekle</span>
           </button>
@@ -3226,128 +3557,136 @@
 
       <!-- Ürün 4: Saf Bebek Kolajeni -->
       <div class="product-card" data-category="kemik bebek">
-        <span class="card-trendyol-pill">✦ BEBEK & EK GIDA</span>
+        <span class="card-trendyol-pill" style="background:#D8F3DC; color:#2D6A4F;">✦ 0 TUZ & PEDİATRİK GÜVEN</span>
         <span class="card-vol-pill">300 ml Cam</span>
-        <div class="card-img-box" id="cardBox_no04">
-          <img src="assets/gallery_no04_01_hero.jpg" alt="Saf Bebek Kolajeni" loading="lazy" id="cardImg_no04">
-          <div class="card-quick-tabs">
-            <button class="card-tab-btn active" onclick="switchCardImage('no04', 'assets/gallery_no04_01_hero.jpg', this)">Ürün</button>
-            <button class="card-tab-btn" onclick="switchCardImage('no04', 'assets/gallery_no04_02_baby_safety.jpg', this)">Güvenlik</button>
-            <button class="card-tab-btn" onclick="switchCardImage('no04', 'assets/gallery_no01_05_texture.jpg', this)">Doku</button>
-            <button class="card-tab-btn" onclick="switchCardImage('no04', 'assets/gallery_no01_06_how_to_use.jpg', this)">Kullanım</button>
+        <a href="saf-bebek-kolajeni.html" class="card-img-link" title="Saf Bebek Kolajeni Ürün Sayfasına Git">
+          <div class="card-img-box" id="cardBox_no04">
+            <img src="assets/product_no04_baby_broth.jpg" alt="No. 04 Saf Bebek Kolajeni" loading="lazy" id="cardImg_no04">
+            <div class="card-quick-tabs">
+              <button type="button" class="card-tab-btn active" onclick="event.preventDefault(); switchCardImage('no04', 'assets/product_no04_baby_broth.jpg', this)">Kavanoz</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no04', 'assets/hero_collagen_jelly.jpg', this)">0 Tuz Jöle</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no04', 'assets/photo_01_morning_pour.jpg', this)">Berrak İçim</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no04', 'assets/photo_03_gourmet_soup.jpg', this)">Püre Tarifi</button>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="card-content">
-          <div class="card-series">NO. 04 • BABY NUTRITION</div>
-          <h3 class="card-name">Saf Bebek Kolajeni</h3>
+          <div class="card-series">ZANAATKAR İLİKLİ KEMİK SUYU SERİSİ • 300 ML</div>
+          <h3 class="card-name"><a href="saf-bebek-kolajeni.html" class="title-link">No. 04 Saf Bebek Kolajeni</a></h3>
           <div class="card-rating">
-            <span>★★★★★</span> <span class="count">(96 değerlendirme • Pediatrist Onaylı)</span>
+            <span>★★★★★</span> <span class="count">(165 anne değerlendirmesi • Sıfır Tuz)</span>
           </div>
           <p class="card-desc">
-            6. aydan itibaren ek gıdaya geçen bebekler için sıfır tuz ve sıfır baharat ile sadece saf dana kaval kemiği iliğinden 28 saatte süzüldü. Bebek böbreklerini yormaz.
+            Sıfır ilave tuz, sıfır soğan, sarımsak veya baharat. Çocuk doktoru kriterlerinde 28 saatte çıkarılan saf kemik kalsiyumu ve doğal kolajen ile ek gıdaya güvenli geçiş.
           </p>
           <div class="card-actions-row">
             <button class="btn-quick-look" style="margin:0; flex:1;" onclick="openProductModal('no04')">Hızlı İncele ↗</button>
             <a href="saf-bebek-kolajeni.html" class="btn-card-pdp">Ürün Sayfası →</a>
           </div>
           <div class="card-specs">
+            <span class="spec-pill">%0.0 Tuz & Baharat</span>
             <span class="spec-pill">6. Aydan İtibaren</span>
-            <span class="spec-pill">Sıfır Tuz & Baharat</span>
-            <span class="spec-pill">Bebek Çorbalarına</span>
+            <span class="spec-pill">Taş Jöle Garantisi</span>
           </div>
         </div>
         <div class="card-footer-row">
-          <div class="card-price">210 TL</div>
-          <button class="btn-add-cart" onclick="addToCart('No.04 Saf Bebek Kolajeni', 210)">
+          <div class="card-price">230 TL</div>
+          <button class="btn-add-cart" onclick="addToCart('No.04 Saf Bebek Kolajeni', 230)">
             <span class="icon" style="width: 14px; height: 14px;"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
             <span>Sepete Ekle</span>
           </button>
         </div>
       </div>
 
-      <!-- Ürün 5: Rosemary Elixir -->
+      <!-- Ürün 5: Rosemary Collagen Elixir -->
       <div class="product-card" data-category="kemik kolajen">
-        <span class="card-trendyol-pill">✦ GURME AROMA</span>
+        <span class="card-trendyol-pill" style="background:#D8F3DC; color:#1B4332;">✦ GURME ŞEF SERİSİ</span>
         <span class="card-vol-pill">300 ml Cam</span>
-        <div class="card-img-box" id="cardBox_no05">
-          <img src="assets/gallery_no05_01_hero.jpg" alt="Rosemary Collagen Elixir" loading="lazy" id="cardImg_no05">
-          <div class="card-quick-tabs">
-            <button class="card-tab-btn active" onclick="switchCardImage('no05', 'assets/gallery_no05_01_hero.jpg', this)">Ürün</button>
-            <button class="card-tab-btn" onclick="switchCardImage('no05', 'assets/gallery_no01_02_ingredients.jpg', this)">İçerik</button>
-            <button class="card-tab-btn" onclick="switchCardImage('no05', 'assets/gallery_no01_05_texture.jpg', this)">Doku</button>
+        <a href="rosemary-elixir.html" class="card-img-link" title="Rosemary Collagen Elixir Ürün Sayfasına Git">
+          <div class="card-img-box" id="cardBox_no05">
+            <img src="assets/product_no05_rosemary_broth.jpg" alt="No. 05 Rosemary Collagen Elixir" loading="lazy" id="cardImg_no05">
+            <div class="card-quick-tabs">
+              <button type="button" class="card-tab-btn active" onclick="event.preventDefault(); switchCardImage('no05', 'assets/product_no05_rosemary_broth.jpg', this)">Kavanoz</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no05', 'assets/photo_01_morning_pour.jpg', this)">Gurme İksir</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no05', 'assets/photo_02_ingredients_flatlay.jpg', this)">Biberiye</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('no05', 'assets/hero_collagen_jelly.jpg', this)">Taş Jöle</button>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="card-content">
-          <div class="card-series">NO. 05 • HERBAL INFUSION</div>
-          <h3 class="card-name">Rosemary Collagen Elixir</h3>
+          <div class="card-series">ZANAATKAR İLİKLİ KEMİK SUYU SERİSİ • 300 ML</div>
+          <h3 class="card-name"><a href="rosemary-elixir.html" class="title-link">No. 05 Rosemary Collagen Elixir</a></h3>
           <div class="card-rating">
-            <span>★★★★★</span> <span class="count">(67 değerlendirme)</span>
+            <span>★★★★★</span> <span class="count">(112 değerlendirme • Şef İmzası)</span>
           </div>
           <p class="card-desc">
-            Taze yayla biberiyesi, dağ kekiği ve defne yaprağıyla demlendi. Gurme yemeklerde, pilavlarda ve sıcak çorbalarda nefis Akdeniz şifası.
+            Vahşi dağ biberiyesi, dağ kekiği ve defne yapraklarıyla zenginleştirildi. Risotto, makarna sosu ve et yemeklerine restoran şeflerinin derin imza lezzetini taşır.
           </p>
           <div class="card-actions-row">
             <button class="btn-quick-look" style="margin:0; flex:1;" onclick="openProductModal('no05')">Hızlı İncele ↗</button>
             <a href="rosemary-elixir.html" class="btn-card-pdp">Ürün Sayfası →</a>
           </div>
           <div class="card-specs">
-            <span class="spec-pill">Yabani Biberiye & Kekik</span>
-            <span class="spec-pill">Yüksek Antioksidan</span>
-            <span class="spec-pill">Gurme Lezzet</span>
+            <span class="spec-pill">Akdeniz Dağ Kekiği</span>
+            <span class="spec-pill">7.900 mg Kolajen</span>
+            <span class="spec-pill">Şef Redüksiyonu</span>
           </div>
         </div>
         <div class="card-footer-row">
-          <div class="card-price">230 TL</div>
-          <button class="btn-add-cart" onclick="addToCart('No.05 Rosemary Collagen Elixir', 230)">
+          <div class="card-price">235 TL</div>
+          <button class="btn-add-cart" onclick="addToCart('No.05 Rosemary Collagen Elixir', 235)">
             <span class="icon" style="width: 14px; height: 14px;"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
             <span>Sepete Ekle</span>
           </button>
         </div>
       </div>
 
-      <!-- Ürün 6: 14 Günlük Lüks Kit -->
+      <!-- Ürün 6: 14 Günlük Lüks Yenilenme Kiti -->
       <div class="product-card" style="background: var(--bg-card); justify-content: space-between;" data-category="kemik kolajen bagisiklik cay">
-        <span class="card-trendyol-pill">✦ FULL WELLNESS SETİ</span>
-        <span class="card-vol-pill">Lüks Kutu</span>
-        <div class="card-img-box" id="cardBox_bundle">
-          <img src="assets/gallery_bundle_01_hero.jpg" alt="14 Günlük Lüks Wellness Kiti" loading="lazy" id="cardImg_bundle">
-          <div class="card-quick-tabs">
-            <button class="card-tab-btn active" onclick="switchCardImage('bundle', 'assets/gallery_bundle_01_hero.jpg', this)">Set</button>
-            <button class="card-tab-btn" onclick="switchCardImage('bundle', 'assets/bundle_14day_box.jpg', this)">Kutu</button>
-            <button class="card-tab-btn" onclick="switchCardImage('bundle', 'assets/gallery_no01_05_texture.jpg', this)">Doku</button>
-            <button class="card-tab-btn" onclick="switchCardImage('bundle', 'assets/gallery_no01_04_clinical.jpg', this)">Klinik</button>
+        <span class="card-trendyol-pill" style="background:#FEF3C7; color:#163824;">✦ %23 AVANTAJLI PROTOKOL</span>
+        <span class="card-vol-pill">Lüks Hediye Kutusu</span>
+        <a href="14-gunluk-paket.html" class="card-img-link" title="14 Günlük Lüks Yenilenme Kiti Sayfasına Git">
+          <div class="card-img-box" id="cardBox_bundle">
+            <img src="assets/bundle_14day_box.jpg" alt="14 Günlük Lüks Yenilenme Kiti" loading="lazy" id="cardImg_bundle">
+            <div class="card-quick-tabs">
+              <button type="button" class="card-tab-btn active" onclick="event.preventDefault(); switchCardImage('bundle', 'assets/bundle_14day_box.jpg', this)">Kutu</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('bundle', 'assets/photo_01_morning_pour.jpg', this)">Sabah</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('bundle', 'assets/hero_collagen_jelly.jpg', this)">Taş Jöle</button>
+              <button type="button" class="card-tab-btn" onclick="event.preventDefault(); switchCardImage('bundle', 'assets/photo_03_gourmet_soup.jpg', this)">Rehber</button>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="card-content">
-          <div class="card-series">ÖZEL SEÇKİ • COMPLETE WELLNESS</div>
-          <h3 class="card-name">14 Günlük Lüks Yenilenme Kiti</h3>
+          <div class="card-series">HÜCRESEL YENİLENME KÜR SERİSİ • FULL SET</div>
+          <h3 class="card-name"><a href="14-gunluk-paket.html" class="title-link">14 Günlük Lüks Yenilenme Kiti</a></h3>
           <div class="card-rating">
-            <span>★★★★★</span> <span class="count">(188 değerlendirme • %100 Memnuniyet)</span>
+            <span>★★★★★</span> <span class="count">(89 değerlendirme • 260 TL Tasarruf)</span>
           </div>
           <p class="card-desc">
-            Hücresel yenilenme kürü için tasarlandı: 4 kavanoz kemik suyu + 1 Night Story botanik çayı + el yapımı zeytin ağacı dozaj kaşığı ve 14 günlük kullanım takvimi.
+            4 kavanoz zanaatkar kemik suyu (Pure, Golden, Rosemary) + 1 Night Story botanik çay + masif zeytin ağacı kaşık + 14 günlük kullanım rehberi.
           </p>
           <div class="card-actions-row">
             <button class="btn-quick-look" style="margin:0; flex:1;" onclick="openProductModal('bundle')">Hızlı İncele ↗</button>
             <a href="14-gunluk-paket.html" class="btn-card-pdp">Ürün Sayfası →</a>
           </div>
           <div class="card-specs">
-            <span class="spec-pill">4x İlikli Kemik Suyu</span>
-            <span class="spec-pill">1x Botanik Çay</span>
-            <span class="spec-pill">Ahşap Dozaj Kaşığı</span>
+            <span class="spec-pill">4 Kavanoz + 1 Çay</span>
+            <span class="spec-pill">Zeytin Ağacı Kaşık</span>
+            <span class="spec-pill">Ücretsiz Hızlı Kargo</span>
           </div>
         </div>
         <div class="card-footer-row">
           <div>
-            <div class="card-price" style="font-size: 26px;">980 TL</div>
-            <div style="font-size: 11px; color: var(--color-trust-green); font-weight: 700;">✓ Kargo Bedava</div>
+            <div class="card-price">890 TL</div>
+            <div style="font-size: 0.72rem; text-decoration: line-through; color: var(--text-muted);">1.150 TL</div>
           </div>
-          <button class="btn-add-cart" onclick="addToCart('14 Günlük Lüks Yenilenme Kiti', 980)">
+          <button class="btn-add-cart" onclick="addToCart('14 Günlük Lüks Yenilenme Kiti', 890)">
             <span class="icon" style="width: 14px; height: 14px;"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
             <span>Sepete Ekle</span>
           </button>
         </div>
       </div>
+    </div>
     </div>
   </section>
 
@@ -3919,45 +4258,52 @@
     // ==========================================
     // TRENDYOL & COSMED STYLE INFOGRAPHIC GALLERIES
     // ==========================================
+    // Gerçek, Ağız Sulandıran Ticari Mutfak & Stüdyo Fotoğraf Galerileri
     const PRODUCT_GALLERIES = {
       no01: [
-        { src: "assets/gallery_no01_01_hero.jpg", label: "1 / 6 • Ürün Görünümü & Onay Badgeleri", thumbTitle: "Ürün" },
-        { src: "assets/gallery_no01_02_ingredients.jpg", label: "2 / 6 • Öne Çıkan Standartlar (Dairesel Rozetler)", thumbTitle: "İçerik" },
-        { src: "assets/gallery_no01_03_who_can_use.jpg", label: "3 / 6 • Özellikleri ve Etkileri (Cosmed Checklist)", thumbTitle: "Kullanıcı" },
-        { src: "assets/gallery_no01_04_clinical.jpg", label: "4 / 6 • Acıbadem Klinik Raporu", thumbTitle: "Klinik" },
-        { src: "assets/gallery_no01_05_texture.jpg", label: "5 / 6 • Reddit #1 Kalite Testi (Buzdolabı Jöle Kanıtı)", thumbTitle: "Doku" },
-        { src: "assets/gallery_no01_06_how_to_use.jpg", label: "6 / 6 • Nasıl Tüketilir? (3 Adım)", thumbTitle: "Kullanım" }
+        { src: "assets/product_no01_bone_broth.jpg", label: "1 / 6 • Zanaatkar Cam Kavanoz & 121°C Otoklav Kapağı", thumbTitle: "Kavanoz" },
+        { src: "assets/photo_01_morning_pour.jpg", label: "2 / 6 • Buharlı Sabah Kupası: 60°C Berrak Altın İçim", thumbTitle: "Sabah İksiri" },
+        { src: "assets/hero_collagen_jelly.jpg", label: "3 / 6 • Reddit #1 Kalite Kanıtı: Kaşıkla Kalkan Doğal Taş Jöle", thumbTitle: "Taş Jöle" },
+        { src: "assets/photo_02_ingredients_flatlay.jpg", label: "4 / 6 • Çiftlik Tazeliğinde Kök Sebzeler & Organik Elma Sirkesi", thumbTitle: "İçindekiler" },
+        { src: "assets/photo_03_gourmet_soup.jpg", label: "5 / 6 • Gurme Tarif: Lokanta Usulü İlikli Sarı Mercimek Çorbası", thumbTitle: "Tarif" },
+        { src: "assets/bundle_14day_box.jpg", label: "6 / 6 • Kırılmaya Karşı Air-Column Şişme Zırhlı Kargo Ambalajı", thumbTitle: "Zırhlı Kargo" }
       ],
       no02: [
-        { src: "assets/gallery_no02_01_hero.jpg", label: "1 / 5 • Golden Immunity Görünüm", thumbTitle: "Ürün" },
-        { src: "assets/gallery_no02_02_ingredients.jpg", label: "2 / 5 • Zerdeçal & Zencefil Formülü", thumbTitle: "İçerik" },
-        { src: "assets/gallery_no01_05_texture.jpg", label: "3 / 5 • Doğal Jelatin Doku Kanıtı", thumbTitle: "Doku" },
-        { src: "assets/gallery_no01_03_who_can_use.jpg", label: "4 / 5 • Kimler Güvenle Kullanabilir?", thumbTitle: "Kullanıcı" },
-        { src: "assets/gallery_no01_06_how_to_use.jpg", label: "5 / 5 • Sabah Aç Karnına Rutin", thumbTitle: "Kullanım" }
+        { src: "assets/product_no02_golden_immunity.jpg", label: "1 / 6 • Golden Immunity Zanaatkar Cam Kavanoz", thumbTitle: "Kavanoz" },
+        { src: "assets/photo_01_morning_pour.jpg", label: "2 / 6 • Buharlı Altın Kupa: Taze Zencefil & Karabiber Aroması", thumbTitle: "Altın İksir" },
+        { src: "assets/photo_02_ingredients_flatlay.jpg", label: "3 / 6 • Taze Zerdeçal, Kök Zencefil & Piperin Emilim Formülü", thumbTitle: "Kök İçerik" },
+        { src: "assets/hero_collagen_jelly.jpg", label: "4 / 6 • +4°C Taş Jöle Garantisi: Doğal Tip 1 & 3 Kolajen", thumbTitle: "Jöle Testi" },
+        { src: "assets/photo_03_gourmet_soup.jpg", label: "5 / 6 • Şifa Tarifi: Zencefilli Tavuk & Kemik Suyu Çorbası", thumbTitle: "Şifa Çorbası" },
+        { src: "assets/bundle_14day_box.jpg", label: "6 / 6 • Air-Column Kırılmaz Kargo Ambalajı", thumbTitle: "Kargo" }
       ],
       no03: [
-        { src: "assets/gallery_no03_01_hero.jpg", label: "1 / 3 • Gece Masalı Çay Paketi", thumbTitle: "Paket" },
-        { src: "assets/product_no03_night_tea.jpg", label: "2 / 3 • Demleme ve Çiçek Harmanı", thumbTitle: "Demleme" },
-        { src: "assets/gallery_no01_03_who_can_use.jpg", label: "3 / 3 • Derin REM Uykusu & Glisin", thumbTitle: "Uyku" }
+        { src: "assets/product_no03_night_tea.jpg", label: "1 / 6 • Night Story Kraft Fermuarlı Korumalı Doypack Pouch", thumbTitle: "Pouch" },
+        { src: "assets/photo_01_morning_pour.jpg", label: "2 / 6 • Dingin Akşam Fincanı: %100 Kafeinsiz Rahatlatıcı Demleme", thumbTitle: "Akşam Fincanı" },
+        { src: "assets/photo_02_ingredients_flatlay.jpg", label: "3 / 6 • Saf Fransız Lavantası, Tıbbi Papatya & Melisa", thumbTitle: "Bitkiler" },
+        { src: "assets/bundle_14day_box.jpg", label: "4 / 6 • 14 Günlük Hücresel Yenilenme Kürü Tamamlayıcısı", thumbTitle: "Kür Seti" }
       ],
       no04: [
-        { src: "assets/gallery_no04_01_hero.jpg", label: "1 / 5 • Saf Bebek Kolajeni", thumbTitle: "Ürün" },
-        { src: "assets/gallery_no04_02_baby_safety.jpg", label: "2 / 5 • Sıfır Tuz & Pediatrik Güvenlik", thumbTitle: "Güvenlik" },
-        { src: "assets/gallery_no01_05_texture.jpg", label: "3 / 5 • Doğal Jelatin Kıvamı", thumbTitle: "Doku" },
-        { src: "assets/gallery_no01_03_who_can_use.jpg", label: "4 / 5 • 6. Aydan İtibaren Ek Gıda", thumbTitle: "Ek Gıda" },
-        { src: "assets/gallery_no01_06_how_to_use.jpg", label: "5 / 5 • Çorba ve Püre Hazırlama", thumbTitle: "Kullanım" }
+        { src: "assets/product_no04_baby_broth.jpg", label: "1 / 6 • Saf Bebek Kolajeni Cam Kavanoz & Ahşap Kaşık", thumbTitle: "Kavanoz & Kaşık" },
+        { src: "assets/hero_collagen_jelly.jpg", label: "2 / 6 • %0.0 İlave Tuz: Bebek Çorbalarına 2 Kaşık Doğal Taş Jöle", thumbTitle: "0 Tuz Jöle" },
+        { src: "assets/photo_01_morning_pour.jpg", label: "3 / 6 • Kokusuz & Berrak İçim: Bebeklerin Kolayca Kabul Ettiği Kıvam", thumbTitle: "Berrak İçim" },
+        { src: "assets/photo_03_gourmet_soup.jpg", label: "4 / 6 • Ek Gıda Tarifi: Bebekler İçin Balkabaklı İlikli Güç Püresi", thumbTitle: "Bebek Püresi" },
+        { src: "assets/bundle_14day_box.jpg", label: "5 / 6 • Kırılmaya Karşı Güvenli Anneler Paketi", thumbTitle: "Kargo" }
       ],
       no05: [
-        { src: "assets/gallery_no05_01_hero.jpg", label: "1 / 4 • Rosemary Collagen Elixir", thumbTitle: "Ürün" },
-        { src: "assets/gallery_no01_02_ingredients.jpg", label: "2 / 4 • Akdeniz Bitkisel İnfüzyon", thumbTitle: "İçerik" },
-        { src: "assets/gallery_no01_05_texture.jpg", label: "3 / 4 • Jelatin Doku Kanıtı", thumbTitle: "Doku" },
-        { src: "assets/gallery_no01_06_how_to_use.jpg", label: "4 / 4 • Gurme Yemek Rutini", thumbTitle: "Kullanım" }
+        { src: "assets/product_no05_rosemary_broth.jpg", label: "1 / 6 • Rosemary Collagen Elixir Cam Kavanoz", thumbTitle: "Kavanoz" },
+        { src: "assets/photo_01_morning_pour.jpg", label: "2 / 6 • Akdeniz Baharatlarıyla Dingin ve Zengin Sabah Kupası", thumbTitle: "Gurme İksir" },
+        { src: "assets/photo_02_ingredients_flatlay.jpg", label: "3 / 6 • Yabani Biberiye, Dağ Kekiği & Defne Yaprağı Buketi", thumbTitle: "Taze Otlar" },
+        { src: "assets/hero_collagen_jelly.jpg", label: "4 / 6 • +4°C Doğal Taş Jöle Yoğunluğu", thumbTitle: "Jöle Kanıtı" },
+        { src: "assets/photo_03_gourmet_soup.jpg", label: "5 / 6 • Şef Usulü Biberiyeli Mantarlı Risotto & Et Sosu", thumbTitle: "Şef Yemeği" },
+        { src: "assets/bundle_14day_box.jpg", label: "6 / 6 • Güvenli Zırhlı Kargo Teslimatı", thumbTitle: "Kargo" }
       ],
       bundle: [
-        { src: "assets/gallery_bundle_01_hero.jpg", label: "1 / 4 • 14 Günlük Lüks Yenilenme Kiti", thumbTitle: "Set" },
-        { src: "assets/bundle_14day_box.jpg", label: "2 / 4 • Açık Kutu İçeriği & Kaşık", thumbTitle: "Kutu" },
-        { src: "assets/gallery_no01_05_texture.jpg", label: "3 / 4 • Yoğun Kolajen Doku Kanıtı", thumbTitle: "Doku" },
-        { src: "assets/gallery_no01_04_clinical.jpg", label: "4 / 4 • Acıbadem Klinik Raporu", thumbTitle: "Klinik" }
+        { src: "assets/bundle_14day_box.jpg", label: "1 / 6 • 14 Günlük Lüks Yenilenme Kiti Açılır Hediye Kutusu", thumbTitle: "Lüks Kutu" },
+        { src: "assets/photo_01_morning_pour.jpg", label: "2 / 6 • Sabah Ritüeli: Aç Karnına 100 ml Ilık Kemik Suyu", thumbTitle: "Sabah Rutini" },
+        { src: "assets/hero_collagen_jelly.jpg", label: "3 / 6 • Doğal Taş Jöle Garantisi: 31.500 mg Toplam Biyoaktif Kolajen", thumbTitle: "Jöle Kanıtı" },
+        { src: "assets/product_no03_night_tea.jpg", label: "4 / 6 • Gece Fazı: Yatmadan Önce Night Story Sakinleşme Çayı", thumbTitle: "Akşam Çayı" },
+        { src: "assets/photo_03_gourmet_soup.jpg", label: "5 / 6 • Kutuda Gelen Kuşe Baskı 14 Günlük Şef Rehberi", thumbTitle: "Rehber" },
+        { src: "assets/photo_02_ingredients_flatlay.jpg", label: "6 / 6 • Çiftlikten Sofraya %100 Katkısız İçerik Garantisi", thumbTitle: "İçerikler" }
       ]
     };
 
@@ -4554,6 +4900,26 @@
       const data = ADVISOR_KNOWLEDGE_BASE[advisorGoal][advisorPeriod];
       addToCart(data.productName, data.price);
     }
+
+  
+    function toggleMiniMenu(e) {
+      if (e) e.stopPropagation();
+      const menu = document.getElementById('miniMenuWindow');
+      if (menu) menu.classList.toggle('open');
+    }
+    function closeMiniMenu() {
+      const menu = document.getElementById('miniMenuWindow');
+      if (menu) menu.classList.remove('open');
+    }
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('miniMenuWindow');
+      const btn = document.querySelector('.btn-header-menu');
+      if (menu && menu.classList.contains('open')) {
+        if (!menu.contains(e.target) && (!btn || !btn.contains(e.target))) {
+          menu.classList.remove('open');
+        }
+      }
+    });
 
   </script>
 

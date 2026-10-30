@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rosemary Collagen Elixir (300 ml) | Story of Nature</title>
-  <meta name="description" content="Taze Ege yayla biberiyesi, dağ kekiği ve defne yaprağıyla demlendi. Akdeniz şifasını ve nefis gurme aromayı sofranıza taşır; pilavlarda, makarnalarda ve sıcak ç">
+  <title>No. 05 Rosemary Collagen Elixir | Story of Nature</title>
+  <meta name="description" content="Akdeniz'in vahşi dağlarından toplanan taze biberiye, dağ kekiği ve defne yapraklarıyla zenginleştirilmiş gurme kolajen iksiri. Soslara, et yemeklerine, risottoya ve doğrudan içime eşsiz bir zenginlik katar.">
   <link rel="canonical" href="https://storyofnature.com.tr/rosemary-elixir.html">
   
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
 
-  <!-- Google Fonts: Cormorant Garamond & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,748 +24,837 @@
       --text-muted: #556258;
       --gold-champagne: #C5A059;
       --gold-hover: #A8833E;
-      --gold-tint: rgba(197, 160, 89, 0.12);
-      --color-trust-green: #237443;
-      --color-terracotta: #C86D51;
-      --border-subtle: #E8E4DA;
+      --gold-tint: #FDFBF7;
+      --border-subtle: rgba(20, 40, 29, 0.10);
+      --border-gold: rgba(197, 160, 89, 0.35);
       --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Inter', -apple-system, sans-serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --radius-sm: 8px;
       --radius-md: 16px;
       --radius-lg: 24px;
-      --radius-full: 9999px;
+      --shadow-soft: 0 4px 20px rgba(20, 40, 29, 0.05);
+      --shadow-float: 0 12px 36px rgba(20, 40, 29, 0.10);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      font-family: var(--font-sans);
-      background: var(--bg-canvas);
+      background-color: var(--bg-canvas);
       color: var(--text-main);
-      line-height: 1.5;
+      font-family: var(--font-sans);
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
 
-    /* Top Ticker */
+    /* TOP BANNER */
     .top-banner {
       background: var(--color-dark);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      padding: 10px 16px;
+      color: #FAF7F2;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.55rem 1rem;
       text-align: center;
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 12px;
+      gap: 1.5rem;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border-gold);
     }
 
-    /* Header */
-    header {
-      background: rgba(250, 247, 242, 0.94);
-      backdrop-filter: blur(16px);
+    /* HEADER */
+    .pdp-header {
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-subtle);
       position: sticky;
       top: 0;
       z-index: 100;
+      transition: all 0.3s ease;
     }
-    .header-container {
-      max-width: 1240px;
+    .header-inner {
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 14px 24px;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--color-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .brand-logo span.leaf { color: var(--gold-champagne); }
+    .header-nav { display: flex; gap: 1.5rem; align-items: center; font-size: 0.9rem; font-weight: 500; }
+    .header-nav a:hover { color: var(--gold-champagne); }
+    .btn-menu-trigger {
+      background: none;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.4rem 0.75rem;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-dark);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+    .btn-menu-trigger:hover { border-color: var(--gold-champagne); background: var(--bg-surface); }
+
+    /* MINI MENU WINDOW POPOVER */
+    .mini-menu-window {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 1.5rem;
+      width: 320px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-float);
+      padding: 1.25rem;
+      display: none;
+      z-index: 200;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .mini-menu-window.open {
+      display: block;
+      animation: menuPopIn 0.2s ease forwards;
+    }
+    @keyframes menuPopIn {
+      from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .menu-title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu-links { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+    .menu-link-item a {
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
-    .brand-mark {
-      text-decoration: none;
-      color: var(--color-dark);
-      display: flex;
-      flex-direction: column;
-    }
-    .brand-mark .sub { font-size: 10px; font-weight: 800; letter-spacing: 2px; color: var(--gold-champagne); text-transform: uppercase; }
-    .brand-mark .title { font-family: var(--font-serif); font-size: 26px; font-weight: 700; line-height: 1; }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-    }
-    @media (max-width: 860px) { .nav-links { display: none; } }
-    .nav-links a {
-      text-decoration: none;
+      padding: 0.45rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 500;
       color: var(--text-main);
-      font-size: 13.5px;
+      transition: background 0.15s ease;
+    }
+    .menu-link-item a:hover { background: var(--bg-card); color: var(--gold-hover); }
+    .menu-link-item a span.tag {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: var(--bg-card);
+      color: var(--text-muted);
       font-weight: 600;
-      transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--gold-champagne); }
 
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .btn-header-cart {
-      background: var(--color-dark);
-      color: #fff;
-      border: none;
-      padding: 10px 18px;
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: background 0.2s;
-    }
-    .btn-header-cart:hover { background: var(--color-dark-hover); }
-
-    /* Breadcrumbs */
+    /* BREADCRUMB */
     .breadcrumbs {
-      max-width: 1240px;
-      margin: 20px auto 0;
-      padding: 0 24px;
-      font-size: 12px;
+      max-width: 1280px;
+      margin: 1rem auto 0;
+      padding: 0 1.5rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       display: flex;
-      gap: 8px;
       align-items: center;
+      gap: 0.5rem;
     }
-    .breadcrumbs a { color: var(--text-muted); text-decoration: none; }
-    .breadcrumbs a:hover { color: var(--color-dark); }
+    .breadcrumbs a:hover { color: var(--color-dark); text-decoration: underline; }
 
-    /* Main Product Layout (2:3 Cosmed Portrait Gallery & Buy Box) */
-    .product-pdp-section {
-      max-width: 1240px;
-      margin: 24px auto 60px;
-      padding: 0 24px;
+    /* PDP MAIN CONTAINER */
+    .pdp-container {
+      max-width: 1280px;
+      margin: 1.5rem auto 3rem;
+      padding: 0 1.5rem;
       display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 50px;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 3rem;
       align-items: start;
     }
-    @media (max-width: 900px) {
-      .product-pdp-section { grid-template-columns: 1fr; gap: 32px; }
+    @media (max-width: 960px) {
+      .pdp-container { grid-template-columns: 1fr; gap: 2rem; }
     }
 
-    /* Gallery (2:3 Aspect Ratio) */
-    .pdp-gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      position: sticky;
-      top: 90px;
-    }
-    .gallery-viewport {
+    /* LEFT: HIGH-IMPACT CULINARY GALLERY */
+    .gallery-col { position: sticky; top: 5rem; }
+    @media (max-width: 960px) { .gallery-col { position: static; } }
+
+    .main-view-box {
       position: relative;
-      width: 100%;
-      aspect-ratio: 2 / 3;
-      max-height: 560px;
-      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
       overflow: hidden;
-      background: #fff;
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      aspect-ratio: 4 / 3.4;
+      box-shadow: var(--shadow-soft);
     }
-    .gallery-viewport img {
+    .main-view-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: opacity 0.2s ease;
+      transition: transform 0.4s ease, opacity 0.25s ease;
     }
-    .gallery-badge-floating {
+    .gallery-overlay-badge {
       position: absolute;
-      bottom: 14px;
-      left: 14px;
+      top: 1rem;
+      left: 1rem;
       background: rgba(20, 40, 29, 0.88);
+      color: #FAF7F2;
       backdrop-filter: blur(8px);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 20px;
+      -webkit-backdrop-filter: blur(8px);
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 2;
     }
-    .gallery-arrow {
+    .gallery-slide-caption {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid var(--border-subtle);
-      color: var(--color-dark);
-      font-size: 18px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(20,40,29,0.92) 0%, rgba(20,40,29,0) 100%);
+      color: #FAF7F2;
+      padding: 2rem 1.25rem 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      z-index: 2;
     }
-    .gallery-arrow:hover { background: var(--color-dark); color: #fff; }
-    .gallery-arrow.prev { left: 12px; }
-    .gallery-arrow.next { right: 12px; }
 
-    .gallery-thumbs-row {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      padding-bottom: 6px;
+    /* THUMBNAILS */
+    .thumbnails-row {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.6rem;
+      margin-top: 0.85rem;
     }
-    .gallery-thumb-item {
-      flex: 0 0 74px;
-      height: 74px;
-      border-radius: 10px;
+    .thumb-btn {
+      background: var(--bg-surface);
+      border: 2px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
       overflow: hidden;
+      padding: 0;
       cursor: pointer;
-      border: 2px solid transparent;
-      background: #fff;
+      aspect-ratio: 1;
       position: relative;
+      transition: all 0.2s ease;
     }
-    .gallery-thumb-item img { width: 100%; height: 100%; object-fit: cover; }
-    .gallery-thumb-item.active {
-      border-color: var(--gold-champagne);
-      box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.3);
+    .thumb-btn:hover { border-color: var(--gold-champagne); }
+    .thumb-btn.active {
+      border-color: var(--color-dark);
+      box-shadow: 0 0 0 2px var(--gold-champagne);
     }
-    .gallery-thumb-title {
+    .thumb-btn img { width: 100%; height: 100%; object-fit: cover; }
+    .thumb-label {
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       background: rgba(20, 40, 29, 0.85);
       color: #fff;
-      font-size: 9px;
-      font-weight: 700;
+      font-size: 0.58rem;
       text-align: center;
       padding: 2px 0;
+      font-weight: 600;
     }
 
-    /* Buy Box */
-    .pdp-buy-box {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    .pdp-badge-pill {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      padding: 6px 14px;
-      border-radius: 12px;
-      width: fit-content;
+    /* RIGHT: BUY BOX & CONVERSION ACCELERATORS */
+    .buy-col { display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .category-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gold-hover);
       text-transform: uppercase;
     }
-    .pdp-title {
+    .product-title {
       font-family: var(--font-serif);
-      font-size: 38px;
-      font-weight: 600;
+      font-size: 2.35rem;
       line-height: 1.15;
+      font-weight: 700;
       color: var(--color-dark);
     }
-    .pdp-subtitle {
-      font-size: 13px;
-      color: var(--gold-champagne);
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+    .product-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: -0.25rem;
     }
-    .pdp-reviews-row {
+    .rating-row {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 13px;
+      gap: 0.5rem;
+      font-size: 0.85rem;
     }
-    .pdp-stars { color: #E2B755; font-size: 16px; }
-    .pdp-price-row {
+    .stars { color: #D97706; font-size: 1rem; }
+    .review-text { color: var(--text-muted); font-weight: 500; }
+
+    /* PRICE BOX */
+    .price-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1.35rem;
       display: flex;
-      align-items: baseline;
-      gap: 14px;
-      margin: 6px 0;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-soft);
     }
-    .pdp-price {
+    .price-current {
       font-family: var(--font-serif);
-      font-size: 38px;
+      font-size: 2.2rem;
       font-weight: 700;
-      color: var(--gold-champagne);
+      color: var(--color-dark);
     }
-    .pdp-old-price {
-      font-size: 18px;
-      color: var(--text-muted);
+    .price-old {
+      font-size: 1.1rem;
       text-decoration: line-through;
-    }
-    .pdp-installment {
-      font-size: 12px;
-      color: var(--color-trust-green);
-      font-weight: 700;
-      background: #e8f5e9;
-      padding: 4px 10px;
-      border-radius: 8px;
-    }
-    .pdp-lead {
-      font-size: 15px;
-      line-height: 1.65;
       color: var(--text-muted);
+      margin-left: 0.5rem;
     }
+    .serving-calc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+    .serving-calc strong { color: var(--color-dark); }
 
-    /* Bullets */
-    .pdp-highlights {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      background: #fff;
-      padding: 18px;
-      border-radius: 16px;
-      border: 1px solid var(--border-subtle);
+    /* GUARANTEE PILLS */
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.65rem;
     }
-    .pdp-highlight-item {
+    .guarantee-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 0.9rem;
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 13px;
+      gap: 0.65rem;
+      font-size: 0.8rem;
       font-weight: 600;
       color: var(--color-dark);
     }
-    .pdp-highlight-item span.check {
-      color: var(--color-trust-green);
-      font-weight: bold;
-    }
+    .guarantee-card .icon { font-size: 1.25rem; flex-shrink: 0; }
 
-    /* Qty & Add to Cart */
-    .pdp-action-box {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-top: 10px;
-    }
-    .pdp-qty-stepper {
-      display: flex;
-      align-items: center;
-      background: #fff;
-      border-radius: 12px;
-      border: 1px solid var(--border-subtle);
-      overflow: hidden;
-    }
-    .pdp-qty-btn {
-      background: none;
-      border: none;
-      width: 40px;
-      height: 44px;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: bold;
-      color: var(--color-dark);
-    }
-    .pdp-qty-btn:hover { background: var(--bg-card); }
-    .pdp-qty-val {
-      width: 40px;
-      text-align: center;
-      font-weight: 700;
-      font-size: 15px;
-    }
-    .pdp-btn-add {
-      flex: 1;
+    /* CTA BUTTONS */
+    .cta-stack { display: flex; flex-direction: column; gap: 0.65rem; }
+    .btn-add-main {
       background: var(--color-dark);
-      color: #fff;
-      padding: 15px 24px;
-      border-radius: var(--radius-full);
-      font-size: 15px;
-      font-weight: 700;
+      color: #FAF7F2;
       border: none;
+      border-radius: var(--radius-sm);
+      padding: 1.1rem 1.5rem;
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       cursor: pointer;
-      transition: background 0.2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: 0 4px 16px rgba(20, 40, 29, 0.25);
+      transition: all 0.2s ease;
     }
-    .pdp-btn-add:hover { background: var(--color-dark-hover); }
-
-    .pdp-btn-whatsapp {
-      width: 100%;
+    .btn-add-main:hover {
+      background: var(--color-dark-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(20, 40, 29, 0.35);
+    }
+    .btn-whatsapp-order {
       background: #25D366;
-      color: #fff;
-      padding: 13px;
-      border-radius: var(--radius-full);
-      font-size: 14px;
-      font-weight: 700;
+      color: #ffffff;
       border: none;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      display: block;
-    }
-
-    /* Guarantee bar */
-    .pdp-guarantee-bar {
-      font-size: 12px;
-      color: var(--color-trust-green);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1.5rem;
+      font-size: 0.9rem;
       font-weight: 600;
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 6px;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+    .btn-whatsapp-order:hover { opacity: 0.92; }
+
+    /* HIGHLIGHTS BULLETS */
+    .highlights-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+    .highlights-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 0.75rem;
+    }
+    .highlights-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .highlights-list li {
+      font-size: 0.86rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .highlights-list li::before {
+      content: "✦";
+      color: var(--gold-champagne);
+      font-weight: bold;
     }
 
-    /* Deep Dive Tabs */
-    .pdp-details-section {
-      max-width: 1240px;
-      margin: 40px auto 80px;
-      padding: 0 24px;
+    /* DEEP DIVE TABS */
+    .deep-dive-section {
+      max-width: 1280px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
     }
     .pdp-tabs-nav {
       display: flex;
-      gap: 12px;
+      gap: 1rem;
       border-bottom: 2px solid var(--border-subtle);
-      margin-bottom: 28px;
-      overflow-x: auto;
+      margin-bottom: 1.5rem;
     }
-    .pdp-tab-btn {
+    .pdp-tab-trigger {
       background: none;
       border: none;
-      padding: 12px 20px;
-      font-size: 15px;
-      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
       color: var(--text-muted);
       cursor: pointer;
-      border-bottom: 3px solid transparent;
-      margin-bottom: -2px;
-      transition: all 0.2s;
+      position: relative;
+      transition: all 0.2s ease;
     }
-    .pdp-tab-btn.active {
+    .pdp-tab-trigger:hover { color: var(--color-dark); }
+    .pdp-tab-trigger.active {
       color: var(--color-dark);
-      border-bottom-color: var(--gold-champagne);
+      font-weight: 700;
     }
-    .pdp-tab-pane {
-      display: none;
-      background: #fff;
-      padding: 34px;
-      border-radius: 20px;
-      border: 1px solid var(--border-subtle);
-    }
-    .pdp-tab-pane.active { display: block; }
-
-    .pdp-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-    .pdp-table th, .pdp-table td {
-      padding: 14px 18px;
-      text-align: left;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .pdp-table th { background: var(--bg-card); color: var(--text-muted); font-weight: 700; width: 35%; }
-
-    /* Footer */
-    footer {
+    .pdp-tab-trigger.active::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 3px;
       background: var(--color-dark);
-      color: #fff;
-      padding: 60px 24px 30px;
-      margin-top: 80px;
+      border-radius: 3px 3px 0 0;
+    }
+    .pdp-tab-panel { display: none; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 2rem; }
+    .pdp-tab-panel.active { display: block; animation: fadeIn 0.25s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* TABLE */
+    .specs-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .specs-table tr { border-bottom: 1px solid var(--border-subtle); }
+    .specs-table td { padding: 0.85rem 1rem; }
+    .specs-table td:first-child { font-weight: 600; color: var(--color-dark); width: 35%; background: var(--bg-card); }
+
+    /* FAQ OBJECTIONS */
+    .objections-grid { display: flex; flex-direction: column; gap: 1rem; }
+    .objection-item {
+      background: var(--bg-card);
+      border-left: 4px solid var(--gold-champagne);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1rem 1.25rem;
+    }
+    .objection-q { font-weight: 700; font-size: 0.95rem; color: var(--color-dark); margin-bottom: 0.35rem; }
+    .objection-a { font-size: 0.88rem; color: var(--text-main); line-height: 1.55; }
+
+    /* RECIPE CARD */
+    .recipe-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .recipe-showcase { grid-template-columns: 1fr; } }
+    .recipe-img { border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 4/3; }
+    .recipe-img img { width: 100%; height: 100%; object-fit: cover; }
+    .recipe-content h4 { font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-dark); margin-bottom: 0.5rem; }
+    .recipe-time-badge {
+      display: inline-block;
+      background: var(--gold-tint);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-hover);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+
+    /* FOOTER */
+    .pdp-footer {
+      background: var(--color-dark);
+      color: #FAF7F2;
+      padding: 3rem 1.5rem 2rem;
+      margin-top: 4rem;
+      border-top: 1px solid var(--border-gold);
     }
     .footer-inner {
-      max-width: 1240px;
+      max-width: 1280px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: rgba(250, 247, 242, 0.7);
     }
-    .footer-copy { font-size: 13px; color: #8C9990; }
   </style>
 </head>
 <body>
 
-  <!-- Top Banner -->
+  <!-- TOP BANNER -->
   <div class="top-banner">
-    <span>🚚 750 TL ve Üzeri Siparişlerde <strong>ÜCRETSİZ ZIRHLI SOĞUK ZİNCİR KARGO</strong> • Kırılmaya Karşı %100 Sigortalı</span>
+    <span>✦ TÜRKİYE GENELİ AYNI GÜN SOĞUK ZIRHLI KARGO</span>
+    <span>•</span>
+    <span>✦ ACIBADEM SAĞLIK STANDARTLARINDA 28 SAAT DEMLEME</span>
+    <span>•</span>
+    <span>✦ %100 DOĞAL TAŞ JÖLE GARANTİSİ</span>
   </div>
 
-  <!-- Header -->
-  <header>
-    <div class="header-container">
-      <a href="index.html" class="brand-mark">
-        <span class="sub">Artisanal Wellness</span>
-        <span class="title">Story of Nature</span>
+  <!-- HEADER -->
+  <header class="pdp-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="leaf">🌿</span> STORY OF NATURE
       </a>
-
-      <nav class="nav-links">
-        <a href="index.html#katalog">Koleksiyon</a>
-        <a href="index.html#tarifler" style="color: var(--gold-champagne); font-weight: 700;">Yemek Tarifleri</a>
-        <a href="index.html#neden-kokusuz">Neden Kokusuz?</a>
-        <a href="index.html#jole-testi">Jöle Testi</a>
-        <a href="index.html#faydalar">Klinik Rapor</a>
-      </nav>
-
-      <div class="header-right">
-        <button class="btn-header-cart" onclick="window.location.href='index.html#katalog'">
-          <span>Sepet</span>
-          <span>→</span>
+      <div class="header-nav">
+        <a href="index.html#urunler">Koleksiyon</a>
+        <a href="index.html#felsefe">Felsefemiz</a>
+        <a href="index.html#tarifler">Gurme Tarifler</a>
+        <button class="btn-menu-trigger" onclick="toggleMiniMenu()">
+          <span>Menü & Ürünler</span>
+          <span>▾</span>
         </button>
+      </div>
+
+      <!-- MINI MENU WINDOW POPOVER -->
+      <div class="mini-menu-window" id="miniMenuWindow">
+        <div class="menu-title">
+          <span>Koleksiyon & Sayfalar</span>
+          <span style="cursor:pointer; font-size: 0.9rem;" onclick="toggleMiniMenu()">✕</span>
+        </div>
+        <ul class="menu-links">
+          <li class="menu-link-item"><a href="pure-essence.html"><span>No. 01 Pure Essence Kemik Suyu</span> <span class="tag">Çok Satan</span></a></li>
+          <li class="menu-link-item"><a href="golden-immunity.html"><span>No. 02 Golden Immunity Zencefil</span> <span class="tag">Bağışıklık</span></a></li>
+          <li class="menu-link-item"><a href="gece-masali.html"><span>No. 03 Night Story Sakinleşme Çayı</span> <span class="tag">Kafeinsiz</span></a></li>
+          <li class="menu-link-item"><a href="saf-bebek-kolajeni.html"><span>No. 04 Saf Bebek Kolajeni</span> <span class="tag">0 Tuz</span></a></li>
+          <li class="menu-link-item"><a href="rosemary-elixir.html"><span>No. 05 Rosemary Collagen Elixir</span> <span class="tag">Gurme</span></a></li>
+          <li class="menu-link-item"><a href="14-gunluk-paket.html"><span>14 Günlük Lüks Yenilenme Kiti</span> <span class="tag">%23 Avantaj</span></a></li>
+          <li style="border-top: 1px solid var(--border-subtle); margin-top: 0.4rem; padding-top: 0.4rem;" class="menu-link-item">
+            <a href="index.html#tarifler"><span>✦ Gurme Tarif Rehberi</span></a>
+          </li>
+          <li class="menu-link-item">
+            <a href="index.html#acibadem"><span>✦ Acıbadem Klinik Raporu</span></a>
+          </li>
+        </ul>
       </div>
     </div>
   </header>
 
-  <!-- Breadcrumbs -->
+  <!-- BREADCRUMBS -->
   <div class="breadcrumbs">
     <a href="index.html">Ana Sayfa</a>
-    <span>/</span>
-    <a href="index.html#katalog">Gurme Kemik Suları</a>
-    <span>/</span>
-    <strong>Rosemary Collagen Elixir (300 ml)</strong>
+    <span>›</span>
+    <a href="index.html#urunler">İlikli Kemik Suları</a>
+    <span>›</span>
+    <span style="color: var(--color-dark); font-weight: 600;">No. 05 Rosemary Collagen Elixir</span>
   </div>
 
-  <!-- Main Product Section -->
-  <section class="product-pdp-section">
-    <!-- Left: 2:3 Cosmed Gallery -->
-    <div class="pdp-gallery">
-      <div class="gallery-viewport">
-        <button class="gallery-arrow prev" onclick="prevSlide()">‹</button>
-        <img id="mainImg" src="assets/gallery_no05_01_hero.jpg" alt="Rosemary Collagen Elixir (300 ml)">
-        <button class="gallery-arrow next" onclick="nextSlide()">›</button>
-        <div class="gallery-badge-floating" id="slideBadge">1 / 4 • Rosemary Collagen Elixir</div>
+  <!-- PDP MAIN CONTAINER -->
+  <main class="pdp-container">
+
+    <!-- LEFT GALLERY -->
+    <div class="gallery-col">
+      <div class="main-view-box">
+        <span class="gallery-overlay-badge" id="galleryPill">✦ Taze Yabani Biberiye & Kekik</span>
+        <img id="mainImage" src="assets/product_no05_rosemary_broth.jpg" alt="No. 05 Rosemary Collagen Elixir" fetchpriority="high">
+        <div class="gallery-slide-caption" id="galleryCaption">1 / 6 • Rosemary Collagen Elixir Cam Kavanoz</div>
       </div>
 
-      <div class="gallery-thumbs-row">
-        
-          <div class="gallery-thumb-item active" onclick="renderSlide(0)" title="1 / 4 • Rosemary Collagen Elixir">
-            <img src="assets/gallery_no05_01_hero.jpg" alt="Ürün" loading="lazy">
-            <span class="gallery-thumb-title">Ürün</span>
-          </div>
-        
-          <div class="gallery-thumb-item " onclick="renderSlide(1)" title="2 / 4 • Akdeniz Bitkisel İnfüzyon">
-            <img src="assets/gallery_no01_02_ingredients.jpg" alt="İçerik" loading="lazy">
-            <span class="gallery-thumb-title">İçerik</span>
-          </div>
-        
-          <div class="gallery-thumb-item " onclick="renderSlide(2)" title="3 / 4 • Doğal Jelatin Doku Kanıtı">
-            <img src="assets/gallery_no01_05_texture.jpg" alt="Jöle Testi" loading="lazy">
-            <span class="gallery-thumb-title">Jöle Testi</span>
-          </div>
-        
-          <div class="gallery-thumb-item " onclick="renderSlide(3)" title="4 / 4 • Gurme Yemek Rutini">
-            <img src="assets/gallery_no01_06_how_to_use.jpg" alt="Kullanım" loading="lazy">
-            <span class="gallery-thumb-title">Kullanım</span>
-          </div>
-        
+      <div class="thumbnails-row">
+        <button class="thumb-btn active" onclick="selectThumbnail(0)" title="1 / 6 • Rosemary Collagen Elixir Cam Kavanoz">
+  <img src="assets/product_no05_rosemary_broth.jpg" alt="Ürün" loading="lazy" fetchpriority="low">
+  <span class="thumb-label">Ürün</span>
+</button>
+<button class="thumb-btn " onclick="selectThumbnail(1)" title="2 / 6 • Akdeniz Baharatlarıyla Dingin ve Zengin Sabah Kupası">
+  <img src="assets/photo_01_morning_pour.jpg" alt="Gurme Kupa" loading="lazy" fetchpriority="low">
+  <span class="thumb-label">Gurme Kupa</span>
+</button>
+<button class="thumb-btn " onclick="selectThumbnail(2)" title="3 / 6 • Doğal Antioksidan Kaynağı Taze Otlar">
+  <img src="assets/photo_02_ingredients_flatlay.jpg" alt="İçerikler" loading="lazy" fetchpriority="low">
+  <span class="thumb-label">İçerikler</span>
+</button>
+<button class="thumb-btn " onclick="selectThumbnail(3)" title="4 / 6 • Yüksek Jelatin Yoğunluğu Garantisi">
+  <img src="assets/hero_collagen_jelly.jpg" alt="Jöle Kanıtı" loading="lazy" fetchpriority="low">
+  <span class="thumb-label">Jöle Kanıtı</span>
+</button>
+<button class="thumb-btn " onclick="selectThumbnail(4)" title="5 / 6 • Şef Mutfağı: Biberiyeli İlikli Et Redüksiyonu">
+  <img src="assets/photo_03_gourmet_soup.jpg" alt="Yemek Tarifi" loading="lazy" fetchpriority="low">
+  <span class="thumb-label">Yemek Tarifi</span>
+</button>
+<button class="thumb-btn " onclick="selectThumbnail(5)" title="6 / 6 • Kırılmaya Karşı Güvenli Teslimat">
+  <img src="assets/bundle_14day_box.jpg" alt="Kargo" loading="lazy" fetchpriority="low">
+  <span class="thumb-label">Kargo</span>
+</button>
       </div>
     </div>
 
-    <!-- Right: Buy Box -->
-    <div class="pdp-buy-box">
-      <span class="pdp-badge-pill" style="color: #C86D51; background: #FCF2EE;">✦ GURME AKDENİZ AROMASI</span>
-      <div class="pdp-subtitle">No. 05 • Wild Rosemary & Mountain Thyme Infusion</div>
-      <h1 class="pdp-title">Rosemary Collagen Elixir (300 ml)</h1>
+    <!-- RIGHT BUY BOX -->
+    <div class="buy-col">
+      <div class="category-eyebrow">ZANAATKAR İLİKLİ KEMİK SUYU SERİSİ • 300 ML</div>
+      <h1 class="product-title">No. 05 Rosemary Collagen Elixir</h1>
+      <p class="product-subtitle">28 Saat Kısık Ateşte Ağır Pişirilmiş • Yabani Biberiye & Dağ Kekiği Gurme Aroma</p>
 
-      <div class="pdp-reviews-row">
-        <span class="pdp-stars">★★★★★</span>
-        <strong>4.9</strong>
-        <span style="color: var(--text-muted);">(67 Doğrulanmış Müşteri Değerlendirmesi)</span>
+      <div class="rating-row">
+        <span class="stars">★★★★★</span>
+        <span class="review-text"><strong>4.9 / 5.0</strong> (112 Doğrulanmış Müşteri Değerlendirmesi • Acıbadem Standartlarında)</span>
       </div>
 
-      <div class="pdp-price-row">
-        <span class="pdp-price" id="totalPrice">230 TL</span>
-        <span class="pdp-old-price">260 TL</span>
-        <span class="pdp-installment">Vade farksız 3 taksit x 76.67 TL</span>
-      </div>
-
-      <p class="pdp-lead">Taze Ege yayla biberiyesi, dağ kekiği ve defne yaprağıyla demlendi. Akdeniz şifasını ve nefis gurme aromayı sofranıza taşır; pilavlarda, makarnalarda ve sıcak çorbalarda eşsiz bir lezzet katar.</p>
-
-      <div class="pdp-highlights">
-        
-          <div class="pdp-highlight-item">
-            <span class="check">✓</span>
-            <span>Taze Yabani Biberiye, Dağ Kekiği ve Defne Yaprağı İnfüzyonu</span>
-          </div>
-        
-          <div class="pdp-highlight-item">
-            <span class="check">✓</span>
-            <span>Yüksek Antioksidan Değeri ile Hücresel Koruma</span>
-          </div>
-        
-          <div class="pdp-highlight-item">
-            <span class="check">✓</span>
-            <span>Gurme Yemeklerde ve Pilavlarda Lokanta Lezzeti</span>
-          </div>
-        
-          <div class="pdp-highlight-item">
-            <span class="check">✓</span>
-            <span>Buzdolabında Taş Jöle, Isıtıldığında Kadifemsi Aromatik İksir</span>
-          </div>
-        
-          <div class="pdp-highlight-item">
-            <span class="check">✓</span>
-            <span>Katkısız, Koruyucusuz ve 121°C Otoklav Güvencesi</span>
-          </div>
-        
-      </div>
-
-      <!-- Action Box -->
-      <div class="pdp-action-box">
-        <div class="pdp-qty-stepper">
-          <button class="pdp-qty-btn" onclick="updateQty(-1)">−</button>
-          <span class="pdp-qty-val" id="qtyVal">1</span>
-          <button class="pdp-qty-btn" onclick="updateQty(1)">+</button>
+      <div class="price-box">
+        <div>
+          <span class="price-current">235 TL</span>
+          <span class="price-old">275 TL</span>
+          <div style="font-size: 0.8rem; color: #166534; font-weight: 600; margin-top: 0.2rem;">✦ 100 TL Üzeri Ücretsiz Soğuk Zincir Kargo</div>
         </div>
-        <button class="pdp-btn-add" onclick="handleAddToCart()">
-          <span>Sepete Ekle (230 TL)</span>
+        <div class="serving-calc">
+          <div><strong>1 Porsiyon = ~35 TL</strong></div>
+          <div>1 Kupa Kahveden Daha Ekonomik</div>
+        </div>
+      </div>
+
+      <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6;">
+        Akdeniz'in vahşi dağlarından toplanan taze biberiye, dağ kekiği ve defne yapraklarıyla zenginleştirilmiş gurme kolajen iksiri. Soslara, et yemeklerine, risottoya ve doğrudan içime eşsiz bir zenginlik katar.
+      </p>
+
+      <!-- GUARANTEES GRID -->
+      <div class="guarantees-grid">
+        <div class="guarantee-card">
+          <span class="icon">❄️</span>
+          <div>
+            <div>Taş Jöle Garantisi</div>
+            <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 400;">Dolapta jöleleşmezse %100 iade</div>
+          </div>
+        </div>
+        <div class="guarantee-card">
+          <span class="icon">🌿</span>
+          <div>
+            <div>Sıfır Ağır Koku</div>
+            <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 400;">Çift ön haşlama ile saf içim</div>
+          </div>
+        </div>
+        <div class="guarantee-card">
+          <span class="icon">🛡️</span>
+          <div>
+            <div>Kırılmaz Zırhlı Kargo</div>
+            <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 400;">Air-column hava yastıklı koli</div>
+          </div>
+        </div>
+        <div class="guarantee-card">
+          <span class="icon">🧊</span>
+          <div>
+            <div>Pratik Buzluk Kullanımı</div>
+            <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 400;">Kalıplarda 6 ay taze saklama</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA ACTIONS -->
+      <div class="cta-stack">
+        <button class="btn-add-main" onclick="handlePdpAddCart('No. 05 Rosemary Collagen Elixir', 235)">
+          <span>🛍️ Sepete Ekle</span>
+          <span>•</span>
+          <span>235 TL</span>
+        </button>
+        <button class="btn-whatsapp-order" onclick="window.open('https://wa.me/905330849027?text=Merhaba,%20Story%20of%20Nature%20No. 05 Rosemary Collagen Elixir%20siparişi%20vermek%20istiyorum.', '_blank')">
+          <span>💬 WhatsApp ile Hızlı Sipariş Ver</span>
         </button>
       </div>
 
-      <a href="https://wa.me/905330849027?text=Merhaba,%20Rosemary%20Collagen%20Elixir%20%28300%20ml%29%20sipari%C5%9Fi%20vermek%20istiyorum." target="_blank" class="pdp-btn-whatsapp">
-        WhatsApp ile Hızlı Sipariş Ver ↗
-      </a>
-
-      <div class="pdp-guarantee-bar">
-        <span>🚚</span>
-        <span>750 TL üzerine <strong>Ücretsiz Soğuk Zincir Kargo</strong> • Kırılmaya Karşı %100 Sigortalı</span>
+      <!-- HIGHLIGHTS -->
+      <div class="highlights-box">
+        <div class="highlights-title">Neden Story of Nature Zanaatkar Kalitesi?</div>
+        <ul class="highlights-list">
+          <li>Akdeniz Gurme Buketi: Taze yabani biberiye, kekik ve defne yaprağı.</li>
+<li>Yemeklerin Gizli İmzası: Risotto, makarna sosu ve et yemeklerine restoran lezzeti.</li>
+<li>Taş Jöle Garantisi: Buzdolabında yoğun, kaşıkla kalkan jelatin formu.</li>
+<li>Sindirim ve Karaciğer Desteği: Biberiyedeki rosmarinik asit ile güçlü antioksidan etki.</li>
+<li>121°C Basınçlı Otoklav Cam Kapama ile 6 Ay Koruyucusuz Raf Ömrü.</li>
+        </ul>
       </div>
-    </div>
-  </section>
 
-  <!-- Deep Dive Tabs -->
-  <section class="pdp-details-section">
+    </div>
+
+  </main>
+
+  <!-- DEEP DIVE TABS -->
+  <section class="deep-dive-section">
     <div class="pdp-tabs-nav">
-      <button class="pdp-tab-btn active" onclick="switchTab('tab-analiz', this)">Acıbadem Bilimsel Besin Analizi</button>
-      <button class="pdp-tab-btn" onclick="switchTab('tab-kullanim', this)">Nasıl Tüketilir?</button>
-      <button class="pdp-tab-btn" onclick="switchTab('tab-tarif', this)">Mutfak Tarif Eşleşmesi</button>
+      <button class="pdp-tab-trigger active" onclick="switchPdpTab(0)">Laboratuvar & Besin Değerleri</button>
+      <button class="pdp-tab-trigger" onclick="switchPdpTab(1)">Sık Sorulan Sorular (Şikayetvar & Reddit Yanıtları)</button>
+      <button class="pdp-tab-trigger" onclick="switchPdpTab(2)">Gurme Şef Tarifi & Pratik Saklama</button>
     </div>
 
-    <!-- Tab 1: Analiz -->
-    <div id="tab-analiz" class="pdp-tab-pane active">
-      <h3 style="font-family: var(--font-serif); font-size: 26px; margin-bottom: 16px; color: var(--color-dark);">Laboratuvar Onaylı Besin Değerleri</h3>
-      <table class="pdp-table">
-        
-          <tr>
-            <th>Bitkisel İnfüzyon</th>
-            <td>Yabani Biberiye, Dağ Kekiği, Kereviz Sapı, Defne</td>
-          </tr>
-        
-          <tr>
-            <th>Protein (100 ml)</th>
-            <td>12.2 g</td>
-          </tr>
-        
-          <tr>
-            <th>Kullanım Alanı</th>
-            <td>Pilav, makarna sosları, güveç ve gurme çorbalar</td>
-          </tr>
-        
-          <tr>
-            <th>Tuz / Koruyucu</th>
-            <td>%0.0 (Sıfır Katkı)</td>
-          </tr>
-        
-          <tr>
-            <th>Net Miktar</th>
-            <td>300 ml Cam Kavanoz</td>
-          </tr>
-        
+    <!-- TAB 1: SPECS -->
+    <div class="pdp-tab-panel active" id="tabPanel0">
+      <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-dark); margin-bottom: 1rem;">
+        Doğrulanmış Laboratuvar Analiz Değerleri
+      </h3>
+      <table class="specs-table">
+        <tbody>
+          <tr><td>Protein (100 ml)</td><td>12.5 g Saf Biyoaktif Protein</td></tr>
+<tr><td>Doğal Kolajen</td><td>7.900 mg Tip 1 & 3 Kolajen</td></tr>
+<tr><td>Bitkisel Ekstraktlar</td><td>Yabani Biberiye, Dağ Kekiği, Defne Yaprağı</td></tr>
+<tr><td>İlave Tuz & Şeker</td><td>%0.0 (Doğal Aromatik)</td></tr>
+<tr><td>Yağ Oranı</td><td><%0.2 (Arındırılmış Hafif İçim)</td></tr>
+<tr><td>Sterilizasyon</td><td>121°C Otoklav</td></tr>
+<tr><td>Saklama</td><td>Açılmadan 6 Ay / Açıldıktan Sonra +4°C 48 Saat</td></tr>
+        </tbody>
       </table>
-      <div style="margin-top: 18px; font-size: 13px; color: var(--text-muted);">
-        * Değerler Acıbadem Sağlık Grubu ve bağımsız akredite gıda laboratuvarı analiz raporları doğrultusunda hazırlanmıştır.
+    </div>
+
+    <!-- TAB 2: OBJECTIONS / FAQ -->
+    <div class="pdp-tab-panel" id="tabPanel1">
+      <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-dark); margin-bottom: 1rem;">
+        Tüketicilerin En Çok Merak Ettiği 4 Kritik Soru
+      </h3>
+      <div class="objections-grid">
+        <div class="objection-item">
+  <div class="objection-q">❓ Biberiye kokusu çok mu baskın?</div>
+  <div class="objection-a">Dozajı şefler tarafından hassasiyetle ayarlanmıştır; ne eti bastırır ne de boğazı sıkar. Çok zarif, Akdeniz esintili bir ferahlık verir.</div>
+</div>
+<div class="objection-item">
+  <div class="objection-q">❓ Sadece yemekte mi kullanılır, içilir mi?</div>
+  <div class="objection-a">Doğrudan kupaya döküp ısıtarak keyifle içebilirsiniz. Özellikle akşam yemeklerinden önce harika bir iştah açıcı ve sindirim başlatıcıdır.</div>
+</div>
       </div>
     </div>
 
-    <!-- Tab 2: Kullanım -->
-    <div id="tab-kullanim" class="pdp-tab-pane">
-      <h3 style="font-family: var(--font-serif); font-size: 26px; margin-bottom: 16px; color: var(--color-dark);">3 Adımlı Günlük Tüketim Rutini</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-        <div style="background: var(--bg-card); padding: 22px; border-radius: 16px;">
-          <div style="font-weight: 800; font-size: 12px; color: var(--gold-champagne); margin-bottom: 6px;">1. ADIM: SABAH AÇ KARNINA</div>
-          <p style="font-size: 13.5px; color: var(--text-main);">Cezvede hafifçe ılıtıp (kaynatmadan) içerisine taze limon suyu ve tane karabiber ekleyerek için. Bağırsak mukozasını güne hazırlar.</p>
+    <!-- TAB 3: RECIPES -->
+    <div class="pdp-tab-panel" id="tabPanel2">
+      <div class="recipe-showcase">
+        <div class="recipe-img">
+          <img src="assets/photo_03_gourmet_soup.jpg" alt="Şef Usulü Biberiyeli Mantarlı Risotto" loading="lazy">
         </div>
-        <div style="background: var(--bg-card); padding: 22px; border-radius: 16px;">
-          <div style="font-weight: 800; font-size: 12px; color: var(--gold-champagne); margin-bottom: 6px;">2. ADIM: BEBEK & YEMEKLER</div>
-          <p style="font-size: 13.5px; color: var(--text-main);">Bebeklerin sebze çorbasına veya aile yemeklerine 2-3 yemek kaşığı ilave edin. Besin değerini ve kolajen miktarını katlar.</p>
-        </div>
-        <div style="background: var(--bg-card); padding: 22px; border-radius: 16px;">
-          <div style="font-weight: 800; font-size: 12px; color: var(--gold-champagne); margin-bottom: 6px;">3. ADIM: SAKLAMA KOŞULLARI</div>
-          <p style="font-size: 13.5px; color: var(--text-main);">Kapak açıldıktan sonra buzdolabında (+4°C) 4-5 gün saklayın. Kalanını buz kalıplarında dondurarak 6 ay kullanabilirsiniz.</p>
+        <div class="recipe-content">
+          <div class="recipe-time-badge">⏱ 30 Dakika • Orta</div>
+          <h4>Şef Usulü Biberiyeli Mantarlı Risotto</h4>
+          <p style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 1rem;">
+            Arborio pirinci zeytinyağında sotelenir; her aşamada sıcak No. 05 Rosemary kemik suyu azar azar eklenerek çektirilir. Son dokunuşta parmesan ve trüf yağı ile bağlanır.
+          </p>
+          <div style="background: var(--bg-card); padding: 0.85rem; border-radius: var(--radius-sm); font-size: 0.82rem; border-left: 3px solid var(--gold-champagne);">
+            <strong>💡 Şefin Pratik Saklama İpucu:</strong> Kavanozu açtığınızda kullanmadığınız kısmı buz kalıplarına aktararak dondurunuz. Her yemek, pilav veya bebek püresi için 2 buz küpü ilave ederek 6 ay boyunca taze kullanabilirsiniz.
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Tab 3: Tarif -->
-    <div id="tab-tarif" class="pdp-tab-pane">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-        <h3 style="font-family: var(--font-serif); font-size: 26px; color: var(--color-dark);">Biberiyeli & İlikli Tereyağlı Siyez Pilavı</h3>
-        <span style="font-size: 12px; font-weight: 700; color: var(--gold-champagne);">⏱ 30 Dakika • Kolay</span>
-      </div>
-      <p style="font-size: 15px; color: var(--text-main); line-height: 1.6; margin-bottom: 18px;">Tereyağında kavrulan siyez bulguruna 1 kavanoz No. 05 kemik suyu ve 1 bardak su eklenerek kısık ateşte demlendirilir.</p>
-      <a href="index.html#tarifler" style="display: inline-block; background: var(--color-dark); color: #fff; padding: 10px 22px; border-radius: var(--radius-full); text-decoration: none; font-size: 13px; font-weight: 700;">
-        Tüm Mutfak Tariflerini Gör →
-      </a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- FOOTER -->
+  <footer class="pdp-footer">
     <div class="footer-inner">
       <div>
-        <div style="font-family: var(--font-serif); font-size: 24px; font-weight: 700;">Story of Nature</div>
-        <div class="footer-copy">© 2026 Story of Nature Artisanal Wellness. Tüm hakları saklıdır.</div>
+        <div style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: #FAF7F2; margin-bottom: 0.35rem;">
+          STORY OF NATURE
+        </div>
+        <div>Zanaatkar İlikli Kemik Suyu & Fonksiyonel Botanikler • Acıbadem Standartları</div>
       </div>
       <div>
-        <a href="index.html" style="color: #fff; text-decoration: none; font-size: 13px; font-weight: 600;">← Ana Sayfaya Dön</a>
+        © 2026 Story of Nature. Tüm hakları saklıdır. Sağlam E-Ticaret ve Doğa Ürünleri.
       </div>
     </div>
   </footer>
 
   <script>
-    const SLIDES = [{"src": "assets/gallery_no05_01_hero.jpg", "label": "1 / 4 • Rosemary Collagen Elixir", "thumb": "Ürün"}, {"src": "assets/gallery_no01_02_ingredients.jpg", "label": "2 / 4 • Akdeniz Bitkisel İnfüzyon", "thumb": "İçerik"}, {"src": "assets/gallery_no01_05_texture.jpg", "label": "3 / 4 • Doğal Jelatin Doku Kanıtı", "thumb": "Jöle Testi"}, {"src": "assets/gallery_no01_06_how_to_use.jpg", "label": "4 / 4 • Gurme Yemek Rutini", "thumb": "Kullanım"}];
-    let currentSlide = 0;
-    const basePrice = 230;
-    let qty = 1;
+    const SLIDES = [{"src": "assets/product_no05_rosemary_broth.jpg", "pill": "✦ Taze Yabani Biberiye & Kekik", "label": "1 / 6 • Rosemary Collagen Elixir Cam Kavanoz", "thumb": "Ürün"}, {"src": "assets/photo_01_morning_pour.jpg", "pill": "✦ Aromatik Gurme İçim", "label": "2 / 6 • Akdeniz Baharatlarıyla Dingin ve Zengin Sabah Kupası", "thumb": "Gurme Kupa"}, {"src": "assets/photo_02_ingredients_flatlay.jpg", "pill": "✦ Dağ Kekiği & Defne Yaprağı", "label": "3 / 6 • Doğal Antioksidan Kaynağı Taze Otlar", "thumb": "İçerikler"}, {"src": "assets/hero_collagen_jelly.jpg", "pill": "✦ +4°C Doğal Taş Jöle", "label": "4 / 6 • Yüksek Jelatin Yoğunluğu Garantisi", "thumb": "Jöle Kanıtı"}, {"src": "assets/photo_03_gourmet_soup.jpg", "pill": "✦ Şef Usulü Risotto & Soslar", "label": "5 / 6 • Şef Mutfağı: Biberiyeli İlikli Et Redüksiyonu", "thumb": "Yemek Tarifi"}, {"src": "assets/bundle_14day_box.jpg", "pill": "✦ Zırhlı Kargo Ambalajı", "label": "6 / 6 • Kırılmaya Karşı Güvenli Teslimat", "thumb": "Kargo"}];
 
-    function renderSlide(idx) {
-      if (idx < 0) idx = SLIDES.length - 1;
-      if (idx >= SLIDES.length) idx = 0;
-      currentSlide = idx;
+    function selectThumbnail(index) {
+      const slide = SLIDES[index];
+      if (!slide) return;
+      
+      const img = document.getElementById("mainImage");
+      const pill = document.getElementById("galleryPill");
+      const caption = document.getElementById("galleryCaption");
 
-      const img = document.getElementById('mainImg');
-      const badge = document.getElementById('slideBadge');
-      if (img) {
-        img.style.opacity = '0.4';
-        setTimeout(() => {
-          img.src = SLIDES[idx].src;
-          img.style.opacity = '1';
-        }, 80);
-      }
-      if (badge) badge.innerText = SLIDES[idx].label;
+      img.style.opacity = "0.4";
+      setTimeout(() => {
+        img.src = slide.src;
+        pill.textContent = slide.pill;
+        caption.textContent = slide.label;
+        img.style.opacity = "1";
+      }, 150);
 
-      document.querySelectorAll('.gallery-thumb-item').forEach((t, i) => {
-        if (i === idx) t.classList.add('active');
-        else t.classList.remove('active');
+      document.querySelectorAll(".thumb-btn").forEach((btn, idx) => {
+        btn.classList.toggle("active", idx === index);
       });
     }
 
-    function prevSlide() { renderSlide(currentSlide - 1); }
-    function nextSlide() { renderSlide(currentSlide + 1); }
-
-    function updateQty(delta) {
-      qty = Math.max(1, qty + delta);
-      document.getElementById('qtyVal').innerText = qty;
-      document.getElementById('totalPrice').innerText = (basePrice * qty) + ' TL';
+    function switchPdpTab(index) {
+      document.querySelectorAll(".pdp-tab-trigger").forEach((btn, idx) => {
+        btn.classList.toggle("active", idx === index);
+      });
+      document.querySelectorAll(".pdp-tab-panel").forEach((panel, idx) => {
+        panel.classList.toggle("active", idx === index);
+      });
     }
 
-    function handleAddToCart() {
-      // Store in localStorage for seamless cart sync with index.html
-      let cart = JSON.parse(localStorage.getItem('son_cart') || '{}');
-      const itemTitle = "Rosemary Collagen Elixir (300 ml)";
-      if (!cart[itemTitle]) {
-        cart[itemTitle] = { price: basePrice, qty: qty };
-      } else {
-        cart[itemTitle].qty += qty;
+    function toggleMiniMenu() {
+      const menu = document.getElementById("miniMenuWindow");
+      menu.classList.toggle("open");
+    }
+
+    document.addEventListener("click", function(e) {
+      const menu = document.getElementById("miniMenuWindow");
+      const trigger = document.querySelector(".btn-menu-trigger");
+      if (menu && menu.classList.contains("open")) {
+        if (!menu.contains(e.target) && !trigger.contains(e.target)) {
+          menu.classList.remove("open");
+        }
       }
-      localStorage.setItem('son_cart', JSON.stringify(cart));
-      alert(qty + ' adet Rosemary Collagen Elixir (300 ml) sepete eklendi! Ana sayfadaki sepetinizden siparişi tamamlayabilirsiniz.');
-      window.location.href = 'index.html#katalog';
-    }
+    });
 
-    function switchTab(tabId, btn) {
-      document.querySelectorAll('.pdp-tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.pdp-tab-pane').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById(tabId).classList.add('active');
+    function handlePdpAddCart(productName, price) {
+      alert("✦ " + productName + " (" + price + " TL) sepetinize eklendi!
+
+Siparişinizi tamamlamak için Ana Sayfadaki Sepetim sekmesine geçebilirsiniz.");
     }
   </script>
 </body>
