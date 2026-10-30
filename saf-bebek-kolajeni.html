@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saf Bebek Kolajeni Kemik Suyu (300 ml) | Story of Nature</title>
+  <meta name="description" content="Bebeklerin narin sindirim ve böbrek sistemine özel olarak sıfır tuz, sıfır baharat ve sadece taze dana kaval kemiği iliğinden 28 saatte süzüldü. Pediatristlerin">
+  <link rel="canonical" href="https://storyofnature.com.tr/saf-bebek-kolajeni.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-canvas: #FAF7F2;
+      --bg-surface: #ffffff;
+      --bg-card: #F3EFE6;
+      --color-dark: #14281D;
+      --color-dark-hover: #1E3D2C;
+      --text-main: #141D17;
+      --text-muted: #556258;
+      --gold-champagne: #C5A059;
+      --gold-hover: #A8833E;
+      --gold-tint: rgba(197, 160, 89, 0.12);
+      --color-trust-green: #237443;
+      --color-terracotta: #C86D51;
+      --border-subtle: #E8E4DA;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-canvas);
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Ticker */
+    .top-banner {
+      background: var(--color-dark);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 10px 16px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(250, 247, 242, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-mark {
+      text-decoration: none;
+      color: var(--color-dark);
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-mark .sub { font-size: 10px; font-weight: 800; letter-spacing: 2px; color: var(--gold-champagne); text-transform: uppercase; }
+    .brand-mark .title { font-family: var(--font-serif); font-size: 26px; font-weight: 700; line-height: 1; }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    @media (max-width: 860px) { .nav-links { display: none; } }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 13.5px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold-champagne); }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-header-cart {
+      background: var(--color-dark);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-header-cart:hover { background: var(--color-dark-hover); }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+      max-width: 1240px;
+      margin: 20px auto 0;
+      padding: 0 24px;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .breadcrumbs a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--color-dark); }
+
+    /* Main Product Layout (2:3 Cosmed Portrait Gallery & Buy Box) */
+    .product-pdp-section {
+      max-width: 1240px;
+      margin: 24px auto 60px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .product-pdp-section { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* Gallery (2:3 Aspect Ratio) */
+    .pdp-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: sticky;
+      top: 90px;
+    }
+    .gallery-viewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      max-height: 560px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    .gallery-viewport img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.2s ease;
+    }
+    .gallery-badge-floating {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(20, 40, 29, 0.88);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--border-subtle);
+      color: var(--color-dark);
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .gallery-arrow:hover { background: var(--color-dark); color: #fff; }
+    .gallery-arrow.prev { left: 12px; }
+    .gallery-arrow.next { right: 12px; }
+
+    .gallery-thumbs-row {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+    .gallery-thumb-item {
+      flex: 0 0 74px;
+      height: 74px;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      background: #fff;
+      position: relative;
+    }
+    .gallery-thumb-item img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-thumb-item.active {
+      border-color: var(--gold-champagne);
+      box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.3);
+    }
+    .gallery-thumb-title {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(20, 40, 29, 0.85);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      text-align: center;
+      padding: 2px 0;
+    }
+
+    /* Buy Box */
+    .pdp-buy-box {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .pdp-badge-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 6px 14px;
+      border-radius: 12px;
+      width: fit-content;
+      text-transform: uppercase;
+    }
+    .pdp-title {
+      font-family: var(--font-serif);
+      font-size: 38px;
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--color-dark);
+    }
+    .pdp-subtitle {
+      font-size: 13px;
+      color: var(--gold-champagne);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .pdp-reviews-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .pdp-stars { color: #E2B755; font-size: 16px; }
+    .pdp-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin: 6px 0;
+    }
+    .pdp-price {
+      font-family: var(--font-serif);
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--gold-champagne);
+    }
+    .pdp-old-price {
+      font-size: 18px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+    .pdp-installment {
+      font-size: 12px;
+      color: var(--color-trust-green);
+      font-weight: 700;
+      background: #e8f5e9;
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
+    .pdp-lead {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
+    /* Bullets */
+    .pdp-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: #fff;
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+    }
+    .pdp-highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-dark);
+    }
+    .pdp-highlight-item span.check {
+      color: var(--color-trust-green);
+      font-weight: bold;
+    }
+
+    /* Qty & Add to Cart */
+    .pdp-action-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .pdp-qty-stepper {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+    }
+    .pdp-qty-btn {
+      background: none;
+      border: none;
+      width: 40px;
+      height: 44px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--color-dark);
+    }
+    .pdp-qty-btn:hover { background: var(--bg-card); }
+    .pdp-qty-val {
+      width: 40px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .pdp-btn-add {
+      flex: 1;
+      background: var(--color-dark);
+      color: #fff;
+      padding: 15px 24px;
+      border-radius: var(--radius-full);
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .pdp-btn-add:hover { background: var(--color-dark-hover); }
+
+    .pdp-btn-whatsapp {
+      width: 100%;
+      background: #25D366;
+      color: #fff;
+      padding: 13px;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Guarantee bar */
+    .pdp-guarantee-bar {
+      font-size: 12px;
+      color: var(--color-trust-green);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Deep Dive Tabs */
+    .pdp-details-section {
+      max-width: 1240px;
+      margin: 40px auto 80px;
+      padding: 0 24px;
+    }
+    .pdp-tabs-nav {
+      display: flex;
+      gap: 12px;
+      border-bottom: 2px solid var(--border-subtle);
+      margin-bottom: 28px;
+      overflow-x: auto;
+    }
+    .pdp-tab-btn {
+      background: none;
+      border: none;
+      padding: 12px 20px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+    }
+    .pdp-tab-btn.active {
+      color: var(--color-dark);
+      border-bottom-color: var(--gold-champagne);
+    }
+    .pdp-tab-pane {
+      display: none;
+      background: #fff;
+      padding: 34px;
+      border-radius: 20px;
+      border: 1px solid var(--border-subtle);
+    }
+    .pdp-tab-pane.active { display: block; }
+
+    .pdp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .pdp-table th, .pdp-table td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .pdp-table th { background: var(--bg-card); color: var(--text-muted); font-weight: 700; width: 35%; }
+
+    /* Footer */
+    footer {
+      background: var(--color-dark);
+      color: #fff;
+      padding: 60px 24px 30px;
+      margin-top: 80px;
+    }
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-copy { font-size: 13px; color: #8C9990; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Banner -->
+  <div class="top-banner">
+    <span>🚚 750 TL ve Üzeri Siparişlerde <strong>ÜCRETSİZ ZIRHLI SOĞUK ZİNCİR KARGO</strong> • Kırılmaya Karşı %100 Sigortalı</span>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-mark">
+        <span class="sub">Artisanal Wellness</span>
+        <span class="title">Story of Nature</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html#katalog">Koleksiyon</a>
+        <a href="index.html#tarifler" style="color: var(--gold-champagne); font-weight: 700;">Yemek Tarifleri</a>
+        <a href="index.html#neden-kokusuz">Neden Kokusuz?</a>
+        <a href="index.html#jole-testi">Jöle Testi</a>
+        <a href="index.html#faydalar">Klinik Rapor</a>
+      </nav>
+
+      <div class="header-right">
+        <button class="btn-header-cart" onclick="window.location.href='index.html#katalog'">
+          <span>Sepet</span>
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <a href="index.html">Ana Sayfa</a>
+    <span>/</span>
+    <a href="index.html#katalog">Bebek Ek Gıda Serisi</a>
+    <span>/</span>
+    <strong>Saf Bebek Kolajeni Kemik Suyu (300 ml)</strong>
+  </div>
+
+  <!-- Main Product Section -->
+  <section class="product-pdp-section">
+    <!-- Left: 2:3 Cosmed Gallery -->
+    <div class="pdp-gallery">
+      <div class="gallery-viewport">
+        <button class="gallery-arrow prev" onclick="prevSlide()">‹</button>
+        <img id="mainImg" src="assets/gallery_no04_01_hero.jpg" alt="Saf Bebek Kolajeni Kemik Suyu (300 ml)">
+        <button class="gallery-arrow next" onclick="nextSlide()">›</button>
+        <div class="gallery-badge-floating" id="slideBadge">1 / 4 • Saf Bebek Kolajeni Görünüm</div>
+      </div>
+
+      <div class="gallery-thumbs-row">
+        
+          <div class="gallery-thumb-item active" onclick="renderSlide(0)" title="1 / 4 • Saf Bebek Kolajeni Görünüm">
+            <img src="assets/gallery_no04_01_hero.jpg" alt="Ürün" loading="lazy">
+            <span class="gallery-thumb-title">Ürün</span>
+          </div>
+        
+          <div class="gallery-thumb-item " onclick="renderSlide(1)" title="2 / 4 • Sıfır Tuz & Pediatrik Güvenlik">
+            <img src="assets/gallery_no04_02_baby_safety.jpg" alt="Güvenlik" loading="lazy">
+            <span class="gallery-thumb-title">Güvenlik</span>
+          </div>
+        
+          <div class="gallery-thumb-item " onclick="renderSlide(2)" title="3 / 4 • Doğal Jelatin Doku Kanıtı">
+            <img src="assets/gallery_no01_05_texture.jpg" alt="Jöle Testi" loading="lazy">
+            <span class="gallery-thumb-title">Jöle Testi</span>
+          </div>
+        
+          <div class="gallery-thumb-item " onclick="renderSlide(3)" title="4 / 4 • Çorba ve Püre Hazırlama">
+            <img src="assets/gallery_no01_06_how_to_use.jpg" alt="Kullanım" loading="lazy">
+            <span class="gallery-thumb-title">Kullanım</span>
+          </div>
+        
+      </div>
+    </div>
+
+    <!-- Right: Buy Box -->
+    <div class="pdp-buy-box">
+      <span class="pdp-badge-pill" style="color: #237443; background: #EBF3EC;">✦ BEBEK EK GIDA • SIFIR TUZ</span>
+      <div class="pdp-subtitle">No. 04 • Baby First Nutrition (6. Aydan İtibaren)</div>
+      <h1 class="pdp-title">Saf Bebek Kolajeni Kemik Suyu (300 ml)</h1>
+
+      <div class="pdp-reviews-row">
+        <span class="pdp-stars">★★★★★</span>
+        <strong>5.0</strong>
+        <span style="color: var(--text-muted);">(96 Doğrulanmış Müşteri Değerlendirmesi)</span>
+      </div>
+
+      <div class="pdp-price-row">
+        <span class="pdp-price" id="totalPrice">210 TL</span>
+        <span class="pdp-old-price">250 TL</span>
+        <span class="pdp-installment">Vade farksız 3 taksit x 70.0 TL</span>
+      </div>
+
+      <p class="pdp-lead">Bebeklerin narin sindirim ve böbrek sistemine özel olarak sıfır tuz, sıfır baharat ve sadece taze dana kaval kemiği iliğinden 28 saatte süzüldü. Pediatristlerin ek gıda önerileriyle %100 uyumludur.</p>
+
+      <div class="pdp-highlights">
+        
+          <div class="pdp-highlight-item">
+            <span class="check">✓</span>
+            <span>0 mg İlave Tuz • Bebek Böbreklerini Kesinlikle Yormaz</span>
+          </div>
+        
+          <div class="pdp-highlight-item">
+            <span class="check">✓</span>
+            <span>0 Baharat, 0 Soğan/Sarımsak • Gaz ve Alerji Yapmaz</span>
+          </div>
+        
+          <div class="pdp-highlight-item">
+            <span class="check">✓</span>
+            <span>6. Aydan İtibaren Ek Gıda Çorba ve Pürelerine Uygun</span>
+          </div>
+        
+          <div class="pdp-highlight-item">
+            <span class="check">✓</span>
+            <span>Kemik, Diş ve Kıkırdak Gelişimi İçin Saf Kalsiyum Deposu</span>
+          </div>
+        
+          <div class="pdp-highlight-item">
+            <span class="check">✓</span>
+            <span>121°C Otoklav Basınçlı Sterilizasyon ile %100 Güvenli</span>
+          </div>
+        
+      </div>
+
+      <!-- Action Box -->
+      <div class="pdp-action-box">
+        <div class="pdp-qty-stepper">
+          <button class="pdp-qty-btn" onclick="updateQty(-1)">−</button>
+          <span class="pdp-qty-val" id="qtyVal">1</span>
+          <button class="pdp-qty-btn" onclick="updateQty(1)">+</button>
+        </div>
+        <button class="pdp-btn-add" onclick="handleAddToCart()">
+          <span>Sepete Ekle (210 TL)</span>
+        </button>
+      </div>
+
+      <a href="https://wa.me/905330849027?text=Merhaba,%20Saf%20Bebek%20Kolajeni%20Kemik%20Suyu%20%28300%20ml%29%20sipari%C5%9Fi%20vermek%20istiyorum." target="_blank" class="pdp-btn-whatsapp">
+        WhatsApp ile Hızlı Sipariş Ver ↗
+      </a>
+
+      <div class="pdp-guarantee-bar">
+        <span>🚚</span>
+        <span>750 TL üzerine <strong>Ücretsiz Soğuk Zincir Kargo</strong> • Kırılmaya Karşı %100 Sigortalı</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Dive Tabs -->
+  <section class="pdp-details-section">
+    <div class="pdp-tabs-nav">
+      <button class="pdp-tab-btn active" onclick="switchTab('tab-analiz', this)">Acıbadem Bilimsel Besin Analizi</button>
+      <button class="pdp-tab-btn" onclick="switchTab('tab-kullanim', this)">Nasıl Tüketilir?</button>
+      <button class="pdp-tab-btn" onclick="switchTab('tab-tarif', this)">Mutfak Tarif Eşleşmesi</button>
+    </div>
+
+    <!-- Tab 1: Analiz -->
+    <div id="tab-analiz" class="pdp-tab-pane active">
+      <h3 style="font-family: var(--font-serif); font-size: 26px; margin-bottom: 16px; color: var(--color-dark);">Laboratuvar Onaylı Besin Değerleri</h3>
+      <table class="pdp-table">
+        
+          <tr>
+            <th>Uygunluk Dönemi</th>
+            <td>6. Aydan İtibaren Ek Gıdaya Geçiş</td>
+          </tr>
+        
+          <tr>
+            <th>İlave Tuz & Baharat</th>
+            <td>%0.0 (Kesinlikle İçermez)</td>
+          </tr>
+        
+          <tr>
+            <th>Protein (100 ml)</th>
+            <td>12.0 g Kolay Sindirilebilir</td>
+          </tr>
+        
+          <tr>
+            <th>Kullanım Şekli</th>
+            <td>Sebze çorbası, balkabağı püresi veya mamaya 2-3 kaşık</td>
+          </tr>
+        
+          <tr>
+            <th>Ambalaj</th>
+            <td>300 ml Cam Kavanoz (BPA İçermez)</td>
+          </tr>
+        
+      </table>
+      <div style="margin-top: 18px; font-size: 13px; color: var(--text-muted);">
+        * Değerler Acıbadem Sağlık Grubu ve bağımsız akredite gıda laboratuvarı analiz raporları doğrultusunda hazırlanmıştır.
+      </div>
+    </div>
+
+    <!-- Tab 2: Kullanım -->
+    <div id="tab-kullanim" class="pdp-tab-pane">
+      <h3 style="font-family: var(--font-serif); font-size: 26px; margin-bottom: 16px; color: var(--color-dark);">3 Adımlı Günlük Tüketim Rutini</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <div style="background: var(--bg-card); padding: 22px; border-radius: 16px;">
+          <div style="font-weight: 800; font-size: 12px; color: var(--gold-champagne); margin-bottom: 6px;">1. ADIM: SABAH AÇ KARNINA</div>
+          <p style="font-size: 13.5px; color: var(--text-main);">Cezvede hafifçe ılıtıp (kaynatmadan) içerisine taze limon suyu ve tane karabiber ekleyerek için. Bağırsak mukozasını güne hazırlar.</p>
+        </div>
+        <div style="background: var(--bg-card); padding: 22px; border-radius: 16px;">
+          <div style="font-weight: 800; font-size: 12px; color: var(--gold-champagne); margin-bottom: 6px;">2. ADIM: BEBEK & YEMEKLER</div>
+          <p style="font-size: 13.5px; color: var(--text-main);">Bebeklerin sebze çorbasına veya aile yemeklerine 2-3 yemek kaşığı ilave edin. Besin değerini ve kolajen miktarını katlar.</p>
+        </div>
+        <div style="background: var(--bg-card); padding: 22px; border-radius: 16px;">
+          <div style="font-weight: 800; font-size: 12px; color: var(--gold-champagne); margin-bottom: 6px;">3. ADIM: SAKLAMA KOŞULLARI</div>
+          <p style="font-size: 13.5px; color: var(--text-main);">Kapak açıldıktan sonra buzdolabında (+4°C) 4-5 gün saklayın. Kalanını buz kalıplarında dondurarak 6 ay kullanabilirsiniz.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3: Tarif -->
+    <div id="tab-tarif" class="pdp-tab-pane">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+        <h3 style="font-family: var(--font-serif); font-size: 26px; color: var(--color-dark);">Balkabaklı & İlikli Bebek Ek Gıda Püresi</h3>
+        <span style="font-size: 12px; font-weight: 700; color: var(--gold-champagne);">⏱ 12 Dakika • Çok Kolay</span>
+      </div>
+      <p style="font-size: 15px; color: var(--text-main); line-height: 1.6; margin-bottom: 18px;">Buharda pişen balkabağı ve havuç çatalla ezilir; içerisine 2-3 yemek kaşığı ılık No. 04 kemik suyu ve zeytinyağı eklenir.</p>
+      <a href="index.html#tarifler" style="display: inline-block; background: var(--color-dark); color: #fff; padding: 10px 22px; border-radius: var(--radius-full); text-decoration: none; font-size: 13px; font-weight: 700;">
+        Tüm Mutfak Tariflerini Gör →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div style="font-family: var(--font-serif); font-size: 24px; font-weight: 700;">Story of Nature</div>
+        <div class="footer-copy">© 2026 Story of Nature Artisanal Wellness. Tüm hakları saklıdır.</div>
+      </div>
+      <div>
+        <a href="index.html" style="color: #fff; text-decoration: none; font-size: 13px; font-weight: 600;">← Ana Sayfaya Dön</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const SLIDES = [{"src": "assets/gallery_no04_01_hero.jpg", "label": "1 / 4 • Saf Bebek Kolajeni Görünüm", "thumb": "Ürün"}, {"src": "assets/gallery_no04_02_baby_safety.jpg", "label": "2 / 4 • Sıfır Tuz & Pediatrik Güvenlik", "thumb": "Güvenlik"}, {"src": "assets/gallery_no01_05_texture.jpg", "label": "3 / 4 • Doğal Jelatin Doku Kanıtı", "thumb": "Jöle Testi"}, {"src": "assets/gallery_no01_06_how_to_use.jpg", "label": "4 / 4 • Çorba ve Püre Hazırlama", "thumb": "Kullanım"}];
+    let currentSlide = 0;
+    const basePrice = 210;
+    let qty = 1;
+
+    function renderSlide(idx) {
+      if (idx < 0) idx = SLIDES.length - 1;
+      if (idx >= SLIDES.length) idx = 0;
+      currentSlide = idx;
+
+      const img = document.getElementById('mainImg');
+      const badge = document.getElementById('slideBadge');
+      if (img) {
+        img.style.opacity = '0.4';
+        setTimeout(() => {
+          img.src = SLIDES[idx].src;
+          img.style.opacity = '1';
+        }, 80);
+      }
+      if (badge) badge.innerText = SLIDES[idx].label;
+
+      document.querySelectorAll('.gallery-thumb-item').forEach((t, i) => {
+        if (i === idx) t.classList.add('active');
+        else t.classList.remove('active');
+      });
+    }
+
+    function prevSlide() { renderSlide(currentSlide - 1); }
+    function nextSlide() { renderSlide(currentSlide + 1); }
+
+    function updateQty(delta) {
+      qty = Math.max(1, qty + delta);
+      document.getElementById('qtyVal').innerText = qty;
+      document.getElementById('totalPrice').innerText = (basePrice * qty) + ' TL';
+    }
+
+    function handleAddToCart() {
+      // Store in localStorage for seamless cart sync with index.html
+      let cart = JSON.parse(localStorage.getItem('son_cart') || '{}');
+      const itemTitle = "Saf Bebek Kolajeni Kemik Suyu (300 ml)";
+      if (!cart[itemTitle]) {
+        cart[itemTitle] = { price: basePrice, qty: qty };
+      } else {
+        cart[itemTitle].qty += qty;
+      }
+      localStorage.setItem('son_cart', JSON.stringify(cart));
+      alert(qty + ' adet Saf Bebek Kolajeni Kemik Suyu (300 ml) sepete eklendi! Ana sayfadaki sepetinizden siparişi tamamlayabilirsiniz.');
+      window.location.href = 'index.html#katalog';
+    }
+
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.pdp-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.pdp-tab-pane').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
