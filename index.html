@@ -1899,6 +1899,366 @@
     }
 
   </style>
+<style>
+    /* FOND Bone Broth & Luxury Apothecary Aesthetics */
+    .fond-hero {
+      padding: 60px 24px 80px;
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    @media (max-width: 960px) {
+      .fond-hero { grid-template-columns: 1fr; gap: 40px; padding: 40px 18px 60px; text-align: center; }
+    }
+    .fond-hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    @media (max-width: 960px) {
+      .fond-hero-left { align-items: center; }
+    }
+    .fond-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(26, 56, 38, 0.07);
+      color: var(--color-dark);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(26, 56, 38, 0.12);
+      width: fit-content;
+    }
+    .fond-hero-title {
+      font-family: var(--font-serif);
+      font-size: 52px;
+      line-height: 1.12;
+      font-weight: 600;
+      color: var(--color-dark);
+      letter-spacing: -0.5px;
+    }
+    @media (max-width: 768px) {
+      .fond-hero-title { font-size: 38px; }
+    }
+    .fond-hero-title em {
+      font-style: italic;
+      color: var(--gold-champagne);
+    }
+    .fond-hero-lead {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 560px;
+    }
+    .fond-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    @media (max-width: 960px) {
+      .fond-bullets { align-items: flex-start; text-align: left; }
+    }
+    .fond-bullet-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-dark);
+    }
+    .fond-bullet-icon {
+      color: var(--color-trust-green);
+      font-weight: bold;
+      background: #e8f5e9;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+    .fond-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    @media (max-width: 960px) {
+      .fond-cta-group { justify-content: center; }
+    }
+    .fond-btn-primary {
+      background: var(--color-dark);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: var(--radius-full);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 25px rgba(18, 30, 22, 0.15);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .fond-btn-primary:hover {
+      background: #1e3a27;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(18, 30, 22, 0.22);
+    }
+    .fond-btn-secondary {
+      background: #fff;
+      color: var(--color-dark);
+      padding: 16px 28px;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid var(--border-subtle);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .fond-btn-secondary:hover {
+      background: var(--bg-card);
+      border-color: var(--color-dark);
+    }
+    .fond-social-proof {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    .fond-stars {
+      color: #E2B755;
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
+
+    /* Hero Visual Showcase Right */
+    .fond-hero-right {
+      position: relative;
+    }
+    .fond-hero-showcase {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #F8F6F0;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    .fond-hero-showcase img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .fond-float-tag-top {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      background: rgba(22, 30, 24, 0.88);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .fond-float-tag-bottom {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      padding: 14px 20px;
+      border-radius: 18px;
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    /* Reddit Pain Points Solution Grid */
+    .reddit-solutions-section {
+      padding: 80px 24px;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .reddit-sol-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px;
+    }
+    .reddit-sol-eyebrow {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #1A3826;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+      border: 1px solid rgba(26,56,38,0.15);
+    }
+    .reddit-sol-title {
+      font-family: var(--font-serif);
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--color-dark);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .reddit-sol-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .reddit-sol-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+    @media (max-width: 1024px) {
+      .reddit-sol-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .reddit-sol-grid { grid-template-columns: 1fr; }
+    }
+    .reddit-sol-card {
+      background: #fff;
+      padding: 32px 24px;
+      border-radius: 20px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+      transition: all 0.25s ease;
+    }
+    .reddit-sol-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+      border-color: var(--gold-champagne);
+    }
+    .sol-card-badge {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #c62828;
+      background: #ffebee;
+      padding: 4px 10px;
+      border-radius: 10px;
+      width: fit-content;
+    }
+    .sol-card-title {
+      font-family: var(--font-serif);
+      font-size: 21px;
+      font-weight: 600;
+      color: var(--color-dark);
+      line-height: 1.3;
+    }
+    .sol-card-text {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .sol-card-proof {
+      padding-top: 12px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--color-trust-green);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Lifestyle Routines Section (Fond Style) */
+    .routines-section {
+      background: var(--bg-card);
+      padding: 80px 24px;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .routines-container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .routines-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 40px;
+    }
+    @media (max-width: 900px) {
+      .routines-grid { grid-template-columns: 1fr; }
+    }
+    .routine-card {
+      background: #fff;
+      padding: 34px 28px;
+      border-radius: 20px;
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .routine-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--color-dark);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .routine-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--color-dark);
+    }
+    .routine-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+    .routine-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold-champagne);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+</style>
 </head>
 <body>
 
@@ -1940,169 +2300,138 @@
     </div>
   </header>
 
-  <!-- 3. APPLE STORE HERO (Store. En sevdiğiniz ürünleri satın almanın en iyi yolu.) -->
-  <section class="apple-store-hero" id="magaza">
-    <h1 class="apple-hero-headline">
-      Mağaza. <span class="apple-lead">Doğanın en saf halini keşfetmenin en zarif yolu.</span>
-    </h1>
-    <p class="apple-hero-sub">
-      Acıbadem Sağlık verileri ve geleneksel reçetelerle hazırlanan, jel kıvamında %100 doğal ilikli kemik suları ve fonksiyonel botanik iksirler.
-    </p>
-  </section>
-
-  <!-- 4. Apple Horizontal Category Shelf -->
-  <div class="category-ribbon">
-    <button class="cat-pill active" onclick="filterCategory(this, 'all')">Tüm Koleksiyon</button>
-    <button class="cat-pill" onclick="filterCategory(this, 'kemik')">İlikli Kemik Suları</button>
-    <button class="cat-pill" onclick="filterCategory(this, 'bebek')">Bebek Ek Gıda</button>
-    <button class="cat-pill" onclick="filterCategory(this, 'kolajen')">Cilt & Eklem Kolajeni</button>
-    <button class="cat-pill" onclick="filterCategory(this, 'bagisiklik')">Bağışıklık & Zencefil</button>
-    <button class="cat-pill" onclick="filterCategory(this, 'cay')">Botanik Çaylar</button>
-  </div>
-
-  <!-- 5. HERO SPOTLIGHT & DUAL-STATE STAGE (Real Generated Product Photography) -->
-  <section class="hero-spotlight">
-    <div class="spotlight-text-box">
-      <div class="spotlight-eyebrow">
+    <!-- 3. FOND BONE BROTH & APOTHECARY LUXURY HERO -->
+  <section class="fond-hero" id="magaza">
+    <div class="fond-hero-left">
+      <div class="fond-eyebrow">
         <span>✦</span>
-        <span>28 SAAT KISIK ATEŞTE GELENEKSEL DEMLEME</span>
+        <span>ZANAATKAR DEMLEME • DOĞAL BOTANİK WELLNESS</span>
       </div>
 
-      <h2 class="spotlight-title">
-        Doğanın En Saf Hali,<br><em>En Sabırlı</em> Reçetelerle.
-      </h2>
-      
-      <p class="spotlight-lead">
-        Dana kaval kemikleri fermante elma sirkeli suda arındırılır, 200°C'de fırınlanıp 28 saat boyunca kısık ateşte demlenir. Sıfır katkı, sıfır koruyucu ve buzdolabında kaşık batırıldığında ayrılan taş gibi doğal kolajen jölesi.
+      <h1 class="fond-hero-title">
+        Kahveden Daha Zengin,<br>
+        Çaydan Daha Saf:<br>
+        <em>Yudumlanabilir</em> Şifa.
+      </h1>
+
+      <p class="fond-hero-lead">
+        Piyasadaki ağır kokan tencerelerle ve donmuş yağ katmanlarıyla uğraşmayın. 28 saat kısık ateşte ağır ağır demlenmiş, buzdolabında taş gibi jöleleşen, sıfır ağır kokulu ve %0.2 yağ oranına sahip %100 saf ilikli kemik suyu.
       </p>
 
-      <!-- Acıbadem Clinical Fast Badges -->
-      <div class="clinical-highlights">
-        <div class="highlight-cell">
-          <div class="val">12.4g</div>
-          <div class="lbl">Saf Protein (100 ml)</div>
-          <div class="sub">Glisin & Prolin aminoasit deposu</div>
+      <div class="fond-bullets">
+        <div class="fond-bullet-item">
+          <span class="fond-bullet-icon">✓</span>
+          <span><strong>Çift Ön Haşlama ile Sıfır Ağır Koku:</strong> Kokusuz, yumuşak ve kadifemsi içim.</span>
         </div>
-        <div class="highlight-cell">
-          <div class="val">7.800mg</div>
-          <div class="lbl">Tip 1 & 3 Kolajen</div>
-          <div class="sub">Cilt & eklem kıkırdak desteği</div>
+        <div class="fond-bullet-item">
+          <span class="fond-bullet-icon">✓</span>
+          <span><strong>3 Kademeli Filtrasyon ile &lt;%0.2 Yağ:</strong> Doymuş yağdan arındırılmış saf protein.</span>
         </div>
-        <div class="highlight-cell">
-          <div class="val">%100</div>
-          <div class="lbl">Doğal Taş Jel</div>
-          <div class="sub">Seyreltmesiz, kıvam artırıcısız</div>
+        <div class="fond-bullet-item">
+          <span class="fond-bullet-icon">✓</span>
+          <span><strong>Buzdolabında Taş Jöle Garantisi:</strong> Kaşıkla kalıp halinde kalkan yoğun doğal kolajen.</span>
         </div>
-        <div class="highlight-cell">
-          <div class="val">121°C</div>
-          <div class="lbl">Otoklav Sterilizasyon</div>
-          <div class="sub">6 ay güvenli cam kiler ömrü</div>
+        <div class="fond-bullet-item">
+          <span class="fond-bullet-icon">✓</span>
+          <span><strong>Acıbadem Tıp Standardında:</strong> 7.800 mg Tip 1 &amp; 3 kolajen ile hücresel onarım.</span>
         </div>
       </div>
 
-      <div style="display: flex; gap: 16px; align-items: center;">
-        <a href="#katalog" class="btn-cta" style="background: var(--color-dark); color: #fff; padding: 15px 32px; border-radius: var(--radius-full); text-decoration: none; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
-          <span>Ürünleri İncele</span>
-          <span>→</span>
+      <div class="fond-cta-group">
+        <a href="#katalog" class="fond-btn-primary">
+          <span>Zanaatkar Koleksiyonu Keşfet (300 ml)</span>
+          <span>↓</span>
         </a>
-        <a href="#faydalar" style="color: var(--text-main); font-size: 14px; font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--border-medium); padding-bottom: 2px;">
-          Klinik Faydaları Oku ↗
+        <a href="#jole-testi" class="fond-btn-secondary">
+          <span>Buzdolabı Jöle Testini Gör</span>
         </a>
+      </div>
+
+      <div class="fond-social-proof">
+        <span class="fond-stars">★★★★★</span>
+        <strong>4.9 / 5.0</strong>
+        <span>• 1.420+ Doğrulanmış Anne, Diyetisyen ve Sporcu Yorumu</span>
       </div>
     </div>
 
-    <!-- Apple-Style Floating Stage With Real Product Photography & Live Dual-State Switcher -->
-    <div class="spotlight-stage">
-      <div class="stage-top-meta">
-        <span class="tag">İMZA ÜRÜN • NO. 01</span>
-        <span class="badge">
-          <span class="icon" style="width: 12px; height: 12px;"><svg viewBox="0 0 24 24" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <span>%100 Doğal Jel Garantisi</span>
-        </span>
-      </div>
-
-      <!-- Real Product Photography with Crossfade -->
-      <div class="stage-photo-wrap">
-        <img id="stageImage" src="assets/product_no01_bone_broth.jpg" alt="Pure Essence İlikli Kemik Suyu">
-        <div class="stage-photo-badge" id="stagePhotoBadge">
-          <span class="pulse"></span>
-          <span id="stagePhotoText">Oda Sıcaklığı: Altın Amber İksir</span>
+    <!-- Sağ: Vitrin Fotoğrafı & Güven Rozetleri -->
+    <div class="fond-hero-right">
+      <div class="fond-hero-showcase">
+        <img src="assets/product_no01_bone_broth.jpg" alt="Story of Nature Zanaatkar İlikli Kemik Suyu" loading="eager">
+        <div class="fond-float-tag-top">
+          <span>121°C OTOKLAV CAM KAPAMA</span>
+          <span style="color: var(--gold-champagne);">6 AY KORUYUCUSUZ TAZELİK</span>
         </div>
-      </div>
-
-      <!-- Tactile Dual-State Switcher -->
-      <div class="stage-controls">
-        <div class="state-toggle-tabs">
-          <button class="state-tab active" id="tabLiquid" onclick="switchStageVisual('liquid')">
-            Isıtılmış / Akıcı (60°C)
-          </button>
-          <button class="state-tab" id="tabJelly" onclick="switchStageVisual('jelly')">
-            Buzdolabı Jeli (+4°C)
-          </button>
+        <div class="fond-float-tag-bottom">
+          <div>
+            <div style="font-size: 11px; color: var(--gold-champagne); font-weight: 800; letter-spacing: 1px;">ORİJİNAL FORMÜL</div>
+            <div style="font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--color-dark);">No. 01 Pure Essence</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 11px; color: var(--color-trust-green); font-weight: 700;">✓ Kırılma Sigortalı</div>
+            <div style="font-size: 18px; font-weight: 700; color: var(--color-dark);">220 TL</div>
+          </div>
         </div>
-        <p class="state-desc-text" id="stageInfoDesc">
-          Isıtıldığında berrak, kokusuz ve içimi son derece yumuşak altın rengi bir şifa suyuna dönüşür. Sabahları aç karnına fincanda içilebilir veya yemeklere katılabilir.
-        </p>
-      </div>
-
-      <div class="stage-bottom-row">
-        <div class="stage-price-box">
-          <div class="old">260 TL</div>
-          <div class="curr">220 TL</div>
-        </div>
-        <button class="btn-stage-add" onclick="addToCart('No.01 Pure Essence Kemik Suyu', 220)">
-          <span class="icon" style="width: 16px; height: 16px;"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
-          <span>Sepete Ekle</span>
-        </button>
       </div>
     </div>
   </section>
 
-  <!-- 6. APPLE "NEDEN STORY OF NATURE?" TRUST SHELF (Why Apple? equivalent) -->
-  <section class="apple-why-section" id="neden-biz">
-    <div class="why-header">
-      <h3>Neden Story of Nature?</h3>
-      <p>Doğallığı ve zanaatkar kaliteyi güvenle kapınıza ulaştıran standartlarımız.</p>
+  <!-- 4. REDDIT PAIN POINTS SOLUTION GRID -->
+  <section class="reddit-solutions-section" id="neden-kokusuz">
+    <div class="reddit-sol-header">
+      <span class="reddit-sol-eyebrow">REDDİT r/Cooking &amp; r/nutrition CRO ANALİZİ</span>
+      <h2 class="reddit-sol-title">Neden Başka Kemik Suyu İçemeyenler<br>Story of Nature'ı Tercih Ediyor?</h2>
+      <p class="reddit-sol-desc">
+        Reddit tüketici yorumlarında kemik suyu tüketenlerin en çok şikayet ettiği 4 kronik sorunu bilimsel zanaatkarlıkla sıfırladık.
+      </p>
     </div>
 
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">
-          <span class="icon" style="width: 22px; height: 22px;"><svg viewBox="0 0 24 24" stroke="currentColor"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
-        </div>
-        <div>
-          <div class="why-title">Aynı Gün Taze Gönderim</div>
-          <div class="why-desc">Saat 15:00'e kadar verilen siparişler taze partiden aynı gün özenle kargoya teslim edilir.</div>
-        </div>
-      </div>
-
-      <div class="why-card">
-        <div class="why-icon">
-          <span class="icon" style="width: 22px; height: 22px;"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-        </div>
-        <div>
-          <div class="why-title">Hasarsız Teslimat Sigortası</div>
-          <div class="why-desc">Özel hava kanallı koruma balonlarıyla paketlenir; olası hasarda koşulsuz yenisi derhal sevk edilir.</div>
+    <div class="reddit-sol-grid">
+      <!-- 1. Koku -->
+      <div class="reddit-sol-card">
+        <span class="sol-card-badge">ŞİKAYET: "AHIR GİBİ KOKUYOR"</span>
+        <h3 class="sol-card-title">Çift Aşamalı Ön Haşlama ile Sıfır Koku</h3>
+        <p class="sol-card-text">
+          Piyasadaki kemik sularının ağır hayvansal kokusundan bıkanlar için; kemikler 28 saatlik demlemeye girmeden önce yüksek ısıda ilk suyundan arındırılır, köpük ve ağır koku tamamen tahliye edilir. Taze kereviz ve organik elma sirkesi ile asitliği dengelenerek tamamen kokusuz, narin bir içim sağlanır.
+        </p>
+        <div class="sol-card-proof">
+          <span>✓</span> <span>Kokusuz &amp; Fincanda İçilebilir</span>
         </div>
       </div>
 
-      <div class="why-card">
-        <div class="why-icon">
-          <span class="icon" style="width: 22px; height: 22px;"><svg viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M16 8l-8 8"/><path d="M12 16h4"/><path d="M8 8h4"/></svg></span>
-        </div>
-        <div>
-          <div class="why-title">750 TL Üzeri Ücretsiz Kargo</div>
-          <div class="why-desc">Tüm Türkiye geneline 750 TL ve üzeri siparişlerde kargo ücretini biz karşılıyoruz.</div>
+      <!-- 2. Yağ -->
+      <div class="reddit-sol-card">
+        <span class="sol-card-badge">ŞİKAYET: "YAĞ İÇİYORMUŞ GİBİYİM"</span>
+        <h3 class="sol-card-title">3 Kademeli Soğuk Yağ Ayrıştırma</h3>
+        <p class="sol-card-text">
+          Mide bulandıran donmuş yağ katmanlarına son verdik. Pişirme sonrası +2°C'ye soğutulan kemik suyunun üstünde donan doymuş yağ tabakası cerrahi titizlikle sıyrılır. Yağ oranı &lt;%0.2'ye iner; geriye yalnızca saf protein, biyoaktif kolajen ve amino asitler kalır.
+        </p>
+        <div class="sol-card-proof">
+          <span>✓</span> <span>&lt;%0.2 Yağ • Saf Protein</span>
         </div>
       </div>
 
-      <div class="why-card">
-        <div class="why-icon">
-          <span class="icon" style="width: 22px; height: 22px;"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+      <!-- 3. Jöle -->
+      <div class="reddit-sol-card">
+        <span class="sol-card-badge">ŞİKAYET: "SU GİBİ ÇALKALANIYOR"</span>
+        <h3 class="sol-card-title">Buzdolabı Taş Jöle Garantisi</h3>
+        <p class="sol-card-text">
+          Karton kutulardaki seyreltik sıvılara veda edin. Gerçek kemik suyu buzdolabında (+4°C) puding gibi taşlaşır, kaşıkla kalıp halinde kalkar. Isıtıldığında ise altın sarısı berrak bir iksire dönüşür. Suyla seyreltilmediğinin kesin kanıtıdır.
+        </p>
+        <div class="sol-card-proof">
+          <span>✓</span> <span>Kaşıkla Kalkan Jelatin Blokları</span>
         </div>
-        <div>
-          <div class="why-title">Doğrudan Uzman Desteği</div>
-          <div class="why-desc">Bebek beslenmesi ve tüketim rehberliği için WhatsApp hattımızdan doğrudan bilgi alabilirsiniz.</div>
+      </div>
+
+      <!-- 4. Kargo -->
+      <div class="reddit-sol-card">
+        <span class="sol-card-badge">ŞİKAYET: "KARGODA KIRILIR MI?"</span>
+        <h3 class="sol-card-title">Zırhlı Strafor Kargo &amp; %100 Sigorta</h3>
+        <p class="sol-card-text">
+          Özel üretim yüksek yoğunluklu EPS strafor zırh kutularda, soğuk tutucu buz aküleriyle sevk edilir. Kırılmaya ve bozulmaya karşı %100 anında ücretsiz yenisiyle değişim garantisi veriyoruz. Kapınıza kadar taptaze ulaşır.
+        </p>
+        <div class="sol-card-proof">
+          <span>✓</span> <span>Buz Akülü Strafor Kutu</span>
         </div>
       </div>
     </div>
@@ -2222,8 +2551,8 @@
     </div>
   </section>
 
-  <!-- 8. PRODUCT CATALOG (Apple Store Clean Format with Real Photos) -->
-  <section class="catalog-section" id="katalog">
+  <!-- 8. PRODUCT CATALOG -->
+  <section class="catalog-section" id="katalog" id="katalog">
     <div class="catalog-header">
       <h2>Zanaatkar Koleksiyon</h2>
       <p>Sipariş üzerine taze partiler halinde sınırlı sayıda demlenen saf reçeteler.</p>
@@ -2474,7 +2803,7 @@
   </section>
 
   <!-- 9.5 REDDIT #1 CRO: THE JELLO FACTOR COMPARISON -->
-  <section style="background: var(--bg-card); padding: 70px 24px; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); margin: 40px 0;">
+  <section id="jole-testi" style="background: var(--bg-card); padding: 70px 24px; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); margin: 40px 0;">
     <div style="max-width: 1040px; margin: 0 auto;">
       <div style="text-align: center; max-width: 720px; margin: 0 auto 40px;">
         <span style="display: inline-block; background: #e8f5e9; color: #1A3826; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; padding: 6px 16px; border-radius: 20px; text-transform: uppercase; margin-bottom: 12px; border: 1px solid rgba(26,56,38,0.15);">
@@ -2525,6 +2854,50 @@
         <button class="btn-cta" style="background: var(--color-dark); color: #fff; padding: 14px 34px; border-radius: var(--radius-full); border: none; font-weight: 700; cursor: pointer; font-size: 14px;" onclick="document.getElementById('katalog').scrollIntoView({behavior: 'smooth'})">
           Jöle Testi Garantili Ürünleri İnceleyin →
         </button>
+      </div>
+    </div>
+  </section>
+
+    <!-- 9.7 NASIL TÜKETİLİR? 3 YAŞAM RİTÜELİ (FOND BONE BROTH STYLE) -->
+  <section class="routines-section" id="nasil-icilir">
+    <div class="routines-container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+        <span style="font-size: 11px; font-weight: 800; letter-spacing: 2px; color: var(--gold-champagne); text-transform: uppercase;">GÜNLÜK DÖNÜŞÜM RİTÜELİ</span>
+        <h2 style="font-family: var(--font-serif); font-size: 38px; font-weight: 600; color: var(--color-dark); margin-top: 8px;">
+          Gününüzü Şifalandıran 3 Farklı Tüketim Şekli
+        </h2>
+        <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-top: 10px;">
+          Zanaatkar ilikli kemik suyunu sadece yemeklerde değil; sabah kahveniz yerine fincanda veya bebeğinizin ilk besinlerinde keyifle kullanın.
+        </p>
+      </div>
+
+      <div class="routines-grid">
+        <div class="routine-card">
+          <div class="routine-num">1</div>
+          <span class="routine-tag">SABAH RİTÜELİ</span>
+          <h3 class="routine-title">Kahve Yerine Sıcak İksir</h3>
+          <p class="routine-text">
+            Sabah aç karnına 1 çay fincanı (100-150 ml) kemik suyunu cezvede hafifçe ılıtın. İçerisine taze limon suyu ve bir tutam tane karabiber ekleyin. Bağırsak mukozasını güne hazırlar ve kafeinsiz zindelik sağlar.
+          </p>
+        </div>
+
+        <div class="routine-card">
+          <div class="routine-num">2</div>
+          <span class="routine-tag">BEBEK &amp; ÇOCUK</span>
+          <h3 class="routine-title">Ek Gıda &amp; Çorba Güçlendirici</h3>
+          <p class="routine-text">
+            6. aydan itibaren bebeklerin sebze çorbalarına, balkabağı ya da patates pürelerine 2-3 tatlı kaşığı ekleyin. Sıfır tuz ve sıfır baharat içeren No. 04 Saf Bebek Kolajeni bebek böbreklerini kesinlikle yormaz.
+          </p>
+        </div>
+
+        <div class="routine-card">
+          <div class="routine-num">3</div>
+          <span class="routine-tag">AKŞAM YEMEĞİ</span>
+          <h3 class="routine-title">Yemeklerin Gizli Gurme Şifası</h3>
+          <p class="routine-text">
+            Pilav, makarna, mercimek çorbası ve tencere yemeklerine normal su yerine 1 su bardağı ilikli kemik suyu ilave edin. Aile yemeklerinin protein ve kolajen değerini katlarken lokanta lezzetinde zenginlik katar.
+          </p>
+        </div>
       </div>
     </div>
   </section>
