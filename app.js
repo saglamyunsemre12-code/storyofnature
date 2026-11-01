@@ -52,21 +52,10 @@ function update() {
   const total = products.reduce((sum, p) => sum + (cart[p.id] || 0) * p.estimatedPrice, 0);
   if ($('#cart-total')) $('#cart-total').textContent = money(total);
 
-  // 1 Order / Items = Tree Counter
-  const treesCount = Math.max(1, count > 0 ? Math.ceil(count / 2) : 1);
-  if ($('#header-tree-count')) $('#header-tree-count').textContent = treesCount;
-  if ($('#tree-tracker-fill')) $('#tree-tracker-fill').style.width = '100%';
-  if ($('#tree-tracker-pct')) $('#tree-tracker-pct').textContent = `🌱 ${treesCount} Fidan`;
-  if ($('#tree-tracker-text')) {
-    $('#tree-tracker-text').textContent = count > 0
-      ? `Seçkinle doğaya ${treesCount} fidan izi bırakıyorsun`
-      : 'Her alışveriş doğaya 1 fidan izi bırakır';
-  }
-  if ($('#tree-live-status')) {
-    $('#tree-live-status').innerHTML = count > 0
-      ? `🌱 Harika! Şu an listendeki <strong>${count} ürün</strong> ile doğaya <strong>${treesCount} fidan</strong> filizlenmeye hazır.`
-      : '🌱 Şu an listendeki seçkinle <strong>1 fidan</strong> filizlenmeye hazır (Planlanan doğa programı).';
-  }
+  if ($('#header-tree-count')) $('#header-tree-count').textContent = 'Fidan';
+  if ($('#tree-tracker-pct')) $('#tree-tracker-pct').textContent = 'Planlanan program';
+  if ($('#tree-tracker-text')) $('#tree-tracker-text').textContent = 'Fidan desteği programı henüz başlamadı.';
+  if ($('#tree-live-status')) $('#tree-live-status').textContent = 'Bu animasyon temsili bir büyüme deneyimidir; sipariş veya bağış kaydı oluşturmaz.';
 
   // Cart items
   if ($('#cart-items')) {
@@ -115,7 +104,7 @@ function update() {
 
   const message = 'Merhaba, Story of Nature ürünleri için fiyat teklifi almak istiyorum:\n' +
     products.filter(p => cart[p.id]).map(p => `${cart[p.id]} × ${p.name}`).join('\n') +
-    '\nTahmini ürün toplamı: ' + money(total) + ' (kargo hariç; nihai fiyat teyidi rica ederim).\n🌱 Doğa izi: ' + treesCount + ' fidan.\nGüncel fiyat, üretim uygunluğu, tam içerik, alerjen, ambalaj ve teslimat bilgilerini paylaşabilir misiniz?';
+    '\nTahmini ürün toplamı: ' + money(total) + ' (kargo hariç; nihai fiyat teyidi rica ederim).\nFidan desteği programı henüz başlamadı.\nGüncel fiyat, üretim uygunluğu, tam içerik, alerjen, ambalaj ve teslimat bilgilerini paylaşabilir misiniz?';
 
   if ($('#checkout')) {
     $('#checkout').href = 'https://wa.me/905330849027?text=' + encodeURIComponent(message);
@@ -489,18 +478,7 @@ document.addEventListener('click', e => {
   if (b.classList.contains('tree-step-btn')) {
     setTreeStage(Number(b.dataset.treeStep), true);
   }
-  if (b.id === 'water-tree-btn') {
-    const card = $('#tree-interactive-card');
-    const cur = Number(card?.getAttribute('data-tree-stage') || 4);
-    const next = cur >= 4 ? 1 : cur + 1;
-    setTreeStage(next, true);
-    document.querySelectorAll('.soil-ripple').forEach(r => {
-      r.classList.remove('active');
-      void r.offsetWidth;
-      r.classList.add('active');
-    });
-    spawnSproutParticle(b, '💧 Can Suyu Verildi · Gül ve Fidan Büyüyor! 🌸');
-  }
+  if (b.id === 'water-tree-btn') playTreeStory();
 
   if (b.dataset.close) $('#' + b.dataset.close).close();
   if (b.dataset.change) {
@@ -685,3 +663,9 @@ if ('IntersectionObserver' in window) {
     observer.observe(el);
   });
 }
+
+// A single visible growth sequence; no background animation work.
+let treeTimers=[];
+function stopTreeStory(){treeTimers.forEach(clearTimeout);treeTimers=[];const card=$('#tree-interactive-card');if(card){card.classList.remove('scene-growing');$('#water-tree-btn').disabled=false;}}
+function playTreeStory(){const card=$('#tree-interactive-card');if(!card)return;stopTreeStory();if(matchMedia('(prefers-reduced-motion: reduce)').matches){setTreeStage(4);return;}card.classList.add('scene-growing');$('#water-tree-btn').disabled=true;setTreeStage(1,true);document.querySelectorAll('.soil-ripple').forEach(r=>{r.classList.remove('active');void r.getBoundingClientRect();r.classList.add('active');});[2,3,4].forEach((stage,i)=>treeTimers.push(setTimeout(()=>setTreeStage(stage,true),1400+i*1900)));treeTimers.push(setTimeout(()=>{card.classList.remove('scene-growing');$('#water-tree-btn').disabled=false;$('#water-tree-btn').textContent='Yeniden büyüt ↻';},7000));}
+if($('#tree-interactive-card')){const card=$('#tree-interactive-card');document.querySelectorAll('.tree-step-btn').forEach(b=>b.addEventListener('click',stopTreeStory));if('IntersectionObserver'in window)new IntersectionObserver(entries=>{for(const e of entries){card.classList.toggle('scene-visible',e.isIntersecting);if(!e.isIntersecting)stopTreeStory();}},{threshold:.15}).observe(card);document.addEventListener('visibilitychange',()=>{if(document.hidden){card.classList.remove('scene-visible');stopTreeStory();}});}
