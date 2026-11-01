@@ -1,14 +1,447 @@
-const $=s=>document.querySelector(s);let cart={};try{const saved=JSON.parse(localStorage.getItem('nature-quote-v2')||'{}');for(const p of products)if(Number.isInteger(saved[p.id])&&saved[p.id]>0)cart[p.id]=Math.min(99,saved[p.id]);}catch{}
-let toastTimer;function notify(message){$('#toast').textContent=message;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),2600);}
-function update(){let count=0;for(const p of products)count+=cart[p.id]||0;$('#count').textContent=count;$('#cart-items').innerHTML=count?products.filter(p=>cart[p.id]).map(p=>`<div class="cart-row"><img src="assets/${p.image}" alt="${p.series}, temsili sunum" width="65" height="75"><div><h3>${p.series}</h3><p>${p.variant}</p><div class="quantity"><button data-change="${p.id}" data-delta="-1" aria-label="${p.name} azalt">−</button><span>${cart[p.id]}</span><button data-change="${p.id}" data-delta="1" aria-label="${p.name} artır">+</button></div></div><button class="remove" data-remove="${p.id}" aria-label="${p.name} listeden çıkar">Çıkar</button></div>`).join(''):'<p style="padding:40px 0">Listen henüz boş.<br>Bir ürün ve lezzet seçerek başlayabilirsin.</p>';const message='Merhaba, Story of Nature ürünleri için fiyat teklifi almak istiyorum:\n'+products.filter(p=>cart[p.id]).map(p=>`${cart[p.id]} × ${p.name}`).join('\n')+'\nGüncel fiyat, üretim uygunluğu, tam içerik, alerjen, ambalaj ve teslimat bilgilerini paylaşabilir misiniz?';$('#checkout').href='https://wa.me/905330849027?text='+encodeURIComponent(message);$('#checkout').hidden=!count;$('#checkout').style.display=count?'flex':'none';try{localStorage.setItem('nature-quote-v2',JSON.stringify(cart));}catch{}}
-function add(id,qty=1,silent=false){const p=products.find(p=>p.id===id);if(!p)return;cart[id]=Math.min(99,(cart[id]||0)+qty);update();if(!silent)notify(p.variant+' teklif listene eklendi');}
-function addSet(id){const set=catalog.sets.find(s=>s.id===id);if(!set)return;for(const [item,qty]of set.items)add(item,qty,true);notify(set.name+' teklif listene eklendi');}
-function quick(id){const f=catalog.families.find(f=>f.id===id);if(!f)return;$('#detail-content').innerHTML=`<img src="assets/${f.image}" alt="${f.name}, temsili sunum" width="1448" height="1086"><div><p class="eyebrow">${f.kicker}</p><h2>${f.name}</h2><p>${f.description}</p><label class="quick-label">Lezzet<select id="quick-variant">${f.variants.map(v=>`<option value="${f.id}--${v.id}">${v.name}</option>`).join('')}</select></label><p class="image-disclosure">Görsel temsili sunumdur; içerik ve üretim uygunluğu teklif ile netleşir.</p><a class="text-link" href="${f.slug}.html">Tüm lezzet notlarını incele ↗</a><button class="button" id="quick-add">Seçtiğim çeşidi listeme ekle +</button></div>`;$('#detail').showModal();}
-document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.add)add(b.dataset.add);if(b.dataset.set)addSet(b.dataset.set);if(b.dataset.familyDetail)quick(b.dataset.familyDetail);if(b.id==='quick-add')add($('#quick-variant').value);if(b.dataset.close)$('#'+b.dataset.close).close();if(b.dataset.change){const id=b.dataset.change;cart[id]=Math.min(99,(cart[id]||0)+Number(b.dataset.delta));if(cart[id]<=0)delete cart[id];update();}if(b.dataset.remove){delete cart[b.dataset.remove];update();}if(b.dataset.filter){document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});document.querySelectorAll('[data-family-card]').forEach(x=>{x.hidden=b.dataset.filter!=='all'&&x.dataset.familyCard!==b.dataset.filter;});}});
-$('#cart-open').onclick=()=>$('#cart').showModal();for(const d of document.querySelectorAll('dialog'))d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}});
-async function replaceImage(img,src,alt){const next=new Image();next.src=src;try{await next.decode();img.src=src;img.alt=alt;}catch{notify('Görsel yüklenemedi. Lütfen yeniden dene.');}}
-function texture(warm){$('#cold').classList.toggle('active',!warm);$('#warm').classList.toggle('active',warm);$('#cold').setAttribute('aria-pressed',String(!warm));$('#warm').setAttribute('aria-pressed',String(warm));replaceImage($('#texture-image'),'assets/'+(warm?'hero-real.jpg':'gel-real.jpg'),warm?'Sıcak kemik suyunun normal sıvı akışı, temsili sunum':'Soğuk kemik suyunun yumuşak jel dokusu, temsili sunum');$('#texture-note').textContent=warm?'Isınan jel çözülür; kemik suyu dökülebilir sıvıya dönüşür.':'Soğukta jel oluşumu tarife ve yoğunluğa göre değişir.';}
-if($('#cold')){$('#cold').onclick=()=>texture(false);$('#warm').onclick=()=>texture(true);}$('#year').textContent=new Date().getFullYear();update();document.querySelectorAll('.nav-menu').forEach(m=>{document.addEventListener('click',e=>{if(!m.contains(e.target))m.open=false;});m.addEventListener('keydown',e=>{if(e.key==='Escape')m.open=false;});});
-const page=$('[data-family-page]');if(page){const family=catalog.families.find(f=>f.id===page.dataset.familyPage);function selectVariant(id){const v=family.variants.find(v=>v.id===id)||family.variants[0];const radio=page.querySelector(`input[value="${v.id}"]`);if(radio)radio.checked=true;$('#selected-name').textContent=v.name;$('#selected-note').textContent=v.note;$('#add-selected').dataset.add=family.id+'--'+v.id;replaceImage($('#pdp-image'),'assets/'+(v.image||family.image),family.name+' · '+v.name+', temsili ürün sunumu');}page.addEventListener('change',e=>{if(e.target.name==='lezzet'){selectVariant(e.target.value);history.replaceState(null,'','#'+e.target.value);}});window.addEventListener('hashchange',()=>selectVariant(location.hash.slice(1)));selectVariant(location.hash.slice(1));}
-if($('#set-builder')){const familySelect=$('#builder-family');familySelect.onchange=()=>{const f=catalog.families.find(f=>f.id===familySelect.value);$('#builder-variant').innerHTML=f.variants.map(v=>`<option value="${v.id}">${v.name}</option>`).join('');};$('#set-builder').onsubmit=e=>{e.preventDefault();const qty=Number($('#builder-quantity').value);if(!Number.isInteger(qty)||qty<1||qty>99)return;add(familySelect.value+'--'+$('#builder-variant').value,qty);};$('#builder-review').onclick=()=>$('#cart').showModal();}
-if($('#bulk-form'))$('#bulk-form').onsubmit=e=>{e.preventDefault();const form=e.currentTarget,data=new FormData(form),groups=data.getAll('groups');if(!groups.length){$('#bulk-error').textContent='Lütfen en az bir ürün grubu seç.';return;}$('#bulk-error').textContent='';const msg='Merhaba, Story of Nature için toplu teklif almak istiyorum.\nKullanım alanı: '+data.get('business')+'\nÜrün grupları: '+groups.join(', ')+'\nYaklaşık adet: '+data.get('quantity')+'\nTeslimat şehri: '+data.get('city')+'\nNotlar: '+(data.get('notes')||'—')+'\nGüncel fiyat, tam içerik, üretim uygunluğu ve teslimat seçeneklerini paylaşabilir misiniz?';$('#bulk-summary').textContent=msg;$('#bulk-send').href='https://wa.me/905330849027?text='+encodeURIComponent(msg);$('#bulk-preview').hidden=false;};
+const money = n => n.toLocaleString('tr-TR') + ' TL';
+const $ = s => document.querySelector(s);
+
+let cart = {};
+try {
+  const saved = JSON.parse(localStorage.getItem('nature-quote-v2') || '{}');
+  for (const p of products) {
+    if (Number.isInteger(saved[p.id]) && saved[p.id] > 0) {
+      cart[p.id] = Math.min(99, saved[p.id]);
+    }
+  }
+} catch {}
+
+let toastTimer;
+function notify(message) {
+  const t = $('#toast');
+  if (!t) return;
+  t.textContent = message;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+function pulseButton(btn) {
+  if (!btn) return;
+  btn.classList.add('added-pulse');
+  setTimeout(() => btn.classList.remove('added-pulse'), 450);
+}
+
+function update() {
+  let count = 0;
+  for (const p of products) count += cart[p.id] || 0;
+  if ($('#count')) $('#count').textContent = count;
+
+  const total = products.reduce((sum, p) => sum + (cart[p.id] || 0) * p.estimatedPrice, 0);
+  if ($('#cart-total')) $('#cart-total').textContent = money(total);
+
+  // 500 TL Tree Tracker
+  const treeTarget = 500;
+  const pct = Math.min(100, Math.round((total / treeTarget) * 100));
+  if ($('#tree-tracker-fill')) $('#tree-tracker-fill').style.width = pct + '%';
+  if ($('#tree-tracker-pct')) $('#tree-tracker-pct').textContent = pct + '%';
+  if ($('#tree-tracker-text')) {
+    $('#tree-tracker-text').textContent = total >= treeTarget
+      ? '500 TL hedefi tamamlandı · Planlanan 1 fidan desteği eşiğinde'
+      : `Planlanan fidan desteği hedefine ${money(treeTarget - total)} kaldı`;
+  }
+
+  // Cart items
+  if ($('#cart-items')) {
+    $('#cart-items').innerHTML = count
+      ? products.filter(p => cart[p.id]).map(p => `<div class="cart-row">
+          <img src="assets/${p.image}" alt="${p.series}, temsili sunum" width="65" height="75">
+          <div>
+            <h3>${p.series}</h3>
+            <p>${p.variant}</p>
+            <p class="cart-item-price">${p.priceBasis} · Yaklaşık ${money(p.estimatedPrice)} / adet</p>
+            <div class="quantity">
+              <button type="button" data-change="${p.id}" data-delta="-1" aria-label="${p.name} azalt">−</button>
+              <span>${cart[p.id]}</span>
+              <button type="button" data-change="${p.id}" data-delta="1" aria-label="${p.name} artır">+</button>
+            </div>
+          </div>
+          <button type="button" class="remove" data-remove="${p.id}" aria-label="${p.name} listeden çıkar">Çıkar</button>
+        </div>`).join('')
+      : '<p style="padding:36px 0">Listen henüz boş.<br>Koleksiyondan veya özel kraft kutulardan seçim yaparak başlayabilirsin.</p>';
+  }
+
+  // Complementary Ritual Upsell
+  const upsellBox = $('#cart-upsell');
+  if (upsellBox) {
+    let candidate = null;
+    if (count > 0) {
+      const hasBroth = products.some(p => p.family === 'kemik' && cart[p.id]);
+      const hasTea = products.some(p => p.family === 'cay' && cart[p.id]);
+      const hasGranola = products.some(p => p.family === 'granola' && cart[p.id]);
+      if (hasBroth && !hasTea) candidate = products.find(p => p.id === 'cay--papatya-melisa');
+      else if (!hasGranola) candidate = products.find(p => p.id === 'granola--findik-kakao');
+      else if (!cart['icecek--orman-meyveleri']) candidate = products.find(p => p.id === 'icecek--orman-meyveleri');
+    }
+    if (candidate) {
+      upsellBox.hidden = false;
+      upsellBox.innerHTML = `<p class="cart-upsell-head">SOFRANI TAMAMLA</p>
+        <div class="cart-upsell-row">
+          <div><strong>${candidate.variant}</strong><span>${candidate.series} · Yaklaşık ${money(candidate.estimatedPrice)}</span></div>
+          <button type="button" data-add="${candidate.id}">Listeye ekle +</button>
+        </div>`;
+    } else {
+      upsellBox.hidden = true;
+      upsellBox.innerHTML = '';
+    }
+  }
+
+  const message = 'Merhaba, Story of Nature ürünleri için fiyat teklifi almak istiyorum:\n' +
+    products.filter(p => cart[p.id]).map(p => `${cart[p.id]} × ${p.name}`).join('\n') +
+    '\nTahmini ürün toplamı: ' + money(total) + ' (kargo hariç; nihai fiyat teyidi rica ederim).\nGüncel fiyat, üretim uygunluğu, tam içerik, alerjen, ambalaj ve teslimat bilgilerini paylaşabilir misiniz?';
+
+  if ($('#checkout')) {
+    $('#checkout').href = 'https://wa.me/905330849027?text=' + encodeURIComponent(message);
+    $('#checkout').hidden = !count;
+    $('#checkout').style.display = count ? 'flex' : 'none';
+  }
+  if ($('#cart-clear')) {
+    $('#cart-clear').hidden = !count;
+    $('#cart-clear').style.display = count ? 'block' : 'none';
+  }
+
+  try {
+    localStorage.setItem('nature-quote-v2', JSON.stringify(cart));
+  } catch {}
+}
+
+function add(id, qty = 1, silent = false) {
+  const p = products.find(p => p.id === id);
+  if (!p) return;
+  cart[id] = Math.min(99, (cart[id] || 0) + qty);
+  update();
+  if (!silent) notify(p.variant + ' teklif listene eklendi');
+}
+
+function addSet(id) {
+  const set = catalog.sets.find(s => s.id === id);
+  if (!set) return;
+  for (const [item, qty] of set.items) add(item, qty, true);
+  notify(set.name + ' teklif listene eklendi');
+}
+
+function quick(id, selected) {
+  const f = catalog.families.find(f => f.id === id);
+  if (!f) return;
+  const v = f.variants.find(v => v.id === selected) || f.variants[0];
+  $('#detail-content').innerHTML = `<img id="quick-image" src="assets/${v.image || f.image}" alt="${f.name} · ${v.name}, temsili sunum" width="1448" height="1086">
+    <div>
+      <p class="eyebrow">${f.name}</p>
+      <h2 id="quick-title">${v.name}</h2>
+      <p id="quick-note">${v.note}</p>
+      <p id="quick-aroma" class="quick-aroma">${v.aroma} · ${v.pair}</p>
+      <p id="quick-price" class="quick-price">Yaklaşık <strong>${money(v.estimatedPrice)}</strong> / ${v.priceBasis}</p>
+      <label class="quick-label">Aynı seriden başka bir lezzet
+        <select id="quick-variant">${f.variants.map(x => `<option value="${f.id}--${x.id}" ${x.id === v.id ? 'selected' : ''}>${x.name} (${money(x.estimatedPrice)})</option>`).join('')}</select>
+      </label>
+      <a id="quick-link" class="text-link quick-link" href="${f.slug}.html#${v.id}">İçerik ve lezzet notlarını incele ↗</a>
+      <button type="button" class="button" id="quick-add">Bu çeşidi listeme ekle +</button>
+      <p class="image-disclosure quick-note">Görsel temsili sunumdur. Tam içerik, gramaj ve fiyat teklif sırasında paylaşılır.</p>
+    </div>`;
+
+  $('#quick-variant').onchange = () => {
+    const chosen = f.variants.find(x => f.id + '--' + x.id === $('#quick-variant').value);
+    $('#quick-title').textContent = chosen.name;
+    $('#quick-note').textContent = chosen.note;
+    $('#quick-aroma').textContent = chosen.aroma + ' · ' + chosen.pair;
+    $('#quick-price').innerHTML = 'Yaklaşık <strong>' + money(chosen.estimatedPrice) + '</strong> / ' + chosen.priceBasis;
+    $('#quick-link').href = f.slug + '.html#' + chosen.id;
+    replaceImage($('#quick-image'), 'assets/' + (chosen.image || f.image), f.name + ' · ' + chosen.name + ', temsili sunum');
+  };
+  $('#detail').showModal();
+}
+
+let selectedFilter = 'all';
+const searchTerm = s => s.toLocaleLowerCase('tr').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ı/g, 'i');
+
+function applyFilterDOM() {
+  const container = $('#products');
+  if (!container) return;
+  const term = searchTerm($('#catalog-search')?.value.trim() || '');
+  const sort = $('#catalog-sort')?.value || 'curated';
+  const cards = [...container.querySelectorAll('[data-product-card]')];
+  let total = 0;
+
+  for (const card of cards) {
+    card.hidden = (selectedFilter !== 'all' && card.dataset.productCard !== selectedFilter) || !searchTerm(card.dataset.search).includes(term);
+    if (!card.hidden) total++;
+  }
+
+  cards.sort((a, b) => {
+    if (sort === 'name') return a.dataset.name.localeCompare(b.dataset.name, 'tr');
+    if (sort === 'price-asc') return Number(a.dataset.price) - Number(b.dataset.price);
+    if (sort === 'price-desc') return Number(b.dataset.price) - Number(a.dataset.price);
+    if (sort === 'family') return a.dataset.productCard.localeCompare(b.dataset.productCard, 'tr') || Number(a.dataset.order) - Number(b.dataset.order);
+    return Number(a.dataset.order) - Number(b.dataset.order);
+  }).forEach(card => container.appendChild(card));
+
+  document.querySelectorAll('[data-family-card]').forEach(x => {
+    x.hidden = selectedFilter !== 'all' && x.dataset.familyCard !== selectedFilter;
+  });
+  if ($('#catalog-count')) $('#catalog-count').textContent = total + ' lezzet gösteriliyor';
+  if ($('#catalog-empty')) $('#catalog-empty').hidden = total > 0;
+  if ($('#koleksiyon')) $('#koleksiyon').setAttribute('data-active-theme', selectedFilter);
+}
+
+function filterCatalog(useTransition = false) {
+  if (useTransition && document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.startViewTransition(() => applyFilterDOM());
+  } else {
+    applyFilterDOM();
+  }
+}
+
+function setFilter(value) {
+  selectedFilter = value;
+  document.querySelectorAll('[data-filter]').forEach(x => {
+    const active = x.dataset.filter === value;
+    x.classList.toggle('active', active);
+    x.setAttribute('aria-pressed', String(active));
+  });
+  filterCatalog(true);
+}
+
+if ($('#catalog-search')) $('#catalog-search').addEventListener('input', () => filterCatalog(false));
+if ($('#catalog-sort')) $('#catalog-sort').addEventListener('change', () => filterCatalog(true));
+if ($('#catalog-reset')) {
+  $('#catalog-reset').onclick = () => {
+    $('#catalog-search').value = '';
+    $('#catalog-sort').value = 'curated';
+    setFilter('all');
+  };
+}
+
+// Interactive 4-Step Chronology Tabs
+const chronoSteps = [
+  {
+    badge: 'ADIM 01 / HAMMADDE SEÇİMİ',
+    title: 'Mevsiminde toplanan botanikler, özenle seçilen kemik ve kuruyemişler.',
+    desc: 'Kemik sularında ilikli kemikler ve taze kök sebzeler; çay ve içeceklerde bütün yapraklar ile kurutulmuş meyveler; ezme ve granolalarda ise kavurma profili dengelenmiş kuruyemişler kullanılır.',
+    m1: ['6 Ana Seri', 'Birbirini tamamlayan sofra ailesi'],
+    m2: ['Sade Reçete', 'Sipariş öncesi şeffaf içerik teyidi']
+  },
+  {
+    badge: 'ADIM 02 / AĞIR ATEŞ & HARMAN',
+    title: 'Uzun süreli kaynatma, düşük ısıda fırınlama ve dengeli harmanlama.',
+    desc: 'İlikli kemik suları kısık ateşte uzun süre kaynatılarak aromatik sebze ve baharatlarla buluşturulur. Granolalar kıtır dokusunu koruyacak şekilde fırınlanır; ezmeler taş değirmen/pürüzsüz çekim disipliniyle hazırlanır.',
+    m1: ['Ağır Ateş', 'Geleneksel mutfak temposu'],
+    m2: ['30 Lezzet', 'Her damak tadına uygun çeşitlilik']
+  },
+  {
+    badge: 'ADIM 03 / DOĞAL KIVAM & DOKU',
+    title: 'Soğukta doğal jel, fincanda berrak içim, kaşıkta yoğun kıvam.',
+    desc: 'Ürünlerin dokusu katkı maddeleriyle değil, kullanılan malzemenin kendi doğasıyla şekillenir. Kemik suyu soğukta jelimsi bir yapı alırken, sıcak suda çözünen meyveli içecekler ferah veya ısıtan bir fincana dönüşür.',
+    m1: ['+4°C / +75°C', 'İki farklı doğal kullanım hali'],
+    m2: ['Doğal Doku', 'Temsili değil, malzemenin kendi özü']
+  },
+  {
+    badge: 'ADIM 04 / CAM KAVANOZ & KRAFT KORUMA',
+    title: 'Cam kavanozlarda tazelik, pencereli kraft poşetlerde doğal sunum.',
+    desc: 'Sıvı ve sürülebilir ürünler cam kavanozlarda; bitki çayları, meyveli içecekler ve granolalar ise içeriği gösteren pencereli doğal kraft ambalajlarda ve özel kraft hediye kutularında sofrana ulaşır.',
+    m1: ['Cam & Kraft', 'Ürünün yapısına uygun ambalaj'],
+    m2: ['Özel Kutular', '6 hazır kraft kutu veya kişisel seçki']
+  }
+];
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  if (b.dataset.add) {
+    pulseButton(b);
+    add(b.dataset.add);
+  }
+  if (b.dataset.set) {
+    pulseButton(b);
+    addSet(b.dataset.set);
+  }
+  if (b.dataset.familyDetail) quick(b.dataset.familyDetail);
+  if (b.dataset.productDetail) {
+    const [family, variant] = b.dataset.productDetail.split('--');
+    quick(family, variant);
+  }
+  if (b.id === 'quick-add') {
+    pulseButton(b);
+    add($('#quick-variant').value);
+  }
+  if (b.id === 'cart-clear') {
+    cart = {};
+    update();
+    notify('Teklif listen temizlendi');
+  }
+  if (b.dataset.close) $('#' + b.dataset.close).close();
+  if (b.dataset.change) {
+    const id = b.dataset.change;
+    cart[id] = Math.min(99, (cart[id] || 0) + Number(b.dataset.delta));
+    if (cart[id] <= 0) delete cart[id];
+    update();
+  }
+  if (b.dataset.remove) {
+    delete cart[b.dataset.remove];
+    update();
+  }
+  if (b.dataset.filter) setFilter(b.dataset.filter);
+  if (b.classList.contains('chrono-tab')) {
+    const idx = Number(b.dataset.step);
+    const step = chronoSteps[idx];
+    if (!step) return;
+    document.querySelectorAll('.chrono-tab').forEach(t => {
+      const active = t === b;
+      t.classList.toggle('active', active);
+      t.setAttribute('aria-selected', String(active));
+    });
+    const updateChrono = () => {
+      $('#chrono-badge').textContent = step.badge;
+      $('#chrono-title').textContent = step.title;
+      $('#chrono-desc').textContent = step.desc;
+      $('#chrono-metrics').innerHTML = `<div><strong>${step.m1[0]}</strong><span>${step.m1[1]}</span></div><div><strong>${step.m2[0]}</strong><span>${step.m2[1]}</span></div>`;
+    };
+    if (document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.startViewTransition(updateChrono);
+    } else {
+      updateChrono();
+    }
+  }
+});
+
+if ($('#cart-open')) $('#cart-open').onclick = () => $('#cart').showModal();
+
+for (const d of document.querySelectorAll('dialog')) {
+  d.addEventListener('click', e => {
+    if (e.target === d) {
+      const r = d.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) d.close();
+    }
+  });
+}
+
+const imageRequests = new WeakMap();
+async function replaceImage(img, src, alt) {
+  const request = { src };
+  imageRequests.set(img, request);
+  const next = new Image();
+  next.src = src;
+  try {
+    await next.decode();
+    if (imageRequests.get(img) !== request) return;
+    img.src = src;
+    img.alt = alt;
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      img.animate([{ opacity: 0.35, transform: 'scale(1.015)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 300, easing: 'ease-out' });
+    }
+  } catch {
+    if (imageRequests.get(img) === request) notify('Görsel yüklenemedi. Lütfen yeniden dene.');
+  }
+}
+
+function texture(warm) {
+  $('#cold').classList.toggle('active', !warm);
+  $('#warm').classList.toggle('active', warm);
+  $('#cold').setAttribute('aria-pressed', String(!warm));
+  $('#warm').setAttribute('aria-pressed', String(warm));
+  replaceImage(
+    $('#texture-image'),
+    'assets/' + (warm ? 'hero-real.jpg' : 'gel-real.jpg'),
+    warm ? 'Sıcak kemik suyunun normal sıvı akışı, temsili sunum' : 'Soğuk kemik suyunun yumuşak jel dokusu, temsili sunum'
+  );
+  $('#texture-note').textContent = warm
+    ? '+75°C sıcak sunumda jel çözülür; kemik suyu fincanda veya tariflerde akışkan sıvı haline dönüşür.'
+    : '+4°C buzdolabı sıcaklığında doğal jel kıvamı; yoğunluk tarife ve süzmeye göre değişebilir.';
+}
+
+if ($('#cold')) {
+  $('#cold').onclick = () => texture(false);
+  $('#warm').onclick = () => texture(true);
+}
+
+if ($('#year')) $('#year').textContent = new Date().getFullYear();
+update();
+
+document.querySelectorAll('.nav-menu').forEach(m => {
+  document.addEventListener('click', e => {
+    if (!m.contains(e.target)) m.open = false;
+  });
+  m.addEventListener('keydown', e => {
+    if (e.key === 'Escape') m.open = false;
+  });
+});
+
+const page = $('[data-family-page]');
+if (page) {
+  const family = catalog.families.find(f => f.id === page.dataset.familyPage);
+  function selectVariant(id) {
+    const v = family.variants.find(v => v.id === id) || family.variants[0];
+    const radio = page.querySelector(`input[value="${v.id}"]`);
+    if (radio) radio.checked = true;
+    $('#selected-name').textContent = v.name;
+    $('#selected-note').textContent = v.note;
+    if ($('#selected-price')) $('#selected-price').textContent = money(v.estimatedPrice) + ' / ' + v.priceBasis;
+    $('#add-selected').dataset.add = family.id + '--' + v.id;
+    replaceImage($('#pdp-image'), 'assets/' + (v.image || family.image), family.name + ' · ' + v.name + ', temsili ürün sunumu');
+  }
+  page.addEventListener('change', e => {
+    if (e.target.name === 'lezzet') {
+      selectVariant(e.target.value);
+      history.replaceState(null, '', '#' + e.target.value);
+    }
+  });
+  window.addEventListener('hashchange', () => selectVariant(location.hash.slice(1)));
+  selectVariant(location.hash.slice(1));
+}
+
+if ($('#set-builder')) {
+  const familySelect = $('#builder-family');
+  familySelect.onchange = () => {
+    const f = catalog.families.find(f => f.id === familySelect.value);
+    $('#builder-variant').innerHTML = f.variants.map(v => `<option value="${v.id}">${v.name} (${money(v.estimatedPrice)})</option>`).join('');
+  };
+  $('#set-builder').onsubmit = e => {
+    e.preventDefault();
+    const qty = Number($('#builder-quantity').value);
+    if (!Number.isInteger(qty) || qty < 1 || qty > 99) return;
+    add(familySelect.value + '--' + $('#builder-variant').value, qty);
+  };
+  $('#builder-review').onclick = () => $('#cart').showModal();
+}
+
+if ($('#bulk-form')) {
+  $('#bulk-form').onsubmit = e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const groups = data.getAll('groups');
+    if (!groups.length) {
+      $('#bulk-error').textContent = 'Lütfen en az bir ürün grubu seç.';
+      return;
+    }
+    $('#bulk-error').textContent = '';
+    const msg = 'Merhaba, Story of Nature için toplu teklif almak istiyorum.\nKullanım alanı: ' + data.get('business') +
+      '\nÜrün grupları: ' + groups.join(', ') +
+      '\nYaklaşık adet: ' + data.get('quantity') +
+      '\nTeslimat şehri: ' + data.get('city') +
+      '\nNotlar: ' + (data.get('notes') || '—') +
+      '\nGüncel fiyat, tam içerik, üretim uygunluğu ve teslimat seçeneklerini paylaşabilir misiniz?';
+    $('#bulk-summary').textContent = msg;
+    $('#bulk-send').href = 'https://wa.me/905330849027?text=' + encodeURIComponent(msg);
+    $('#bulk-preview').hidden = false;
+  };
+}
+
+if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    }
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.section-title,.store-card,.moment-card,.selection-copy,.texture>div,.bulk-band>div,.flavor-card,.set-card,.chronology-panel').forEach(el => {
+    el.classList.add('scroll-reveal');
+    observer.observe(el);
+  });
+}
