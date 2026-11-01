@@ -9,7 +9,7 @@
       "kicker": "01 / İLİKLİ KEMİK SUYU",
       "size": "300 ml · cam kavanoz",
       "type": "broth",
-      "description": "Sade tariften kök baharatlara, Akdeniz otlarından limon ve defneye uzanan beş geleneksel seçenek.",
+      "description": "Sade tariften kök baharatlara, Akdeniz otlarından limon ve defneye uzanan altı seçenek. Bebek için sade talebi de aynı serinin içinde, ayrı içerik teyidiyle değerlendirilir.",
       "use": "Fincanda sıcak sunum, çorba, pilav ve tencere yemekleri.",
       "variants": [
         {
@@ -23,6 +23,18 @@
           "estimatedPrice": 249,
           "priceBasis": "300 ml",
           "pageUrl": "urun-kemik-sade.html"
+        },
+        {
+          "id": "bebek-sade",
+          "name": "Bebek İçin Sade Seri",
+          "note": "Bebek kullanımına yönelik sade içerik ve küçük porsiyon talepleri için ayrı seçenek.",
+          "aroma": "Sade tarif talebi",
+          "pair": "Kullanım uygunluğu ve porsiyon sağlık uzmanıyla değerlendirilmelidir",
+          "profile": "Güncel tam içerik, ilave tuz durumu, alerjenler ve saklama koşulları yazılı olarak teyit edilmelidir. Bu ürün adı her bebek için uygunluk garantisi değildir.",
+          "image": "kemik-bebek-sade.jpg",
+          "estimatedPrice": 249,
+          "priceBasis": "300 ml",
+          "pageUrl": "urun-kemik-bebek-sade.html"
         },
         {
           "id": "zerdecal-zencefil",
@@ -76,87 +88,12 @@
       "priceBasis": "300 ml"
     },
     {
-      "id": "bebek",
-      "name": "Bebek & Ek Gıda Serisi",
-      "slug": "bebek-ek-gida",
-      "image": "kemik-bebek-sade.jpg",
-      "accent": "baby",
-      "kicker": "02 / MİNİK GURMELER & EK GIDA",
-      "size": "150–200 ml/g · cam kavanoz & kraft",
-      "type": "baby",
-      "description": "Minik sofralar için ilave tuzsuz sade ve tatlı sebzeli kemik suları, ilave şekersiz meyve püreleri ve ince öğütülmüş yulaflı kaşık karışımları. Her ürünün içeriği sipariş öncesi yazılı teyit edilir.",
-      "use": "Ek gıda çorbalarında, sebze pürelerinde ve sade kâse tariflerinde (uzman görüşüyle).",
-      "variants": [
-        {
-          "id": "sade-kemik",
-          "name": "Bebek İçin Sade Kemik Suyu",
-          "note": "İlave tuz ve baharat içermeyen, yalnızca ilikli kemikle hazırlanan yalın seçenek.",
-          "aroma": "Tuzsuz, sade ve yumuşak",
-          "pair": "Bebek çorbaları ve sebze pürelerine 1–2 kaşık ekleme",
-          "profile": "İlave tuzsuz sade tarif talebi. Güncel tam içerik, alerjenler ve saklama koşulları sipariş öncesinde teyit edilir; kullanım uygunluğu çocuk sağlığı uzmanıyla değerlendirilmelidir.",
-          "image": "kemik-bebek-sade.jpg",
-          "estimatedPrice": 229,
-          "priceBasis": "150–200 ml/g",
-          "pageUrl": "urun-bebek-sade-kemik.html"
-        },
-        {
-          "id": "sebzeli-kemik",
-          "name": "Bebek İçin Tatlı Sebzeli Kemik Suyu",
-          "note": "Havuç ve tatlı patates gibi yumuşak kök sebze notalarıyla hazırlanan ilave tuzsuz seri.",
-          "aroma": "Hafif tatlı sebze notalı, tuzsuz",
-          "pair": "Sebze çorbaları, irmikli ve yulaflı tarifler",
-          "profile": "İlave tuzsuz, tatlı sebze notalı kemik suyu. Kullanılan sebzeler ve alerjen bilgisi sipariş öncesinde paylaşılır; uzman görüşüyle kullanılmalıdır.",
-          "image": "bebek-sebzeli-kemik.jpg",
-          "estimatedPrice": 239,
-          "priceBasis": "150–200 ml/g",
-          "pageUrl": "urun-bebek-sebzeli-kemik.html"
-        },
-        {
-          "id": "elma-armut-pure",
-          "name": "Bebek İçin Elma & Armut Püresi",
-          "note": "Mevsim elması ve armudunun buharda yumuşatılıp ipeksi kıvama getirildiği sade meyve püresi.",
-          "aroma": "Yumuşak, doğal meyve tatlılığında",
-          "pair": "Ara öğün kâsesi veya yoğurt/yulaf eşlikçisi",
-          "profile": "İlave şeker içermeyen elma ve armut püresi yönü. Tam içerik, meyve cinsi ve saklama süresi teklif sırasında paylaşılır.",
-          "image": "bebek-elma-armut-pure.jpg",
-          "estimatedPrice": 179,
-          "priceBasis": "150–200 ml/g",
-          "pageUrl": "urun-bebek-elma-armut-pure.html"
-        },
-        {
-          "id": "kayisi-seftali-pure",
-          "name": "Bebek İçin Kayısı & Şeftali Püresi",
-          "note": "Olgun kayısı ve şeftalinin pürüzsüz dokulu, ilave şekersiz meyve püresi.",
-          "aroma": "Kadifemsi, sarı meyve notalı",
-          "pair": "Kahvaltı kâseleri ve sade yoğurt karışımları",
-          "profile": "İlave şekersiz kayısı ve şeftali püresi yönü. Tam reçete ve uygunluk bilgileri sipariş öncesinde paylaşılır.",
-          "image": "bebek-kayisi-seftali-pure.jpg",
-          "estimatedPrice": 189,
-          "priceBasis": "150–200 ml/g",
-          "pageUrl": "urun-bebek-kayisi-seftali-pure.html"
-        },
-        {
-          "id": "yulaf-elmali-kasik",
-          "name": "Yulaf & Elmalı Kaşık Karışımı",
-          "note": "İnce öğütülmüş yulaf unu ve kurutulmuş tatlı elma tozundan oluşan sade pişirmelik karışım.",
-          "aroma": "Sade tahıl ve hafif elma kokulu",
-          "pair": "Su, anne sütü veya devam sütüyle pişirilerek kâse sunumu",
-          "profile": "Yulaf ve kurutulmuş elma bazlı karışım. Gluten/tahıl alerjen bilgisi ve hazırlama oranı sipariş öncesinde yazılı olarak paylaşılır.",
-          "image": "bebek-yulaf-irmik-kasik.jpg",
-          "estimatedPrice": 199,
-          "priceBasis": "150–200 ml/g",
-          "pageUrl": "urun-bebek-yulaf-elmali-kasik.html"
-        }
-      ],
-      "priceBasis": "150–200 ml/g"
-    },
-    {
       "id": "cay",
       "name": "Bitki Çayları",
       "slug": "botanik-caylar",
       "image": "cay-papatya-melisa.jpg",
       "accent": "sage",
-      "kicker": "03 / BOTANİK HARMAN",
+      "kicker": "02 / BOTANİK HARMAN",
       "size": "50 g · pencereli kraft poşet",
       "type": "tea",
       "description": "Çiçeksi, baharatlı, meyvemsi ve ferah aromalar. Pencereli doğal kraft ambalajda altı botanik harman.",
@@ -243,7 +180,7 @@
       "slug": "tahin-kuruyemis-ezmeleri",
       "image": "ezme-sade-tahin.jpg",
       "accent": "ochre",
-      "kicker": "04 / GELENEKSEL EZME",
+      "kicker": "03 / GELENEKSEL EZME",
       "size": "200 g · cam kavanoz",
       "type": "nut",
       "description": "Sade tahinden pürüzsüz ve parçacıklı fıstık ezmesine uzanan beş lezzet. Meyve seçkilerine ve kahvaltı ritüeline eşlik eder.",
@@ -318,7 +255,7 @@
       "slug": "meyve-ezmeleri",
       "image": "meyve-elma-tarcin.jpg",
       "accent": "berry",
-      "kicker": "05 / SOFRA SEÇKİSİ",
+      "kicker": "04 / SOFRA SEÇKİSİ",
       "size": "200 g · cam kavanoz",
       "type": "fruit",
       "description": "Kahvaltıdan ara öğün sunumlarına uzanan beş meyve lezzeti. Şeker ve ilave içerik bilgileri güncel reçeteye göre paylaşılır.",
@@ -393,7 +330,7 @@
       "slug": "meyveli-icecekler",
       "image": "icecek-orman-meyveleri.jpg",
       "accent": "clay",
-      "kicker": "06 / SICAK & SOĞUK MEYVE HARMANI",
+      "kicker": "05 / SICAK & SOĞUK MEYVE HARMANI",
       "size": "120 g · pencereli kraft poşet",
       "type": "drinkpowder",
       "description": "Kurutulmuş ve öğütülmüş meyve ile botanik notalardan oluşan, hem sıcak suda hem soğuk/buzlu sunumlarda hazırlanabilen dört pratik içecek harmanı.",
@@ -456,7 +393,7 @@
       "slug": "granola-kahvalti",
       "image": "granola-findik-kakao.jpg",
       "accent": "gold",
-      "kicker": "07 / FIRINLANMIŞ KAHVALTI SEÇKİSİ",
+      "kicker": "06 / FIRINLANMIŞ KAHVALTI SEÇKİSİ",
       "size": "300 g · pencereli kraft poşet",
       "type": "granola",
       "description": "Yulaf ezmesi, kavrulmuş kuruyemişler, tohumlar ve meyve dokunuşlarıyla fırınlanan dört kıtır kahvaltı ve ara öğün karışımı.",
@@ -535,6 +472,25 @@
       "ingredients": "İlikli dana kemik suyu temeli. Tam reçete, tuz miktarı ve alerjenler teklif sırasında paylaşılır."
     },
     {
+      "id": "kemik--bebek-sade",
+      "family": "kemik",
+      "name": "İlikli Kemik Suları · Bebek İçin Sade Seri",
+      "variant": "Bebek İçin Sade Seri",
+      "series": "İlikli Kemik Suları",
+      "image": "kemik-bebek-sade.jpg",
+      "slug": "urun-kemik-bebek-sade.html",
+      "pageUrl": "urun-kemik-bebek-sade.html",
+      "familySlug": "ilikli-kemik-sulari.html",
+      "size": "300 ml · cam kavanoz",
+      "type": "broth",
+      "estimatedPrice": 249,
+      "priceBasis": "300 ml",
+      "aroma": "Sade tarif talebi",
+      "pair": "Kullanım uygunluğu ve porsiyon sağlık uzmanıyla değerlendirilmelidir",
+      "description": "Bebek kullanımına yönelik sade içerik ve küçük porsiyon talepleri için ayrı seçenek.",
+      "ingredients": "Güncel tam içerik, ilave tuz durumu, alerjenler ve saklama koşulları yazılı olarak teyit edilmelidir. Bu ürün adı her bebek için uygunluk garantisi değildir."
+    },
+    {
       "id": "kemik--zerdecal-zencefil",
       "family": "kemik",
       "name": "İlikli Kemik Suları · Zerdeçal & Zencefil",
@@ -609,101 +565,6 @@
       "pair": "Fincanda sıcak sunum ve hafif pilav tarifleri",
       "description": "Limonun ferah notası ve defnenin otsu karakteri.",
       "ingredients": "İlikli kemik suyu temelinde limon ve defne lezzet yönü. Tam reçete ve alerjenler sipariş öncesinde paylaşılır."
-    },
-    {
-      "id": "bebek--sade-kemik",
-      "family": "bebek",
-      "name": "Bebek & Ek Gıda Serisi · Bebek İçin Sade Kemik Suyu",
-      "variant": "Bebek İçin Sade Kemik Suyu",
-      "series": "Bebek & Ek Gıda Serisi",
-      "image": "kemik-bebek-sade.jpg",
-      "slug": "urun-bebek-sade-kemik.html",
-      "pageUrl": "urun-bebek-sade-kemik.html",
-      "familySlug": "bebek-ek-gida.html",
-      "size": "150–200 ml/g · cam kavanoz & kraft",
-      "type": "baby",
-      "estimatedPrice": 229,
-      "priceBasis": "150–200 ml/g",
-      "aroma": "Tuzsuz, sade ve yumuşak",
-      "pair": "Bebek çorbaları ve sebze pürelerine 1–2 kaşık ekleme",
-      "description": "İlave tuz ve baharat içermeyen, yalnızca ilikli kemikle hazırlanan yalın seçenek.",
-      "ingredients": "İlave tuzsuz sade tarif talebi. Güncel tam içerik, alerjenler ve saklama koşulları sipariş öncesinde teyit edilir; kullanım uygunluğu çocuk sağlığı uzmanıyla değerlendirilmelidir."
-    },
-    {
-      "id": "bebek--sebzeli-kemik",
-      "family": "bebek",
-      "name": "Bebek & Ek Gıda Serisi · Bebek İçin Tatlı Sebzeli Kemik Suyu",
-      "variant": "Bebek İçin Tatlı Sebzeli Kemik Suyu",
-      "series": "Bebek & Ek Gıda Serisi",
-      "image": "bebek-sebzeli-kemik.jpg",
-      "slug": "urun-bebek-sebzeli-kemik.html",
-      "pageUrl": "urun-bebek-sebzeli-kemik.html",
-      "familySlug": "bebek-ek-gida.html",
-      "size": "150–200 ml/g · cam kavanoz & kraft",
-      "type": "baby",
-      "estimatedPrice": 239,
-      "priceBasis": "150–200 ml/g",
-      "aroma": "Hafif tatlı sebze notalı, tuzsuz",
-      "pair": "Sebze çorbaları, irmikli ve yulaflı tarifler",
-      "description": "Havuç ve tatlı patates gibi yumuşak kök sebze notalarıyla hazırlanan ilave tuzsuz seri.",
-      "ingredients": "İlave tuzsuz, tatlı sebze notalı kemik suyu. Kullanılan sebzeler ve alerjen bilgisi sipariş öncesinde paylaşılır; uzman görüşüyle kullanılmalıdır."
-    },
-    {
-      "id": "bebek--elma-armut-pure",
-      "family": "bebek",
-      "name": "Bebek & Ek Gıda Serisi · Bebek İçin Elma & Armut Püresi",
-      "variant": "Bebek İçin Elma & Armut Püresi",
-      "series": "Bebek & Ek Gıda Serisi",
-      "image": "bebek-elma-armut-pure.jpg",
-      "slug": "urun-bebek-elma-armut-pure.html",
-      "pageUrl": "urun-bebek-elma-armut-pure.html",
-      "familySlug": "bebek-ek-gida.html",
-      "size": "150–200 ml/g · cam kavanoz & kraft",
-      "type": "baby",
-      "estimatedPrice": 179,
-      "priceBasis": "150–200 ml/g",
-      "aroma": "Yumuşak, doğal meyve tatlılığında",
-      "pair": "Ara öğün kâsesi veya yoğurt/yulaf eşlikçisi",
-      "description": "Mevsim elması ve armudunun buharda yumuşatılıp ipeksi kıvama getirildiği sade meyve püresi.",
-      "ingredients": "İlave şeker içermeyen elma ve armut püresi yönü. Tam içerik, meyve cinsi ve saklama süresi teklif sırasında paylaşılır."
-    },
-    {
-      "id": "bebek--kayisi-seftali-pure",
-      "family": "bebek",
-      "name": "Bebek & Ek Gıda Serisi · Bebek İçin Kayısı & Şeftali Püresi",
-      "variant": "Bebek İçin Kayısı & Şeftali Püresi",
-      "series": "Bebek & Ek Gıda Serisi",
-      "image": "bebek-kayisi-seftali-pure.jpg",
-      "slug": "urun-bebek-kayisi-seftali-pure.html",
-      "pageUrl": "urun-bebek-kayisi-seftali-pure.html",
-      "familySlug": "bebek-ek-gida.html",
-      "size": "150–200 ml/g · cam kavanoz & kraft",
-      "type": "baby",
-      "estimatedPrice": 189,
-      "priceBasis": "150–200 ml/g",
-      "aroma": "Kadifemsi, sarı meyve notalı",
-      "pair": "Kahvaltı kâseleri ve sade yoğurt karışımları",
-      "description": "Olgun kayısı ve şeftalinin pürüzsüz dokulu, ilave şekersiz meyve püresi.",
-      "ingredients": "İlave şekersiz kayısı ve şeftali püresi yönü. Tam reçete ve uygunluk bilgileri sipariş öncesinde paylaşılır."
-    },
-    {
-      "id": "bebek--yulaf-elmali-kasik",
-      "family": "bebek",
-      "name": "Bebek & Ek Gıda Serisi · Yulaf & Elmalı Kaşık Karışımı",
-      "variant": "Yulaf & Elmalı Kaşık Karışımı",
-      "series": "Bebek & Ek Gıda Serisi",
-      "image": "bebek-yulaf-irmik-kasik.jpg",
-      "slug": "urun-bebek-yulaf-elmali-kasik.html",
-      "pageUrl": "urun-bebek-yulaf-elmali-kasik.html",
-      "familySlug": "bebek-ek-gida.html",
-      "size": "150–200 ml/g · cam kavanoz & kraft",
-      "type": "baby",
-      "estimatedPrice": 199,
-      "priceBasis": "150–200 ml/g",
-      "aroma": "Sade tahıl ve hafif elma kokulu",
-      "pair": "Su, anne sütü veya devam sütüyle pişirilerek kâse sunumu",
-      "description": "İnce öğütülmüş yulaf unu ve kurutulmuş tatlı elma tozundan oluşan sade pişirmelik karışım.",
-      "ingredients": "Yulaf ve kurutulmuş elma bazlı karışım. Gluten/tahıl alerjen bilgisi ve hazırlama oranı sipariş öncesinde yazılı olarak paylaşılır."
     },
     {
       "id": "cay--papatya-melisa",
@@ -1192,41 +1053,9 @@
       "estimatedPrice": 1195
     },
     {
-      "id": "set-bebek-kutu",
-      "name": "Minik Gurme & Ek Gıda Başlangıç Kutusu",
-      "subtitle": "Bebek & ek gıda serisi · 5 ürün",
-      "boxImage": "kemik-bebek-sade.jpg",
-      "badge": "MİNİK SOFRA KUTUSU",
-      "pageUrl": "kutu-set-sade-sofra.html",
-      "description": "Bebekler için özel hazırlanan 5 çeşit bir arada: Sade Kemik Suyu, Tatlı Sebzeli Kemik Suyu, Elma & Armut Püresi, Kayısı & Şeftali Püresi ve Yulaf & Elmalı Kaşık Karışımı.",
-      "items": [
-        [
-          "bebek--sade-kemik",
-          1
-        ],
-        [
-          "bebek--sebzeli-kemik",
-          1
-        ],
-        [
-          "bebek--elma-armut-pure",
-          1
-        ],
-        [
-          "bebek--kayisi-seftali-pure",
-          1
-        ],
-        [
-          "bebek--yulaf-elmali-kasik",
-          1
-        ]
-      ],
-      "estimatedPrice": 1035
-    },
-    {
       "id": "set-tanisma",
-      "name": "Koleksiyon Tanışma Kutusu",
-      "subtitle": "6 farklı seriden 6 imza lezzet",
+      "name": "6 Seri Tanışma Kutusu",
+      "subtitle": "6 ana gruptan 6 imza lezzet",
       "boxImage": "bundle_14day_box.jpg",
       "badge": "KOLEKSİYON SEÇKİSİ",
       "pageUrl": "kutu-set-tanisma.html",
@@ -1354,6 +1183,30 @@
         ]
       ],
       "estimatedPrice": 1334
+    },
+    {
+      "id": "set-sade-sofra",
+      "name": "Yalın & Sade Sofra Seçkisi",
+      "subtitle": "4 ürünlük sade tarif kutusu",
+      "boxImage": "kemik-bebek-sade.jpg",
+      "badge": "SADE REÇETE",
+      "pageUrl": "kutu-set-sade-sofra.html",
+      "description": "2× Bebek İçin Sade Seri Kemik Suyu, 1× Elma & Tarçın Meyve Ezmesi ve 1× Armut & Vanilya Meyve Ezmesi.",
+      "items": [
+        [
+          "kemik--bebek-sade",
+          2
+        ],
+        [
+          "meyve--elma-tarcin",
+          1
+        ],
+        [
+          "meyve--armut-vanilya",
+          1
+        ]
+      ],
+      "estimatedPrice": 896
     }
   ]
 }
