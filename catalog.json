@@ -1,0 +1,604 @@
+{
+  "families": [
+    {
+      "id": "kemik",
+      "name": "İlikli Kemik Suları",
+      "slug": "ilikli-kemik-sulari",
+      "image": "kemik-sade.jpg",
+      "accent": "forest",
+      "kicker": "01 / İLİKLİ KEMİK SUYU",
+      "size": "Cam kavanoz · boyut teklif ile",
+      "type": "broth",
+      "description": "Sade tariften kök baharatlara ve aromatik otlara uzanan beş seçenek. Bebek için sade talebi de aynı serinin içinde, ayrı içerik teyidiyle değerlendirilir.",
+      "use": "Fincanda sıcak sunum, çorba, pilav ve tencere yemekleri.",
+      "variants": [
+        {
+          "id": "sade",
+          "name": "Sade · Pure Essence",
+          "note": "Kemik suyunun kendi karakterini öne çıkaran yalın lezzet yönü.",
+          "aroma": "Dengeli, et suyu karakterinde",
+          "pair": "Çorba, pilav ve günlük mutfak tarifleri",
+          "profile": "İlikli dana kemik suyu temeli. Tam reçete, tuz miktarı ve alerjenler teklif sırasında paylaşılır.",
+          "image": "kemik-sade.jpg"
+        },
+        {
+          "id": "bebek-sade",
+          "name": "Bebek İçin Sade Seri",
+          "note": "Bebek kullanımına yönelik sade içerik ve küçük porsiyon talepleri için ayrı seçenek.",
+          "aroma": "Sade tarif talebi",
+          "pair": "Kullanım uygunluğu ve porsiyon sağlık uzmanıyla değerlendirilmelidir",
+          "profile": "Güncel tam içerik, ilave tuz durumu, alerjenler ve saklama koşulları yazılı olarak teyit edilmelidir. Bu ürün adı her bebek için uygunluk garantisi değildir.",
+          "image": "kemik-bebek-sade.jpg"
+        },
+        {
+          "id": "zerdecal-zencefil",
+          "name": "Zerdeçal & Zencefil",
+          "note": "Kök baharatların sıcak ve hafif keskin karakteri.",
+          "aroma": "Topraksı, sıcak baharatlı",
+          "pair": "Kök sebze çorbaları ve baharatlı tarifler",
+          "profile": "İlikli kemik suyu temelinde zerdeçal ve zencefil lezzet yönü. Tam reçete ve içerik teklif sırasında netleşir.",
+          "image": "kemik-zerdecal-zencefil.jpg"
+        },
+        {
+          "id": "biberiye-kekik",
+          "name": "Biberiye & Kekik",
+          "note": "Akdeniz otlarının aromatik dokunuşu.",
+          "aroma": "Otsu, aromatik",
+          "pair": "Fırın sebzeler, mantarlı tarifler ve soslar",
+          "profile": "İlikli kemik suyu temelinde biberiye ve kekik lezzet yönü. Tam reçete ve içerik teklif sırasında netleşir.",
+          "image": "kemik-biberiye-kekik.jpg"
+        },
+        {
+          "id": "sebzeli",
+          "name": "Sebzeli Kemik Suyu",
+          "note": "Sebze notalarının eşlik ettiği ilikli kemik suyu seçeneği.",
+          "aroma": "Yuvarlak, sebze notalı",
+          "pair": "Çorba, bulgur pilavı ve güveç",
+          "profile": "Bu seçenek sebze suyu değildir; ilikli kemik suyu temelinde hazırlanması talep edilen sebzeli lezzet profilidir. Sebze listesi ve alerjenler teklif sırasında paylaşılır.",
+          "image": "kemik-sebzeli.jpg"
+        }
+      ]
+    },
+    {
+      "id": "cay",
+      "name": "Bitki Çayları",
+      "slug": "botanik-caylar",
+      "image": "cay-papatya-melisa.jpg",
+      "accent": "sage",
+      "kicker": "02 / BOTANİK HARMAN",
+      "size": "Pencereli kraft poşet · gramaj teklif ile",
+      "type": "tea",
+      "description": "Çiçeksi, baharatlı, meyvemsi ve ferah aromalar. Kavanoz yerine kilitli poşet ambalajda beş botanik lezzet yönü.",
+      "use": "Günün farklı anları için bir fincanlık mola.",
+      "variants": [
+        {
+          "id": "papatya-melisa",
+          "name": "Papatya & Melisa",
+          "note": "Çiçeksi ve hafif otsu bir fincan.",
+          "aroma": "Çiçeksi, yumuşak",
+          "pair": "Günün sonunda sakin bir mola",
+          "profile": "Papatya ve melisa lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır.",
+          "image": "cay-papatya-melisa.jpg"
+        },
+        {
+          "id": "zencefil-limon",
+          "name": "Zencefil & Limon",
+          "note": "Sıcak baharat ve narenciye notalarının birlikteliği.",
+          "aroma": "Baharatlı, narenciye notalı",
+          "pair": "Gün içi sıcak bir fincan",
+          "profile": "Zencefil ve limon lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır.",
+          "image": "cay-zencefil-limon.jpg"
+        },
+        {
+          "id": "hibiskus-elma",
+          "name": "Hibiskus & Elma",
+          "note": "Meyvemsi ve hafif mayhoş bir fincan.",
+          "aroma": "Meyvemsi, mayhoş",
+          "pair": "Tarifine uygun sıcak veya soğuk sunum",
+          "profile": "Hibiskus ve elma lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır.",
+          "image": "cay-hibiskus-elma.jpg"
+        },
+        {
+          "id": "nane-rezene",
+          "name": "Nane & Rezene",
+          "note": "Nanenin ferah aroması ve rezenenin belirgin karakteri.",
+          "aroma": "Ferah, anason notalı",
+          "pair": "Gün içinde aromatik bir mola",
+          "profile": "Nane ve rezene lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır.",
+          "image": "cay-nane-rezene.jpg"
+        },
+        {
+          "id": "adacayi-limon",
+          "name": "Adaçayı & Limon",
+          "note": "Otsu karaktere hafif narenciye dokunuşu.",
+          "aroma": "Otsu, narenciye notalı",
+          "pair": "Demleme talimatına uygun bir fincan",
+          "profile": "Adaçayı ve limon lezzet yönü. Tam içerik, miktar ve kullanım uygunluğu sipariş öncesinde teyit edilir.",
+          "image": "cay-adacayi-limon.jpg"
+        }
+      ]
+    },
+    {
+      "id": "ezme",
+      "name": "Tahin & Kuruyemiş Ezmeleri",
+      "slug": "tahin-kuruyemis-ezmeleri",
+      "image": "ezme-sade-tahin.jpg",
+      "accent": "ochre",
+      "kicker": "03 / GELENEKSEL EZME",
+      "size": "Cam kavanoz · gramaj teklif ile",
+      "type": "nut",
+      "description": "Sade tahinden pürüzsüz ve parçacıklı fıstık ezmesine uzanan beş lezzet. Meyve seçkilerine ve kahvaltı ritüeline eşlik eder.",
+      "use": "Ekmek üstünde, yoğurt ve yulafla veya tariflerin içinde.",
+      "variants": [
+        {
+          "id": "sade-tahin",
+          "name": "Sade Tahin",
+          "note": "Susamın kavruk ve belirgin karakteri.",
+          "aroma": "Kavrulmuş susam, yoğun",
+          "pair": "Ekmek üstü, kahvaltı ve sos tarifleri",
+          "profile": "Susam temelli lezzet yönü. İçerik oranı, kavurma profili, alerjen ve yağ ayrışması bilgisi teklif sırasında paylaşılır.",
+          "image": "ezme-sade-tahin.jpg"
+        },
+        {
+          "id": "puruzsuz-fistik",
+          "name": "Pürüzsüz Yer Fıstığı",
+          "note": "Düzgün sürülebilir doku arayanlar için.",
+          "aroma": "Kavrulmuş yer fıstığı, pürüzsüz",
+          "pair": "Kızarmış ekmek, yulaf ve yoğurt",
+          "profile": "Yer fıstığı temelli lezzet yönü. Fıstık oranı, ilave içerik, alerjen ve kıvam bilgisi teklif sırasında paylaşılır.",
+          "image": "ezme-puruzsuz-fistik.jpg"
+        },
+        {
+          "id": "parcacikli-fistik",
+          "name": "Parçacıklı Yer Fıstığı",
+          "note": "Küçük fıstık parçalarıyla daha belirgin doku.",
+          "aroma": "Kavrulmuş yer fıstığı, parçacıklı",
+          "pair": "Ekmek üstü ve atıştırmalık sunumları",
+          "profile": "Parçacıklı yer fıstığı lezzet yönü. Fıstık oranı, ilave içerik ve alerjen bilgisi teklif sırasında paylaşılır.",
+          "image": "ezme-parcacikli-fistik.jpg"
+        },
+        {
+          "id": "sade-findik",
+          "name": "Sade Fındık",
+          "note": "Fındığın kendi karakterini öne çıkaran sade yön.",
+          "aroma": "Kavrulmuş fındık, yoğun",
+          "pair": "Kahvaltı ve meyve eşlikçisi",
+          "profile": "Fındık temelli lezzet yönü. Fındık oranı, kavurma profili ve tam içerik teklif sırasında paylaşılır.",
+          "image": "ezme-sade-findik.jpg"
+        },
+        {
+          "id": "kakao-hurma-findik",
+          "name": "Kakao & Hurmalı Fındık",
+          "note": "Fındığı kakao ve hurma notalarıyla buluşturan seçenek.",
+          "aroma": "Kakaolu, meyvemsi",
+          "pair": "Ekmek üstü ve tatlı tarifleri",
+          "profile": "Fındık, kakao ve hurma lezzet yönü. Yüzdeler, ilave şeker durumu ve alerjenler teklif sırasında paylaşılır.",
+          "image": "ezme-kakao-hurma-findik.jpg"
+        }
+      ]
+    },
+    {
+      "id": "meyve",
+      "name": "Meyve Ezmeleri",
+      "slug": "meyve-ezmeleri",
+      "image": "meyve-elma-tarcin.jpg",
+      "accent": "berry",
+      "kicker": "04 / SOFRA SEÇKİSİ",
+      "size": "Cam kavanoz · gramaj teklif ile",
+      "type": "fruit",
+      "description": "Kahvaltıdan ara öğün sunumlarına uzanan beş meyve lezzeti. Şeker ve ilave içerik bilgileri güncel reçeteye göre paylaşılır.",
+      "use": "Ekmek üstünde, yoğurtla veya tariflerin içinde.",
+      "variants": [
+        {
+          "id": "elma-tarcin",
+          "name": "Elma & Tarçın",
+          "note": "Elmanın tanıdık lezzetine tarçın dokunuşu.",
+          "aroma": "Sıcak baharatlı, meyvemsi",
+          "pair": "Yoğurt, yulaf ve kızarmış ekmek",
+          "profile": "Elma ve tarçın lezzet yönü. Meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır.",
+          "image": "meyve-elma-tarcin.jpg"
+        },
+        {
+          "id": "kayisi",
+          "name": "Kayısı",
+          "note": "Kayısının belirgin meyve karakteri.",
+          "aroma": "Meyvemsi, hafif mayhoş",
+          "pair": "Kahvaltı ve yoğurt sunumları",
+          "profile": "Kayısı lezzet yönü. Meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır.",
+          "image": "meyve-kayisi.jpg"
+        },
+        {
+          "id": "incir",
+          "name": "İncir",
+          "note": "İncirin yoğun ve taneli karakteri.",
+          "aroma": "Belirgin, meyvemsi",
+          "pair": "Ekmek üstü ve peynir eşlikçisi",
+          "profile": "İncir lezzet yönü. Meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır.",
+          "image": "meyve-incir.jpg"
+        },
+        {
+          "id": "armut-vanilya",
+          "name": "Armut & Vanilya",
+          "note": "Armut lezzetine yumuşak vanilya notası.",
+          "aroma": "Yumuşak, aromatik",
+          "pair": "Yoğurt ve kahvaltı tarifleri",
+          "profile": "Armut ve vanilya lezzet yönü. Vanilya türü, meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır.",
+          "image": "meyve-armut-vanilya.jpg"
+        },
+        {
+          "id": "orman-meyveleri",
+          "name": "Orman Meyveleri",
+          "note": "Mayhoş ve meyvemsi notaları bir araya getiren seçki.",
+          "aroma": "Meyvemsi, mayhoş",
+          "pair": "Yoğurt, yulaf ve ekmek üstü",
+          "profile": "Orman meyveleri lezzet yönü. Kullanılan meyveler, meyve oranı ve ilave şeker bilgisi teklif sırasında paylaşılır.",
+          "image": "meyve-orman-meyveleri.jpg"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "kemik--sade",
+      "family": "kemik",
+      "name": "İlikli Kemik Suları · Sade · Pure Essence",
+      "variant": "Sade · Pure Essence",
+      "series": "İlikli Kemik Suları",
+      "image": "kemik-sade.jpg",
+      "slug": "ilikli-kemik-sulari#sade",
+      "size": "Cam kavanoz · boyut teklif ile",
+      "type": "broth",
+      "description": "Kemik suyunun kendi karakterini öne çıkaran yalın lezzet yönü.",
+      "ingredients": "İlikli dana kemik suyu temeli. Tam reçete, tuz miktarı ve alerjenler teklif sırasında paylaşılır."
+    },
+    {
+      "id": "kemik--bebek-sade",
+      "family": "kemik",
+      "name": "İlikli Kemik Suları · Bebek İçin Sade Seri",
+      "variant": "Bebek İçin Sade Seri",
+      "series": "İlikli Kemik Suları",
+      "image": "kemik-bebek-sade.jpg",
+      "slug": "ilikli-kemik-sulari#bebek-sade",
+      "size": "Cam kavanoz · boyut teklif ile",
+      "type": "broth",
+      "description": "Bebek kullanımına yönelik sade içerik ve küçük porsiyon talepleri için ayrı seçenek.",
+      "ingredients": "Güncel tam içerik, ilave tuz durumu, alerjenler ve saklama koşulları yazılı olarak teyit edilmelidir. Bu ürün adı her bebek için uygunluk garantisi değildir."
+    },
+    {
+      "id": "kemik--zerdecal-zencefil",
+      "family": "kemik",
+      "name": "İlikli Kemik Suları · Zerdeçal & Zencefil",
+      "variant": "Zerdeçal & Zencefil",
+      "series": "İlikli Kemik Suları",
+      "image": "kemik-zerdecal-zencefil.jpg",
+      "slug": "ilikli-kemik-sulari#zerdecal-zencefil",
+      "size": "Cam kavanoz · boyut teklif ile",
+      "type": "broth",
+      "description": "Kök baharatların sıcak ve hafif keskin karakteri.",
+      "ingredients": "İlikli kemik suyu temelinde zerdeçal ve zencefil lezzet yönü. Tam reçete ve içerik teklif sırasında netleşir."
+    },
+    {
+      "id": "kemik--biberiye-kekik",
+      "family": "kemik",
+      "name": "İlikli Kemik Suları · Biberiye & Kekik",
+      "variant": "Biberiye & Kekik",
+      "series": "İlikli Kemik Suları",
+      "image": "kemik-biberiye-kekik.jpg",
+      "slug": "ilikli-kemik-sulari#biberiye-kekik",
+      "size": "Cam kavanoz · boyut teklif ile",
+      "type": "broth",
+      "description": "Akdeniz otlarının aromatik dokunuşu.",
+      "ingredients": "İlikli kemik suyu temelinde biberiye ve kekik lezzet yönü. Tam reçete ve içerik teklif sırasında netleşir."
+    },
+    {
+      "id": "kemik--sebzeli",
+      "family": "kemik",
+      "name": "İlikli Kemik Suları · Sebzeli Kemik Suyu",
+      "variant": "Sebzeli Kemik Suyu",
+      "series": "İlikli Kemik Suları",
+      "image": "kemik-sebzeli.jpg",
+      "slug": "ilikli-kemik-sulari#sebzeli",
+      "size": "Cam kavanoz · boyut teklif ile",
+      "type": "broth",
+      "description": "Sebze notalarının eşlik ettiği ilikli kemik suyu seçeneği.",
+      "ingredients": "Bu seçenek sebze suyu değildir; ilikli kemik suyu temelinde hazırlanması talep edilen sebzeli lezzet profilidir. Sebze listesi ve alerjenler teklif sırasında paylaşılır."
+    },
+    {
+      "id": "cay--papatya-melisa",
+      "family": "cay",
+      "name": "Bitki Çayları · Papatya & Melisa",
+      "variant": "Papatya & Melisa",
+      "series": "Bitki Çayları",
+      "image": "cay-papatya-melisa.jpg",
+      "slug": "botanik-caylar#papatya-melisa",
+      "size": "Pencereli kraft poşet · gramaj teklif ile",
+      "type": "tea",
+      "description": "Çiçeksi ve hafif otsu bir fincan.",
+      "ingredients": "Papatya ve melisa lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır."
+    },
+    {
+      "id": "cay--zencefil-limon",
+      "family": "cay",
+      "name": "Bitki Çayları · Zencefil & Limon",
+      "variant": "Zencefil & Limon",
+      "series": "Bitki Çayları",
+      "image": "cay-zencefil-limon.jpg",
+      "slug": "botanik-caylar#zencefil-limon",
+      "size": "Pencereli kraft poşet · gramaj teklif ile",
+      "type": "tea",
+      "description": "Sıcak baharat ve narenciye notalarının birlikteliği.",
+      "ingredients": "Zencefil ve limon lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır."
+    },
+    {
+      "id": "cay--hibiskus-elma",
+      "family": "cay",
+      "name": "Bitki Çayları · Hibiskus & Elma",
+      "variant": "Hibiskus & Elma",
+      "series": "Bitki Çayları",
+      "image": "cay-hibiskus-elma.jpg",
+      "slug": "botanik-caylar#hibiskus-elma",
+      "size": "Pencereli kraft poşet · gramaj teklif ile",
+      "type": "tea",
+      "description": "Meyvemsi ve hafif mayhoş bir fincan.",
+      "ingredients": "Hibiskus ve elma lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır."
+    },
+    {
+      "id": "cay--nane-rezene",
+      "family": "cay",
+      "name": "Bitki Çayları · Nane & Rezene",
+      "variant": "Nane & Rezene",
+      "series": "Bitki Çayları",
+      "image": "cay-nane-rezene.jpg",
+      "slug": "botanik-caylar#nane-rezene",
+      "size": "Pencereli kraft poşet · gramaj teklif ile",
+      "type": "tea",
+      "description": "Nanenin ferah aroması ve rezenenin belirgin karakteri.",
+      "ingredients": "Nane ve rezene lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır."
+    },
+    {
+      "id": "cay--adacayi-limon",
+      "family": "cay",
+      "name": "Bitki Çayları · Adaçayı & Limon",
+      "variant": "Adaçayı & Limon",
+      "series": "Bitki Çayları",
+      "image": "cay-adacayi-limon.jpg",
+      "slug": "botanik-caylar#adacayi-limon",
+      "size": "Pencereli kraft poşet · gramaj teklif ile",
+      "type": "tea",
+      "description": "Otsu karaktere hafif narenciye dokunuşu.",
+      "ingredients": "Adaçayı ve limon lezzet yönü. Tam içerik, miktar ve kullanım uygunluğu sipariş öncesinde teyit edilir."
+    },
+    {
+      "id": "ezme--sade-tahin",
+      "family": "ezme",
+      "name": "Tahin & Kuruyemiş Ezmeleri · Sade Tahin",
+      "variant": "Sade Tahin",
+      "series": "Tahin & Kuruyemiş Ezmeleri",
+      "image": "ezme-sade-tahin.jpg",
+      "slug": "tahin-kuruyemis-ezmeleri#sade-tahin",
+      "size": "Cam kavanoz · gramaj teklif ile",
+      "type": "nut",
+      "description": "Susamın kavruk ve belirgin karakteri.",
+      "ingredients": "Susam temelli lezzet yönü. İçerik oranı, kavurma profili, alerjen ve yağ ayrışması bilgisi teklif sırasında paylaşılır."
+    },
+    {
+      "id": "ezme--puruzsuz-fistik",
+      "family": "ezme",
+      "name": "Tahin & Kuruyemiş Ezmeleri · Pürüzsüz Yer Fıstığı",
+      "variant": "Pürüzsüz Yer Fıstığı",
+      "series": "Tahin & Kuruyemiş Ezmeleri",
+      "image": "ezme-puruzsuz-fistik.jpg",
+      "slug": "tahin-kuruyemis-ezmeleri#puruzsuz-fistik",
+      "size": "Cam kavanoz · gramaj teklif ile",
+      "type": "nut",
+      "description": "Düzgün sürülebilir doku arayanlar için.",
+      "ingredients": "Yer fıstığı temelli lezzet yönü. Fıstık oranı, ilave içerik, alerjen ve kıvam bilgisi teklif sırasında paylaşılır."
+    },
+    {
+      "id": "ezme--parcacikli-fistik",
+      "family": "ezme",
+      "name": "Tahin & Kuruyemiş Ezmeleri · Parçacıklı Yer Fıstığı",
+      "variant": "Parçacıklı Yer Fıstığı",
+      "series": "Tahin & Kuruyemiş Ezmeleri",
+      "image": "ezme-parcacikli-fistik.jpg",
+      "slug": "tahin-kuruyemis-ezmeleri#parcacikli-fistik",
+      "size": "Cam kavanoz · gramaj teklif ile",
+      "type": "nut",
+      "description": "Küçük fıstık parçalarıyla daha belirgin doku.",
+      "ingredients": "Parçacıklı yer fıstığı lezzet yönü. Fıstık oranı, ilave içerik ve alerjen bilgisi teklif sırasında paylaşılır."
+    },
+    {
+      "id": "ezme--sade-findik",
+      "family": "ezme",
+      "name": "Tahin & Kuruyemiş Ezmeleri · Sade Fındık",
+      "variant": "Sade Fındık",
+      "series": "Tahin & Kuruyemiş Ezmeleri",
+      "image": "ezme-sade-findik.jpg",
+      "slug": "tahin-kuruyemis-ezmeleri#sade-findik",
+      "size": "Cam kavanoz · gramaj teklif ile",
+      "type": "nut",
+      "description": "Fındığın kendi karakterini öne çıkaran sade yön.",
+      "ingredients": "Fındık temelli lezzet yönü. Fındık oranı, kavurma profili ve tam içerik teklif sırasında paylaşılır."
+    },
+    {
+      "id": "ezme--kakao-hurma-findik",
+      "family": "ezme",
+      "name": "Tahin & Kuruyemiş Ezmeleri · Kakao & Hurmalı Fındık",
+      "variant": "Kakao & Hurmalı Fındık",
+      "series": "Tahin & Kuruyemiş Ezmeleri",
+      "image": "ezme-kakao-hurma-findik.jpg",
+      "slug": "tahin-kuruyemis-ezmeleri#kakao-hurma-findik",
+      "size": "Cam kavanoz · gramaj teklif ile",
+      "type": "nut",
+      "description": "Fındığı kakao ve hurma notalarıyla buluşturan seçenek.",
+      "ingredients": "Fındık, kakao ve hurma lezzet yönü. Yüzdeler, ilave şeker durumu ve alerjenler teklif sırasında paylaşılır."
+    },
+    {
+      "id": "meyve--elma-tarcin",
+      "family": "meyve",
+      "name": "Meyve Ezmeleri · Elma & Tarçın",
+      "variant": "Elma & Tarçın",
+      "series": "Meyve Ezmeleri",
+      "image": "meyve-elma-tarcin.jpg",
+      "slug": "meyve-ezmeleri#elma-tarcin",
+      "size": "Cam kavanoz · gramaj teklif ile",
+      "type": "fruit",
+      "description": "Elmanın tanıdık lezzetine tarçın dokunuşu.",
+      "ingredients": "Elma ve tarçın lezzet yönü. Meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır."
+    },
+    {
+      "id": "meyve--kayisi",
+      "family": "meyve",
+      "name": "Meyve Ezmeleri · Kayısı",
+      "variant": "Kayısı",
+      "series": "Meyve Ezmeleri",
+      "image": "meyve-kayisi.jpg",
+      "slug": "meyve-ezmeleri#kayisi",
+      "size": "Cam kavanoz · gramaj teklif ile",
+      "type": "fruit",
+      "description": "Kayısının belirgin meyve karakteri.",
+      "ingredients": "Kayısı lezzet yönü. Meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır."
+    },
+    {
+      "id": "meyve--incir",
+      "family": "meyve",
+      "name": "Meyve Ezmeleri · İncir",
+      "variant": "İncir",
+      "series": "Meyve Ezmeleri",
+      "image": "meyve-incir.jpg",
+      "slug": "meyve-ezmeleri#incir",
+      "size": "Cam kavanoz · gramaj teklif ile",
+      "type": "fruit",
+      "description": "İncirin yoğun ve taneli karakteri.",
+      "ingredients": "İncir lezzet yönü. Meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır."
+    },
+    {
+      "id": "meyve--armut-vanilya",
+      "family": "meyve",
+      "name": "Meyve Ezmeleri · Armut & Vanilya",
+      "variant": "Armut & Vanilya",
+      "series": "Meyve Ezmeleri",
+      "image": "meyve-armut-vanilya.jpg",
+      "slug": "meyve-ezmeleri#armut-vanilya",
+      "size": "Cam kavanoz · gramaj teklif ile",
+      "type": "fruit",
+      "description": "Armut lezzetine yumuşak vanilya notası.",
+      "ingredients": "Armut ve vanilya lezzet yönü. Vanilya türü, meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır."
+    },
+    {
+      "id": "meyve--orman-meyveleri",
+      "family": "meyve",
+      "name": "Meyve Ezmeleri · Orman Meyveleri",
+      "variant": "Orman Meyveleri",
+      "series": "Meyve Ezmeleri",
+      "image": "meyve-orman-meyveleri.jpg",
+      "slug": "meyve-ezmeleri#orman-meyveleri",
+      "size": "Cam kavanoz · gramaj teklif ile",
+      "type": "fruit",
+      "description": "Mayhoş ve meyvemsi notaları bir araya getiren seçki.",
+      "ingredients": "Orman meyveleri lezzet yönü. Kullanılan meyveler, meyve oranı ve ilave şeker bilgisi teklif sırasında paylaşılır."
+    }
+  ],
+  "sets": [
+    {
+      "id": "set-tanisma",
+      "name": "Tanışma Seçkisi",
+      "subtitle": "4 ana gruptan 4 lezzet",
+      "description": "Sade kemik suyu, Papatya & Melisa, Pürüzsüz Yer Fıstığı ve Elma & Tarçın. Koleksiyonu tanımak için.",
+      "items": [
+        [
+          "kemik--sade",
+          1
+        ],
+        [
+          "cay--papatya-melisa",
+          1
+        ],
+        [
+          "ezme--puruzsuz-fistik",
+          1
+        ],
+        [
+          "meyve--elma-tarcin",
+          1
+        ]
+      ]
+    },
+    {
+      "id": "set-kemik",
+      "name": "Kemik Suyu Seçkisi",
+      "subtitle": "4 farklı lezzet",
+      "description": "Sade, Zerdeçal & Zencefil, Biberiye & Kekik ve Sebzeli Kemik Suyu. Tek seriden dört farklı yön.",
+      "items": [
+        [
+          "kemik--sade",
+          1
+        ],
+        [
+          "kemik--zerdecal-zencefil",
+          1
+        ],
+        [
+          "kemik--biberiye-kekik",
+          1
+        ],
+        [
+          "kemik--sebzeli",
+          1
+        ]
+      ]
+    },
+    {
+      "id": "set-kahvalti",
+      "name": "Kahvaltı Seçkisi",
+      "subtitle": "4 kavanozluk sofra seçkisi",
+      "description": "Sade Tahin, Pürüzsüz Yer Fıstığı, Elma & Tarçın ve Kayısı. Farklı lezzetleri kahvaltıda buluştur.",
+      "items": [
+        [
+          "ezme--sade-tahin",
+          1
+        ],
+        [
+          "ezme--puruzsuz-fistik",
+          1
+        ],
+        [
+          "meyve--elma-tarcin",
+          1
+        ],
+        [
+          "meyve--kayisi",
+          1
+        ]
+      ]
+    },
+    {
+      "id": "set-cay",
+      "name": "Botanik Fincan Seçkisi",
+      "subtitle": "5 farklı harman",
+      "description": "Beş botanik çay çeşidinden birer ambalaj. Kendi fincan ritüelini keşfet.",
+      "items": [
+        [
+          "cay--papatya-melisa",
+          1
+        ],
+        [
+          "cay--zencefil-limon",
+          1
+        ],
+        [
+          "cay--hibiskus-elma",
+          1
+        ],
+        [
+          "cay--nane-rezene",
+          1
+        ],
+        [
+          "cay--adacayi-limon",
+          1
+        ]
+      ]
+    }
+  ]
+}

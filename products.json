@@ -1,0 +1,80 @@
+[
+  {
+    "id": "pure",
+    "name": "Pure Essence",
+    "sub": "Artizan İlikli Kemik Suyu Serisi",
+    "type": "broth",
+    "image": "pure-real.jpg",
+    "tag": "KLASİK TARİF",
+    "description": "Geleneksel ilikli kemik suyu seçeneği. Bir fincanlık sıcak sunumdan çorba, pilav ve sebze yemeklerine kadar mutfakta farklı şekillerde kullanılabilir.",
+    "ingredients": "Tarif notlarında ilikli dana kemiği, su, elma sirkesi, havuç, kereviz, soğan, sarımsak ve aromatikler yer alır. Güncel ve tam içerik ile alerjen listesini sipariş öncesi isteyin.",
+    "slug": "pure-essence",
+    "series": "Artizan İlikli Kemik Suyu Serisi",
+    "size": "300 ml cam kavanoz"
+  },
+  {
+    "id": "golden",
+    "name": "Golden Immunity",
+    "sub": "Artizan İlikli Kemik Suyu Serisi",
+    "type": "broth",
+    "image": "golden-real.jpg",
+    "tag": "BAHARATLI BİR DOKUNUŞ",
+    "description": "Zerdeçal ve zencefil dokunuşlarıyla hazırlanan ilikli kemik suyu seçeneği. Baharatlı tarifleri ve aromatik çorbaları sevenler için koleksiyonda yer alır.",
+    "ingredients": "Tarif notlarında ilikli dana kemiği, su, zerdeçal, zencefil, limon ve sebzeler yer alır. Güncel ve tam içerik ile alerjen listesini sipariş öncesi isteyin.",
+    "slug": "golden-immunity",
+    "series": "Artizan İlikli Kemik Suyu Serisi",
+    "size": "300 ml cam kavanoz"
+  },
+  {
+    "id": "night",
+    "name": "Gece Masalı",
+    "sub": "Botanik Harman Serisi",
+    "type": "tea",
+    "image": "night-story-premium.jpg",
+    "tag": "AKŞAM RİTÜELİ",
+    "description": "Papatya, melisa ve lavanta notalarıyla sunulan botanik harman. Günün sonunda bir fincanlık mola için hazırlanabilir. Güncel içerik ve demleme talimatını ambalaj üzerinden teyit edin.",
+    "ingredients": "Tarif notlarında papatya, melisa, lavanta, pasiflora ve kedi otu kökü yer alır. Güncel içerik, miktarlar ve kullanım talimatını etiketten teyit edin.",
+    "slug": "gece-masali",
+    "series": "Botanik Harman Serisi",
+    "size": "Botanik çay harmanı"
+  },
+  {
+    "id": "baby",
+    "name": "Saf Bebek Kolajeni",
+    "sub": "Artizan İlikli Kemik Suyu Serisi",
+    "type": "broth",
+    "image": "baby-real.jpg",
+    "tag": "SADE SERİ",
+    "description": "Koleksiyondaki sade kemik suyu seçeneği. Ürün adı kullanım uygunluğu veya sağlık sonucu garantisi anlamına gelmez. Bebek ve çocuklarda kullanım için güncel içerik, alerjenler ve uygunluk sağlık uzmanıyla değerlendirilmelidir.",
+    "ingredients": "Güncel ve tam içerik, tuz miktarı ve alerjen listesini teklif sırasında isteyin.",
+    "slug": "saf-bebek-kolajeni",
+    "series": "Artizan İlikli Kemik Suyu Serisi",
+    "size": "300 ml cam kavanoz"
+  },
+  {
+    "id": "rosemary",
+    "name": "Rosemary Elixir",
+    "sub": "Artizan İlikli Kemik Suyu Serisi",
+    "type": "broth",
+    "image": "rosemary-real.jpg",
+    "tag": "AROMATİK TARİF",
+    "description": "Biberiye aromasıyla sunulan ilikli kemik suyu seçeneği. Çorba ve sebze yemeklerine aromatik bir katman eklemek için değerlendirilebilir.",
+    "ingredients": "Güncel ve tam içerik, tuz miktarı ve alerjen listesini teklif sırasında isteyin.",
+    "slug": "rosemary-elixir",
+    "series": "Artizan İlikli Kemik Suyu Serisi",
+    "size": "300 ml cam kavanoz"
+  },
+  {
+    "id": "set",
+    "name": "14 Günlük Ritüel",
+    "sub": "Artizan Ritüel Setleri",
+    "type": "set",
+    "image": "bundle-premium.jpg",
+    "tag": "BİRLİKTE DAHA GÜZEL",
+    "description": "Kemik suları, botanik harman ve ahşap kaşığı bir araya getiren koleksiyon seti. Güncel kutu içeriği, ürün adetleri ve paket seçenekleri teklif sırasında paylaşılır. 14 gün adı bir sağlık programı veya sonuç vaadi değildir.",
+    "ingredients": "Set içindeki her ürünün içeriği ve alerjen bilgisi ayrı değerlendirilmelidir.",
+    "slug": "14-gunluk-paket",
+    "series": "Artizan Ritüel Setleri",
+    "size": "Kutu içeriği teklif sırasında netleşir"
+  }
+]
