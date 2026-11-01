@@ -223,65 +223,14 @@ const heroSlides = [
   }
 ];
 
-let currentSlide = 0;
-let slideInterval = null;
-
-function setHeroSlide(idx) {
-  const hero = $('#hero-slider');
-  if (!hero) return;
-  currentSlide = (idx + heroSlides.length) % heroSlides.length;
-  const s = heroSlides[currentSlide];
-
-  hero.classList.add('hero-transitioning');
-  setTimeout(() => {
-    if ($('#hero-eyebrow')) $('#hero-eyebrow').innerHTML = s.eyebrow;
-    if ($('#hero-title')) $('#hero-title').innerHTML = s.title;
-    if ($('#hero-desc')) $('#hero-desc').innerHTML = s.desc;
-    if ($('#hero-primary-btn')) {
-      $('#hero-primary-btn').href = s.link;
-      $('#hero-primary-btn').innerHTML = `${s.btnText} <span>↗</span>`;
-    }
-    if ($('#hero-seal')) $('#hero-seal').innerHTML = s.seal;
-    if ($('#hero-caption')) $('#hero-caption').href = s.link;
-    if ($('#hero-caption-small')) $('#hero-caption-small').textContent = s.captionSmall;
-    if ($('#hero-caption-title')) $('#hero-caption-title').textContent = s.captionTitle;
-    if ($('#hero-img')) {
-      $('#hero-img').src = s.img;
-      $('#hero-img').alt = s.alt;
-    }
-    document.querySelectorAll('.hero-slide-pill').forEach((pill, i) => {
-      const active = i === currentSlide;
-      pill.classList.toggle('active', active);
-      pill.setAttribute('aria-selected', String(active));
-    });
-    hero.classList.remove('hero-transitioning');
-  }, 240);
-}
-
-function startHeroAutoplay() {
-  if (slideInterval) clearInterval(slideInterval);
-  slideInterval = setInterval(() => setHeroSlide(currentSlide + 1), 5500);
-}
-
-if ($('#hero-slider')) {
-  startHeroAutoplay();
-  $('#hero-slider').addEventListener('mouseenter', () => clearInterval(slideInterval));
-  $('#hero-slider').addEventListener('mouseleave', () => startHeroAutoplay());
-  $('#hero-prev-btn')?.addEventListener('click', () => {
-    setHeroSlide(currentSlide - 1);
-    startHeroAutoplay();
-  });
-  $('#hero-next-btn')?.addEventListener('click', () => {
-    setHeroSlide(currentSlide + 1);
-    startHeroAutoplay();
-  });
-  document.querySelectorAll('.hero-slide-pill').forEach(pill => {
-    pill.addEventListener('click', () => {
-      setHeroSlide(Number(pill.dataset.slide));
-      startHeroAutoplay();
-    });
-  });
-}
+let currentSlide=0,slideInterval=null,heroRequest=0,heroInView=true,heroHovered=false,heroFocused=false;
+const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
+async function setHeroSlide(idx){const hero=$('#hero-slider');if(!hero)return;currentSlide=(idx+heroSlides.length)%heroSlides.length;const slide=heroSlides[currentSlide],request=++heroRequest;const image=new Image();image.src=slide.img;try{await image.decode();}catch{return;}if(request!==heroRequest)return;
+const nodes=[$('#hero-img'),$('#hero-copy-box')||hero.querySelector('.hero-copy-box')].filter(Boolean);nodes.forEach(n=>n.getAnimations().forEach(a=>a.cancel()));
+if($('#hero-eyebrow'))$('#hero-eyebrow').innerHTML=slide.eyebrow;if($('#hero-title'))$('#hero-title').innerHTML=slide.title;if($('#hero-desc'))$('#hero-desc').innerHTML=slide.desc;if($('#hero-primary-btn')){$('#hero-primary-btn').href=slide.link;$('#hero-primary-btn').innerHTML=slide.btnText+' <span>↗</span>';}if($('#hero-seal'))$('#hero-seal').innerHTML=slide.seal;if($('#hero-caption'))$('#hero-caption').href=slide.link;if($('#hero-caption-small'))$('#hero-caption-small').textContent=slide.captionSmall;const product=products.find(p=>p.id===slide.id);if($('#hero-caption-title'))$('#hero-caption-title').textContent=product?product.variant+' · '+money(product.estimatedPrice):slide.captionTitle;$('#hero-img').src=slide.img;$('#hero-img').alt=slide.alt;document.querySelectorAll('.hero-slide-pill').forEach((pill,i)=>{pill.classList.toggle('active',i===currentSlide);pill.setAttribute('aria-selected',String(i===currentSlide));});
+if(!motionPreference.matches){$('#hero-img').animate([{opacity:.15,transform:'scale(1.045)'},{opacity:1,transform:'scale(1)'}],{duration:850,easing:'cubic-bezier(.22,.61,.36,1)'});[$('#hero-eyebrow'),$('#hero-title'),$('#hero-desc'),$('#hero-caption')].filter(Boolean).forEach((n,i)=>n.animate([{opacity:0,translate:'0 12px'},{opacity:1,translate:'0 0'}],{duration:550,delay:i*65,fill:'backwards',easing:'cubic-bezier(.22,.61,.36,1)'}));}}
+function startHeroAutoplay(){clearInterval(slideInterval);if(document.hidden||motionPreference.matches||!heroInView||heroHovered||heroFocused)return;slideInterval=setInterval(()=>setHeroSlide(currentSlide+1),6500);}
+if($('#hero-slider')){const hero=$('#hero-slider');hero.addEventListener('mouseenter',()=>{heroHovered=true;startHeroAutoplay();});hero.addEventListener('mouseleave',()=>{heroHovered=false;startHeroAutoplay();});hero.addEventListener('focusin',()=>{heroFocused=true;startHeroAutoplay();});hero.addEventListener('focusout',e=>{if(!hero.contains(e.relatedTarget)){heroFocused=false;startHeroAutoplay();}});$('#hero-prev-btn')?.addEventListener('click',()=>{setHeroSlide(currentSlide-1);startHeroAutoplay();});$('#hero-next-btn')?.addEventListener('click',()=>{setHeroSlide(currentSlide+1);startHeroAutoplay();});document.querySelectorAll('.hero-slide-pill').forEach(p=>p.addEventListener('click',()=>{setHeroSlide(Number(p.dataset.slide));startHeroAutoplay();}));if('IntersectionObserver'in window)new IntersectionObserver(entries=>{heroInView=entries[0].isIntersecting;startHeroAutoplay();},{threshold:.15}).observe(hero);document.addEventListener('visibilitychange',startHeroAutoplay);motionPreference.addEventListener('change',startHeroAutoplay);startHeroAutoplay();}
 
 let selectedFilter = 'bestseller';
 const searchTerm = s => s.toLocaleLowerCase('tr').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ı/g, 'i');
@@ -359,8 +308,9 @@ function setTreeStage(stage, withWater = false) {
   card.setAttribute('data-tree-stage', String(s));
   if ($('#tree-stage-label')) $('#tree-stage-label').textContent = treeStageNames[s];
   document.querySelectorAll('.tree-step-btn').forEach(btn => {
-    btn.classList.toggle('active', Number(btn.dataset.treeStep) === s);
+    btn.classList.toggle('active', Number(btn.dataset.treeStep) === s);btn.setAttribute('aria-pressed',String(Number(btn.dataset.treeStep)===s));
   });
+  animateTreeStage(s);
   if (withWater && $('#water-drops')) {
     const drops = $('#water-drops');
     drops.classList.remove('watering');
@@ -531,7 +481,7 @@ async function replaceImage(img, src, alt) {
     if (imageRequests.get(img)!== request) return;
     img.src = src;
     img.alt = alt;
-    img.animate([{ opacity: 0.35, transform: 'scale(1.015)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 300, easing: 'ease-out' });
+    if(!motionPreference.matches)img.animate([{ opacity: 0.35, transform: 'scale(1.015)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 300, easing: 'ease-out' });
   } catch {
     if (imageRequests.get(img) === request) notify('Görsel yüklenemedi. Lütfen yeniden dene.');
   }
@@ -666,6 +616,10 @@ if ('IntersectionObserver' in window) {
 
 // A single visible growth sequence; no background animation work.
 let treeTimers=[];
-function stopTreeStory(){treeTimers.forEach(clearTimeout);treeTimers=[];const card=$('#tree-interactive-card');if(card){card.classList.remove('scene-growing');$('#water-tree-btn').disabled=false;}}
-function playTreeStory(){const card=$('#tree-interactive-card');if(!card)return;stopTreeStory();if(matchMedia('(prefers-reduced-motion: reduce)').matches){setTreeStage(4);return;}card.classList.add('scene-growing');$('#water-tree-btn').disabled=true;setTreeStage(1,true);document.querySelectorAll('.soil-ripple').forEach(r=>{r.classList.remove('active');void r.getBoundingClientRect();r.classList.add('active');});[2,3,4].forEach((stage,i)=>treeTimers.push(setTimeout(()=>setTreeStage(stage,true),1400+i*1900)));treeTimers.push(setTimeout(()=>{card.classList.remove('scene-growing');$('#water-tree-btn').disabled=false;$('#water-tree-btn').textContent='Yeniden büyüt ↻';},7000));}
+function stopTreeStory(){treeTimers.forEach(clearTimeout);treeTimers=[];const card=$('#tree-interactive-card');if(card){card.classList.remove('scene-growing');card.querySelectorAll('svg,.growth-progress-fill').forEach(el=>el.getAnimations({subtree:true}).forEach(a=>a.cancel()));$('#water-tree-btn').disabled=false;}}
+function playTreeStory(){const card=$('#tree-interactive-card');if(!card)return;stopTreeStory();if(matchMedia('(prefers-reduced-motion: reduce)').matches){setTreeStage(4);return;}card.classList.add('scene-growing');const progress=card.querySelector('.growth-progress-fill');if(progress){progress.getAnimations().forEach(a=>a.cancel());progress.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:9000,fill:'forwards',easing:'linear'});}$('#water-tree-btn').disabled=true;setTreeStage(1,true);document.querySelectorAll('.soil-ripple').forEach(r=>{r.classList.remove('active');void r.getBoundingClientRect();r.classList.add('active');});[2,3,4].forEach((stage,i)=>treeTimers.push(setTimeout(()=>setTreeStage(stage,true),1700+i*2300)));treeTimers.push(setTimeout(()=>{card.classList.remove('scene-growing');$('#water-tree-btn').disabled=false;$('#water-tree-btn').textContent='Yeniden büyüt ↻';},9000));}
 if($('#tree-interactive-card')){const card=$('#tree-interactive-card');document.querySelectorAll('.tree-step-btn').forEach(b=>b.addEventListener('click',stopTreeStory));if('IntersectionObserver'in window)new IntersectionObserver(entries=>{for(const e of entries){card.classList.toggle('scene-visible',e.isIntersecting);if(!e.isIntersecting)stopTreeStory();}},{threshold:.15}).observe(card);document.addEventListener('visibilitychange',()=>{if(document.hidden){card.classList.remove('scene-visible');stopTreeStory();}});}
+
+function animateTreeStage(stage){const card=$('#tree-interactive-card');if(!card||motionPreference.matches)return;const svg=$('#animated-tree-svg');if(stage===1){svg.querySelectorAll('.tree-part-trunk path,.botanical-leaf path,.tree-part-blossoms circle').forEach(n=>n.getAnimations().forEach(a=>a.cancel()));}if(stage===2){svg.querySelectorAll('.tree-part-trunk path').forEach((path,i)=>{const length=path.getTotalLength();path.animate([{strokeDasharray:length,strokeDashoffset:length},{strokeDasharray:length,strokeDashoffset:0}],{duration:1700,delay:i*100,easing:'ease-out'});});}if(stage===3){svg.querySelectorAll('.botanical-leaf').forEach((leaf,i)=>{leaf.animate([{opacity:0,scale:'.08'},{opacity:1,scale:'1'}],{duration:1100,delay:i*28,fill:'backwards',easing:'cubic-bezier(.2,.8,.3,1)'});});}if(stage===4){svg.querySelectorAll('.tree-part-blossoms circle').forEach((flower,i)=>{flower.style.transformBox='fill-box';flower.style.transformOrigin='center';flower.animate([{opacity:0,scale:'.1'},{opacity:1,scale:'1.3',offset:.7},{opacity:1,scale:'1'}],{duration:1200,delay:i*110,fill:'backwards',easing:'ease-out'});});}}
+
+motionPreference.addEventListener('change',()=>{stopTreeStory();if(motionPreference.matches)setTreeStage(4);});
