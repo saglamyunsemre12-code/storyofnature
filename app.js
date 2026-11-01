@@ -178,7 +178,123 @@ function quick(id, selected) {
   $('#detail').showModal();
 }
 
-let selectedFilter = 'all';
+// Hero Showcase Synchronized Rotator
+const heroSlides = [
+  {
+    id: 'kemik--sade',
+    eyebrow: '<span class="tiny-leaf">❧</span> DOĞADAN İLHAMLA · 28 SAAT AĞIR ATEŞ GELENEĞİ',
+    title: 'Doğadan gelen,<br><em>sofranda çiçek açan.</em>',
+    desc: 'İlikli kemik suyundan bebek & ek gıda serisine, botanik bitki çaylarından meyveli sıcak-soğuk içeceklere, fırınlanmış granoladan tahin ve meyve ezmelerine uzanan 7 özenli seri ve 34 lezzet.',
+    img: 'assets/kemik-sade.jpg',
+    alt: 'Story of Nature ilikli kemik suyu; keten ve doğal malzemelerle temsili sofra sunumu',
+    seal: 'STORY OF NATURE<span>sofraya<br><em>dönüş</em></span>28 SAAT KAYNATMA',
+    link: 'urun-kemik-sade.html',
+    captionSmall: 'İMZA ÜRÜNÜMÜZ · ÖZEL ÜRÜN SAYFASI',
+    captionTitle: 'Sade · Pure Essence (249 TL)',
+    btnText: 'İmza Ürünü İncele'
+  },
+  {
+    id: 'bebek--sade-kemik',
+    eyebrow: '👶 MİNİK GURMELER · İLAVE TUZSUZ & KORUYUCUSUZ',
+    title: 'Minik kaşıklara,<br><em>en saf başlangıç.</em>',
+    desc: 'Bebeklerin hassas damakları için ilave tuzsuz ilikli kemik suları, mevsim meyveli ipeksi püreler ve ince öğütülmüş besleyici yulaflı kaşık karışımları.',
+    img: 'assets/kemik-bebek-sade.jpg',
+    alt: 'Bebek İçin Sade Kemik Suyu cam kavanoz sunumu',
+    seal: 'BEBEK & EK GİDA<span>saf ve<br><em>yalın</em></span>SIFIR İLAVE TUZ',
+    link: 'urun-bebek-sade-kemik.html',
+    captionSmall: 'BEBEK SERİSİ · ŞEFFAF VE GÜVENLİ İÇERİK',
+    captionTitle: 'Bebek İçin Sade Seri (229 TL)',
+    btnText: 'Bebek Serisini Keşfet'
+  },
+  {
+    id: 'granola--findik-kakao',
+    eyebrow: '🥣 FIRINLANMIŞ KAHVALTI · DOĞAL KITIRLIK',
+    title: 'Sabah kâsende,<br><em>kıtır bir ritüel.</em>',
+    desc: 'Düşük ısıda yavaşça fırınlanmış tam tahıllar, kavrulmuş Karadeniz fındıkları ve gerçek ham kakao taneleriyle güne enerjik ve hafif bir başlangıç.',
+    img: 'assets/granola-findik-kakao.jpg',
+    alt: 'Fındık ve Ham Kakaolu Fırınlanmış Granola kraft ambalaj sunumu',
+    seal: 'KAHVALTI SERİSİ<span>fırından<br><em>sofraya</em></span>HAM KAKAO & FINDIK',
+    link: 'urun-granola-findik-kakao.html',
+    captionSmall: 'GRANOLA SEÇKİSİ · PENCERELİ KRAFT AMBALAJ',
+    captionTitle: 'Fındık & Ham Kakao (219 TL)',
+    btnText: 'Granola Serisini Gör'
+  },
+  {
+    id: 'cay--papatya-melisa',
+    eyebrow: '🌿 BOTANİK HARMAN · DİNGİN BİR FİNCAN',
+    title: 'Günün sonunda,<br><em>huzurlu bir mola.</em>',
+    desc: 'Bütün papatya çiçekleri, aromatik melisa yaprakları ve Fransız lavantasıyla harmanlanmış; kokusuyla sakinleştiren pencereli kraft çay seçkisi.',
+    img: 'assets/cay-papatya-melisa.jpg',
+    alt: 'Papatya ve Melisalı Botanik Çay sunumu',
+    seal: 'BOTANİK ÇAY<span>dingin<br><em>akşamlar</em></span>BÜTÜN ÇİÇEKLER',
+    link: 'urun-cay-papatya-melisa.html',
+    captionSmall: 'DİNLENDİRİCİ HARMAN · DOĞAL BİTKİ ÇAYI',
+    captionTitle: 'Papatya & Melisa (189 TL)',
+    btnText: 'Bitki Çaylarını Keşfet'
+  }
+];
+
+let currentSlide = 0;
+let slideInterval = null;
+
+function setHeroSlide(idx) {
+  const hero = $('#hero-slider');
+  if (!hero) return;
+  currentSlide = (idx + heroSlides.length) % heroSlides.length;
+  const s = heroSlides[currentSlide];
+
+  hero.classList.add('hero-transitioning');
+  setTimeout(() => {
+    if ($('#hero-eyebrow')) $('#hero-eyebrow').innerHTML = s.eyebrow;
+    if ($('#hero-title')) $('#hero-title').innerHTML = s.title;
+    if ($('#hero-desc')) $('#hero-desc').innerHTML = s.desc;
+    if ($('#hero-primary-btn')) {
+      $('#hero-primary-btn').href = s.link;
+      $('#hero-primary-btn').innerHTML = `${s.btnText} <span>↗</span>`;
+    }
+    if ($('#hero-seal')) $('#hero-seal').innerHTML = s.seal;
+    if ($('#hero-caption')) $('#hero-caption').href = s.link;
+    if ($('#hero-caption-small')) $('#hero-caption-small').textContent = s.captionSmall;
+    if ($('#hero-caption-title')) $('#hero-caption-title').textContent = s.captionTitle;
+    if ($('#hero-img')) {
+      $('#hero-img').src = s.img;
+      $('#hero-img').alt = s.alt;
+    }
+    document.querySelectorAll('.hero-slide-pill').forEach((pill, i) => {
+      const active = i === currentSlide;
+      pill.classList.toggle('active', active);
+      pill.setAttribute('aria-selected', String(active));
+    });
+    hero.classList.remove('hero-transitioning');
+  }, 240);
+}
+
+function startHeroAutoplay() {
+  if (slideInterval) clearInterval(slideInterval);
+  slideInterval = setInterval(() => setHeroSlide(currentSlide + 1), 5500);
+}
+
+if ($('#hero-slider')) {
+  startHeroAutoplay();
+  $('#hero-slider').addEventListener('mouseenter', () => clearInterval(slideInterval));
+  $('#hero-slider').addEventListener('mouseleave', () => startHeroAutoplay());
+  $('#hero-prev-btn')?.addEventListener('click', () => {
+    setHeroSlide(currentSlide - 1);
+    startHeroAutoplay();
+  });
+  $('#hero-next-btn')?.addEventListener('click', () => {
+    setHeroSlide(currentSlide + 1);
+    startHeroAutoplay();
+  });
+  document.querySelectorAll('.hero-slide-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      setHeroSlide(Number(pill.dataset.slide));
+      startHeroAutoplay();
+    });
+  });
+}
+
+let selectedFilter = 'bestseller';
 const searchTerm = s => s.toLocaleLowerCase('tr').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ı/g, 'i');
 
 function filterCatalog() {
@@ -190,7 +306,15 @@ function filterCatalog() {
   let total = 0;
 
   for (const card of cards) {
-    card.hidden = (selectedFilter !== 'all' && card.dataset.productCard !== selectedFilter) || !searchTerm(card.dataset.search).includes(term);
+    let match = false;
+    if (selectedFilter === 'bestseller') {
+      match = card.dataset.bestseller === 'true';
+    } else if (selectedFilter === 'all') {
+      match = true;
+    } else {
+      match = card.dataset.productCard === selectedFilter;
+    }
+    card.hidden = !match || !searchTerm(card.dataset.search).includes(term);
     if (!card.hidden) total++;
   }
 
@@ -202,10 +326,11 @@ function filterCatalog() {
     return Number(a.dataset.order) - Number(b.dataset.order);
   }).forEach(card => container.appendChild(card));
 
-  document.querySelectorAll('[data-family-card]').forEach(x => {
-    x.hidden = selectedFilter !== 'all' && x.dataset.familyCard !== selectedFilter;
-  });
-  if ($('#catalog-count')) $('#catalog-count').textContent = total + ' lezzet gösteriliyor';
+  if ($('#catalog-count')) {
+    $('#catalog-count').textContent = selectedFilter === 'bestseller'
+      ? `${total} en çok satan lezzet gösteriliyor`
+      : `${total} lezzet gösteriliyor`;
+  }
   if ($('#catalog-empty')) $('#catalog-empty').hidden = total > 0;
   if ($('#koleksiyon')) $('#koleksiyon').setAttribute('data-active-theme', selectedFilter);
 }
@@ -226,7 +351,7 @@ if ($('#catalog-reset')) {
   $('#catalog-reset').onclick = () => {
     $('#catalog-search').value = '';
     $('#catalog-sort').value = 'curated';
-    setFilter('all');
+    setFilter('bestseller');
   };
 }
 
@@ -366,10 +491,15 @@ document.addEventListener('click', e => {
   }
   if (b.id === 'water-tree-btn') {
     const card = $('#tree-interactive-card');
-    const cur = Number(card?.getAttribute('data-tree-stage') || 3);
+    const cur = Number(card?.getAttribute('data-tree-stage') || 4);
     const next = cur >= 4 ? 1 : cur + 1;
-    setTreeStage(next === 1 ? 2 : next, true);
-    spawnSproutParticle(b, '💧 Can Suyu Verildi · Fidan Büyüyor! 🌱');
+    setTreeStage(next, true);
+    document.querySelectorAll('.soil-ripple').forEach(r => {
+      r.classList.remove('active');
+      void r.offsetWidth;
+      r.classList.add('active');
+    });
+    spawnSproutParticle(b, '💧 Can Suyu Verildi · Gül ve Fidan Büyüyor! 🌸');
   }
 
   if (b.dataset.close) $('#' + b.dataset.close).close();
@@ -451,6 +581,7 @@ if ($('#cold')) {
 
 if ($('#year')) $('#year').textContent = new Date().getFullYear();
 update();
+filterCatalog();
 
 document.querySelectorAll('.nav-menu').forEach(m => {
   document.addEventListener('click', e => {

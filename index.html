@@ -5,13 +5,13 @@
     <span class="orb orb-lavender"></span>
   </div>
 
-  <section class="store-hero">
-    <div class="store-hero-copy">
-      <p class="eyebrow"><span class="tiny-leaf">❧</span> DOĞADAN İLHAMLA · HER SİPARİŞ DOĞAYA 1 FİDAN 🌱</p>
-      <h1>Doğadan gelen,<br><em>sofranda çiçek açan.</em></h1>
-      <p>İlikli kemik suyundan bebek & ek gıda serisine, botanik bitki çaylarından meyveli sıcak-soğuk içeceklere, fırınlanmış granoladan tahin ve meyve ezmelerine uzanan 7 özenli seri ve her biri kendi özel sayfasına sahip 34 lezzet.</p>
+  <section class="store-hero" id="hero-slider" aria-roledescription="carousel" aria-label="Öne çıkan geleneksel lezzetler">
+    <div class="store-hero-copy" id="hero-copy-box">
+      <p class="eyebrow" id="hero-eyebrow"><span class="tiny-leaf">❧</span> DOĞADAN İLHAMLA · 28 SAAT AĞIR ATEŞ GELENEĞİ</p>
+      <h1 id="hero-title">Doğadan gelen,<br><em>sofranda çiçek açan.</em></h1>
+      <p id="hero-desc">İlikli kemik suyundan bebek & ek gıda serisine, botanik bitki çaylarından meyveli sıcak-soğuk içeceklere, fırınlanmış granoladan tahin ve meyve ezmelerine uzanan 7 özenli seri ve 34 lezzet.</p>
       <div class="hero-buttons">
-        <a class="button" href="#koleksiyon">34 Ürünü Keşfet <span>↗</span></a>
+        <a class="button" id="hero-primary-btn" href="urun-kemik-sade.html">İmza Ürünü İncele <span>↗</span></a>
         <a class="hero-secondary" href="#bir-alisveris-bir-agac">🌱 1 Alışveriş = 1 Fidan ↗</a>
       </div>
       <div class="hero-checks">
@@ -19,19 +19,31 @@
         <span>👶 Bebek & ek gıda uyumlu saf lezzetler</span>
         <span>🌱 Her siparişte 1 fidan izi</span>
       </div>
+      <div class="hero-slider-nav" role="tablist" aria-label="Öne çıkan lezzet slaytları">
+        <button type="button" class="hero-slide-pill active" data-slide="0" role="tab" aria-selected="true"><span>01</span> Kemik Suyu</button>
+        <button type="button" class="hero-slide-pill" data-slide="1" role="tab" aria-selected="false"><span>02</span> Bebek Serisi</button>
+        <button type="button" class="hero-slide-pill" data-slide="2" role="tab" aria-selected="false"><span>03</span> Granola</button>
+        <button type="button" class="hero-slide-pill" data-slide="3" role="tab" aria-selected="false"><span>04</span> Botanik Çay</button>
+        <div class="hero-slider-arrows">
+          <button type="button" id="hero-prev-btn" class="hero-nav-arrow" aria-label="Önceki lezzet">‹</button>
+          <button type="button" id="hero-next-btn" class="hero-nav-arrow" aria-label="Sonraki lezzet">›</button>
+        </div>
+      </div>
     </div>
-    <div class="store-stage">
-      <img class="stage-main" src="assets/kemik-sade.jpg" alt="Story of Nature ilikli kemik suyu; keten ve doğal malzemelerle temsili sofra sunumu" width="1448" height="1086" fetchpriority="high">
-      <span class="stage-seal">STORY OF NATURE<span>sofraya<br><em>dönüş</em></span>HER SİPARİŞ 1 FİDAN</span>
-      <a class="stage-caption" href="urun-kemik-sade.html">
-        <span><small>İMZA ÜRÜNÜMÜZ · ÖZEL ÜRÜN SAYFASI</small><strong>Sade · Pure Essence (249 TL)</strong></span>
+    <div class="store-stage" id="hero-stage">
+      <div class="stage-photo-wrap">
+        <img class="stage-main" id="hero-img" src="assets/kemik-sade.jpg" alt="Story of Nature ilikli kemik suyu; keten ve doğal malzemelerle temsili sofra sunumu" width="1448" height="1086" fetchpriority="high">
+      </div>
+      <span class="stage-seal" id="hero-seal">STORY OF NATURE<span>sofraya<br><em>dönüş</em></span>28 SAAT KAYNATMA</span>
+      <a class="stage-caption" id="hero-caption" href="urun-kemik-sade.html">
+        <span><small id="hero-caption-small">İMZA ÜRÜNÜMÜZ · ÖZEL ÜRÜN SAYFASI</small><strong id="hero-caption-title">Sade · Pure Essence (249 TL)</strong></span>
         <span class="round-arrow">↗</span>
       </a>
     </div>
   </section>
 
   <div class="store-promise">
-    <span>🌱 Her siparişin doğada özenle korunan yeni bir fidana dönüşsün.</span>
+    <span>🌱 Her siparişin doğada özenle korunan yeni bir fidana ve güle dönüşsün.</span>
     <div class="promise-links">
       <a href="#bir-alisveris-bir-agac">Fidanını Büyüt 🌱</a>
       <a href="bebek-ek-gida.html">👶 Bebek & Ek Gıda <span>↗</span></a>
@@ -93,23 +105,23 @@
     </a>
   </section>
 
-  <section class="section storefront" id="koleksiyon" data-active-theme="all">
+  <section class="section storefront" id="koleksiyon" data-active-theme="bestseller">
     <div class="section-title">
       <div>
-        <p class="eyebrow">34 AYRI ÜRÜN · HER BİRİNİN KENDİ ÖZEL SAYFASI VAR</p>
+        <p class="eyebrow">ÖZEL SEÇKİLER · HER BİRİNİN KENDİ ÖZEL SAYFASI VAR</p>
         <h2>Senin sofran. <em>Senin seçimin.</em></h2>
       </div>
-      <p>7 seri, 34 ayrı lezzet.<br>Her ürüne tıklayarak kendi müstakil sayfasına gidebilir veya doğrudan listene ekleyebilirsin.</p>
+      <p>Özenle hazırlanan 7 seri, 34 ayrı lezzet.<br>Aşağıdaki kategorilerden dilediğin seriyi seçebilir veya doğrudan lezzet arayabilirsin.</p>
     </div>
     <div class="catalog-controls">
       <div class="filters" role="group" aria-label="Ürün grubu filtresi">
-        <button type="button" data-filter="all" class="active" aria-pressed="true">Tümü <span>34</span></button>
+        <button type="button" data-filter="bestseller" class="active filter-bestseller-btn" aria-pressed="true">En Çok Satanlar ⭐ <span>3</span></button>
         <button type="button" data-filter="kemik" aria-pressed="false">İlikli kemik suları <span>5</span></button><button type="button" data-filter="bebek" aria-pressed="false">Bebek & ek gıda <span>5</span></button><button type="button" data-filter="cay" aria-pressed="false">Bitki çayları <span>6</span></button><button type="button" data-filter="ezme" aria-pressed="false">Tahin & kuruyemiş <span>5</span></button><button type="button" data-filter="meyve" aria-pressed="false">Meyve ezmeleri <span>5</span></button><button type="button" data-filter="icecek" aria-pressed="false">Meyveli içecekler <span>4</span></button><button type="button" data-filter="granola" aria-pressed="false">Granola & kahvaltı <span>4</span></button>
       </div>
       <div class="catalog-tools">
         <label class="catalog-search">
           <span>Lezzet ara</span>
-          <input id="catalog-search" type="search" placeholder="Örn. zencefil, bebek püresi, granola, nar…" autocomplete="off" aria-label="Koleksiyonda lezzet ara">
+          <input id="catalog-search" type="search" placeholder="Örn. kemik suyu, bebek püresi, granola, nar…" autocomplete="off" aria-label="Koleksiyonda lezzet ara">
         </label>
         <label class="catalog-sort">
           <span>Sıralama</span>
@@ -121,14 +133,14 @@
             <option value="family">Ürün grubuna göre</option>
           </select>
         </label>
-        <p id="catalog-count" aria-live="polite">34 lezzet gösteriliyor</p>
+        <p id="catalog-count" aria-live="polite">3 en çok satan lezzet gösteriliyor</p>
       </div>
     </div>
-    <div class="store-grid" id="products"><article class="store-card card-aura-kemik" data-product-card="kemik" data-product-id="kemik--sade" data-name="Sade" data-price="249" data-search="İlikli Kemik Suları · Sade · Pure Essence Dengeli, et suyu karakterinde Kemik suyunun kendi karakterini öne çıkaran yalın lezzet yönü. Çorba, pilav ve günlük mutfak tarifleri" data-order="0">
+    <div class="store-grid" id="products"><article class="store-card card-aura-kemik" data-product-card="kemik" data-product-id="kemik--sade" data-bestseller="true" data-name="Sade" data-price="249" data-search="İlikli Kemik Suları · Sade · Pure Essence Dengeli, et suyu karakterinde Kemik suyunun kendi karakterini öne çıkaran yalın lezzet yönü. Çorba, pilav ve günlük mutfak tarifleri" data-order="0">
       <a class="store-photo" href="urun-kemik-sade.html" aria-label="İlikli Kemik Suları · Sade · Pure Essence ürün sayfası">
         <img src="assets/kemik-sade.jpg" alt="İlikli Kemik Suları · Sade · Pure Essence, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
-        <span class="photo-tree-pill">🌱 1 Fidan</span>
+        <span class="photo-bestseller-badge">⭐ En Çok Satan</span>
         <span class="photo-pair-badge">Çorba, pilav ve günlük mutfak tarifleri</span>
       </a>
       <div class="store-info">
@@ -145,11 +157,11 @@
           <button type="button" data-add="kemik--sade" aria-label="İlikli Kemik Suları · Sade · Pure Essence teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-bebek" data-product-card="bebek" data-product-id="bebek--sade-kemik" data-name="Bebek İçin Sade Kemik Suyu" data-price="229" data-search="Bebek &amp; Ek Gıda Serisi · Bebek İçin Sade Kemik Suyu Tuzsuz, sade ve yumuşak İlave tuz ve baharat içermeyen, yalnızca ilikli kemikle hazırlanan yalın seçenek. Bebek çorbaları ve sebze pürelerine 1–2 kaşık ekleme" data-order="1">
+    </article><article class="store-card card-aura-bebek" data-product-card="bebek" data-product-id="bebek--sade-kemik" data-bestseller="true" data-name="Bebek İçin Sade Kemik Suyu" data-price="229" data-search="Bebek &amp; Ek Gıda Serisi · Bebek İçin Sade Kemik Suyu Tuzsuz, sade ve yumuşak İlave tuz ve baharat içermeyen, yalnızca ilikli kemikle hazırlanan yalın seçenek. Bebek çorbaları ve sebze pürelerine 1–2 kaşık ekleme" data-order="1">
       <a class="store-photo" href="urun-bebek-sade-kemik.html" aria-label="Bebek &amp; Ek Gıda Serisi · Bebek İçin Sade Kemik Suyu ürün sayfası">
         <img src="assets/kemik-bebek-sade.jpg" alt="Bebek &amp; Ek Gıda Serisi · Bebek İçin Sade Kemik Suyu, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
-        <span class="photo-tree-pill">🌱 1 Fidan</span>
+        <span class="photo-bestseller-badge">⭐ En Çok Satan</span>
         <span class="photo-pair-badge">Bebek çorbaları ve sebze pürelerine 1–2 kaşık ekleme</span>
       </a>
       <div class="store-info">
@@ -166,7 +178,7 @@
           <button type="button" data-add="bebek--sade-kemik" aria-label="Bebek &amp; Ek Gıda Serisi · Bebek İçin Sade Kemik Suyu teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-cay" data-product-card="cay" data-product-id="cay--papatya-melisa" data-name="Papatya &amp; Melisa" data-price="199" data-search="Bitki Çayları · Papatya &amp; Melisa Çiçeksi, yumuşak Çiçeksi ve hafif otsu bir fincan. Günün sonunda sakin bir mola" data-order="2">
+    </article><article class="store-card card-aura-cay" data-product-card="cay" data-product-id="cay--papatya-melisa" data-bestseller="false" data-name="Papatya &amp; Melisa" data-price="199" data-search="Bitki Çayları · Papatya &amp; Melisa Çiçeksi, yumuşak Çiçeksi ve hafif otsu bir fincan. Günün sonunda sakin bir mola" data-order="2">
       <a class="store-photo" href="urun-cay-papatya-melisa.html" aria-label="Bitki Çayları · Papatya &amp; Melisa ürün sayfası">
         <img src="assets/cay-papatya-melisa.jpg" alt="Bitki Çayları · Papatya &amp; Melisa, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft</span>
@@ -187,7 +199,7 @@
           <button type="button" data-add="cay--papatya-melisa" aria-label="Bitki Çayları · Papatya &amp; Melisa teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-ezme" data-product-card="ezme" data-product-id="ezme--sade-tahin" data-name="Sade Tahin" data-price="229" data-search="Tahin &amp; Kuruyemiş Ezmeleri · Sade Tahin Kavrulmuş susam, yoğun Susamın kavruk ve belirgin karakteri. Ekmek üstü, kahvaltı ve sos tarifleri" data-order="3">
+    </article><article class="store-card card-aura-ezme" data-product-card="ezme" data-product-id="ezme--sade-tahin" data-bestseller="false" data-name="Sade Tahin" data-price="229" data-search="Tahin &amp; Kuruyemiş Ezmeleri · Sade Tahin Kavrulmuş susam, yoğun Susamın kavruk ve belirgin karakteri. Ekmek üstü, kahvaltı ve sos tarifleri" data-order="3">
       <a class="store-photo" href="urun-ezme-sade-tahin.html" aria-label="Tahin &amp; Kuruyemiş Ezmeleri · Sade Tahin ürün sayfası">
         <img src="assets/ezme-sade-tahin.jpg" alt="Tahin &amp; Kuruyemiş Ezmeleri · Sade Tahin, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -208,7 +220,7 @@
           <button type="button" data-add="ezme--sade-tahin" aria-label="Tahin &amp; Kuruyemiş Ezmeleri · Sade Tahin teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-meyve" data-product-card="meyve" data-product-id="meyve--elma-tarcin" data-name="Elma &amp; Tarçın" data-price="189" data-search="Meyve Ezmeleri · Elma &amp; Tarçın Sıcak baharatlı, meyvemsi Elmanın tanıdık lezzetine tarçın dokunuşu. Yoğurt, yulaf ve kızarmış ekmek" data-order="4">
+    </article><article class="store-card card-aura-meyve" data-product-card="meyve" data-product-id="meyve--elma-tarcin" data-bestseller="false" data-name="Elma &amp; Tarçın" data-price="189" data-search="Meyve Ezmeleri · Elma &amp; Tarçın Sıcak baharatlı, meyvemsi Elmanın tanıdık lezzetine tarçın dokunuşu. Yoğurt, yulaf ve kızarmış ekmek" data-order="4">
       <a class="store-photo" href="urun-meyve-elma-tarcin.html" aria-label="Meyve Ezmeleri · Elma &amp; Tarçın ürün sayfası">
         <img src="assets/meyve-elma-tarcin.jpg" alt="Meyve Ezmeleri · Elma &amp; Tarçın, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -229,7 +241,7 @@
           <button type="button" data-add="meyve--elma-tarcin" aria-label="Meyve Ezmeleri · Elma &amp; Tarçın teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-icecek" data-product-card="icecek" data-product-id="icecek--orman-meyveleri" data-name="Orman Meyveleri &amp; Hibiskus" data-price="239" data-search="Meyveli İçecekler · Orman Meyveleri &amp; Hibiskus Mayhoş, kırmızı meyveli Kırmızı meyve tozları ve hibiskus yaprağının canlı, yakut renkli uyumu. Buzlu maden suyu veya sıcak fincan sunumu" data-order="5">
+    </article><article class="store-card card-aura-icecek" data-product-card="icecek" data-product-id="icecek--orman-meyveleri" data-bestseller="false" data-name="Orman Meyveleri &amp; Hibiskus" data-price="239" data-search="Meyveli İçecekler · Orman Meyveleri &amp; Hibiskus Mayhoş, kırmızı meyveli Kırmızı meyve tozları ve hibiskus yaprağının canlı, yakut renkli uyumu. Buzlu maden suyu veya sıcak fincan sunumu" data-order="5">
       <a class="store-photo" href="urun-icecek-orman-meyveleri.html" aria-label="Meyveli İçecekler · Orman Meyveleri &amp; Hibiskus ürün sayfası">
         <img src="assets/icecek-orman-meyveleri.jpg" alt="Meyveli İçecekler · Orman Meyveleri &amp; Hibiskus, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft poşet</span>
@@ -250,11 +262,11 @@
           <button type="button" data-add="icecek--orman-meyveleri" aria-label="Meyveli İçecekler · Orman Meyveleri &amp; Hibiskus teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-granola" data-product-card="granola" data-product-id="granola--findik-kakao" data-name="Fındık &amp; Ham Kakao Granola" data-price="269" data-search="Granola &amp; Kahvaltı Karışımları · Fındık &amp; Ham Kakao Granola Kavruk fındık, yoğun kakao Kavrulmuş bütün fındıklar, ham kakao parçacıkları ve kıtır yulaf kümeleri. Yoğurt kâsesi, süt veya sade fındık ezmesi eşliğinde" data-order="6">
+    </article><article class="store-card card-aura-granola" data-product-card="granola" data-product-id="granola--findik-kakao" data-bestseller="true" data-name="Fındık &amp; Ham Kakao Granola" data-price="269" data-search="Granola &amp; Kahvaltı Karışımları · Fındık &amp; Ham Kakao Granola Kavruk fındık, yoğun kakao Kavrulmuş bütün fındıklar, ham kakao parçacıkları ve kıtır yulaf kümeleri. Yoğurt kâsesi, süt veya sade fındık ezmesi eşliğinde" data-order="6">
       <a class="store-photo" href="urun-granola-findik-kakao.html" aria-label="Granola &amp; Kahvaltı Karışımları · Fındık &amp; Ham Kakao Granola ürün sayfası">
         <img src="assets/granola-findik-kakao.jpg" alt="Granola &amp; Kahvaltı Karışımları · Fındık &amp; Ham Kakao Granola, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft poşet</span>
-        <span class="photo-tree-pill">🌱 1 Fidan</span>
+        <span class="photo-bestseller-badge">⭐ En Çok Satan</span>
         <span class="photo-pair-badge">Yoğurt kâsesi, süt veya sade fındık ezmesi eşliğinde</span>
       </a>
       <div class="store-info">
@@ -271,7 +283,7 @@
           <button type="button" data-add="granola--findik-kakao" aria-label="Granola &amp; Kahvaltı Karışımları · Fındık &amp; Ham Kakao Granola teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-kemik" data-product-card="kemik" data-product-id="kemik--zerdecal-zencefil" data-name="Zerdeçal &amp; Zencefil" data-price="279" data-search="İlikli Kemik Suları · Zerdeçal &amp; Zencefil Topraksı, sıcak baharatlı Kök baharatların sıcak ve hafif keskin karakteri. Kök sebze çorbaları ve baharatlı tarifler" data-order="7">
+    </article><article class="store-card card-aura-kemik" data-product-card="kemik" data-product-id="kemik--zerdecal-zencefil" data-bestseller="false" data-name="Zerdeçal &amp; Zencefil" data-price="279" data-search="İlikli Kemik Suları · Zerdeçal &amp; Zencefil Topraksı, sıcak baharatlı Kök baharatların sıcak ve hafif keskin karakteri. Kök sebze çorbaları ve baharatlı tarifler" data-order="7">
       <a class="store-photo" href="urun-kemik-zerdecal-zencefil.html" aria-label="İlikli Kemik Suları · Zerdeçal &amp; Zencefil ürün sayfası">
         <img src="assets/kemik-zerdecal-zencefil.jpg" alt="İlikli Kemik Suları · Zerdeçal &amp; Zencefil, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -292,7 +304,7 @@
           <button type="button" data-add="kemik--zerdecal-zencefil" aria-label="İlikli Kemik Suları · Zerdeçal &amp; Zencefil teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-bebek" data-product-card="bebek" data-product-id="bebek--sebzeli-kemik" data-name="Bebek İçin Tatlı Sebzeli Kemik Suyu" data-price="239" data-search="Bebek &amp; Ek Gıda Serisi · Bebek İçin Tatlı Sebzeli Kemik Suyu Hafif tatlı sebze notalı, tuzsuz Havuç ve tatlı patates gibi yumuşak kök sebze notalarıyla hazırlanan ilave tuzsuz seri. Sebze çorbaları, irmikli ve yulaflı tarifler" data-order="8">
+    </article><article class="store-card card-aura-bebek" data-product-card="bebek" data-product-id="bebek--sebzeli-kemik" data-bestseller="false" data-name="Bebek İçin Tatlı Sebzeli Kemik Suyu" data-price="239" data-search="Bebek &amp; Ek Gıda Serisi · Bebek İçin Tatlı Sebzeli Kemik Suyu Hafif tatlı sebze notalı, tuzsuz Havuç ve tatlı patates gibi yumuşak kök sebze notalarıyla hazırlanan ilave tuzsuz seri. Sebze çorbaları, irmikli ve yulaflı tarifler" data-order="8">
       <a class="store-photo" href="urun-bebek-sebzeli-kemik.html" aria-label="Bebek &amp; Ek Gıda Serisi · Bebek İçin Tatlı Sebzeli Kemik Suyu ürün sayfası">
         <img src="assets/bebek-sebzeli-kemik.jpg" alt="Bebek &amp; Ek Gıda Serisi · Bebek İçin Tatlı Sebzeli Kemik Suyu, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -313,7 +325,7 @@
           <button type="button" data-add="bebek--sebzeli-kemik" aria-label="Bebek &amp; Ek Gıda Serisi · Bebek İçin Tatlı Sebzeli Kemik Suyu teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-cay" data-product-card="cay" data-product-id="cay--zencefil-limon" data-name="Zencefil &amp; Limon" data-price="219" data-search="Bitki Çayları · Zencefil &amp; Limon Baharatlı, narenciye notalı Sıcak baharat ve narenciye notalarının birlikteliği. Gün içi sıcak bir fincan" data-order="9">
+    </article><article class="store-card card-aura-cay" data-product-card="cay" data-product-id="cay--zencefil-limon" data-bestseller="false" data-name="Zencefil &amp; Limon" data-price="219" data-search="Bitki Çayları · Zencefil &amp; Limon Baharatlı, narenciye notalı Sıcak baharat ve narenciye notalarının birlikteliği. Gün içi sıcak bir fincan" data-order="9">
       <a class="store-photo" href="urun-cay-zencefil-limon.html" aria-label="Bitki Çayları · Zencefil &amp; Limon ürün sayfası">
         <img src="assets/cay-zencefil-limon.jpg" alt="Bitki Çayları · Zencefil &amp; Limon, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft</span>
@@ -334,7 +346,7 @@
           <button type="button" data-add="cay--zencefil-limon" aria-label="Bitki Çayları · Zencefil &amp; Limon teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-ezme" data-product-card="ezme" data-product-id="ezme--puruzsuz-fistik" data-name="Pürüzsüz Yer Fıstığı" data-price="199" data-search="Tahin &amp; Kuruyemiş Ezmeleri · Pürüzsüz Yer Fıstığı Kavrulmuş yer fıstığı, pürüzsüz Düzgün sürülebilir doku arayanlar için. Kızarmış ekmek, yulaf ve yoğurt" data-order="10">
+    </article><article class="store-card card-aura-ezme" data-product-card="ezme" data-product-id="ezme--puruzsuz-fistik" data-bestseller="false" data-name="Pürüzsüz Yer Fıstığı" data-price="199" data-search="Tahin &amp; Kuruyemiş Ezmeleri · Pürüzsüz Yer Fıstığı Kavrulmuş yer fıstığı, pürüzsüz Düzgün sürülebilir doku arayanlar için. Kızarmış ekmek, yulaf ve yoğurt" data-order="10">
       <a class="store-photo" href="urun-ezme-puruzsuz-fistik.html" aria-label="Tahin &amp; Kuruyemiş Ezmeleri · Pürüzsüz Yer Fıstığı ürün sayfası">
         <img src="assets/ezme-puruzsuz-fistik.jpg" alt="Tahin &amp; Kuruyemiş Ezmeleri · Pürüzsüz Yer Fıstığı, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -355,7 +367,7 @@
           <button type="button" data-add="ezme--puruzsuz-fistik" aria-label="Tahin &amp; Kuruyemiş Ezmeleri · Pürüzsüz Yer Fıstığı teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-meyve" data-product-card="meyve" data-product-id="meyve--kayisi" data-name="Kayısı" data-price="199" data-search="Meyve Ezmeleri · Kayısı Meyvemsi, hafif mayhoş Kayısının belirgin meyve karakteri. Kahvaltı ve yoğurt sunumları" data-order="11">
+    </article><article class="store-card card-aura-meyve" data-product-card="meyve" data-product-id="meyve--kayisi" data-bestseller="false" data-name="Kayısı" data-price="199" data-search="Meyve Ezmeleri · Kayısı Meyvemsi, hafif mayhoş Kayısının belirgin meyve karakteri. Kahvaltı ve yoğurt sunumları" data-order="11">
       <a class="store-photo" href="urun-meyve-kayisi.html" aria-label="Meyve Ezmeleri · Kayısı ürün sayfası">
         <img src="assets/meyve-kayisi.jpg" alt="Meyve Ezmeleri · Kayısı, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -376,7 +388,7 @@
           <button type="button" data-add="meyve--kayisi" aria-label="Meyve Ezmeleri · Kayısı teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-icecek" data-product-card="icecek" data-product-id="icecek--elma-tarcin" data-name="Elma &amp; Tarçın İçecek Harmanı" data-price="219" data-search="Meyveli İçecekler · Elma &amp; Tarçın İçecek Harmanı Sıcak baharatlı, tatlı elma notalı Kurutulmuş elma tozu ve Seylan tarçınının ısıtan, yumuşak içimli dengesi. Sıcak kış fincanı veya ılık süt/su karışımı" data-order="12">
+    </article><article class="store-card card-aura-icecek" data-product-card="icecek" data-product-id="icecek--elma-tarcin" data-bestseller="false" data-name="Elma &amp; Tarçın İçecek Harmanı" data-price="219" data-search="Meyveli İçecekler · Elma &amp; Tarçın İçecek Harmanı Sıcak baharatlı, tatlı elma notalı Kurutulmuş elma tozu ve Seylan tarçınının ısıtan, yumuşak içimli dengesi. Sıcak kış fincanı veya ılık süt/su karışımı" data-order="12">
       <a class="store-photo" href="urun-icecek-elma-tarcin.html" aria-label="Meyveli İçecekler · Elma &amp; Tarçın İçecek Harmanı ürün sayfası">
         <img src="assets/icecek-elma-tarcin.jpg" alt="Meyveli İçecekler · Elma &amp; Tarçın İçecek Harmanı, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft poşet</span>
@@ -397,7 +409,7 @@
           <button type="button" data-add="icecek--elma-tarcin" aria-label="Meyveli İçecekler · Elma &amp; Tarçın İçecek Harmanı teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-granola" data-product-card="granola" data-product-id="granola--elma-ceviz" data-name="Elma, Tarçın &amp; Ceviz Granola" data-price="259" data-search="Granola &amp; Kahvaltı Karışımları · Elma, Tarçın &amp; Ceviz Granola Tarçınlı, cevizli, kıtır doku Kurutulmuş elma dilimleri, ceviz içi ve tarçınla fırınlanmış sıcak kahvaltı klasiği. Sıcak süt, süzme yoğurt ve elma ezmesiyle" data-order="13">
+    </article><article class="store-card card-aura-granola" data-product-card="granola" data-product-id="granola--elma-ceviz" data-bestseller="false" data-name="Elma, Tarçın &amp; Ceviz Granola" data-price="259" data-search="Granola &amp; Kahvaltı Karışımları · Elma, Tarçın &amp; Ceviz Granola Tarçınlı, cevizli, kıtır doku Kurutulmuş elma dilimleri, ceviz içi ve tarçınla fırınlanmış sıcak kahvaltı klasiği. Sıcak süt, süzme yoğurt ve elma ezmesiyle" data-order="13">
       <a class="store-photo" href="urun-granola-elma-ceviz.html" aria-label="Granola &amp; Kahvaltı Karışımları · Elma, Tarçın &amp; Ceviz Granola ürün sayfası">
         <img src="assets/granola-elma-ceviz.jpg" alt="Granola &amp; Kahvaltı Karışımları · Elma, Tarçın &amp; Ceviz Granola, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft poşet</span>
@@ -418,7 +430,7 @@
           <button type="button" data-add="granola--elma-ceviz" aria-label="Granola &amp; Kahvaltı Karışımları · Elma, Tarçın &amp; Ceviz Granola teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-kemik" data-product-card="kemik" data-product-id="kemik--biberiye-kekik" data-name="Biberiye &amp; Kekik" data-price="279" data-search="İlikli Kemik Suları · Biberiye &amp; Kekik Otsu, aromatik Akdeniz otlarının aromatik dokunuşu. Fırın sebzeler, mantarlı tarifler ve soslar" data-order="14">
+    </article><article class="store-card card-aura-kemik" data-product-card="kemik" data-product-id="kemik--biberiye-kekik" data-bestseller="false" data-name="Biberiye &amp; Kekik" data-price="279" data-search="İlikli Kemik Suları · Biberiye &amp; Kekik Otsu, aromatik Akdeniz otlarının aromatik dokunuşu. Fırın sebzeler, mantarlı tarifler ve soslar" data-order="14">
       <a class="store-photo" href="urun-kemik-biberiye-kekik.html" aria-label="İlikli Kemik Suları · Biberiye &amp; Kekik ürün sayfası">
         <img src="assets/kemik-biberiye-kekik.jpg" alt="İlikli Kemik Suları · Biberiye &amp; Kekik, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -439,7 +451,7 @@
           <button type="button" data-add="kemik--biberiye-kekik" aria-label="İlikli Kemik Suları · Biberiye &amp; Kekik teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-bebek" data-product-card="bebek" data-product-id="bebek--elma-armut-pure" data-name="Bebek İçin Elma &amp; Armut Püresi" data-price="179" data-search="Bebek &amp; Ek Gıda Serisi · Bebek İçin Elma &amp; Armut Püresi Yumuşak, doğal meyve tatlılığında Mevsim elması ve armudunun buharda yumuşatılıp ipeksi kıvama getirildiği sade meyve püresi. Ara öğün kâsesi veya yoğurt/yulaf eşlikçisi" data-order="15">
+    </article><article class="store-card card-aura-bebek" data-product-card="bebek" data-product-id="bebek--elma-armut-pure" data-bestseller="false" data-name="Bebek İçin Elma &amp; Armut Püresi" data-price="179" data-search="Bebek &amp; Ek Gıda Serisi · Bebek İçin Elma &amp; Armut Püresi Yumuşak, doğal meyve tatlılığında Mevsim elması ve armudunun buharda yumuşatılıp ipeksi kıvama getirildiği sade meyve püresi. Ara öğün kâsesi veya yoğurt/yulaf eşlikçisi" data-order="15">
       <a class="store-photo" href="urun-bebek-elma-armut-pure.html" aria-label="Bebek &amp; Ek Gıda Serisi · Bebek İçin Elma &amp; Armut Püresi ürün sayfası">
         <img src="assets/bebek-elma-armut-pure.jpg" alt="Bebek &amp; Ek Gıda Serisi · Bebek İçin Elma &amp; Armut Püresi, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -460,7 +472,7 @@
           <button type="button" data-add="bebek--elma-armut-pure" aria-label="Bebek &amp; Ek Gıda Serisi · Bebek İçin Elma &amp; Armut Püresi teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-cay" data-product-card="cay" data-product-id="cay--hibiskus-elma" data-name="Hibiskus &amp; Elma" data-price="219" data-search="Bitki Çayları · Hibiskus &amp; Elma Meyvemsi, mayhoş Meyvemsi ve hafif mayhoş bir fincan. Tarifine uygun sıcak veya soğuk sunum" data-order="16">
+    </article><article class="store-card card-aura-cay" data-product-card="cay" data-product-id="cay--hibiskus-elma" data-bestseller="false" data-name="Hibiskus &amp; Elma" data-price="219" data-search="Bitki Çayları · Hibiskus &amp; Elma Meyvemsi, mayhoş Meyvemsi ve hafif mayhoş bir fincan. Tarifine uygun sıcak veya soğuk sunum" data-order="16">
       <a class="store-photo" href="urun-cay-hibiskus-elma.html" aria-label="Bitki Çayları · Hibiskus &amp; Elma ürün sayfası">
         <img src="assets/cay-hibiskus-elma.jpg" alt="Bitki Çayları · Hibiskus &amp; Elma, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft</span>
@@ -481,7 +493,7 @@
           <button type="button" data-add="cay--hibiskus-elma" aria-label="Bitki Çayları · Hibiskus &amp; Elma teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-ezme" data-product-card="ezme" data-product-id="ezme--parcacikli-fistik" data-name="Parçacıklı Yer Fıstığı" data-price="209" data-search="Tahin &amp; Kuruyemiş Ezmeleri · Parçacıklı Yer Fıstığı Kavrulmuş yer fıstığı, parçacıklı Küçük fıstık parçalarıyla daha belirgin doku. Ekmek üstü ve atıştırmalık sunumları" data-order="17">
+    </article><article class="store-card card-aura-ezme" data-product-card="ezme" data-product-id="ezme--parcacikli-fistik" data-bestseller="false" data-name="Parçacıklı Yer Fıstığı" data-price="209" data-search="Tahin &amp; Kuruyemiş Ezmeleri · Parçacıklı Yer Fıstığı Kavrulmuş yer fıstığı, parçacıklı Küçük fıstık parçalarıyla daha belirgin doku. Ekmek üstü ve atıştırmalık sunumları" data-order="17">
       <a class="store-photo" href="urun-ezme-parcacikli-fistik.html" aria-label="Tahin &amp; Kuruyemiş Ezmeleri · Parçacıklı Yer Fıstığı ürün sayfası">
         <img src="assets/ezme-parcacikli-fistik.jpg" alt="Tahin &amp; Kuruyemiş Ezmeleri · Parçacıklı Yer Fıstığı, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -502,7 +514,7 @@
           <button type="button" data-add="ezme--parcacikli-fistik" aria-label="Tahin &amp; Kuruyemiş Ezmeleri · Parçacıklı Yer Fıstığı teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-meyve" data-product-card="meyve" data-product-id="meyve--incir" data-name="İncir" data-price="229" data-search="Meyve Ezmeleri · İncir Belirgin, meyvemsi İncirin yoğun ve taneli karakteri. Ekmek üstü ve peynir eşlikçisi" data-order="18">
+    </article><article class="store-card card-aura-meyve" data-product-card="meyve" data-product-id="meyve--incir" data-bestseller="false" data-name="İncir" data-price="229" data-search="Meyve Ezmeleri · İncir Belirgin, meyvemsi İncirin yoğun ve taneli karakteri. Ekmek üstü ve peynir eşlikçisi" data-order="18">
       <a class="store-photo" href="urun-meyve-incir.html" aria-label="Meyve Ezmeleri · İncir ürün sayfası">
         <img src="assets/meyve-incir.jpg" alt="Meyve Ezmeleri · İncir, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -523,7 +535,7 @@
           <button type="button" data-add="meyve--incir" aria-label="Meyve Ezmeleri · İncir teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-icecek" data-product-card="icecek" data-product-id="icecek--seftali-zencefil" data-name="Şeftali &amp; Taze Zencefil" data-price="229" data-search="Meyveli İçecekler · Şeftali &amp; Taze Zencefil Meyvemsi, hafif zencefil ferahlığı Şeftalinin kadifemsi meyvemsiliğiyle zencefilin ferahlatıcı dokunuşu. Soğuk yaz bardağı veya ılık gün ortası molası" data-order="19">
+    </article><article class="store-card card-aura-icecek" data-product-card="icecek" data-product-id="icecek--seftali-zencefil" data-bestseller="false" data-name="Şeftali &amp; Taze Zencefil" data-price="229" data-search="Meyveli İçecekler · Şeftali &amp; Taze Zencefil Meyvemsi, hafif zencefil ferahlığı Şeftalinin kadifemsi meyvemsiliğiyle zencefilin ferahlatıcı dokunuşu. Soğuk yaz bardağı veya ılık gün ortası molası" data-order="19">
       <a class="store-photo" href="urun-icecek-seftali-zencefil.html" aria-label="Meyveli İçecekler · Şeftali &amp; Taze Zencefil ürün sayfası">
         <img src="assets/icecek-seftali-zencefil.jpg" alt="Meyveli İçecekler · Şeftali &amp; Taze Zencefil, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft poşet</span>
@@ -544,7 +556,7 @@
           <button type="button" data-add="icecek--seftali-zencefil" aria-label="Meyveli İçecekler · Şeftali &amp; Taze Zencefil teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-granola" data-product-card="granola" data-product-id="granola--orman-badem" data-name="Orman Meyveleri &amp; Badem Granola" data-price="279" data-search="Granola &amp; Kahvaltı Karışımları · Orman Meyveleri &amp; Badem Granola Meyvemsi, kavrulmuş bademli Kırmızı orman meyvelerinin hafif mayhoşluğu ve kavrulmuş badem dilimleri. Kefir, yoğurt veya taze meyveli kahvaltı kâseleri" data-order="20">
+    </article><article class="store-card card-aura-granola" data-product-card="granola" data-product-id="granola--orman-badem" data-bestseller="false" data-name="Orman Meyveleri &amp; Badem Granola" data-price="279" data-search="Granola &amp; Kahvaltı Karışımları · Orman Meyveleri &amp; Badem Granola Meyvemsi, kavrulmuş bademli Kırmızı orman meyvelerinin hafif mayhoşluğu ve kavrulmuş badem dilimleri. Kefir, yoğurt veya taze meyveli kahvaltı kâseleri" data-order="20">
       <a class="store-photo" href="urun-granola-orman-badem.html" aria-label="Granola &amp; Kahvaltı Karışımları · Orman Meyveleri &amp; Badem Granola ürün sayfası">
         <img src="assets/granola-orman-badem.jpg" alt="Granola &amp; Kahvaltı Karışımları · Orman Meyveleri &amp; Badem Granola, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft poşet</span>
@@ -565,7 +577,7 @@
           <button type="button" data-add="granola--orman-badem" aria-label="Granola &amp; Kahvaltı Karışımları · Orman Meyveleri &amp; Badem Granola teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-kemik" data-product-card="kemik" data-product-id="kemik--sebzeli" data-name="Sebzeli Kemik Suyu" data-price="269" data-search="İlikli Kemik Suları · Sebzeli Kemik Suyu Yuvarlak, sebze notalı Sebze notalarının eşlik ettiği ilikli kemik suyu seçeneği. Çorba, bulgur pilavı ve güveç" data-order="21">
+    </article><article class="store-card card-aura-kemik" data-product-card="kemik" data-product-id="kemik--sebzeli" data-bestseller="false" data-name="Sebzeli Kemik Suyu" data-price="269" data-search="İlikli Kemik Suları · Sebzeli Kemik Suyu Yuvarlak, sebze notalı Sebze notalarının eşlik ettiği ilikli kemik suyu seçeneği. Çorba, bulgur pilavı ve güveç" data-order="21">
       <a class="store-photo" href="urun-kemik-sebzeli.html" aria-label="İlikli Kemik Suları · Sebzeli Kemik Suyu ürün sayfası">
         <img src="assets/kemik-sebzeli.jpg" alt="İlikli Kemik Suları · Sebzeli Kemik Suyu, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -586,7 +598,7 @@
           <button type="button" data-add="kemik--sebzeli" aria-label="İlikli Kemik Suları · Sebzeli Kemik Suyu teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-bebek" data-product-card="bebek" data-product-id="bebek--kayisi-seftali-pure" data-name="Bebek İçin Kayısı &amp; Şeftali Püresi" data-price="189" data-search="Bebek &amp; Ek Gıda Serisi · Bebek İçin Kayısı &amp; Şeftali Püresi Kadifemsi, sarı meyve notalı Olgun kayısı ve şeftalinin pürüzsüz dokulu, ilave şekersiz meyve püresi. Kahvaltı kâseleri ve sade yoğurt karışımları" data-order="22">
+    </article><article class="store-card card-aura-bebek" data-product-card="bebek" data-product-id="bebek--kayisi-seftali-pure" data-bestseller="false" data-name="Bebek İçin Kayısı &amp; Şeftali Püresi" data-price="189" data-search="Bebek &amp; Ek Gıda Serisi · Bebek İçin Kayısı &amp; Şeftali Püresi Kadifemsi, sarı meyve notalı Olgun kayısı ve şeftalinin pürüzsüz dokulu, ilave şekersiz meyve püresi. Kahvaltı kâseleri ve sade yoğurt karışımları" data-order="22">
       <a class="store-photo" href="urun-bebek-kayisi-seftali-pure.html" aria-label="Bebek &amp; Ek Gıda Serisi · Bebek İçin Kayısı &amp; Şeftali Püresi ürün sayfası">
         <img src="assets/bebek-kayisi-seftali-pure.jpg" alt="Bebek &amp; Ek Gıda Serisi · Bebek İçin Kayısı &amp; Şeftali Püresi, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -607,7 +619,7 @@
           <button type="button" data-add="bebek--kayisi-seftali-pure" aria-label="Bebek &amp; Ek Gıda Serisi · Bebek İçin Kayısı &amp; Şeftali Püresi teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-cay" data-product-card="cay" data-product-id="cay--nane-rezene" data-name="Nane &amp; Rezene" data-price="189" data-search="Bitki Çayları · Nane &amp; Rezene Ferah, anason notalı Nanenin ferah aroması ve rezenenin belirgin karakteri. Gün içinde aromatik bir mola" data-order="23">
+    </article><article class="store-card card-aura-cay" data-product-card="cay" data-product-id="cay--nane-rezene" data-bestseller="false" data-name="Nane &amp; Rezene" data-price="189" data-search="Bitki Çayları · Nane &amp; Rezene Ferah, anason notalı Nanenin ferah aroması ve rezenenin belirgin karakteri. Gün içinde aromatik bir mola" data-order="23">
       <a class="store-photo" href="urun-cay-nane-rezene.html" aria-label="Bitki Çayları · Nane &amp; Rezene ürün sayfası">
         <img src="assets/cay-nane-rezene.jpg" alt="Bitki Çayları · Nane &amp; Rezene, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft</span>
@@ -628,7 +640,7 @@
           <button type="button" data-add="cay--nane-rezene" aria-label="Bitki Çayları · Nane &amp; Rezene teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-ezme" data-product-card="ezme" data-product-id="ezme--sade-findik" data-name="Sade Fındık" data-price="349" data-search="Tahin &amp; Kuruyemiş Ezmeleri · Sade Fındık Kavrulmuş fındık, yoğun Fındığın kendi karakterini öne çıkaran sade yön. Kahvaltı ve meyve eşlikçisi" data-order="24">
+    </article><article class="store-card card-aura-ezme" data-product-card="ezme" data-product-id="ezme--sade-findik" data-bestseller="false" data-name="Sade Fındık" data-price="349" data-search="Tahin &amp; Kuruyemiş Ezmeleri · Sade Fındık Kavrulmuş fındık, yoğun Fındığın kendi karakterini öne çıkaran sade yön. Kahvaltı ve meyve eşlikçisi" data-order="24">
       <a class="store-photo" href="urun-ezme-sade-findik.html" aria-label="Tahin &amp; Kuruyemiş Ezmeleri · Sade Fındık ürün sayfası">
         <img src="assets/ezme-sade-findik.jpg" alt="Tahin &amp; Kuruyemiş Ezmeleri · Sade Fındık, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -649,7 +661,7 @@
           <button type="button" data-add="ezme--sade-findik" aria-label="Tahin &amp; Kuruyemiş Ezmeleri · Sade Fındık teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-meyve" data-product-card="meyve" data-product-id="meyve--armut-vanilya" data-name="Armut &amp; Vanilya" data-price="209" data-search="Meyve Ezmeleri · Armut &amp; Vanilya Yumuşak, aromatik Armut lezzetine yumuşak vanilya notası. Yoğurt ve kahvaltı tarifleri" data-order="25">
+    </article><article class="store-card card-aura-meyve" data-product-card="meyve" data-product-id="meyve--armut-vanilya" data-bestseller="false" data-name="Armut &amp; Vanilya" data-price="209" data-search="Meyve Ezmeleri · Armut &amp; Vanilya Yumuşak, aromatik Armut lezzetine yumuşak vanilya notası. Yoğurt ve kahvaltı tarifleri" data-order="25">
       <a class="store-photo" href="urun-meyve-armut-vanilya.html" aria-label="Meyve Ezmeleri · Armut &amp; Vanilya ürün sayfası">
         <img src="assets/meyve-armut-vanilya.jpg" alt="Meyve Ezmeleri · Armut &amp; Vanilya, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -670,7 +682,7 @@
           <button type="button" data-add="meyve--armut-vanilya" aria-label="Meyve Ezmeleri · Armut &amp; Vanilya teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-icecek" data-product-card="icecek" data-product-id="icecek--nar-limon" data-name="Nar &amp; Limon Kabuğu" data-price="239" data-search="Meyveli İçecekler · Nar &amp; Limon Kabuğu Canlı, narenciye ve nar notalı Narın buruk meyvemsiliği ve limon kabuğunun narenciye tazeliği. Soğuk su, buz ve taze nane yaprağıyla sunum" data-order="26">
+    </article><article class="store-card card-aura-icecek" data-product-card="icecek" data-product-id="icecek--nar-limon" data-bestseller="false" data-name="Nar &amp; Limon Kabuğu" data-price="239" data-search="Meyveli İçecekler · Nar &amp; Limon Kabuğu Canlı, narenciye ve nar notalı Narın buruk meyvemsiliği ve limon kabuğunun narenciye tazeliği. Soğuk su, buz ve taze nane yaprağıyla sunum" data-order="26">
       <a class="store-photo" href="urun-icecek-nar-limon.html" aria-label="Meyveli İçecekler · Nar &amp; Limon Kabuğu ürün sayfası">
         <img src="assets/icecek-nar-limon.jpg" alt="Meyveli İçecekler · Nar &amp; Limon Kabuğu, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft poşet</span>
@@ -691,7 +703,7 @@
           <button type="button" data-add="icecek--nar-limon" aria-label="Meyveli İçecekler · Nar &amp; Limon Kabuğu teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-granola" data-product-card="granola" data-product-id="granola--tahin-hurma" data-name="Tahin, Hurma &amp; Kabak Çekirdeği" data-price="269" data-search="Granola &amp; Kahvaltı Karışımları · Tahin, Hurma &amp; Kabak Çekirdeği Kavruk susam, karamelimsi hurma Susam tahini ve hurma özüyle harmanlanmış, kabak çekirdekli geleneksel dokunuş. Sade yoğurt ve tahin gezdirilmiş kâse sunumu" data-order="27">
+    </article><article class="store-card card-aura-granola" data-product-card="granola" data-product-id="granola--tahin-hurma" data-bestseller="false" data-name="Tahin, Hurma &amp; Kabak Çekirdeği" data-price="269" data-search="Granola &amp; Kahvaltı Karışımları · Tahin, Hurma &amp; Kabak Çekirdeği Kavruk susam, karamelimsi hurma Susam tahini ve hurma özüyle harmanlanmış, kabak çekirdekli geleneksel dokunuş. Sade yoğurt ve tahin gezdirilmiş kâse sunumu" data-order="27">
       <a class="store-photo" href="urun-granola-tahin-hurma.html" aria-label="Granola &amp; Kahvaltı Karışımları · Tahin, Hurma &amp; Kabak Çekirdeği ürün sayfası">
         <img src="assets/granola-tahin-hurma.jpg" alt="Granola &amp; Kahvaltı Karışımları · Tahin, Hurma &amp; Kabak Çekirdeği, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft poşet</span>
@@ -712,7 +724,7 @@
           <button type="button" data-add="granola--tahin-hurma" aria-label="Granola &amp; Kahvaltı Karışımları · Tahin, Hurma &amp; Kabak Çekirdeği teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-kemik" data-product-card="kemik" data-product-id="kemik--limon-defne" data-name="Limon &amp; Defne" data-price="269" data-search="İlikli Kemik Suları · Limon &amp; Defne Narenciye notalı, hafif otsu Limonun ferah notası ve defnenin otsu karakteri. Fincanda sıcak sunum ve hafif pilav tarifleri" data-order="28">
+    </article><article class="store-card card-aura-kemik" data-product-card="kemik" data-product-id="kemik--limon-defne" data-bestseller="false" data-name="Limon &amp; Defne" data-price="269" data-search="İlikli Kemik Suları · Limon &amp; Defne Narenciye notalı, hafif otsu Limonun ferah notası ve defnenin otsu karakteri. Fincanda sıcak sunum ve hafif pilav tarifleri" data-order="28">
       <a class="store-photo" href="urun-kemik-limon-defne.html" aria-label="İlikli Kemik Suları · Limon &amp; Defne ürün sayfası">
         <img src="assets/kemik-limon-defne.jpg" alt="İlikli Kemik Suları · Limon &amp; Defne, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -733,7 +745,7 @@
           <button type="button" data-add="kemik--limon-defne" aria-label="İlikli Kemik Suları · Limon &amp; Defne teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-bebek" data-product-card="bebek" data-product-id="bebek--yulaf-elmali-kasik" data-name="Yulaf &amp; Elmalı Kaşık Karışımı" data-price="199" data-search="Bebek &amp; Ek Gıda Serisi · Yulaf &amp; Elmalı Kaşık Karışımı Sade tahıl ve hafif elma kokulu İnce öğütülmüş yulaf unu ve kurutulmuş tatlı elma tozundan oluşan sade pişirmelik karışım. Su, anne sütü veya devam sütüyle pişirilerek kâse sunumu" data-order="29">
+    </article><article class="store-card card-aura-bebek" data-product-card="bebek" data-product-id="bebek--yulaf-elmali-kasik" data-bestseller="false" data-name="Yulaf &amp; Elmalı Kaşık Karışımı" data-price="199" data-search="Bebek &amp; Ek Gıda Serisi · Yulaf &amp; Elmalı Kaşık Karışımı Sade tahıl ve hafif elma kokulu İnce öğütülmüş yulaf unu ve kurutulmuş tatlı elma tozundan oluşan sade pişirmelik karışım. Su, anne sütü veya devam sütüyle pişirilerek kâse sunumu" data-order="29">
       <a class="store-photo" href="urun-bebek-yulaf-elmali-kasik.html" aria-label="Bebek &amp; Ek Gıda Serisi · Yulaf &amp; Elmalı Kaşık Karışımı ürün sayfası">
         <img src="assets/bebek-yulaf-irmik-kasik.jpg" alt="Bebek &amp; Ek Gıda Serisi · Yulaf &amp; Elmalı Kaşık Karışımı, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft poşet</span>
@@ -754,7 +766,7 @@
           <button type="button" data-add="bebek--yulaf-elmali-kasik" aria-label="Bebek &amp; Ek Gıda Serisi · Yulaf &amp; Elmalı Kaşık Karışımı teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-cay" data-product-card="cay" data-product-id="cay--adacayi-limon" data-name="Adaçayı &amp; Limon" data-price="189" data-search="Bitki Çayları · Adaçayı &amp; Limon Otsu, narenciye notalı Otsu karaktere hafif narenciye dokunuşu. Demleme talimatına uygun bir fincan" data-order="30">
+    </article><article class="store-card card-aura-cay" data-product-card="cay" data-product-id="cay--adacayi-limon" data-bestseller="false" data-name="Adaçayı &amp; Limon" data-price="189" data-search="Bitki Çayları · Adaçayı &amp; Limon Otsu, narenciye notalı Otsu karaktere hafif narenciye dokunuşu. Demleme talimatına uygun bir fincan" data-order="30">
       <a class="store-photo" href="urun-cay-adacayi-limon.html" aria-label="Bitki Çayları · Adaçayı &amp; Limon ürün sayfası">
         <img src="assets/cay-adacayi-limon.jpg" alt="Bitki Çayları · Adaçayı &amp; Limon, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft</span>
@@ -775,7 +787,7 @@
           <button type="button" data-add="cay--adacayi-limon" aria-label="Bitki Çayları · Adaçayı &amp; Limon teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-ezme" data-product-card="ezme" data-product-id="ezme--kakao-hurma-findik" data-name="Kakao &amp; Hurmalı Fındık" data-price="379" data-search="Tahin &amp; Kuruyemiş Ezmeleri · Kakao &amp; Hurmalı Fındık Kakaolu, meyvemsi Fındığı kakao ve hurma notalarıyla buluşturan seçenek. Ekmek üstü ve tatlı tarifleri" data-order="31">
+    </article><article class="store-card card-aura-ezme" data-product-card="ezme" data-product-id="ezme--kakao-hurma-findik" data-bestseller="false" data-name="Kakao &amp; Hurmalı Fındık" data-price="379" data-search="Tahin &amp; Kuruyemiş Ezmeleri · Kakao &amp; Hurmalı Fındık Kakaolu, meyvemsi Fındığı kakao ve hurma notalarıyla buluşturan seçenek. Ekmek üstü ve tatlı tarifleri" data-order="31">
       <a class="store-photo" href="urun-ezme-kakao-hurma-findik.html" aria-label="Tahin &amp; Kuruyemiş Ezmeleri · Kakao &amp; Hurmalı Fındık ürün sayfası">
         <img src="assets/ezme-kakao-hurma-findik.jpg" alt="Tahin &amp; Kuruyemiş Ezmeleri · Kakao &amp; Hurmalı Fındık, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -796,7 +808,7 @@
           <button type="button" data-add="ezme--kakao-hurma-findik" aria-label="Tahin &amp; Kuruyemiş Ezmeleri · Kakao &amp; Hurmalı Fındık teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-meyve" data-product-card="meyve" data-product-id="meyve--orman-meyveleri" data-name="Orman Meyveleri" data-price="249" data-search="Meyve Ezmeleri · Orman Meyveleri Meyvemsi, mayhoş Mayhoş ve meyvemsi notaları bir araya getiren seçki. Yoğurt, yulaf ve ekmek üstü" data-order="32">
+    </article><article class="store-card card-aura-meyve" data-product-card="meyve" data-product-id="meyve--orman-meyveleri" data-bestseller="false" data-name="Orman Meyveleri" data-price="249" data-search="Meyve Ezmeleri · Orman Meyveleri Meyvemsi, mayhoş Mayhoş ve meyvemsi notaları bir araya getiren seçki. Yoğurt, yulaf ve ekmek üstü" data-order="32">
       <a class="store-photo" href="urun-meyve-orman-meyveleri.html" aria-label="Meyve Ezmeleri · Orman Meyveleri ürün sayfası">
         <img src="assets/meyve-orman-meyveleri.jpg" alt="Meyve Ezmeleri · Orman Meyveleri, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Cam kavanoz</span>
@@ -817,7 +829,7 @@
           <button type="button" data-add="meyve--orman-meyveleri" aria-label="Meyve Ezmeleri · Orman Meyveleri teklif listeme ekle">Listeme ekle <span>＋</span></button>
         </div>
       </div>
-    </article><article class="store-card card-aura-cay" data-product-card="cay" data-product-id="cay--ihlamur-kusburnu" data-name="Ihlamur &amp; Kuşburnu" data-price="229" data-search="Bitki Çayları · Ihlamur &amp; Kuşburnu Çiçeksi, meyvemsi Ihlamurun çiçeksi notalarına kuşburnunun hafif mayhoş dokunuşu. Gün içinde sıcak bir fincan" data-order="33">
+    </article><article class="store-card card-aura-cay" data-product-card="cay" data-product-id="cay--ihlamur-kusburnu" data-bestseller="false" data-name="Ihlamur &amp; Kuşburnu" data-price="229" data-search="Bitki Çayları · Ihlamur &amp; Kuşburnu Çiçeksi, meyvemsi Ihlamurun çiçeksi notalarına kuşburnunun hafif mayhoş dokunuşu. Gün içinde sıcak bir fincan" data-order="33">
       <a class="store-photo" href="urun-cay-ihlamur-kusburnu.html" aria-label="Bitki Çayları · Ihlamur &amp; Kuşburnu ürün sayfası">
         <img src="assets/cay-ihlamur-kusburnu.jpg" alt="Bitki Çayları · Ihlamur &amp; Kuşburnu, çeşide özel temsili ürün sunumu" width="1448" height="1086" loading="lazy">
         <span class="photo-corner">Pencereli kraft</span>
@@ -841,7 +853,7 @@
     </article></div>
     <div id="catalog-empty" hidden>
       <h3>Bu lezzeti bulamadık.</h3>
-      <p>Başka bir kelime dene veya tüm koleksiyona dön.</p>
+      <p>Başka bir kelime dene veya en çok satanlara dön.</p>
       <button type="button" id="catalog-reset" class="button">Filtreleri temizle ↗</button>
     </div>
     <p class="image-disclosure centered catalog-disclosure">Görseller temsili sunumdur. Fiyatlar belirtilen gramaj için yaklaşık tutarlardır; nihai fiyat ve teslimat teklif sırasında netleşir.</p>
@@ -859,36 +871,42 @@
         </div>
         <svg class="animated-tree-svg" id="animated-tree-svg" viewBox="0 0 340 320" fill="none" aria-label="Büyüyen fidan ve gül animasyonu">
           <defs>
-            <radialGradient id="canopyGlow" cx="50%" cy="45%" r="50%">
-              <stop offset="0%" stop-color="#fdf0c2" stop-opacity="0.85"/>
-              <stop offset="55%" stop-color="#c1e3be" stop-opacity="0.45"/>
+            <radialGradient id="canopyGlow" cx="50%" cy="45%" r="52%">
+              <stop offset="0%" stop-color="#fdf2c9" stop-opacity="0.95"/>
+              <stop offset="50%" stop-color="#cbe6c8" stop-opacity="0.55"/>
               <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
             </radialGradient>
             <linearGradient id="trunkGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#8b623f"/>
-              <stop offset="100%" stop-color="#593c23"/>
+              <stop offset="100%" stop-color="#55371e"/>
             </linearGradient>
             <linearGradient id="clocheGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.65"/>
-              <stop offset="45%" stop-color="#d6edfc" stop-opacity="0.25"/>
-              <stop offset="100%" stop-color="#ffffff" stop-opacity="0.55"/>
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.75"/>
+              <stop offset="40%" stop-color="#e2f1fc" stop-opacity="0.28"/>
+              <stop offset="85%" stop-color="#ffffff" stop-opacity="0.55"/>
             </linearGradient>
           </defs>
 
           <!-- Twilight Sun Aura -->
           <circle class="svg-sun-aura" cx="170" cy="135" r="120" fill="url(#canopyGlow)"/>
 
-          <!-- Gentle Starlight Sparkles (Subtle Easter Egg) -->
-          <g class="subtle-stars" opacity="0.75">
-            <path class="star-sparkle s1" d="M85 80 Q85 90 75 90 Q85 90 85 100 Q85 90 95 90 Q85 90 85 80 Z" fill="#f7de8b"/>
-            <path class="star-sparkle s2" d="M260 72 Q260 80 252 80 Q260 80 260 88 Q260 80 268 80 Q260 80 260 72 Z" fill="#f7de8b"/>
-            <circle cx="282" cy="118" r="1.8" fill="#f9e8a8"/>
-            <circle cx="62" cy="132" r="1.6" fill="#f9e8a8"/>
+          <!-- Gentle Starlight Sparkles -->
+          <g class="subtle-stars">
+            <path class="star-sparkle s1" d="M85 78 Q85 88 75 88 Q85 88 85 98 Q85 88 95 88 Q85 88 85 78 Z" fill="#f7de8b"/>
+            <path class="star-sparkle s2" d="M262 70 Q262 78 254 78 Q262 78 262 86 Q262 78 270 78 Q262 78 262 70 Z" fill="#f7de8b"/>
+            <circle class="star-sparkle s3" cx="286" cy="116" r="2" fill="#fbe89d"/>
+            <circle class="star-sparkle s4" cx="58" cy="130" r="1.8" fill="#fbe89d"/>
+          </g>
+
+          <!-- Soil Water Ripple Rings (Active on Watering) -->
+          <g class="soil-ripples">
+            <ellipse class="soil-ripple r1" cx="160" cy="275" rx="14" ry="4" stroke="#79aa74" stroke-width="2" fill="none" opacity="0"/>
+            <ellipse class="soil-ripple r2" cx="160" cy="275" rx="28" ry="7" stroke="#9ec799" stroke-width="1.5" fill="none" opacity="0"/>
           </g>
 
           <!-- Ground Earth Mound -->
           <ellipse cx="170" cy="276" rx="108" ry="19" fill="#d7e6d0"/>
-          <path d="M78 276 Q170 260 262 276" stroke="#719b6b" stroke-width="2.8" stroke-linecap="round"/>
+          <path d="M78 276 Q170 258 262 276" stroke="#6b9665" stroke-width="3" stroke-linecap="round"/>
 
           <!-- Sleeping Seed -->
           <ellipse class="tree-part-seed" cx="160" cy="272" rx="9" ry="6" fill="#7c5633"/>
@@ -920,7 +938,7 @@
           <!-- Golden Blossoms & Fruits (Stage 4) -->
           <g class="tree-part-blossoms">
             <circle cx="134" cy="96" r="6" fill="#f7d56e"/>
-            <circle cx="184" cy="98" r="6.5" fill="#f7c978"/>
+            <circle cx="184" cy="98" r="6.5" fill="#f9982" style="fill:#f7c978"/>
             <circle cx="110" cy="144" r="5.5" fill="#f7a8b8"/>
             <circle cx="212" cy="136" r="6" fill="#f7d56e"/>
             <circle cx="160" cy="74" r="7" fill="#fae08c"/>
@@ -928,21 +946,23 @@
             <circle cx="176" cy="132" r="5" fill="#fae08c"/>
           </g>
 
-          <!-- Companion Wild Rose Detail (Subtle Easter Egg) -->
+          <!-- Companion Wild Rose Detail -->
           <g class="tree-part-rose">
             <path d="M216 274 C216 256 218 244 216 230" stroke="#488246" stroke-width="2.8" stroke-linecap="round"/>
             <path d="M216 254 C208 249 205 254 210 258 C213 260 215 257 216 254 Z" fill="#62a35e"/>
             <path d="M216 247 C224 242 227 247 222 251 C219 253 217 250 216 247 Z" fill="#76b872"/>
-            <circle cx="216" cy="226" r="8.5" fill="#db4f63"/>
-            <circle cx="213" cy="224" r="5.5" fill="#ef7e90"/>
-            <circle cx="217" cy="223" r="3.2" fill="#ba3347"/>
+            <g class="rose-bloom-petals">
+              <circle cx="216" cy="226" r="9" fill="#db4f63"/>
+              <circle cx="213" cy="224" r="6" fill="#f07f92"/>
+              <circle cx="217" cy="223" r="3.6" fill="#bc3248"/>
+            </g>
           </g>
 
-          <!-- Protective Crystal Glass Cloche (Cam Fanus — Lifts Up as Nature Awakens) -->
+          <!-- Protective Crystal Glass Cloche (Cam Fanus — Smooth Levitation) -->
           <g class="tree-part-cloche">
-            <circle cx="178" cy="190" r="5.5" fill="url(#clocheGrad)" stroke="#ffffff" stroke-width="1.6" stroke-opacity="0.85"/>
-            <path d="M142 274 L142 228 A36 36 0 0 1 214 228 L214 274 Z" fill="url(#clocheGrad)" stroke="#ffffff" stroke-width="1.8" stroke-opacity="0.75"/>
-            <path d="M150 228 A28 28 0 0 1 170 204" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.8"/>
+            <circle cx="178" cy="190" r="5.5" fill="url(#clocheGrad)" stroke="#ffffff" stroke-width="1.8" stroke-opacity="0.9"/>
+            <path d="M142 274 L142 228 A36 36 0 0 1 214 228 L214 274 Z" fill="url(#clocheGrad)" stroke="#ffffff" stroke-width="2" stroke-opacity="0.8"/>
+            <path d="M150 228 A28 28 0 0 1 170 204" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-opacity="0.85"/>
           </g>
         </svg>
         <div class="tree-stage-badge" id="tree-stage-label">🌸 4. Aşama · Çiçek Açan Bereket Ağacı ve Gül</div>

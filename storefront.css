@@ -510,19 +510,28 @@ dialog[open]::backdrop {
 /* ==========================================================================
    SOFT MULTI-HUE BOTANICAL COLOR TRANSITIONS, ANIMATED TREE & STANDALONE PDP
    ========================================================================== */
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
 body {
   background:
-    radial-gradient(circle at 12% 8%, rgba(244, 217, 160, 0.38) 0%, transparent 42%),
-    radial-gradient(circle at 88% 18%, rgba(190, 224, 194, 0.42) 0%, transparent 45%),
-    radial-gradient(circle at 18% 54%, rgba(243, 202, 206, 0.30) 0%, transparent 46%),
-    radial-gradient(circle at 82% 76%, rgba(213, 201, 236, 0.32) 0%, transparent 45%),
-    linear-gradient(160deg var(--in-oklab), #fdfaf2 0%, #f5efe0 32%, #ebf4ec 66%, #f9efe7 100%) !important;
+    radial-gradient(circle at 12% 8%, rgba(244, 217, 160, 0.34) 0%, transparent 45%),
+    radial-gradient(circle at 88% 18%, rgba(190, 224, 194, 0.38) 0%, transparent 48%),
+    radial-gradient(circle at 18% 54%, rgba(243, 202, 206, 0.26) 0%, transparent 46%),
+    radial-gradient(circle at 82% 76%, rgba(213, 201, 236, 0.28) 0%, transparent 48%),
+    linear-gradient(160deg var(--in-oklab), #fdfaf2 0%, #f6f0e2 32%, #ecf4ed 66%, #faf0e8 100%) !important;
   background-attachment: fixed;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Floating Ambient Mesh Orbs */
+/* Static, High-Performance Ambient Orbs (No live blur filter thrashing) */
 .ambient-mesh {
   position: fixed;
   inset: 0;
@@ -533,50 +542,168 @@ body {
 .ambient-mesh .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(72px);
-  opacity: 0.48;
-  animation: orbFloat 16s ease-in-out infinite alternate;
+  opacity: 0.6;
 }
 .orb-gold {
-  width: 440px;
-  height: 440px;
-  top: -80px;
-  left: -60px;
-  background: radial-gradient(circle, #f5d488 0%, #f7e7be 65%, transparent 100%);
+  width: 520px;
+  height: 520px;
+  top: -120px;
+  left: -90px;
+  background: radial-gradient(circle, rgba(245, 212, 136, 0.32) 0%, rgba(247, 231, 190, 0.14) 48%, transparent 72%);
 }
 .orb-sage {
-  width: 480px;
-  height: 480px;
-  top: 22%;
-  right: -100px;
-  background: radial-gradient(circle, #a8d8b0 0%, #dcefe0 65%, transparent 100%);
-  animation-delay: -4s;
+  width: 560px;
+  height: 560px;
+  top: 20%;
+  right: -130px;
+  background: radial-gradient(circle, rgba(168, 216, 176, 0.34) 0%, rgba(220, 239, 224, 0.14) 50%, transparent 72%);
 }
 .orb-blush {
-  width: 420px;
-  height: 420px;
-  top: 58%;
-  left: -90px;
-  background: radial-gradient(circle, #f2b8c0 0%, #f9dfe2 65%, transparent 100%);
-  animation-delay: -8s;
+  width: 500px;
+  height: 500px;
+  top: 55%;
+  left: -120px;
+  background: radial-gradient(circle, rgba(242, 184, 192, 0.26) 0%, rgba(249, 223, 226, 0.12) 50%, transparent 72%);
 }
 .orb-lavender {
-  width: 450px;
-  height: 450px;
-  bottom: -90px;
-  right: 8%;
-  background: radial-gradient(circle, #cbbbe8 0%, #ebe3f7 65%, transparent 100%);
-  animation-delay: -11s;
-}
-@keyframes orbFloat {
-  0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(28px, -24px, 0) scale(1.08); }
-  100% { transform: translate3d(-22px, 26px, 0) scale(0.95); }
+  width: 520px;
+  height: 520px;
+  bottom: -110px;
+  right: 6%;
+  background: radial-gradient(circle, rgba(203, 187, 232, 0.28) 0%, rgba(235, 227, 247, 0.12) 50%, transparent 72%);
 }
 
 main, header, footer {
   position: relative;
   z-index: 1;
+}
+
+header {
+  isolation: isolate;
+}
+
+/* Crystal-Sharp Scroll Reveal Reset */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.scroll-reveal.revealed {
+  opacity: 1 !important;
+  transform: none !important;
+  will-change: auto !important;
+}
+
+/* Hero Showcase Carousel Transitions */
+.store-hero {
+  position: relative;
+}
+.store-hero-copy h1,
+.store-hero-copy p,
+.store-hero-copy .eyebrow,
+.stage-main,
+.stage-seal,
+.stage-caption {
+  transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hero-transitioning .store-hero-copy h1,
+.hero-transitioning .store-hero-copy p,
+.hero-transitioning .store-hero-copy .eyebrow,
+.hero-transitioning .stage-main,
+.hero-transitioning .stage-seal,
+.hero-transitioning .stage-caption {
+  opacity: 0.2;
+  transform: translateY(5px);
+}
+
+.hero-slider-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.hero-slide-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #d4ccb6;
+  background: rgba(255, 253, 247, 0.88);
+  font: 600 11px/1.2 Manrope, sans-serif;
+  color: #2b3e32;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+.hero-slide-pill span {
+  font-weight: 700;
+  font-size: 10px;
+  color: #8a703b;
+}
+.hero-slide-pill.active,
+.hero-slide-pill:hover {
+  background: #203c31;
+  color: #faf4e3;
+  border-color: #203c31;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(32, 60, 49, 0.15);
+}
+.hero-slide-pill.active span {
+  color: #fae4a8;
+}
+.hero-slider-arrows {
+  display: inline-flex;
+  gap: 6px;
+  margin-left: auto;
+}
+.hero-nav-arrow {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #c7c1ae;
+  background: rgba(255, 253, 248, 0.9);
+  color: #203c31;
+  font-size: 19px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.hero-nav-arrow:hover {
+  background: #203c31;
+  color: #faf5e6;
+  border-color: #203c31;
+}
+
+/* Bestseller Filter & Badge Styling */
+.filter-bestseller-btn {
+  background: linear-gradient(120deg, #203c31, #365e47) !important;
+  color: #faf4e2 !important;
+  border-color: #bfa564 !important;
+  font-weight: 700 !important;
+}
+.filter-bestseller-btn span {
+  background: #bfa564;
+  color: #1e382b;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-weight: 700;
+  opacity: 1 !important;
+}
+.photo-bestseller-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font: 700 8.5px/1.2 Manrope, sans-serif;
+  color: #1c3d28;
+  background: linear-gradient(120deg, #fce9ad, #f7d56e);
+  border: 1px solid #d4b14d;
+  box-shadow: 0 4px 12px rgba(90, 70, 20, 0.16);
+  z-index: 2;
 }
 
 /* Header Actions & Tree Pill */
@@ -850,6 +977,18 @@ main, header, footer {
   opacity: 0.95;
 }
 
+.tree-stage-card[data-tree-stage="4"] .tree-part-trunk {
+  transform: scale(1);
+  opacity: 1;
+}
+.tree-stage-card[data-tree-stage="4"] .tree-part-canopy {
+  transform: scale(1);
+  opacity: 1;
+}
+.tree-stage-card[data-tree-stage="4"] .tree-part-blossoms {
+  transform: scale(1);
+  opacity: 1;
+}
 .tree-stage-card[data-tree-stage="4"] .tree-part-sprout {
   transform: scale(0);
   opacity: 0;
@@ -859,8 +998,25 @@ main, header, footer {
   opacity: 0.42;
 }
 .tree-stage-card[data-tree-stage="4"] .tree-part-rose {
-  transform: scale(1.05);
+  transform: scale(1.08);
   opacity: 1;
+}
+
+/* Soil Water Ripples when watering */
+.soil-ripple {
+  transform-origin: 160px 275px;
+  transition: opacity 0.4s ease;
+}
+.soil-ripple.active {
+  animation: soilWave 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.soil-ripple.r2.active {
+  animation-delay: 0.14s;
+}
+@keyframes soilWave {
+  0% { opacity: 0.85; transform: scale(0.35); }
+  60% { opacity: 0.6; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(1.55); }
 }
 
 /* Water Droplets & Floating Leaves */
