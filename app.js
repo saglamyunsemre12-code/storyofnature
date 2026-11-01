@@ -64,8 +64,8 @@ function update() {
   }
   if ($('#tree-live-status')) {
     $('#tree-live-status').innerHTML = count > 0
-      ? `🌱 Harika! Şu an listendeki <strong>${count} ürün</strong> ile doğaya <strong>${treesCount} fidan</strong> filizlenmeye hazır.`
-      : '🌱 Şu an listendeki seçkinle <strong>1 fidan</strong> filizlenmeye hazır (Planlanan doğa programı).';
+      ? `🪐 Harika! Şu an listendeki <strong>${count} ürün</strong> ile Gezegen B-612’de <strong>${treesCount} fidan ve gül</strong> çiçek açmaya hazır.`
+      : '🪐 Şu an listendeki seçkinle <strong>1 fidan ve 1 gül</strong> Gezegen B-612’de çiçek açmaya hazır (Planlanan doğa programı).';
   }
 
   // Cart items
@@ -205,7 +205,7 @@ function filterCatalog() {
   document.querySelectorAll('[data-family-card]').forEach(x => {
     x.hidden = selectedFilter !== 'all' && x.dataset.familyCard !== selectedFilter;
   });
-  if ($('#catalog-count')) $('#catalog-count').textContent = total + ' lezzet gösteriliyor';
+  if ($('#catalog-count')) $('#catalog-count').textContent = total + ' ana başlık gösteriliyor';
   if ($('#catalog-empty')) $('#catalog-empty').hidden = total > 0;
   if ($('#koleksiyon')) $('#koleksiyon').setAttribute('data-active-theme', selectedFilter);
 }
@@ -224,18 +224,18 @@ if ($('#catalog-search')) $('#catalog-search').addEventListener('input', filterC
 if ($('#catalog-sort')) $('#catalog-sort').addEventListener('change', filterCatalog);
 if ($('#catalog-reset')) {
   $('#catalog-reset').onclick = () => {
-    $('#catalog-search').value = '';
-    $('#catalog-sort').value = 'curated';
+    if ($('#catalog-search')) $('#catalog-search').value = '';
+    if ($('#catalog-sort')) $('#catalog-sort').value = 'curated';
     setFilter('all');
   };
 }
 
-// Interactive Tree Growth Stages
+// Interactive Tree Growth Stages (Küçük Prens — Asteroid B-612)
 const treeStageNames = {
-  1: '🌰 1. Aşama · Toprakta Uyuyan Tohum',
-  2: '🌱 2. Aşama · İlk Yeşil Filiz',
-  3: '🌿 3. Aşama · Kök Salan Genç Fidan',
-  4: '🌳 4. Aşama · Çiçek Açan Bereket Ağacı'
+  1: '🪐 1. Aşama · Gezegen B-612’de Cam Fanus Altında Tohum',
+  2: '🌱 2. Aşama · Cam Fanus Kalkıyor & İlk Filiz Uyanıyor',
+  3: '🌧️ 3. Aşama · Yıldız Yağmuruyla Kök Salan Fidan & Gül Goncası',
+  4: '🌹 4. Aşama · Gezegen B-612’de Ağaç ve Gül Çiçek Açtı'
 };
 
 function setTreeStage(stage, withWater = false) {
@@ -259,17 +259,17 @@ function setTreeStage(stage, withWater = false) {
 const chronoSteps = [
   {
     badge: 'ADIM 01 / HAMMADDE SEÇİMİ',
-    title: 'Mevsiminde toplanan botanikler, özenle seçilen kemik ve kuruyemişler.',
-    desc: 'Kemik sularında ilikli kemikler ve taze kök sebzeler; çay ve içeceklerde bütün yapraklar ile kurutulmuş meyveler; ezme ve granolalarda ise kavurma profili dengelenmiş kuruyemişler kullanılır.',
-    m1: ['6 Ana Seri', 'Birbirini tamamlayan sofra ailesi'],
-    m2: ['30 Özel Sayfa', 'Her ürün için şeffaf içerik kartı']
+    title: 'Mevsiminde toplanan botanikler, özenle seçilen kemik, meyve ve kuruyemişler.',
+    desc: 'Kemik sularında ve bebek ek gıda serisinde ilikli kemikler, tatlı kök sebzeler ve yumuşak meyveler; çay ve içeceklerde bütün yapraklar; ezme ve granolalarda ise kavurma profili dengelenmiş kuruyemişler kullanılır.',
+    m1: ['7 Ana Başlık', 'Bebek & Ek Gıda dahil bütünlüklü aile'],
+    m2: ['34 Özel Sayfa', 'Her ürün için şeffaf içerik kartı']
   },
   {
     badge: 'ADIM 02 / AĞIR ATEŞ & HARMAN',
     title: 'Uzun süreli kaynatma, düşük ısıda fırınlama ve dengeli harmanlama.',
-    desc: 'İlikli kemik suları kısık ateşte uzun süre kaynatılarak aromatik sebze ve baharatlarla buluşturulur. Granolalar kıtır dokusunu koruyacak şekilde fırınlanır; ezmeler pürüzsüz veya parçacıklı çekim disipliniyle hazırlanır.',
+    desc: 'İlikli kemik suları kısık ateşte uzun süre kaynatılarak aromatik sebze ve baharatlarla buluşturulur. Bebek püreleri pürüzsüz dokuda hazırlanır; granolalar kıtır dokusunu koruyacak şekilde fırınlanır.',
     m1: ['Ağır Ateş', 'Geleneksel mutfak temposu'],
-    m2: ['30 Lezzet', 'Her damak tadına uygun çeşitlilik']
+    m2: ['34 Lezzet', 'Her damak tadına uygun çeşitlilik']
   },
   {
     badge: 'ADIM 03 / DOĞAL KIVAM & DOKU',
@@ -281,7 +281,7 @@ const chronoSteps = [
   {
     badge: 'ADIM 04 / CAM KAVANOZ & KRAFT KORUMA',
     title: 'Cam kavanozlarda tazelik, pencereli kraft poşetlerde doğal sunum.',
-    desc: 'Sıvı ve sürülebilir ürünler cam kavanozlarda; bitki çayları, meyveli içecekler ve granolalar ise içeriği gösteren pencereli doğal kraft ambalajlarda ve özel kraft hediye kutularında sofrana ulaşır.',
+    desc: 'Sıvı, püre ve sürülebilir ürünler cam kavanozlarda; bitki çayları, meyveli içecekler, kaşık karışımı ve granolalar ise içeriği gösteren pencereli doğal kraft ambalajlarda ve özel kraft hediye kutularında sofrana ulaşır.',
     m1: ['Cam & Kraft', 'Ürünün yapısına uygun ambalaj'],
     m2: ['Özel Kutular', '6 hazır kraft kutu veya kişisel seçki']
   }
