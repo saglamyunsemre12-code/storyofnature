@@ -21,7 +21,8 @@
           "profile": "İlikli dana kemik suyu temeli. Tam reçete, tuz miktarı ve alerjenler teklif sırasında paylaşılır.",
           "image": "kemik-sade.jpg",
           "estimatedPrice": 249,
-          "priceBasis": "300 ml"
+          "priceBasis": "300 ml",
+          "pageUrl": "urun-kemik-sade.html"
         },
         {
           "id": "bebek-sade",
@@ -32,7 +33,8 @@
           "profile": "Güncel tam içerik, ilave tuz durumu, alerjenler ve saklama koşulları yazılı olarak teyit edilmelidir. Bu ürün adı her bebek için uygunluk garantisi değildir.",
           "image": "kemik-bebek-sade.jpg",
           "estimatedPrice": 249,
-          "priceBasis": "300 ml"
+          "priceBasis": "300 ml",
+          "pageUrl": "urun-kemik-bebek-sade.html"
         },
         {
           "id": "zerdecal-zencefil",
@@ -43,7 +45,8 @@
           "profile": "İlikli kemik suyu temelinde zerdeçal ve zencefil lezzet yönü. Tam reçete ve içerik teklif sırasında netleşir.",
           "image": "kemik-zerdecal-zencefil.jpg",
           "estimatedPrice": 279,
-          "priceBasis": "300 ml"
+          "priceBasis": "300 ml",
+          "pageUrl": "urun-kemik-zerdecal-zencefil.html"
         },
         {
           "id": "biberiye-kekik",
@@ -54,7 +57,8 @@
           "profile": "İlikli kemik suyu temelinde biberiye ve kekik lezzet yönü. Tam reçete ve içerik teklif sırasında netleşir.",
           "image": "kemik-biberiye-kekik.jpg",
           "estimatedPrice": 279,
-          "priceBasis": "300 ml"
+          "priceBasis": "300 ml",
+          "pageUrl": "urun-kemik-biberiye-kekik.html"
         },
         {
           "id": "sebzeli",
@@ -65,7 +69,8 @@
           "profile": "İlikli kemik suyu temelinde sebzeli bir lezzet profili. Sebze listesi ve alerjenler teklif sırasında paylaşılır.",
           "image": "kemik-sebzeli.jpg",
           "estimatedPrice": 269,
-          "priceBasis": "300 ml"
+          "priceBasis": "300 ml",
+          "pageUrl": "urun-kemik-sebzeli.html"
         },
         {
           "id": "limon-defne",
@@ -76,7 +81,8 @@
           "profile": "İlikli kemik suyu temelinde limon ve defne lezzet yönü. Tam reçete ve alerjenler sipariş öncesinde paylaşılır.",
           "image": "kemik-limon-defne.jpg",
           "estimatedPrice": 269,
-          "priceBasis": "300 ml"
+          "priceBasis": "300 ml",
+          "pageUrl": "urun-kemik-limon-defne.html"
         }
       ],
       "priceBasis": "300 ml"
@@ -102,7 +108,8 @@
           "profile": "Papatya ve melisa lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır.",
           "image": "cay-papatya-melisa.jpg",
           "estimatedPrice": 199,
-          "priceBasis": "50 g"
+          "priceBasis": "50 g",
+          "pageUrl": "urun-cay-papatya-melisa.html"
         },
         {
           "id": "zencefil-limon",
@@ -113,7 +120,8 @@
           "profile": "Zencefil ve limon lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır.",
           "image": "cay-zencefil-limon.jpg",
           "estimatedPrice": 219,
-          "priceBasis": "50 g"
+          "priceBasis": "50 g",
+          "pageUrl": "urun-cay-zencefil-limon.html"
         },
         {
           "id": "hibiskus-elma",
@@ -124,7 +132,8 @@
           "profile": "Hibiskus ve elma lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır.",
           "image": "cay-hibiskus-elma.jpg",
           "estimatedPrice": 219,
-          "priceBasis": "50 g"
+          "priceBasis": "50 g",
+          "pageUrl": "urun-cay-hibiskus-elma.html"
         },
         {
           "id": "nane-rezene",
@@ -135,7 +144,8 @@
           "profile": "Nane ve rezene lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır.",
           "image": "cay-nane-rezene.jpg",
           "estimatedPrice": 189,
-          "priceBasis": "50 g"
+          "priceBasis": "50 g",
+          "pageUrl": "urun-cay-nane-rezene.html"
         },
         {
           "id": "adacayi-limon",
@@ -146,7 +156,8 @@
           "profile": "Adaçayı ve limon lezzet yönü. Tam içerik, miktar ve kullanım uygunluğu sipariş öncesinde teyit edilir.",
           "image": "cay-adacayi-limon.jpg",
           "estimatedPrice": 189,
-          "priceBasis": "50 g"
+          "priceBasis": "50 g",
+          "pageUrl": "urun-cay-adacayi-limon.html"
         },
         {
           "id": "ihlamur-kusburnu",
@@ -157,7 +168,8 @@
           "profile": "Ihlamur ve kuşburnu harmanı. Tam içerik ve demleme talimatı sipariş öncesinde paylaşılır.",
           "image": "cay-ihlamur-kusburnu.jpg",
           "estimatedPrice": 229,
-          "priceBasis": "50 g"
+          "priceBasis": "50 g",
+          "pageUrl": "urun-cay-ihlamur-kusburnu.html"
         }
       ],
       "priceBasis": "50 g"
@@ -183,7 +195,8 @@
           "profile": "Susam temelli lezzet yönü. İçerik oranı, kavurma profili, alerjen ve yağ ayrışması bilgisi teklif sırasında paylaşılır.",
           "image": "ezme-sade-tahin.jpg",
           "estimatedPrice": 229,
-          "priceBasis": "200 g"
+          "priceBasis": "200 g",
+          "pageUrl": "urun-ezme-sade-tahin.html"
         },
         {
           "id": "puruzsuz-fistik",
@@ -194,7 +207,8 @@
           "profile": "Yer fıstığı temelli lezzet yönü. Fıstık oranı, ilave içerik, alerjen ve kıvam bilgisi teklif sırasında paylaşılır.",
           "image": "ezme-puruzsuz-fistik.jpg",
           "estimatedPrice": 199,
-          "priceBasis": "200 g"
+          "priceBasis": "200 g",
+          "pageUrl": "urun-ezme-puruzsuz-fistik.html"
         },
         {
           "id": "parcacikli-fistik",
@@ -205,7 +219,8 @@
           "profile": "Parçacıklı yer fıstığı lezzet yönü. Fıstık oranı, ilave içerik ve alerjen bilgisi teklif sırasında paylaşılır.",
           "image": "ezme-parcacikli-fistik.jpg",
           "estimatedPrice": 209,
-          "priceBasis": "200 g"
+          "priceBasis": "200 g",
+          "pageUrl": "urun-ezme-parcacikli-fistik.html"
         },
         {
           "id": "sade-findik",
@@ -216,7 +231,8 @@
           "profile": "Fındık temelli lezzet yönü. Fındık oranı, kavurma profili ve tam içerik teklif sırasında paylaşılır.",
           "image": "ezme-sade-findik.jpg",
           "estimatedPrice": 349,
-          "priceBasis": "200 g"
+          "priceBasis": "200 g",
+          "pageUrl": "urun-ezme-sade-findik.html"
         },
         {
           "id": "kakao-hurma-findik",
@@ -227,7 +243,8 @@
           "profile": "Fındık, kakao ve hurma lezzet yönü. Yüzdeler, ilave şeker durumu ve alerjenler teklif sırasında paylaşılır.",
           "image": "ezme-kakao-hurma-findik.jpg",
           "estimatedPrice": 379,
-          "priceBasis": "200 g"
+          "priceBasis": "200 g",
+          "pageUrl": "urun-ezme-kakao-hurma-findik.html"
         }
       ],
       "priceBasis": "200 g"
@@ -253,7 +270,8 @@
           "profile": "Elma ve tarçın lezzet yönü. Meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır.",
           "image": "meyve-elma-tarcin.jpg",
           "estimatedPrice": 189,
-          "priceBasis": "200 g"
+          "priceBasis": "200 g",
+          "pageUrl": "urun-meyve-elma-tarcin.html"
         },
         {
           "id": "kayisi",
@@ -264,7 +282,8 @@
           "profile": "Kayısı lezzet yönü. Meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır.",
           "image": "meyve-kayisi.jpg",
           "estimatedPrice": 199,
-          "priceBasis": "200 g"
+          "priceBasis": "200 g",
+          "pageUrl": "urun-meyve-kayisi.html"
         },
         {
           "id": "incir",
@@ -275,7 +294,8 @@
           "profile": "İncir lezzet yönü. Meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır.",
           "image": "meyve-incir.jpg",
           "estimatedPrice": 229,
-          "priceBasis": "200 g"
+          "priceBasis": "200 g",
+          "pageUrl": "urun-meyve-incir.html"
         },
         {
           "id": "armut-vanilya",
@@ -286,7 +306,8 @@
           "profile": "Armut ve vanilya lezzet yönü. Vanilya türü, meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır.",
           "image": "meyve-armut-vanilya.jpg",
           "estimatedPrice": 209,
-          "priceBasis": "200 g"
+          "priceBasis": "200 g",
+          "pageUrl": "urun-meyve-armut-vanilya.html"
         },
         {
           "id": "orman-meyveleri",
@@ -297,7 +318,8 @@
           "profile": "Orman meyveleri lezzet yönü. Kullanılan meyveler, meyve oranı ve ilave şeker bilgisi teklif sırasında paylaşılır.",
           "image": "meyve-orman-meyveleri.jpg",
           "estimatedPrice": 249,
-          "priceBasis": "200 g"
+          "priceBasis": "200 g",
+          "pageUrl": "urun-meyve-orman-meyveleri.html"
         }
       ],
       "priceBasis": "200 g"
@@ -323,7 +345,8 @@
           "profile": "Kurutulmuş orman meyveleri ve hibiskus bazlı içecek karışımı. Meyve oranları, çözünürlük ve ilave içerik bilgisi teklif sırasında paylaşılır.",
           "image": "icecek-orman-meyveleri.jpg",
           "estimatedPrice": 239,
-          "priceBasis": "120 g"
+          "priceBasis": "120 g",
+          "pageUrl": "urun-icecek-orman-meyveleri.html"
         },
         {
           "id": "elma-tarcin",
@@ -334,7 +357,8 @@
           "profile": "Elma ve tarçın bazlı toz içecek karışımı. Tam içerik, hazırlama oranı ve alerjen bilgisi teklif sırasında paylaşılır.",
           "image": "icecek-elma-tarcin.jpg",
           "estimatedPrice": 219,
-          "priceBasis": "120 g"
+          "priceBasis": "120 g",
+          "pageUrl": "urun-icecek-elma-tarcin.html"
         },
         {
           "id": "seftali-zencefil",
@@ -345,7 +369,8 @@
           "profile": "Kurutulmuş şeftali ve zencefil bazlı içecek karışımı. Tam reçete ve hazırlama önerisi teklif sırasında paylaşılır.",
           "image": "icecek-seftali-zencefil.jpg",
           "estimatedPrice": 229,
-          "priceBasis": "120 g"
+          "priceBasis": "120 g",
+          "pageUrl": "urun-icecek-seftali-zencefil.html"
         },
         {
           "id": "nar-limon",
@@ -356,7 +381,8 @@
           "profile": "Nar ve limon kabuğu bazlı meyveli içecek harmanı. İçerik yüzdeleri ve saklama koşulları teklif sırasında paylaşılır.",
           "image": "icecek-nar-limon.jpg",
           "estimatedPrice": 239,
-          "priceBasis": "120 g"
+          "priceBasis": "120 g",
+          "pageUrl": "urun-icecek-nar-limon.html"
         }
       ],
       "priceBasis": "120 g"
@@ -382,7 +408,8 @@
           "profile": "Yulaf, fındık ve kakao temelli granola. Tatlandırıcı türü, kuruyemiş oranı ve gluten/alerjen bilgisi teklif sırasında paylaşılır.",
           "image": "granola-findik-kakao.jpg",
           "estimatedPrice": 269,
-          "priceBasis": "300 g"
+          "priceBasis": "300 g",
+          "pageUrl": "urun-granola-findik-kakao.html"
         },
         {
           "id": "elma-ceviz",
@@ -393,7 +420,8 @@
           "profile": "Yulaf, ceviz, elma ve tarçın temelli granola. Tam içerik ve alerjen bilgisi teklif sırasında paylaşılır.",
           "image": "granola-elma-ceviz.jpg",
           "estimatedPrice": 259,
-          "priceBasis": "300 g"
+          "priceBasis": "300 g",
+          "pageUrl": "urun-granola-elma-ceviz.html"
         },
         {
           "id": "orman-badem",
@@ -404,7 +432,8 @@
           "profile": "Yulaf, badem ve kurutulmuş orman meyveleri temelli granola. Tam içerik ve saklama bilgisi teklif sırasında paylaşılır.",
           "image": "granola-orman-badem.jpg",
           "estimatedPrice": 279,
-          "priceBasis": "300 g"
+          "priceBasis": "300 g",
+          "pageUrl": "urun-granola-orman-badem.html"
         },
         {
           "id": "tahin-hurma",
@@ -415,7 +444,8 @@
           "profile": "Yulaf, tahin, hurma ve kabak çekirdeği temelli granola. Susam/tahıl alerjen bilgisi ve tam reçete teklif sırasında paylaşılır.",
           "image": "granola-tahin-hurma.jpg",
           "estimatedPrice": 269,
-          "priceBasis": "300 g"
+          "priceBasis": "300 g",
+          "pageUrl": "urun-granola-tahin-hurma.html"
         }
       ],
       "priceBasis": "300 g"
@@ -429,11 +459,15 @@
       "variant": "Sade · Pure Essence",
       "series": "İlikli Kemik Suları",
       "image": "kemik-sade.jpg",
-      "slug": "ilikli-kemik-sulari#sade",
+      "slug": "urun-kemik-sade.html",
+      "pageUrl": "urun-kemik-sade.html",
+      "familySlug": "ilikli-kemik-sulari.html",
       "size": "300 ml · cam kavanoz",
       "type": "broth",
       "estimatedPrice": 249,
       "priceBasis": "300 ml",
+      "aroma": "Dengeli, et suyu karakterinde",
+      "pair": "Çorba, pilav ve günlük mutfak tarifleri",
       "description": "Kemik suyunun kendi karakterini öne çıkaran yalın lezzet yönü.",
       "ingredients": "İlikli dana kemik suyu temeli. Tam reçete, tuz miktarı ve alerjenler teklif sırasında paylaşılır."
     },
@@ -444,11 +478,15 @@
       "variant": "Bebek İçin Sade Seri",
       "series": "İlikli Kemik Suları",
       "image": "kemik-bebek-sade.jpg",
-      "slug": "ilikli-kemik-sulari#bebek-sade",
+      "slug": "urun-kemik-bebek-sade.html",
+      "pageUrl": "urun-kemik-bebek-sade.html",
+      "familySlug": "ilikli-kemik-sulari.html",
       "size": "300 ml · cam kavanoz",
       "type": "broth",
       "estimatedPrice": 249,
       "priceBasis": "300 ml",
+      "aroma": "Sade tarif talebi",
+      "pair": "Kullanım uygunluğu ve porsiyon sağlık uzmanıyla değerlendirilmelidir",
       "description": "Bebek kullanımına yönelik sade içerik ve küçük porsiyon talepleri için ayrı seçenek.",
       "ingredients": "Güncel tam içerik, ilave tuz durumu, alerjenler ve saklama koşulları yazılı olarak teyit edilmelidir. Bu ürün adı her bebek için uygunluk garantisi değildir."
     },
@@ -459,11 +497,15 @@
       "variant": "Zerdeçal & Zencefil",
       "series": "İlikli Kemik Suları",
       "image": "kemik-zerdecal-zencefil.jpg",
-      "slug": "ilikli-kemik-sulari#zerdecal-zencefil",
+      "slug": "urun-kemik-zerdecal-zencefil.html",
+      "pageUrl": "urun-kemik-zerdecal-zencefil.html",
+      "familySlug": "ilikli-kemik-sulari.html",
       "size": "300 ml · cam kavanoz",
       "type": "broth",
       "estimatedPrice": 279,
       "priceBasis": "300 ml",
+      "aroma": "Topraksı, sıcak baharatlı",
+      "pair": "Kök sebze çorbaları ve baharatlı tarifler",
       "description": "Kök baharatların sıcak ve hafif keskin karakteri.",
       "ingredients": "İlikli kemik suyu temelinde zerdeçal ve zencefil lezzet yönü. Tam reçete ve içerik teklif sırasında netleşir."
     },
@@ -474,11 +516,15 @@
       "variant": "Biberiye & Kekik",
       "series": "İlikli Kemik Suları",
       "image": "kemik-biberiye-kekik.jpg",
-      "slug": "ilikli-kemik-sulari#biberiye-kekik",
+      "slug": "urun-kemik-biberiye-kekik.html",
+      "pageUrl": "urun-kemik-biberiye-kekik.html",
+      "familySlug": "ilikli-kemik-sulari.html",
       "size": "300 ml · cam kavanoz",
       "type": "broth",
       "estimatedPrice": 279,
       "priceBasis": "300 ml",
+      "aroma": "Otsu, aromatik",
+      "pair": "Fırın sebzeler, mantarlı tarifler ve soslar",
       "description": "Akdeniz otlarının aromatik dokunuşu.",
       "ingredients": "İlikli kemik suyu temelinde biberiye ve kekik lezzet yönü. Tam reçete ve içerik teklif sırasında netleşir."
     },
@@ -489,11 +535,15 @@
       "variant": "Sebzeli Kemik Suyu",
       "series": "İlikli Kemik Suları",
       "image": "kemik-sebzeli.jpg",
-      "slug": "ilikli-kemik-sulari#sebzeli",
+      "slug": "urun-kemik-sebzeli.html",
+      "pageUrl": "urun-kemik-sebzeli.html",
+      "familySlug": "ilikli-kemik-sulari.html",
       "size": "300 ml · cam kavanoz",
       "type": "broth",
       "estimatedPrice": 269,
       "priceBasis": "300 ml",
+      "aroma": "Yuvarlak, sebze notalı",
+      "pair": "Çorba, bulgur pilavı ve güveç",
       "description": "Sebze notalarının eşlik ettiği ilikli kemik suyu seçeneği.",
       "ingredients": "İlikli kemik suyu temelinde sebzeli bir lezzet profili. Sebze listesi ve alerjenler teklif sırasında paylaşılır."
     },
@@ -504,11 +554,15 @@
       "variant": "Limon & Defne",
       "series": "İlikli Kemik Suları",
       "image": "kemik-limon-defne.jpg",
-      "slug": "ilikli-kemik-sulari#limon-defne",
+      "slug": "urun-kemik-limon-defne.html",
+      "pageUrl": "urun-kemik-limon-defne.html",
+      "familySlug": "ilikli-kemik-sulari.html",
       "size": "300 ml · cam kavanoz",
       "type": "broth",
       "estimatedPrice": 269,
       "priceBasis": "300 ml",
+      "aroma": "Narenciye notalı, hafif otsu",
+      "pair": "Fincanda sıcak sunum ve hafif pilav tarifleri",
       "description": "Limonun ferah notası ve defnenin otsu karakteri.",
       "ingredients": "İlikli kemik suyu temelinde limon ve defne lezzet yönü. Tam reçete ve alerjenler sipariş öncesinde paylaşılır."
     },
@@ -519,11 +573,15 @@
       "variant": "Papatya & Melisa",
       "series": "Bitki Çayları",
       "image": "cay-papatya-melisa.jpg",
-      "slug": "botanik-caylar#papatya-melisa",
+      "slug": "urun-cay-papatya-melisa.html",
+      "pageUrl": "urun-cay-papatya-melisa.html",
+      "familySlug": "botanik-caylar.html",
       "size": "50 g · pencereli kraft poşet",
       "type": "tea",
       "estimatedPrice": 199,
       "priceBasis": "50 g",
+      "aroma": "Çiçeksi, yumuşak",
+      "pair": "Günün sonunda sakin bir mola",
       "description": "Çiçeksi ve hafif otsu bir fincan.",
       "ingredients": "Papatya ve melisa lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır."
     },
@@ -534,11 +592,15 @@
       "variant": "Zencefil & Limon",
       "series": "Bitki Çayları",
       "image": "cay-zencefil-limon.jpg",
-      "slug": "botanik-caylar#zencefil-limon",
+      "slug": "urun-cay-zencefil-limon.html",
+      "pageUrl": "urun-cay-zencefil-limon.html",
+      "familySlug": "botanik-caylar.html",
       "size": "50 g · pencereli kraft poşet",
       "type": "tea",
       "estimatedPrice": 219,
       "priceBasis": "50 g",
+      "aroma": "Baharatlı, narenciye notalı",
+      "pair": "Gün içi sıcak bir fincan",
       "description": "Sıcak baharat ve narenciye notalarının birlikteliği.",
       "ingredients": "Zencefil ve limon lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır."
     },
@@ -549,11 +611,15 @@
       "variant": "Hibiskus & Elma",
       "series": "Bitki Çayları",
       "image": "cay-hibiskus-elma.jpg",
-      "slug": "botanik-caylar#hibiskus-elma",
+      "slug": "urun-cay-hibiskus-elma.html",
+      "pageUrl": "urun-cay-hibiskus-elma.html",
+      "familySlug": "botanik-caylar.html",
       "size": "50 g · pencereli kraft poşet",
       "type": "tea",
       "estimatedPrice": 219,
       "priceBasis": "50 g",
+      "aroma": "Meyvemsi, mayhoş",
+      "pair": "Tarifine uygun sıcak veya soğuk sunum",
       "description": "Meyvemsi ve hafif mayhoş bir fincan.",
       "ingredients": "Hibiskus ve elma lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır."
     },
@@ -564,11 +630,15 @@
       "variant": "Nane & Rezene",
       "series": "Bitki Çayları",
       "image": "cay-nane-rezene.jpg",
-      "slug": "botanik-caylar#nane-rezene",
+      "slug": "urun-cay-nane-rezene.html",
+      "pageUrl": "urun-cay-nane-rezene.html",
+      "familySlug": "botanik-caylar.html",
       "size": "50 g · pencereli kraft poşet",
       "type": "tea",
       "estimatedPrice": 189,
       "priceBasis": "50 g",
+      "aroma": "Ferah, anason notalı",
+      "pair": "Gün içinde aromatik bir mola",
       "description": "Nanenin ferah aroması ve rezenenin belirgin karakteri.",
       "ingredients": "Nane ve rezene lezzet yönü. Tam harman içeriği ve demleme talimatı teklif sırasında paylaşılır."
     },
@@ -579,11 +649,15 @@
       "variant": "Adaçayı & Limon",
       "series": "Bitki Çayları",
       "image": "cay-adacayi-limon.jpg",
-      "slug": "botanik-caylar#adacayi-limon",
+      "slug": "urun-cay-adacayi-limon.html",
+      "pageUrl": "urun-cay-adacayi-limon.html",
+      "familySlug": "botanik-caylar.html",
       "size": "50 g · pencereli kraft poşet",
       "type": "tea",
       "estimatedPrice": 189,
       "priceBasis": "50 g",
+      "aroma": "Otsu, narenciye notalı",
+      "pair": "Demleme talimatına uygun bir fincan",
       "description": "Otsu karaktere hafif narenciye dokunuşu.",
       "ingredients": "Adaçayı ve limon lezzet yönü. Tam içerik, miktar ve kullanım uygunluğu sipariş öncesinde teyit edilir."
     },
@@ -594,11 +668,15 @@
       "variant": "Ihlamur & Kuşburnu",
       "series": "Bitki Çayları",
       "image": "cay-ihlamur-kusburnu.jpg",
-      "slug": "botanik-caylar#ihlamur-kusburnu",
+      "slug": "urun-cay-ihlamur-kusburnu.html",
+      "pageUrl": "urun-cay-ihlamur-kusburnu.html",
+      "familySlug": "botanik-caylar.html",
       "size": "50 g · pencereli kraft poşet",
       "type": "tea",
       "estimatedPrice": 229,
       "priceBasis": "50 g",
+      "aroma": "Çiçeksi, meyvemsi",
+      "pair": "Gün içinde sıcak bir fincan",
       "description": "Ihlamurun çiçeksi notalarına kuşburnunun hafif mayhoş dokunuşu.",
       "ingredients": "Ihlamur ve kuşburnu harmanı. Tam içerik ve demleme talimatı sipariş öncesinde paylaşılır."
     },
@@ -609,11 +687,15 @@
       "variant": "Sade Tahin",
       "series": "Tahin & Kuruyemiş Ezmeleri",
       "image": "ezme-sade-tahin.jpg",
-      "slug": "tahin-kuruyemis-ezmeleri#sade-tahin",
+      "slug": "urun-ezme-sade-tahin.html",
+      "pageUrl": "urun-ezme-sade-tahin.html",
+      "familySlug": "tahin-kuruyemis-ezmeleri.html",
       "size": "200 g · cam kavanoz",
       "type": "nut",
       "estimatedPrice": 229,
       "priceBasis": "200 g",
+      "aroma": "Kavrulmuş susam, yoğun",
+      "pair": "Ekmek üstü, kahvaltı ve sos tarifleri",
       "description": "Susamın kavruk ve belirgin karakteri.",
       "ingredients": "Susam temelli lezzet yönü. İçerik oranı, kavurma profili, alerjen ve yağ ayrışması bilgisi teklif sırasında paylaşılır."
     },
@@ -624,11 +706,15 @@
       "variant": "Pürüzsüz Yer Fıstığı",
       "series": "Tahin & Kuruyemiş Ezmeleri",
       "image": "ezme-puruzsuz-fistik.jpg",
-      "slug": "tahin-kuruyemis-ezmeleri#puruzsuz-fistik",
+      "slug": "urun-ezme-puruzsuz-fistik.html",
+      "pageUrl": "urun-ezme-puruzsuz-fistik.html",
+      "familySlug": "tahin-kuruyemis-ezmeleri.html",
       "size": "200 g · cam kavanoz",
       "type": "nut",
       "estimatedPrice": 199,
       "priceBasis": "200 g",
+      "aroma": "Kavrulmuş yer fıstığı, pürüzsüz",
+      "pair": "Kızarmış ekmek, yulaf ve yoğurt",
       "description": "Düzgün sürülebilir doku arayanlar için.",
       "ingredients": "Yer fıstığı temelli lezzet yönü. Fıstık oranı, ilave içerik, alerjen ve kıvam bilgisi teklif sırasında paylaşılır."
     },
@@ -639,11 +725,15 @@
       "variant": "Parçacıklı Yer Fıstığı",
       "series": "Tahin & Kuruyemiş Ezmeleri",
       "image": "ezme-parcacikli-fistik.jpg",
-      "slug": "tahin-kuruyemis-ezmeleri#parcacikli-fistik",
+      "slug": "urun-ezme-parcacikli-fistik.html",
+      "pageUrl": "urun-ezme-parcacikli-fistik.html",
+      "familySlug": "tahin-kuruyemis-ezmeleri.html",
       "size": "200 g · cam kavanoz",
       "type": "nut",
       "estimatedPrice": 209,
       "priceBasis": "200 g",
+      "aroma": "Kavrulmuş yer fıstığı, parçacıklı",
+      "pair": "Ekmek üstü ve atıştırmalık sunumları",
       "description": "Küçük fıstık parçalarıyla daha belirgin doku.",
       "ingredients": "Parçacıklı yer fıstığı lezzet yönü. Fıstık oranı, ilave içerik ve alerjen bilgisi teklif sırasında paylaşılır."
     },
@@ -654,11 +744,15 @@
       "variant": "Sade Fındık",
       "series": "Tahin & Kuruyemiş Ezmeleri",
       "image": "ezme-sade-findik.jpg",
-      "slug": "tahin-kuruyemis-ezmeleri#sade-findik",
+      "slug": "urun-ezme-sade-findik.html",
+      "pageUrl": "urun-ezme-sade-findik.html",
+      "familySlug": "tahin-kuruyemis-ezmeleri.html",
       "size": "200 g · cam kavanoz",
       "type": "nut",
       "estimatedPrice": 349,
       "priceBasis": "200 g",
+      "aroma": "Kavrulmuş fındık, yoğun",
+      "pair": "Kahvaltı ve meyve eşlikçisi",
       "description": "Fındığın kendi karakterini öne çıkaran sade yön.",
       "ingredients": "Fındık temelli lezzet yönü. Fındık oranı, kavurma profili ve tam içerik teklif sırasında paylaşılır."
     },
@@ -669,11 +763,15 @@
       "variant": "Kakao & Hurmalı Fındık",
       "series": "Tahin & Kuruyemiş Ezmeleri",
       "image": "ezme-kakao-hurma-findik.jpg",
-      "slug": "tahin-kuruyemis-ezmeleri#kakao-hurma-findik",
+      "slug": "urun-ezme-kakao-hurma-findik.html",
+      "pageUrl": "urun-ezme-kakao-hurma-findik.html",
+      "familySlug": "tahin-kuruyemis-ezmeleri.html",
       "size": "200 g · cam kavanoz",
       "type": "nut",
       "estimatedPrice": 379,
       "priceBasis": "200 g",
+      "aroma": "Kakaolu, meyvemsi",
+      "pair": "Ekmek üstü ve tatlı tarifleri",
       "description": "Fındığı kakao ve hurma notalarıyla buluşturan seçenek.",
       "ingredients": "Fındık, kakao ve hurma lezzet yönü. Yüzdeler, ilave şeker durumu ve alerjenler teklif sırasında paylaşılır."
     },
@@ -684,11 +782,15 @@
       "variant": "Elma & Tarçın",
       "series": "Meyve Ezmeleri",
       "image": "meyve-elma-tarcin.jpg",
-      "slug": "meyve-ezmeleri#elma-tarcin",
+      "slug": "urun-meyve-elma-tarcin.html",
+      "pageUrl": "urun-meyve-elma-tarcin.html",
+      "familySlug": "meyve-ezmeleri.html",
       "size": "200 g · cam kavanoz",
       "type": "fruit",
       "estimatedPrice": 189,
       "priceBasis": "200 g",
+      "aroma": "Sıcak baharatlı, meyvemsi",
+      "pair": "Yoğurt, yulaf ve kızarmış ekmek",
       "description": "Elmanın tanıdık lezzetine tarçın dokunuşu.",
       "ingredients": "Elma ve tarçın lezzet yönü. Meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır."
     },
@@ -699,11 +801,15 @@
       "variant": "Kayısı",
       "series": "Meyve Ezmeleri",
       "image": "meyve-kayisi.jpg",
-      "slug": "meyve-ezmeleri#kayisi",
+      "slug": "urun-meyve-kayisi.html",
+      "pageUrl": "urun-meyve-kayisi.html",
+      "familySlug": "meyve-ezmeleri.html",
       "size": "200 g · cam kavanoz",
       "type": "fruit",
       "estimatedPrice": 199,
       "priceBasis": "200 g",
+      "aroma": "Meyvemsi, hafif mayhoş",
+      "pair": "Kahvaltı ve yoğurt sunumları",
       "description": "Kayısının belirgin meyve karakteri.",
       "ingredients": "Kayısı lezzet yönü. Meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır."
     },
@@ -714,11 +820,15 @@
       "variant": "İncir",
       "series": "Meyve Ezmeleri",
       "image": "meyve-incir.jpg",
-      "slug": "meyve-ezmeleri#incir",
+      "slug": "urun-meyve-incir.html",
+      "pageUrl": "urun-meyve-incir.html",
+      "familySlug": "meyve-ezmeleri.html",
       "size": "200 g · cam kavanoz",
       "type": "fruit",
       "estimatedPrice": 229,
       "priceBasis": "200 g",
+      "aroma": "Belirgin, meyvemsi",
+      "pair": "Ekmek üstü ve peynir eşlikçisi",
       "description": "İncirin yoğun ve taneli karakteri.",
       "ingredients": "İncir lezzet yönü. Meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır."
     },
@@ -729,11 +839,15 @@
       "variant": "Armut & Vanilya",
       "series": "Meyve Ezmeleri",
       "image": "meyve-armut-vanilya.jpg",
-      "slug": "meyve-ezmeleri#armut-vanilya",
+      "slug": "urun-meyve-armut-vanilya.html",
+      "pageUrl": "urun-meyve-armut-vanilya.html",
+      "familySlug": "meyve-ezmeleri.html",
       "size": "200 g · cam kavanoz",
       "type": "fruit",
       "estimatedPrice": 209,
       "priceBasis": "200 g",
+      "aroma": "Yumuşak, aromatik",
+      "pair": "Yoğurt ve kahvaltı tarifleri",
       "description": "Armut lezzetine yumuşak vanilya notası.",
       "ingredients": "Armut ve vanilya lezzet yönü. Vanilya türü, meyve oranı, ilave şeker ve tam içerik teklif sırasında paylaşılır."
     },
@@ -744,11 +858,15 @@
       "variant": "Orman Meyveleri",
       "series": "Meyve Ezmeleri",
       "image": "meyve-orman-meyveleri.jpg",
-      "slug": "meyve-ezmeleri#orman-meyveleri",
+      "slug": "urun-meyve-orman-meyveleri.html",
+      "pageUrl": "urun-meyve-orman-meyveleri.html",
+      "familySlug": "meyve-ezmeleri.html",
       "size": "200 g · cam kavanoz",
       "type": "fruit",
       "estimatedPrice": 249,
       "priceBasis": "200 g",
+      "aroma": "Meyvemsi, mayhoş",
+      "pair": "Yoğurt, yulaf ve ekmek üstü",
       "description": "Mayhoş ve meyvemsi notaları bir araya getiren seçki.",
       "ingredients": "Orman meyveleri lezzet yönü. Kullanılan meyveler, meyve oranı ve ilave şeker bilgisi teklif sırasında paylaşılır."
     },
@@ -759,11 +877,15 @@
       "variant": "Orman Meyveleri & Hibiskus",
       "series": "Meyveli İçecekler",
       "image": "icecek-orman-meyveleri.jpg",
-      "slug": "meyveli-icecekler#orman-meyveleri",
+      "slug": "urun-icecek-orman-meyveleri.html",
+      "pageUrl": "urun-icecek-orman-meyveleri.html",
+      "familySlug": "meyveli-icecekler.html",
       "size": "120 g · pencereli kraft poşet",
       "type": "drinkpowder",
       "estimatedPrice": 239,
       "priceBasis": "120 g",
+      "aroma": "Mayhoş, kırmızı meyveli",
+      "pair": "Buzlu maden suyu veya sıcak fincan sunumu",
       "description": "Kırmızı meyve tozları ve hibiskus yaprağının canlı, yakut renkli uyumu.",
       "ingredients": "Kurutulmuş orman meyveleri ve hibiskus bazlı içecek karışımı. Meyve oranları, çözünürlük ve ilave içerik bilgisi teklif sırasında paylaşılır."
     },
@@ -774,11 +896,15 @@
       "variant": "Elma & Tarçın İçecek Harmanı",
       "series": "Meyveli İçecekler",
       "image": "icecek-elma-tarcin.jpg",
-      "slug": "meyveli-icecekler#elma-tarcin",
+      "slug": "urun-icecek-elma-tarcin.html",
+      "pageUrl": "urun-icecek-elma-tarcin.html",
+      "familySlug": "meyveli-icecekler.html",
       "size": "120 g · pencereli kraft poşet",
       "type": "drinkpowder",
       "estimatedPrice": 219,
       "priceBasis": "120 g",
+      "aroma": "Sıcak baharatlı, tatlı elma notalı",
+      "pair": "Sıcak kış fincanı veya ılık süt/su karışımı",
       "description": "Kurutulmuş elma tozu ve Seylan tarçınının ısıtan, yumuşak içimli dengesi.",
       "ingredients": "Elma ve tarçın bazlı toz içecek karışımı. Tam içerik, hazırlama oranı ve alerjen bilgisi teklif sırasında paylaşılır."
     },
@@ -789,11 +915,15 @@
       "variant": "Şeftali & Taze Zencefil",
       "series": "Meyveli İçecekler",
       "image": "icecek-seftali-zencefil.jpg",
-      "slug": "meyveli-icecekler#seftali-zencefil",
+      "slug": "urun-icecek-seftali-zencefil.html",
+      "pageUrl": "urun-icecek-seftali-zencefil.html",
+      "familySlug": "meyveli-icecekler.html",
       "size": "120 g · pencereli kraft poşet",
       "type": "drinkpowder",
       "estimatedPrice": 229,
       "priceBasis": "120 g",
+      "aroma": "Meyvemsi, hafif zencefil ferahlığı",
+      "pair": "Soğuk yaz bardağı veya ılık gün ortası molası",
       "description": "Şeftalinin kadifemsi meyvemsiliğiyle zencefilin ferahlatıcı dokunuşu.",
       "ingredients": "Kurutulmuş şeftali ve zencefil bazlı içecek karışımı. Tam reçete ve hazırlama önerisi teklif sırasında paylaşılır."
     },
@@ -804,11 +934,15 @@
       "variant": "Nar & Limon Kabuğu",
       "series": "Meyveli İçecekler",
       "image": "icecek-nar-limon.jpg",
-      "slug": "meyveli-icecekler#nar-limon",
+      "slug": "urun-icecek-nar-limon.html",
+      "pageUrl": "urun-icecek-nar-limon.html",
+      "familySlug": "meyveli-icecekler.html",
       "size": "120 g · pencereli kraft poşet",
       "type": "drinkpowder",
       "estimatedPrice": 239,
       "priceBasis": "120 g",
+      "aroma": "Canlı, narenciye ve nar notalı",
+      "pair": "Soğuk su, buz ve taze nane yaprağıyla sunum",
       "description": "Narın buruk meyvemsiliği ve limon kabuğunun narenciye tazeliği.",
       "ingredients": "Nar ve limon kabuğu bazlı meyveli içecek harmanı. İçerik yüzdeleri ve saklama koşulları teklif sırasında paylaşılır."
     },
@@ -819,11 +953,15 @@
       "variant": "Fındık & Ham Kakao Granola",
       "series": "Granola & Kahvaltı Karışımları",
       "image": "granola-findik-kakao.jpg",
-      "slug": "granola-kahvalti#findik-kakao",
+      "slug": "urun-granola-findik-kakao.html",
+      "pageUrl": "urun-granola-findik-kakao.html",
+      "familySlug": "granola-kahvalti.html",
       "size": "300 g · pencereli kraft poşet",
       "type": "granola",
       "estimatedPrice": 269,
       "priceBasis": "300 g",
+      "aroma": "Kavruk fındık, yoğun kakao",
+      "pair": "Yoğurt kâsesi, süt veya sade fındık ezmesi eşliğinde",
       "description": "Kavrulmuş bütün fındıklar, ham kakao parçacıkları ve kıtır yulaf kümeleri.",
       "ingredients": "Yulaf, fındık ve kakao temelli granola. Tatlandırıcı türü, kuruyemiş oranı ve gluten/alerjen bilgisi teklif sırasında paylaşılır."
     },
@@ -834,11 +972,15 @@
       "variant": "Elma, Tarçın & Ceviz Granola",
       "series": "Granola & Kahvaltı Karışımları",
       "image": "granola-elma-ceviz.jpg",
-      "slug": "granola-kahvalti#elma-ceviz",
+      "slug": "urun-granola-elma-ceviz.html",
+      "pageUrl": "urun-granola-elma-ceviz.html",
+      "familySlug": "granola-kahvalti.html",
       "size": "300 g · pencereli kraft poşet",
       "type": "granola",
       "estimatedPrice": 259,
       "priceBasis": "300 g",
+      "aroma": "Tarçınlı, cevizli, kıtır doku",
+      "pair": "Sıcak süt, süzme yoğurt ve elma ezmesiyle",
       "description": "Kurutulmuş elma dilimleri, ceviz içi ve tarçınla fırınlanmış sıcak kahvaltı klasiği.",
       "ingredients": "Yulaf, ceviz, elma ve tarçın temelli granola. Tam içerik ve alerjen bilgisi teklif sırasında paylaşılır."
     },
@@ -849,11 +991,15 @@
       "variant": "Orman Meyveleri & Badem Granola",
       "series": "Granola & Kahvaltı Karışımları",
       "image": "granola-orman-badem.jpg",
-      "slug": "granola-kahvalti#orman-badem",
+      "slug": "urun-granola-orman-badem.html",
+      "pageUrl": "urun-granola-orman-badem.html",
+      "familySlug": "granola-kahvalti.html",
       "size": "300 g · pencereli kraft poşet",
       "type": "granola",
       "estimatedPrice": 279,
       "priceBasis": "300 g",
+      "aroma": "Meyvemsi, kavrulmuş bademli",
+      "pair": "Kefir, yoğurt veya taze meyveli kahvaltı kâseleri",
       "description": "Kırmızı orman meyvelerinin hafif mayhoşluğu ve kavrulmuş badem dilimleri.",
       "ingredients": "Yulaf, badem ve kurutulmuş orman meyveleri temelli granola. Tam içerik ve saklama bilgisi teklif sırasında paylaşılır."
     },
@@ -864,11 +1010,15 @@
       "variant": "Tahin, Hurma & Kabak Çekirdeği",
       "series": "Granola & Kahvaltı Karışımları",
       "image": "granola-tahin-hurma.jpg",
-      "slug": "granola-kahvalti#tahin-hurma",
+      "slug": "urun-granola-tahin-hurma.html",
+      "pageUrl": "urun-granola-tahin-hurma.html",
+      "familySlug": "granola-kahvalti.html",
       "size": "300 g · pencereli kraft poşet",
       "type": "granola",
       "estimatedPrice": 269,
       "priceBasis": "300 g",
+      "aroma": "Kavruk susam, karamelimsi hurma",
+      "pair": "Sade yoğurt ve tahin gezdirilmiş kâse sunumu",
       "description": "Susam tahini ve hurma özüyle harmanlanmış, kabak çekirdekli geleneksel dokunuş.",
       "ingredients": "Yulaf, tahin, hurma ve kabak çekirdeği temelli granola. Susam/tahıl alerjen bilgisi ve tam reçete teklif sırasında paylaşılır."
     }
@@ -880,6 +1030,7 @@
       "subtitle": "Özel kraft hediye kutusu · 5 ürün",
       "boxImage": "bundle-premium.jpg",
       "badge": "ÖZEL KRAFT KUTU",
+      "pageUrl": "kutu-set-rituel-kutu.html",
       "description": "İlk taslaktaki özel kraft kutu sunumuyla: 2× Sade Kemik Suyu, 1× Papatya & Melisa Çayı, 1× Sade Tahin ve 1× Fındık & Kakao Granola.",
       "items": [
         [
@@ -907,6 +1058,7 @@
       "subtitle": "6 ana gruptan 6 imza lezzet",
       "boxImage": "bundle_14day_box.jpg",
       "badge": "KOLEKSİYON SEÇKİSİ",
+      "pageUrl": "kutu-set-tanisma.html",
       "description": "Sade Kemik Suyu, Papatya & Melisa, Pürüzsüz Yer Fıstığı, Elma & Tarçın Ezmesi, Orman Meyveli İçecek ve Fındık & Kakao Granola.",
       "items": [
         [
@@ -942,6 +1094,7 @@
       "subtitle": "4 farklı kemik suyu lezzeti",
       "boxImage": "kemik-sade.jpg",
       "badge": "MUTFAK TEMELİ",
+      "pageUrl": "kutu-set-kemik.html",
       "description": "Sade, Zerdeçal & Zencefil, Biberiye & Kekik ve Sebzeli Kemik Suyu. Tek seriden dört farklı yön.",
       "items": [
         [
@@ -969,6 +1122,7 @@
       "subtitle": "5 parçalık zengin kahvaltı sofrası",
       "boxImage": "granola-findik-kakao.jpg",
       "badge": "KAHVALTI RİTÜELİ",
+      "pageUrl": "kutu-set-kahvalti.html",
       "description": "Sade Tahin, Kakao & Hurmalı Fındık, Elma & Tarçın Ezmesi, Kayısı Ezmesi ve Elma, Tarçın & Ceviz Granola.",
       "items": [
         [
@@ -1000,6 +1154,7 @@
       "subtitle": "6 sıcak & soğuk içecek harmanı",
       "boxImage": "cay-papatya-melisa.jpg",
       "badge": "FİNCAN SEÇKİSİ",
+      "pageUrl": "kutu-set-cay.html",
       "description": "Papatya & Melisa, Zencefil & Limon, Ihlamur & Kuşburnu, Hibiskus & Elma ile Orman Meyveli ve Şeftali & Zencefil içecek harmanları.",
       "items": [
         [
@@ -1035,6 +1190,7 @@
       "subtitle": "4 ürünlük sade tarif kutusu",
       "boxImage": "kemik-bebek-sade.jpg",
       "badge": "SADE REÇETE",
+      "pageUrl": "kutu-set-sade-sofra.html",
       "description": "2× Bebek İçin Sade Seri Kemik Suyu, 1× Elma & Tarçın Meyve Ezmesi ve 1× Armut & Vanilya Meyve Ezmesi.",
       "items": [
         [

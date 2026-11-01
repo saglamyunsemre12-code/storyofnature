@@ -18,13 +18,30 @@ function notify(message) {
   t.textContent = message;
   t.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
 }
 
-function pulseButton(btn) {
+function spawnSproutParticle(btn, label = '🌱 +1 Fidan Filizlendi!') {
   if (!btn) return;
   btn.classList.add('added-pulse');
-  setTimeout(() => btn.classList.remove('added-pulse'), 450);
+  const origHTML = btn.dataset.origHtml || btn.innerHTML;
+  if (!btn.dataset.origHtml) btn.dataset.origHtml = origHTML;
+  btn.innerHTML = '✓ Listeye Eklendi 🌱';
+  setTimeout(() => {
+    btn.classList.remove('added-pulse');
+    if (btn.dataset.origHtml) btn.innerHTML = btn.dataset.origHtml;
+  }, 1200);
+
+  try {
+    const r = btn.getBoundingClientRect();
+    const el = document.createElement('div');
+    el.className = 'sprout-float-particle';
+    el.textContent = label;
+    el.style.left = (r.left + r.width / 2) + 'px';
+    el.style.top = r.top + 'px';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 1300);
+  } catch {}
 }
 
 function update() {
@@ -35,24 +52,29 @@ function update() {
   const total = products.reduce((sum, p) => sum + (cart[p.id] || 0) * p.estimatedPrice, 0);
   if ($('#cart-total')) $('#cart-total').textContent = money(total);
 
-  // 500 TL Tree Tracker
-  const treeTarget = 500;
-  const pct = Math.min(100, Math.round((total / treeTarget) * 100));
-  if ($('#tree-tracker-fill')) $('#tree-tracker-fill').style.width = pct + '%';
-  if ($('#tree-tracker-pct')) $('#tree-tracker-pct').textContent = pct + '%';
+  // 1 Order / Items = Tree Counter
+  const treesCount = Math.max(1, count > 0 ? Math.ceil(count / 2) : 1);
+  if ($('#header-tree-count')) $('#header-tree-count').textContent = treesCount;
+  if ($('#tree-tracker-fill')) $('#tree-tracker-fill').style.width = '100%';
+  if ($('#tree-tracker-pct')) $('#tree-tracker-pct').textContent = `🌱 ${treesCount} Fidan`;
   if ($('#tree-tracker-text')) {
-    $('#tree-tracker-text').textContent = total >= treeTarget
-      ? '500 TL hedefi tamamlandı · Planlanan 1 fidan desteği eşiğinde'
-      : `Planlanan fidan desteği hedefine ${money(treeTarget - total)} kaldı`;
+    $('#tree-tracker-text').textContent = count > 0
+      ? `Seçkinle doğaya ${treesCount} fidan izi bırakıyorsun`
+      : 'Her alışveriş doğaya 1 fidan izi bırakır';
+  }
+  if ($('#tree-live-status')) {
+    $('#tree-live-status').innerHTML = count > 0
+      ? `🌱 Harika! Şu an listendeki <strong>${count} ürün</strong> ile doğaya <strong>${treesCount} fidan</strong> filizlenmeye hazır.`
+      : '🌱 Şu an listendeki seçkinle <strong>1 fidan</strong> filizlenmeye hazır (Planlanan doğa programı).';
   }
 
   // Cart items
   if ($('#cart-items')) {
     $('#cart-items').innerHTML = count
       ? products.filter(p => cart[p.id]).map(p => `<div class="cart-row">
-          <img src="assets/${p.image}" alt="${p.series}, temsili sunum" width="65" height="75">
+          <a href="${p.pageUrl}"><img src="assets/${p.image}" alt="${p.series}, temsili sunum" width="65" height="75"></a>
           <div>
-            <h3>${p.series}</h3>
+            <h3><a href="${p.pageUrl}">${p.series}</a></h3>
             <p>${p.variant}</p>
             <p class="cart-item-price">${p.priceBasis} · Yaklaşık ${money(p.estimatedPrice)} / adet</p>
             <div class="quantity">
@@ -82,7 +104,7 @@ function update() {
       upsellBox.hidden = false;
       upsellBox.innerHTML = `<p class="cart-upsell-head">SOFRANI TAMAMLA</p>
         <div class="cart-upsell-row">
-          <div><strong>${candidate.variant}</strong><span>${candidate.series} · Yaklaşık ${money(candidate.estimatedPrice)}</span></div>
+          <div><strong><a href="${candidate.pageUrl}">${candidate.variant}</a></strong><span>${candidate.series} · Yaklaşık ${money(candidate.estimatedPrice)}</span></div>
           <button type="button" data-add="${candidate.id}">Listeye ekle +</button>
         </div>`;
     } else {
@@ -93,7 +115,7 @@ function update() {
 
   const message = 'Merhaba, Story of Nature ürünleri için fiyat teklifi almak istiyorum:\n' +
     products.filter(p => cart[p.id]).map(p => `${cart[p.id]} × ${p.name}`).join('\n') +
-    '\nTahmini ürün toplamı: ' + money(total) + ' (kargo hariç; nihai fiyat teyidi rica ederim).\nGüncel fiyat, üretim uygunluğu, tam içerik, alerjen, ambalaj ve teslimat bilgilerini paylaşabilir misiniz?';
+    '\nTahmini ürün toplamı: ' + money(total) + ' (kargo hariç; nihai fiyat teyidi rica ederim).\n🌱 Doğa izi: ' + treesCount + ' fidan.\nGüncel fiyat, üretim uygunluğu, tam içerik, alerjen, ambalaj ve teslimat bilgilerini paylaşabilir misiniz?';
 
   if ($('#checkout')) {
     $('#checkout').href = 'https://wa.me/905330849027?text=' + encodeURIComponent(message);
@@ -115,14 +137,14 @@ function add(id, qty = 1, silent = false) {
   if (!p) return;
   cart[id] = Math.min(99, (cart[id] || 0) + qty);
   update();
-  if (!silent) notify(p.variant + ' teklif listene eklendi');
+  if (!silent) notify(`🌱 ${p.variant} teklif listene eklendi (+1 Fidan İzi)`);
 }
 
 function addSet(id) {
   const set = catalog.sets.find(s => s.id === id);
   if (!set) return;
   for (const [item, qty] of set.items) add(item, qty, true);
-  notify(set.name + ' teklif listene eklendi');
+  notify(`🌳 ${set.name} teklif listene eklendi!`);
 }
 
 function quick(id, selected) {
@@ -131,7 +153,7 @@ function quick(id, selected) {
   const v = f.variants.find(v => v.id === selected) || f.variants[0];
   $('#detail-content').innerHTML = `<img id="quick-image" src="assets/${v.image || f.image}" alt="${f.name} · ${v.name}, temsili sunum" width="1448" height="1086">
     <div>
-      <p class="eyebrow">${f.name}</p>
+      <p class="eyebrow">${f.name} · 🌱 1 Fidan İzi</p>
       <h2 id="quick-title">${v.name}</h2>
       <p id="quick-note">${v.note}</p>
       <p id="quick-aroma" class="quick-aroma">${v.aroma} · ${v.pair}</p>
@@ -139,7 +161,7 @@ function quick(id, selected) {
       <label class="quick-label">Aynı seriden başka bir lezzet
         <select id="quick-variant">${f.variants.map(x => `<option value="${f.id}--${x.id}" ${x.id === v.id ? 'selected' : ''}>${x.name} (${money(x.estimatedPrice)})</option>`).join('')}</select>
       </label>
-      <a id="quick-link" class="text-link quick-link" href="${f.slug}.html#${v.id}">İçerik ve lezzet notlarını incele ↗</a>
+      <a id="quick-link" class="text-link quick-link" href="${v.pageUrl}">Bu ürünün kendi özel sayfasına git ↗</a>
       <button type="button" class="button" id="quick-add">Bu çeşidi listeme ekle +</button>
       <p class="image-disclosure quick-note">Görsel temsili sunumdur. Tam içerik, gramaj ve fiyat teklif sırasında paylaşılır.</p>
     </div>`;
@@ -150,7 +172,7 @@ function quick(id, selected) {
     $('#quick-note').textContent = chosen.note;
     $('#quick-aroma').textContent = chosen.aroma + ' · ' + chosen.pair;
     $('#quick-price').innerHTML = 'Yaklaşık <strong>' + money(chosen.estimatedPrice) + '</strong> / ' + chosen.priceBasis;
-    $('#quick-link').href = f.slug + '.html#' + chosen.id;
+    $('#quick-link').href = chosen.pageUrl;
     replaceImage($('#quick-image'), 'assets/' + (chosen.image || f.image), f.name + ' · ' + chosen.name + ', temsili sunum');
   };
   $('#detail').showModal();
@@ -159,7 +181,7 @@ function quick(id, selected) {
 let selectedFilter = 'all';
 const searchTerm = s => s.toLocaleLowerCase('tr').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ı/g, 'i');
 
-function applyFilterDOM() {
+function filterCatalog() {
   const container = $('#products');
   if (!container) return;
   const term = searchTerm($('#catalog-search')?.value.trim() || '');
@@ -188,14 +210,6 @@ function applyFilterDOM() {
   if ($('#koleksiyon')) $('#koleksiyon').setAttribute('data-active-theme', selectedFilter);
 }
 
-function filterCatalog(useTransition = false) {
-  if (useTransition && document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.startViewTransition(() => applyFilterDOM());
-  } else {
-    applyFilterDOM();
-  }
-}
-
 function setFilter(value) {
   selectedFilter = value;
   document.querySelectorAll('[data-filter]').forEach(x => {
@@ -203,17 +217,42 @@ function setFilter(value) {
     x.classList.toggle('active', active);
     x.setAttribute('aria-pressed', String(active));
   });
-  filterCatalog(true);
+  filterCatalog();
 }
 
-if ($('#catalog-search')) $('#catalog-search').addEventListener('input', () => filterCatalog(false));
-if ($('#catalog-sort')) $('#catalog-sort').addEventListener('change', () => filterCatalog(true));
+if ($('#catalog-search')) $('#catalog-search').addEventListener('input', filterCatalog);
+if ($('#catalog-sort')) $('#catalog-sort').addEventListener('change', filterCatalog);
 if ($('#catalog-reset')) {
   $('#catalog-reset').onclick = () => {
     $('#catalog-search').value = '';
     $('#catalog-sort').value = 'curated';
     setFilter('all');
   };
+}
+
+// Interactive Tree Growth Stages
+const treeStageNames = {
+  1: '🌰 1. Aşama · Toprakta Uyuyan Tohum',
+  2: '🌱 2. Aşama · İlk Yeşil Filiz',
+  3: '🌿 3. Aşama · Kök Salan Genç Fidan',
+  4: '🌳 4. Aşama · Çiçek Açan Bereket Ağacı'
+};
+
+function setTreeStage(stage, withWater = false) {
+  const card = $('#tree-interactive-card');
+  if (!card) return;
+  const s = Math.max(1, Math.min(4, Number(stage) || 4));
+  card.setAttribute('data-tree-stage', String(s));
+  if ($('#tree-stage-label')) $('#tree-stage-label').textContent = treeStageNames[s];
+  document.querySelectorAll('.tree-step-btn').forEach(btn => {
+    btn.classList.toggle('active', Number(btn.dataset.treeStep) === s);
+  });
+  if (withWater && $('#water-drops')) {
+    const drops = $('#water-drops');
+    drops.classList.remove('watering');
+    void drops.offsetWidth;
+    drops.classList.add('watering');
+  }
 }
 
 // Interactive 4-Step Chronology Tabs
@@ -223,12 +262,12 @@ const chronoSteps = [
     title: 'Mevsiminde toplanan botanikler, özenle seçilen kemik ve kuruyemişler.',
     desc: 'Kemik sularında ilikli kemikler ve taze kök sebzeler; çay ve içeceklerde bütün yapraklar ile kurutulmuş meyveler; ezme ve granolalarda ise kavurma profili dengelenmiş kuruyemişler kullanılır.',
     m1: ['6 Ana Seri', 'Birbirini tamamlayan sofra ailesi'],
-    m2: ['Sade Reçete', 'Sipariş öncesi şeffaf içerik teyidi']
+    m2: ['30 Özel Sayfa', 'Her ürün için şeffaf içerik kartı']
   },
   {
     badge: 'ADIM 02 / AĞIR ATEŞ & HARMAN',
     title: 'Uzun süreli kaynatma, düşük ısıda fırınlama ve dengeli harmanlama.',
-    desc: 'İlikli kemik suları kısık ateşte uzun süre kaynatılarak aromatik sebze ve baharatlarla buluşturulur. Granolalar kıtır dokusunu koruyacak şekilde fırınlanır; ezmeler taş değirmen/pürüzsüz çekim disipliniyle hazırlanır.',
+    desc: 'İlikli kemik suları kısık ateşte uzun süre kaynatılarak aromatik sebze ve baharatlarla buluşturulur. Granolalar kıtır dokusunu koruyacak şekilde fırınlanır; ezmeler pürüzsüz veya parçacıklı çekim disipliniyle hazırlanır.',
     m1: ['Ağır Ateş', 'Geleneksel mutfak temposu'],
     m2: ['30 Lezzet', 'Her damak tadına uygun çeşitlilik']
   },
@@ -248,16 +287,42 @@ const chronoSteps = [
   }
 ];
 
+// Standalone PDP Quantity State
+let pdpQty = 1;
+const standaloneSection = $('[data-standalone-product]');
+function updateStandaloneQty(delta) {
+  if (!standaloneSection) return;
+  pdpQty = Math.max(1, Math.min(99, pdpQty + delta));
+  if ($('#pdp-qty-val')) $('#pdp-qty-val').textContent = pdpQty;
+  const unitPrice = Number(standaloneSection.dataset.unitPrice) || 0;
+  const basis = standaloneSection.dataset.unitBasis || '';
+  const fullName = standaloneSection.dataset.fullName || '';
+  const total = unitPrice * pdpQty;
+  if ($('#pdp-live-price')) $('#pdp-live-price').textContent = money(total);
+  if ($('#pdp-wa-direct')) {
+    const text = `Merhaba, Story of Nature "${fullName}" (${pdpQty} adet, yaklaşık ${money(total)} / ${basis}) ürünü için güncel fiyat, içerik ve teslimat bilgisi almak istiyorum.`;
+    $('#pdp-wa-direct').href = 'https://wa.me/905330849027?text=' + encodeURIComponent(text);
+  }
+}
+
 document.addEventListener('click', e => {
   const b = e.target.closest('button');
   if (!b) return;
+
   if (b.dataset.add) {
-    pulseButton(b);
+    spawnSproutParticle(b);
     add(b.dataset.add);
   }
+  if (b.dataset.addCustom) {
+    spawnSproutParticle(b, `🌱 +${pdpQty} Ürün Listene Eklendi!`);
+    add(b.dataset.addCustom, pdpQty);
+  }
   if (b.dataset.set) {
-    pulseButton(b);
+    spawnSproutParticle(b, '🌳 Kutu Listene Eklendi!');
     addSet(b.dataset.set);
+  }
+  if (b.dataset.openCart) {
+    $('#cart').showModal();
   }
   if (b.dataset.familyDetail) quick(b.dataset.familyDetail);
   if (b.dataset.productDetail) {
@@ -265,7 +330,7 @@ document.addEventListener('click', e => {
     quick(family, variant);
   }
   if (b.id === 'quick-add') {
-    pulseButton(b);
+    spawnSproutParticle(b);
     add($('#quick-variant').value);
   }
   if (b.id === 'cart-clear') {
@@ -273,6 +338,40 @@ document.addEventListener('click', e => {
     update();
     notify('Teklif listen temizlendi');
   }
+  if (b.id === 'pdp-qty-minus') updateStandaloneQty(-1);
+  if (b.id === 'pdp-qty-plus') updateStandaloneQty(1);
+
+  if (b.classList.contains('pdp-thumb')) {
+    document.querySelectorAll('.pdp-thumb').forEach(t => t.classList.toggle('active', t === b));
+    if ($('#standalone-main-img')) {
+      replaceImage($('#standalone-main-img'), b.dataset.thumbSrc, b.dataset.thumbAlt || '');
+    }
+  }
+
+  if (b.classList.contains('pdp-tab-btn')) {
+    const tabIdx = b.dataset.pdpTab;
+    document.querySelectorAll('.pdp-tab-btn').forEach(t => {
+      const active = t === b;
+      t.classList.toggle('active', active);
+      t.setAttribute('aria-selected', String(active));
+    });
+    for (let i = 0; i < 4; i++) {
+      const panel = $('#pdp-tab-' + i);
+      if (panel) panel.hidden = String(i) !== String(tabIdx);
+    }
+  }
+
+  if (b.classList.contains('tree-step-btn')) {
+    setTreeStage(Number(b.dataset.treeStep), true);
+  }
+  if (b.id === 'water-tree-btn') {
+    const card = $('#tree-interactive-card');
+    const cur = Number(card?.getAttribute('data-tree-stage') || 3);
+    const next = cur >= 4 ? 1 : cur + 1;
+    setTreeStage(next === 1 ? 2 : next, true);
+    spawnSproutParticle(b, '💧 Can Suyu Verildi · Fidan Büyüyor! 🌱');
+  }
+
   if (b.dataset.close) $('#' + b.dataset.close).close();
   if (b.dataset.change) {
     const id = b.dataset.change;
@@ -285,6 +384,7 @@ document.addEventListener('click', e => {
     update();
   }
   if (b.dataset.filter) setFilter(b.dataset.filter);
+
   if (b.classList.contains('chrono-tab')) {
     const idx = Number(b.dataset.step);
     const step = chronoSteps[idx];
@@ -294,17 +394,10 @@ document.addEventListener('click', e => {
       t.classList.toggle('active', active);
       t.setAttribute('aria-selected', String(active));
     });
-    const updateChrono = () => {
-      $('#chrono-badge').textContent = step.badge;
-      $('#chrono-title').textContent = step.title;
-      $('#chrono-desc').textContent = step.desc;
-      $('#chrono-metrics').innerHTML = `<div><strong>${step.m1[0]}</strong><span>${step.m1[1]}</span></div><div><strong>${step.m2[0]}</strong><span>${step.m2[1]}</span></div>`;
-    };
-    if (document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.startViewTransition(updateChrono);
-    } else {
-      updateChrono();
-    }
+    $('#chrono-badge').textContent = step.badge;
+    $('#chrono-title').textContent = step.title;
+    $('#chrono-desc').textContent = step.desc;
+    $('#chrono-metrics').innerHTML = `<div><strong>${step.m1[0]}</strong><span>${step.m1[1]}</span></div><div><strong>${step.m2[0]}</strong><span>${step.m2[1]}</span></div>`;
   }
 });
 
@@ -327,12 +420,10 @@ async function replaceImage(img, src, alt) {
   next.src = src;
   try {
     await next.decode();
-    if (imageRequests.get(img) !== request) return;
+    if (imageRequests.get(img)!== request) return;
     img.src = src;
     img.alt = alt;
-    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      img.animate([{ opacity: 0.35, transform: 'scale(1.015)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 300, easing: 'ease-out' });
-    }
+    img.animate([{ opacity: 0.35, transform: 'scale(1.015)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 300, easing: 'ease-out' });
   } catch {
     if (imageRequests.get(img) === request) notify('Görsel yüklenemedi. Lütfen yeniden dene.');
   }
@@ -380,6 +471,7 @@ if (page) {
     $('#selected-name').textContent = v.name;
     $('#selected-note').textContent = v.note;
     if ($('#selected-price')) $('#selected-price').textContent = money(v.estimatedPrice) + ' / ' + v.priceBasis;
+    if ($('#selected-page-link')) $('#selected-page-link').href = v.pageUrl;
     $('#add-selected').dataset.add = family.id + '--' + v.id;
     replaceImage($('#pdp-image'), 'assets/' + (v.image || family.image), family.name + ' · ' + v.name + ', temsili ürün sunumu');
   }
@@ -395,14 +487,31 @@ if (page) {
 
 if ($('#set-builder')) {
   const familySelect = $('#builder-family');
-  familySelect.onchange = () => {
+  const populateBuilderVariants = (selectedVarId) => {
     const f = catalog.families.find(f => f.id === familySelect.value);
-    $('#builder-variant').innerHTML = f.variants.map(v => `<option value="${v.id}">${v.name} (${money(v.estimatedPrice)})</option>`).join('');
+    $('#builder-variant').innerHTML = f.variants.map(v => `<option value="${v.id}" ${v.id === selectedVarId ? 'selected' : ''}>${v.name} (${money(v.estimatedPrice)})</option>`).join('');
   };
+  familySelect.onchange = () => populateBuilderVariants();
+
+  // Check URL ?preselect=family--variant
+  try {
+    const params = new URLSearchParams(location.search);
+    const pre = params.get('preselect');
+    if (pre && pre.includes('--')) {
+      const [pf, pv] = pre.split('--');
+      if (catalog.families.some(f => f.id === pf)) {
+        familySelect.value = pf;
+        populateBuilderVariants(pv);
+      }
+    }
+  } catch {}
+
   $('#set-builder').onsubmit = e => {
     e.preventDefault();
     const qty = Number($('#builder-quantity').value);
     if (!Number.isInteger(qty) || qty < 1 || qty > 99) return;
+    const btn = $('#set-builder button[type="submit"]');
+    spawnSproutParticle(btn, `🌱 +${qty} Ürün Kutuna Eklendi!`);
     add(familySelect.value + '--' + $('#builder-variant').value, qty);
   };
   $('#builder-review').onclick = () => $('#cart').showModal();
@@ -431,7 +540,7 @@ if ($('#bulk-form')) {
   };
 }
 
-if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {
       if (entry.isIntersecting) {
@@ -440,7 +549,7 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
       }
     }
   }, { threshold: 0.08 });
-  document.querySelectorAll('.section-title,.store-card,.moment-card,.selection-copy,.texture>div,.bulk-band>div,.flavor-card,.set-card,.chronology-panel').forEach(el => {
+  document.querySelectorAll('.section-title,.store-card,.moment-card,.selection-copy,.texture>div,.bulk-band>div,.flavor-card,.set-card,.chronology-panel,.tree-stage-card').forEach(el => {
     el.classList.add('scroll-reveal');
     observer.observe(el);
   });
