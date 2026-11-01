@@ -232,10 +232,10 @@ if ($('#catalog-reset')) {
 
 // Interactive Tree Growth Stages
 const treeStageNames = {
-  1: '🌰 1. Aşama · Toprakta Uyuyan Tohum',
-  2: '🌱 2. Aşama · İlk Yeşil Filiz',
-  3: '🌿 3. Aşama · Kök Salan Genç Fidan',
-  4: '🌳 4. Aşama · Çiçek Açan Bereket Ağacı'
+  1: '🌱 1. Aşama · Toprakta Korunan Tohum',
+  2: '🌱 2. Aşama · Cam Fanus Kalkar & İlk Filiz',
+  3: '🌿 3. Aşama · Yağmurla Büyüyen Fidan',
+  4: '🌸 4. Aşama · Çiçek Açan Bereket Ağacı ve Gül'
 };
 
 function setTreeStage(stage, withWater = false) {

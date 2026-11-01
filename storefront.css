@@ -752,6 +752,25 @@ main, header, footer {
   transform-origin: 160px 275px;
   transition: transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
 }
+.tree-part-rose {
+  transform-origin: 216px 274px;
+  transition: transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+}
+.tree-part-cloche {
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.55s ease;
+  transform-origin: 178px 250px;
+}
+.subtle-stars .star-sparkle {
+  animation: starGlimmer 3.6s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+.subtle-stars .s2 {
+  animation-delay: -1.8s;
+}
+@keyframes starGlimmer {
+  0% { opacity: 0.35; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1.18); }
+}
 .tree-part-canopy {
   animation: treeBreeze 5s ease-in-out infinite alternate;
 }
@@ -775,6 +794,15 @@ main, header, footer {
   transform: scale(0);
   opacity: 0;
 }
+.tree-stage-card[data-tree-stage="1"] .tree-part-cloche {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+.tree-stage-card[data-tree-stage="1"] .tree-part-rose {
+  transform: scale(0.38);
+  opacity: 0.6;
+}
+
 .tree-stage-card[data-tree-stage="2"] .tree-part-trunk {
   transform: scaleY(0.28) scaleX(0.5);
   opacity: 1;
@@ -788,6 +816,15 @@ main, header, footer {
   transform: scale(0);
   opacity: 0;
 }
+.tree-stage-card[data-tree-stage="2"] .tree-part-cloche {
+  transform: translateY(-48px) rotate(4deg);
+  opacity: 0.8;
+}
+.tree-stage-card[data-tree-stage="2"] .tree-part-rose {
+  transform: scale(0.68);
+  opacity: 0.85;
+}
+
 .tree-stage-card[data-tree-stage="3"] .tree-part-trunk {
   transform: scale(0.82);
   opacity: 1;
@@ -804,9 +841,26 @@ main, header, footer {
   transform: scale(0);
   opacity: 0;
 }
+.tree-stage-card[data-tree-stage="3"] .tree-part-cloche {
+  transform: translate(32px, -82px) scale(0.82) rotate(8deg);
+  opacity: 0.62;
+}
+.tree-stage-card[data-tree-stage="3"] .tree-part-rose {
+  transform: scale(0.9);
+  opacity: 0.95;
+}
+
 .tree-stage-card[data-tree-stage="4"] .tree-part-sprout {
   transform: scale(0);
   opacity: 0;
+}
+.tree-stage-card[data-tree-stage="4"] .tree-part-cloche {
+  transform: translate(46px, -104px) scale(0.72) rotate(12deg);
+  opacity: 0.42;
+}
+.tree-stage-card[data-tree-stage="4"] .tree-part-rose {
+  transform: scale(1.05);
+  opacity: 1;
 }
 
 /* Water Droplets & Floating Leaves */
