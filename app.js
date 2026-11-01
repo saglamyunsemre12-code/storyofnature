@@ -293,32 +293,6 @@ if ($('#catalog-reset')) {
   };
 }
 
-// Interactive Tree Growth Stages
-const treeStageNames = {
-  1: '🌱 1. Aşama · Toprakta Korunan Tohum',
-  2: '🌱 2. Aşama · Cam Fanus Kalkar & İlk Filiz',
-  3: '🌿 3. Aşama · Yağmurla Büyüyen Fidan',
-  4: '🌸 4. Aşama · Çiçek Açan Bereket Ağacı ve Gül'
-};
-
-function setTreeStage(stage, withWater = false) {
-  const card = $('#tree-interactive-card');
-  if (!card) return;
-  const s = Math.max(1, Math.min(4, Number(stage) || 4));
-  card.setAttribute('data-tree-stage', String(s));
-  if ($('#tree-stage-label')) $('#tree-stage-label').textContent = treeStageNames[s];
-  document.querySelectorAll('.tree-step-btn').forEach(btn => {
-    btn.classList.toggle('active', Number(btn.dataset.treeStep) === s);btn.setAttribute('aria-pressed',String(Number(btn.dataset.treeStep)===s));
-  });
-  animateTreeStage(s);
-  if (withWater && $('#water-drops')) {
-    const drops = $('#water-drops');
-    drops.classList.remove('watering');
-    void drops.offsetWidth;
-    drops.classList.add('watering');
-  }
-}
-
 // Interactive 4-Step Chronology Tabs
 const chronoSteps = [
   {
@@ -425,10 +399,6 @@ document.addEventListener('click', e => {
     }
   }
 
-  if (b.classList.contains('tree-step-btn')) {
-    setTreeStage(Number(b.dataset.treeStep), true);
-  }
-  if (b.id === 'water-tree-btn') playTreeStory();
 
   if (b.dataset.close) $('#' + b.dataset.close).close();
   if (b.dataset.change) {
@@ -614,12 +584,3 @@ if ('IntersectionObserver' in window) {
   });
 }
 
-// A single visible growth sequence; no background animation work.
-let treeTimers=[];
-function stopTreeStory(){treeTimers.forEach(clearTimeout);treeTimers=[];const card=$('#tree-interactive-card');if(card){card.classList.remove('scene-growing');card.querySelectorAll('svg,.growth-progress-fill').forEach(el=>el.getAnimations({subtree:true}).forEach(a=>a.cancel()));$('#water-tree-btn').disabled=false;}}
-function playTreeStory(){const card=$('#tree-interactive-card');if(!card)return;stopTreeStory();if(matchMedia('(prefers-reduced-motion: reduce)').matches){setTreeStage(4);return;}card.classList.add('scene-growing');const progress=card.querySelector('.growth-progress-fill');if(progress){progress.getAnimations().forEach(a=>a.cancel());progress.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:9000,fill:'forwards',easing:'linear'});}$('#water-tree-btn').disabled=true;setTreeStage(1,true);document.querySelectorAll('.soil-ripple').forEach(r=>{r.classList.remove('active');void r.getBoundingClientRect();r.classList.add('active');});[2,3,4].forEach((stage,i)=>treeTimers.push(setTimeout(()=>setTreeStage(stage,true),1700+i*2300)));treeTimers.push(setTimeout(()=>{card.classList.remove('scene-growing');$('#water-tree-btn').disabled=false;$('#water-tree-btn').textContent='Yeniden büyüt ↻';},9000));}
-if($('#tree-interactive-card')){const card=$('#tree-interactive-card');document.querySelectorAll('.tree-step-btn').forEach(b=>b.addEventListener('click',stopTreeStory));if('IntersectionObserver'in window)new IntersectionObserver(entries=>{for(const e of entries){card.classList.toggle('scene-visible',e.isIntersecting);if(!e.isIntersecting)stopTreeStory();}},{threshold:.15}).observe(card);document.addEventListener('visibilitychange',()=>{if(document.hidden){card.classList.remove('scene-visible');stopTreeStory();}});}
-
-function animateTreeStage(stage){const card=$('#tree-interactive-card');if(!card||motionPreference.matches)return;const svg=$('#animated-tree-svg');if(stage===1){svg.querySelectorAll('.tree-part-trunk path,.botanical-leaf path,.tree-part-blossoms circle').forEach(n=>n.getAnimations().forEach(a=>a.cancel()));}if(stage===2){svg.querySelectorAll('.tree-part-trunk path').forEach((path,i)=>{const length=path.getTotalLength();path.animate([{strokeDasharray:length,strokeDashoffset:length},{strokeDasharray:length,strokeDashoffset:0}],{duration:1700,delay:i*100,easing:'ease-out'});});}if(stage===3){svg.querySelectorAll('.botanical-leaf').forEach((leaf,i)=>{leaf.animate([{opacity:0,scale:'.08'},{opacity:1,scale:'1'}],{duration:1100,delay:i*28,fill:'backwards',easing:'cubic-bezier(.2,.8,.3,1)'});});}if(stage===4){svg.querySelectorAll('.tree-part-blossoms circle').forEach((flower,i)=>{flower.style.transformBox='fill-box';flower.style.transformOrigin='center';flower.animate([{opacity:0,scale:'.1'},{opacity:1,scale:'1.3',offset:.7},{opacity:1,scale:'1'}],{duration:1200,delay:i*110,fill:'backwards',easing:'ease-out'});});}}
-
-motionPreference.addEventListener('change',()=>{stopTreeStory();if(motionPreference.matches)setTreeStage(4);});
