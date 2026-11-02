@@ -1,0 +1,4 @@
+# Story of Nature Autonomous Agent Engine dependencies
+# Pure standard library compatible with optional rich formatting
+requests>=2.31.0
+python-dotenv>=1.0.0

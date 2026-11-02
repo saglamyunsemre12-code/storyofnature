@@ -1,0 +1,135 @@
+{
+  "last_updated": "2026-11-02T03:50:00Z",
+  "warehouse_location": "Story of Nature Merkez Üretim & Lojistik Deposu",
+  "products": [
+    {
+      "sku": "SON-BB-01",
+      "code": "No. 01",
+      "name": "Pure Essence İlikli Kemik Suyu",
+      "size": "300 ml",
+      "current_stock": 18,
+      "safety_stock": 25,
+      "status": "LOW_STOCK_ALERT",
+      "unit_cost": 45.0,
+      "retail_price": 220.0
+    },
+    {
+      "sku": "SON-BB-02",
+      "code": "No. 02",
+      "name": "Golden Immunity Zerdeçallı Kemik Suyu",
+      "size": "300 ml",
+      "current_stock": 14,
+      "safety_stock": 25,
+      "status": "LOW_STOCK_ALERT",
+      "unit_cost": 48.0,
+      "retail_price": 240.0
+    },
+    {
+      "sku": "SON-TEA-03",
+      "code": "No. 03",
+      "name": "Night Story Botanik Çayı",
+      "size": "80 gr Kraft Pouch",
+      "current_stock": 42,
+      "safety_stock": 25,
+      "status": "HEALTHY",
+      "unit_cost": 38.0,
+      "retail_price": 195.0
+    },
+    {
+      "sku": "SON-BB-04",
+      "code": "No. 04",
+      "name": "Pure Baby Bebek & Çocuk Kemik Suyu (Tuzsuz)",
+      "size": "300 ml",
+      "current_stock": 11,
+      "safety_stock": 25,
+      "status": "CRITICAL_LOW",
+      "unit_cost": 46.0,
+      "retail_price": 230.0
+    },
+    {
+      "sku": "SON-BB-05",
+      "code": "No. 05",
+      "name": "Rosemary Elixir Biberiyeli Kemik Suyu",
+      "size": "300 ml",
+      "current_stock": 35,
+      "safety_stock": 25,
+      "status": "HEALTHY",
+      "unit_cost": 47.0,
+      "retail_price": 235.0
+    },
+    {
+      "sku": "SON-GRN-01",
+      "code": "Granola-01",
+      "name": "Fındıklı Kakaolu Çıtır Granola",
+      "size": "300 gr",
+      "current_stock": 29,
+      "safety_stock": 20,
+      "status": "HEALTHY",
+      "unit_cost": 55.0,
+      "retail_price": 210.0
+    },
+    {
+      "sku": "SON-BEV-01",
+      "code": "İçecek-01",
+      "name": "Soğuk Sıkım Nar & Limonlu Doğal İksir",
+      "size": "250 ml",
+      "current_stock": 22,
+      "safety_stock": 20,
+      "status": "HEALTHY",
+      "unit_cost": 32.0,
+      "retail_price": 140.0
+    }
+  ],
+  "packaging_materials": [
+    {
+      "sku": "PKG-JAR-300",
+      "name": "300ml Standart Silindirik Cam Kavanoz (Vakumlu)",
+      "current_stock": 45,
+      "safety_stock": 100,
+      "status": "LOW_STOCK_ALERT",
+      "supplier_category": "glass_packaging"
+    },
+    {
+      "sku": "PKG-LID-82",
+      "name": "Orman Yeşili Mat Metal Kapak 82mm",
+      "current_stock": 58,
+      "safety_stock": 100,
+      "status": "LOW_STOCK_ALERT",
+      "supplier_category": "caps_and_seals"
+    },
+    {
+      "sku": "PKG-LBL-BONE",
+      "name": "Fildişi Altın Varaklı Su Geçirmez Kuşe Etiket",
+      "current_stock": 210,
+      "safety_stock": 150,
+      "status": "HEALTHY",
+      "supplier_category": "labels"
+    },
+    {
+      "sku": "PKG-BOX-4PACK",
+      "name": "4'lü Özel Mukavva Koruyucu Kargo Kutusu",
+      "current_stock": 38,
+      "safety_stock": 60,
+      "status": "LOW_STOCK_ALERT",
+      "supplier_category": "boxes"
+    }
+  ],
+  "raw_ingredients": [
+    {
+      "sku": "RAW-BONE-MERA",
+      "name": "Trakya Mera Besisi İlikli Dana Kaval Kemiği",
+      "current_stock_kg": 12.5,
+      "safety_stock_kg": 25.0,
+      "status": "LOW_STOCK_ALERT",
+      "supplier_category": "organic_bones"
+    },
+    {
+      "sku": "RAW-CIDER-ORG",
+      "name": "Meşe Fıçıda Bekletilmiş Doğal Organik Elma Sirkesi",
+      "current_stock_liter": 8.0,
+      "safety_stock_liter": 5.0,
+      "status": "HEALTHY",
+      "supplier_category": "cider"
+    }
+  ]
+}

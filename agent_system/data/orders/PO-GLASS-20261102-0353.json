@@ -1,0 +1,13 @@
+{
+  "po_id": "PO-GLASS-20261102-0353",
+  "supplier": "Şişecam / Paşabahçe Endüstriyel Ambalaj",
+  "supplier_contact": "siparis@ambalajtedarik.com",
+  "item_name": "300ml Standart Silindirik Cam Kavanoz (Vakumlu)",
+  "boxes_ordered": 9,
+  "units_ordered": 216,
+  "unit_price_try": 12.5,
+  "total_cost_try": 2700.0,
+  "lead_time": "3 iş günü",
+  "status": "DRAFT_READY_FOR_APPROVAL",
+  "notes": "Stok kritik seviyeye indi (45 adet kaldı). Minimum sipariş kuralı (5 koli) uygulandı."
+}

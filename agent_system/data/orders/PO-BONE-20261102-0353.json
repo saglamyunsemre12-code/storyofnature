@@ -1,0 +1,12 @@
+{
+  "po_id": "PO-BONE-20261102-0353",
+  "supplier": "Trakya Organik Mera Çiftliği",
+  "supplier_contact": "tedarik@trakyaorganikciftlik.com",
+  "item_name": "Mera Besisi İlikli Dana Kaval Kemiği",
+  "units_ordered": "50 KG",
+  "unit_price_try": 95.0,
+  "total_cost_try": 4750.0,
+  "lead_time": "2 iş günü (Soğuk zincir taze kesim)",
+  "status": "DRAFT_READY_FOR_APPROVAL",
+  "notes": "Mera kaval kemiği stoku 12.5 kg seviyesine indi. Yeni 28 saatlik demleme kazanı için acil sipariş taslağı."
+}

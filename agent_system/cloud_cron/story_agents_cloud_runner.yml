@@ -1,0 +1,47 @@
+name: Story of Nature 24/7 Autonomous AI Agent Team
+
+on:
+  schedule:
+    # Runs every morning at 08:00 AM Turkey Time (05:00 UTC)
+    - cron: '0 5 * * *'
+    # Runs every afternoon at 17:00 PM Turkey Time (14:00 UTC)
+    - cron: '0 14 * * *'
+  workflow_dispatch: # Allows 1-click manual trigger anytime from GitHub web UI
+
+permissions:
+  contents: write
+
+jobs:
+  run-autonomous-agents:
+    name: Run Manager & 6 Subagents
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Check out repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: ⚙️ Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f agent_system/requirements.txt ]; then pip install -r agent_system/requirements.txt; fi
+
+      - name: 🚀 Execute Master Orchestrator (Manager Agent)
+        run: |
+          python agent_system/agents/manager.py
+
+      - name: 💾 Commit and push daily agent reports and drafts
+        run: |
+          git config --local user.email "ai-agents@storyofnature.com.tr"
+          git config --local user.name "Story of Nature Autonomous Agent Engine"
+          git add agent_system/data/
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "🤖 [AI Autonomous Cycle] Morning Brief & Drafts updated [skip ci]"
+            git push
+          fi

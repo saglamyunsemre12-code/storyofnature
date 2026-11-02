@@ -1,0 +1,108 @@
+{
+  "brand": {
+    "name": "Story of Nature",
+    "legal_entity": "Story of Nature Doğal Gıda & Sağlıklı Yaşam Anonim Şirketi",
+    "domain": "https://storyofnature.com.tr",
+    "official_email": "saglam.yunsemre12@gmail.com",
+    "owner": {
+      "name": "Yunus Emre Sağlam",
+      "phone": "+90 533 084 90 27",
+      "location": "Türkiye"
+    },
+    "currency": "TRY",
+    "tone_of_voice": "Zarif, bilimsel, şeffaf, samimi ve üst segment lüks gıda (Aesop / Erewhon estetiği)."
+  },
+  "inventory_settings": {
+    "safety_stock_threshold_units": 25,
+    "packaging_safety_threshold": 60,
+    "ingredient_safety_threshold_kg": 15,
+    "suppliers": {
+      "glass_packaging": {
+        "primary": {
+          "name": "Şişecam / Paşabahçe Endüstriyel Ambalaj",
+          "contact": "siparis@ambalajtedarik.com",
+          "min_order_box": 5,
+          "box_capacity": 24,
+          "price_per_jar": 12.50,
+          "lead_time_days": 3
+        },
+        "secondary": {
+          "name": "Ege Cam Ambalaj Deposu",
+          "contact": "satis@egecamambalaj.com",
+          "min_order_box": 3,
+          "box_capacity": 24,
+          "price_per_jar": 13.80,
+          "lead_time_days": 2
+        }
+      },
+      "caps_and_seals": {
+        "primary": {
+          "name": "Metal Kapsül & Kapak Sanayi",
+          "item": "Orman Yeşili Mat Twist-Off Kapak 82mm",
+          "price_per_unit": 3.20,
+          "min_order_qty": 200
+        }
+      },
+      "organic_bones": {
+        "primary": {
+          "name": "Trakya Organik Mera Çiftliği",
+          "item": "Mera Besisi İlikli Dana Kaval Kemiği",
+          "price_per_kg": 95.0,
+          "min_order_kg": 30
+        },
+        "secondary": {
+          "name": "Balıkesir Doğal Besi Kooperatifi",
+          "item": "Sertifikalı Dana İlik Kemiği",
+          "price_per_kg": 105.0,
+          "min_order_kg": 20
+        }
+      },
+      "tea_and_herbs": {
+        "primary": {
+          "name": "Ege Doğal Tıbbi Aromatik Bitkiler",
+          "items": ["Organik Papatya", "Tıbbi Melisa", "Fransız Lavantası", "Kök Zencefil", "Kök Zerdeçal"],
+          "min_order_amount_try": 1500.0
+        }
+      }
+    }
+  },
+  "b2b_lead_targets": {
+    "cities": ["İstanbul", "İzmir", "Bodrum", "Çeşme", "Ankara", "Antalya"],
+    "priority_districts": {
+      "İstanbul": ["Bebek", "Nişantaşı", "Etiler", "Kadıköy Moda", "Göktürk", "Bağdat Caddesi", "Suadiye", "Kemerburgaz"],
+      "İzmir": ["Alsancak", "Bostanlı", "Urla Kekliktepe", "Alaçatı"],
+      "Muğla": ["Bodrum Yalıkavak", "Türkbükü", "Gümüşlük"],
+      "Ankara": ["Çayyolu", "Gaziosmanpaşa", "Bilkent"]
+    },
+    "target_categories": [
+      {
+        "id": "gourmet_grocery",
+        "title": "Organik & Şarküteri Gurme Mağazaları",
+        "rationale": "Kavanozlu konserve rafta sergilenmeye hazır, yüksek marjlı ve müşteri sadakati yüksek."
+      },
+      {
+        "id": "specialty_cafe",
+        "title": "Üçüncü Nesil Sağlıklı Kahve & Brunch Mekanları",
+        "rationale": "Kışın fincanda ısıtılarak menüye 'Kemik Suyu Shot' veya 'Kolajen Sıcak İksir' olarak satılır."
+      },
+      {
+        "id": "functional_clinic",
+        "title": "Fonksiyonel Tıp & Diyetisyen Klinikleri",
+        "rationale": "GAPS, otoimmün ve sızdıran bağırsak hastalarına doğrudan reçete ederler."
+      },
+      {
+        "id": "boutique_spa_hotel",
+        "title": "Butik Sağlıklı Yaşam Otelleri & Spa Merkezleri",
+        "rationale": "Detoks kamplarında sabah aç karnına ikram için toptan alım."
+      }
+    ]
+  },
+  "content_pillars": [
+    "Kolajen & Bağırsak Bilimi (Bilgilendirici)",
+    "Slow-Living Mutfak Ritüeli (Estetik Görseller & Sıcak Döküm)",
+    "Bebek & Çocuk Beslenmesi (No. 04 Pure Baby Güven Veren İçerikler)",
+    "Şef Tarifleri & Gurme Eşleşmeler (Kemik Suyuyla Risotto / Çorba)",
+    "Gece Ritüeli & Dinlenme (No. 03 Night Story Bitki Çayı)",
+    "Doğa & Sürdürülebilirlik (1 Sipariş = 1 Fidan Programı)"
+  ]
+}

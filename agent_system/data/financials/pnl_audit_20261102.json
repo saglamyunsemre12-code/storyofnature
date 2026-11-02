@@ -1,0 +1,21 @@
+{
+  "period": "Haftalık Mali Denetim (02.11.2026)",
+  "audited_at": "2026-11-02T03:53:48.707968",
+  "currency": "TRY",
+  "sales_summary": {
+    "total_units_sold": 135,
+    "total_orders_count": 45,
+    "average_order_value_try": 672.78
+  },
+  "financial_breakdown": {
+    "brut_gelir_try": 30275.0,
+    "hammadde_maliyeti_cogs_try": 6080.0,
+    "ambalaj_ve_kutu_maliyeti_try": 2119.5,
+    "kargo_ve_lojistik_gideri_try": 2925.0,
+    "sanal_pos_komisyonu_iyzico_try": 858.95,
+    "toplam_isletme_gideri_try": 11983.45,
+    "net_kar_try": 18291.55,
+    "net_kar_marji_yuzde": 60.42
+  },
+  "profitability_status": "EXCELLENT_HEALTHY"
+}
