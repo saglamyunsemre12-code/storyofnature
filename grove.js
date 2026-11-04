@@ -1,1 +1,56 @@
-(()=>{'use strict';const root=document.getElementById('nature-grove');if(!root)return;const q=s=>root.querySelector(s),button=q('#grove-play'),caption=button.querySelector('span'),slider=q('#grove-scrub'),duration=11000,preference=matchMedia('(prefers-reduced-motion: reduce)');let playing=false,frame=0,last=-1,time=duration;const chapters=[['Küçük bir başlangıç.','Toprağa bırakılan her tohum, henüz yazılmamış bir hikâyedir.'],['Önce kök salar.','Görünmeyen yerde başlar büyüme. Kökler toprağa tutunurken ilk filiz ışığa yönelir.'],['Işığa doğru.','Dallar uzar, zeytin yeşili yapraklar birer birer açılır. Yaşam kendi ritmini bulur.'],['Hayat çoğalır.','Yaprakların arasından küçük çiçekler açılır. Her büyüme yeni bir başlangıçtır.']];const names=['TOHUM','KÖK VE FİLİZ','YAPRAK','YAPRAK VE ÇİÇEK'];const animations=[];if(!root.animate)return;root.querySelectorAll('[data-draw],[data-grow],[data-drop]').forEach(el=>{let keys;if(el.hasAttribute('data-draw'))keys=[{strokeDasharray:'1',strokeDashoffset:'1',opacity:0},{strokeDasharray:'1',strokeDashoffset:'.9',opacity:1,offset:.12},{strokeDasharray:'1',strokeDashoffset:'0',opacity:1}];else if(el.hasAttribute('data-drop'))keys=[{opacity:0,transform:'translateY(-100px)'},{opacity:.8,offset:.3},{opacity:0,transform:'translateY(115px)'}];else keys=[{opacity:0,transform:'scale(.03)'},{opacity:1,transform:'scale(1)'}];const a=el.animate(keys,{delay:Number(el.dataset.start)*duration,duration:Number(el.dataset.duration)*duration,fill:'both',easing:'cubic-bezier(.25,.65,.35,1)'});a.pause();animations.push(a)});const master=root.animate([{opacity:1},{opacity:1}],{duration,fill:'both'});master.pause();function render(){const p=Math.max(0,Math.min(1,time/duration)),stage=p<.2?0:p<.5?1:p<.79?2:3;slider.value=Math.round(p*1000);slider.style.setProperty('--grove-progress',`${p*100}%`);q('#grove-percent').textContent=`${Math.round(p*100)}%`;slider.setAttribute('aria-valuetext',`${Math.round(p*100)} yüzde, ${names[stage].toLocaleLowerCase('tr')}`);root.dataset.playing=String(playing);if(stage!==last){q('#grove-chapter-number').textContent=`0${stage+1}`;q('#grove-chapter-title').textContent=chapters[stage][0];q('#grove-chapter-desc').textContent=chapters[stage][1];q('#grove-scene-label').textContent=`0${stage+1} / ${names[stage]}`;root.querySelectorAll('[data-grove-stage]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.groveStage)===stage)));last=stage}caption.textContent=playing?'Duraklat':time===0?'Can suyu ver':time>=duration?'Yeniden izle':'Devam et'}function pause(){if(playing)time=Math.min(duration,Number(master.currentTime)||0);playing=false;cancelAnimationFrame(frame);master.pause();animations.forEach(a=>a.pause());render()}function seek(p){pause();time=p*duration;master.currentTime=time;animations.forEach(a=>a.currentTime=time);render()}function tick(){if(!playing)return;time=Math.min(duration,Number(master.currentTime)||0);render();if(time>=duration){pause();return}frame=requestAnimationFrame(tick)}function play(){if(preference.matches){seek(1);return}if(time>=duration)seek(0);playing=true;const start=document.timeline.currentTime-time;[master,...animations].forEach(a=>{a.play();a.startTime=start});render();frame=requestAnimationFrame(tick)}button.addEventListener('click',()=>playing?pause():play());q('#grove-reset').addEventListener('click',()=>seek(0));slider.addEventListener('input',()=>seek(Number(slider.value)/1000));root.querySelectorAll('[data-grove-stage]').forEach(b=>b.addEventListener('click',()=>seek([0,.37,.73,1][Number(b.dataset.groveStage)])));document.addEventListener('visibilitychange',()=>{if(document.hidden)pause()});if('IntersectionObserver'in window)new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)pause()},{threshold:.05}).observe(root);preference.addEventListener('change',()=>{pause();if(preference.matches)seek(1)});seek(1)})();
+(() => {
+  const section = document.getElementById('nature-grove');
+  if (!section || !Element.prototype.animate) return;
+
+  const play = section.querySelector('.grove-play');
+  const photo = section.querySelector('.grove-photo');
+  const light = section.querySelector('.grove-light');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let scene = [];
+
+  function pause() {
+    if (scene[0]?.playState !== 'running') return;
+    scene.forEach(animation => animation.pause());
+    play.textContent = 'Devam et';
+  }
+
+  function reset() {
+    scene.forEach(animation => animation.cancel());
+    scene = [];
+    play.hidden = reducedMotion.matches;
+    play.textContent = 'Sahneyi oynat';
+  }
+
+  play.addEventListener('click', () => {
+    if (reducedMotion.matches) return;
+    if (scene[0]?.playState === 'running') {
+      pause();
+      return;
+    }
+    if (scene[0]?.playState === 'paused') {
+      scene.forEach(animation => animation.play());
+    } else {
+      scene.forEach(animation => animation.cancel());
+      const timing = { duration: 6800, easing: 'ease-in-out', fill: 'forwards' };
+      const camera = photo.animate([
+        { transform: 'scale(1)' },
+        { transform: 'scale(1.07) translateX(-1%)' }
+      ], timing);
+      const daylight = light.animate([{ opacity: 0 }, { opacity: .9 }, { opacity: .35 }], timing);
+      camera.onfinish = () => { play.textContent = 'Yeniden izle'; };
+      scene = [camera, daylight];
+    }
+    play.textContent = 'Duraklat';
+  });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) pause();
+    }).observe(section);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) pause();
+  });
+  reducedMotion.addEventListener('change', reset);
+  reset();
+})();
