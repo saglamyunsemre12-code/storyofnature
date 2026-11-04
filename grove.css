@@ -1,1 +1,36 @@
 .grove-section{max-width:1440px;margin:auto}.grove-layout{display:grid;grid-template-columns:1.05fr 1fr;border:1px solid #c8b68c;border-radius:24px;overflow:hidden;background:#f8f3e9;box-shadow:0 24px 70px #243f3210}.grove-art{background:radial-gradient(ellipse at 50% 36%,#3a5140,#1d382e 75%);position:relative;display:flex;flex-direction:column;justify-content:space-between;min-width:0}.grove-art-top,.grove-art-bottom{display:flex;justify-content:space-between;align-items:center;padding:26px 30px;color:#d6c89e;font-size:9px;letter-spacing:1.8px;gap:14px}.grove-art-bottom{border-top:1px solid #d6c89e20;margin:0 28px;padding:20px 0;letter-spacing:1.2px}.grove-art-mark{font-size:27px}.grove-svg{display:block;width:100%;height:auto;overflow:visible;margin:auto}.grove-orbit{fill:none}.grove-leaf-shape,.grove-flower-shape,[data-grow]{transform-origin:0 0;transform-box:view-box}.grove-copy{padding:48px 44px;color:#254234}.grove-kicker{font-size:9px;letter-spacing:2px;color:#8a6e36;margin:0 0 20px}.grove-copy h2{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,5.5vw,76px);font-weight:500;line-height:.96;letter-spacing:-2px;margin:0 0 24px}.grove-copy h2 em{color:#94713a;font-weight:400}.grove-intro{font-size:13px;line-height:1.9;color:#657065;max-width:390px}.grove-chapter{display:flex;gap:18px;align-items:flex-start;margin:26px 0 22px;min-height:82px}.grove-chapter>span{font-family:'Cormorant Garamond',serif;font-size:38px;color:#aa8a4f;line-height:1}.grove-chapter h3{font-family:'Cormorant Garamond',serif;font-size:24px;margin:0 0 5px;font-weight:500}.grove-chapter p{font-size:11px;line-height:1.7;color:#73796d;margin:0}.grove-control-row{display:flex;gap:20px;align-items:center;margin-bottom:22px}.grove-controls button{cursor:pointer;font:inherit}.grove-play{display:flex;align-items:center;gap:8px;border:1px solid #244235;border-radius:7px;background:#244235;color:#fff9e9;padding:12px 18px;font-size:12px!important;transition:background .2s,box-shadow .2s}.grove-play:hover{background:#385841;box-shadow:0 5px 15px #24423520}.grove-play svg{width:20px;height:20px}#grove-reset{border:0;background:none;color:#697563;font-size:11px;padding:10px 0}.grove-scrub-label{display:flex;justify-content:space-between;font-size:10px;color:#737b6d}#grove-percent{font-variant-numeric:tabular-nums;color:#8b6d36}#grove-scrub{display:block;width:100%;height:4px;margin:17px 0 20px;accent-color:#98783b;cursor:pointer;appearance:none;background:linear-gradient(to right,#a4874f var(--grove-progress,100%),#ddd8c9 var(--grove-progress,100%));border-radius:4px}#grove-scrub::-webkit-slider-thumb{appearance:none;width:15px;height:15px;background:#a4874f;border:3px solid #f8f3e9;box-shadow:0 0 0 1px #a4874f;border-radius:50%}#grove-scrub::-moz-range-thumb{width:10px;height:10px;background:#a4874f;border:3px solid #f8f3e9;border-radius:50%}.grove-stages{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grove-stages button{border:0;border-top:1px solid #d8d6c7;background:none;text-align:left;color:#888d7f;padding:9px 0;font-size:11px;transition:color .2s,border-color .2s}.grove-stages small{display:block;font-size:8px;letter-spacing:1px;margin-bottom:3px}.grove-stages button[aria-pressed=true]{color:#244235;border-color:#a4874f}.grove-controls button:focus-visible,#grove-scrub:focus-visible{outline:2px solid #a4874f;outline-offset:5px}.grove-program{border-top:1px solid #d8d4c3;padding-top:19px;margin-top:22px}.grove-program>span{font-size:8px;letter-spacing:1px;color:#8a6e36}.grove-program p{font-size:11px;line-height:1.8;color:#71796b;margin:8px 0}.grove-note{font-size:9px;color:#8c9083;line-height:1.6;margin-bottom:0}@media(max-width:1000px){.grove-copy{padding:32px 28px}.grove-art-top{padding:23px 20px;font-size:8px}.grove-art-bottom{font-size:8px;margin:0 20px}}@media(max-width:800px){.grove-layout{grid-template-columns:1fr}.grove-art{min-height:0}.grove-svg{max-width:600px}.grove-copy{padding:32px 26px}.grove-copy h2{font-size:59px}.grove-intro{max-width:100%}.grove-art-top{padding:22px}.grove-art-bottom{padding:15px 0}}@media(prefers-reduced-motion:reduce){.grove-controls *{transition:none!important}}
+
+/* Compact botanical feature with a shared desktop baseline. */
+.section.grove-section {
+  max-width: 1080px;
+  padding-top: 38px;
+  padding-bottom: 38px;
+}
+.grove-layout { grid-template-columns: 1fr 1.07fr; border-radius: 18px; }
+.grove-art { background: radial-gradient(ellipse at 45% 40%, #43543a, #21382c 75%); }
+.grove-svg { width: 100%; max-height: 392px; overflow: hidden; }
+.grove-art-top, .grove-art-bottom, .grove-kicker {
+  font-family: ui-monospace, monospace;
+  letter-spacing: 1px;
+}
+.grove-art-top { padding: 17px 22px; }
+.grove-art-bottom { padding: 9px 0; margin: 0 22px; }
+.grove-copy { padding: 25px 28px; }
+.grove-kicker { margin-bottom: 11px; }
+.grove-copy h2 { font-size: clamp(42px, 5vw, 58px); margin-bottom: 11px; }
+.grove-intro { margin: 0; line-height: 1.6; }
+.grove-chapter { margin: 14px 0 10px; min-height: 61px; gap: 12px; }
+.grove-chapter h3 { margin-bottom: 2px; }
+.grove-control-row { margin-bottom: 11px; }
+.grove-play { padding: 8px 13px; }
+#grove-scrub { margin: 13px 0 11px; }
+.grove-stages button { padding: 6px 0; }
+.grove-program { margin-top: 10px; padding-top: 8px; }
+.grove-program p { margin: 4px 0; line-height: 1.55; }
+.grove-note { margin-top: 4px; }
+@media (max-width: 700px) {
+  .section.grove-section { padding-top: 24px; padding-bottom: 24px; }
+  .grove-layout { grid-template-columns: 1fr; }
+  .grove-svg { max-height: 250px; }
+  .grove-copy { padding: 21px; }
+}
