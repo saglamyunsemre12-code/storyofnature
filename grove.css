@@ -4,59 +4,15 @@
   padding-block: 24px;
 }
 
-.grove-layout {
-  display: grid;
-  grid-template-columns: 1.12fr 1fr;
-  align-items: center;
-  background: #f8f3e9;
-  border: 1px solid #cfc09e;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.grove-art {
-  position: relative;
-  margin: 0;
-  min-width: 0;
-  height: 245px;
-  background: #25392e;
-}
-
 .grove-photo {
   display: block;
   width: 100%;
-  height: 100%;
+  height: clamp(180px, 31vw, 280px);
   object-fit: cover;
   object-position: 50% 90%;
+  border-radius: 16px;
 }
-
-.grove-art figcaption {
-  position: absolute;
-  bottom: 13px;
-  left: 13px;
-  color: #fff7e6;
-  background: #17251de6;
-  padding: 7px 10px;
-  border-radius: 4px;
-  font-size: 11px;
-}
-
-.grove-copy { padding: 22px 28px; color: #234034; }
-.grove-copy p { font-size: 13px; line-height: 1.6; margin: 0; max-width: 37ch; }
-.grove-copy .grove-kicker {
-  font: 10px/1.4 ui-monospace, monospace;
-  letter-spacing: .09em;
-  color: #795d2e;
-}
-.grove-copy h2 {
-  font: 500 clamp(35px, 4.8vw, 54px)/1 'Cormorant Garamond', serif;
-  margin: 8px 0 12px;
-}
-.grove-copy h2 em { color: #8a6937; }
 
 @media (max-width: 640px) {
   .section.grove-section { padding-block: 16px; }
-  .grove-layout { grid-template-columns: 1fr; }
-  .grove-art { height: 180px; }
-  .grove-copy { padding: 16px 18px; }
 }
