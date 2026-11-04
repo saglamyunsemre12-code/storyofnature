@@ -3,46 +3,63 @@
   if (!section || !Element.prototype.animate) return;
 
   const play = section.querySelector('.grove-play');
-  const photo = section.querySelector('.grove-photo');
-  const light = section.querySelector('.grove-light');
-  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  let scene = [];
+  const frames = [...section.querySelectorAll('[data-grove-chapter]')];
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  let timeline = [];
 
   function pause() {
-    if (scene[0]?.playState !== 'running') return;
-    scene.forEach(animation => animation.pause());
+    if (timeline.at(-2)?.playState !== 'running') return;
+    timeline.filter(animation => animation.playState === 'running').forEach(animation => animation.pause());
     play.textContent = 'Devam et';
   }
 
-  function reset() {
-    scene.forEach(animation => animation.cancel());
-    scene = [];
-    play.hidden = reducedMotion.matches;
-    play.textContent = 'Sahneyi oynat';
+  function start() {
+    timeline.forEach(animation => animation.cancel());
+    const chapterLength = 3000;
+    const startTime = document.timeline.currentTime;
+    timeline = frames.map((frame, index) => {
+      frame.hidden = false;
+      const reveal = frame.animate([{ opacity: 0 }, { opacity: 1 }], {
+        delay: index * chapterLength,
+        duration: index ? 650 : 0,
+        fill: 'both'
+      });
+      const camera = frame.querySelector('img').animate(
+        [{ transform: 'scale(1)' }, { transform: 'scale(1.045)' }],
+        { delay: index * chapterLength, duration: chapterLength, fill: 'both' }
+      );
+      reveal.startTime = camera.startTime = startTime;
+      return [camera, reveal];
+    }).flat();
+    const end = timeline.at(-2);
+    end.onfinish = () => { play.textContent = 'Yeniden izle'; };
   }
 
+  play.hidden = false;
   play.addEventListener('click', () => {
-    if (reducedMotion.matches) return;
-    if (scene[0]?.playState === 'running') {
+    if (motion.matches) {
+      const current = frames.findIndex(frame => !frame.hidden);
+      const next = (current + 1) % frames.length;
+      frames.forEach((frame, index) => { frame.hidden = index !== next; });
+      play.textContent = next === frames.length - 1 ? 'Başa dön' : 'Sonraki sahne';
+      return;
+    }
+    const status = timeline.at(-2)?.playState;
+    if (status === 'running') {
       pause();
       return;
     }
-    if (scene[0]?.playState === 'paused') {
-      scene.forEach(animation => animation.play());
-    } else {
-      scene.forEach(animation => animation.cancel());
-      const timing = { duration: 6800, easing: 'ease-in-out', fill: 'forwards' };
-      const camera = photo.animate([
-        { transform: 'scale(1)' },
-        { transform: 'scale(1.07) translateX(-1%)' }
-      ], timing);
-      const daylight = light.animate([{ opacity: 0 }, { opacity: .9 }, { opacity: .35 }], timing);
-      camera.onfinish = () => { play.textContent = 'Yeniden izle'; };
-      scene = [camera, daylight];
-    }
+    if (status === 'paused') timeline.filter(animation => animation.playState === 'paused').forEach(animation => animation.play());
+    else start();
     play.textContent = 'Duraklat';
   });
 
+  function reset() {
+    timeline.forEach(animation => animation.cancel());
+    timeline = [];
+    frames.forEach((frame, index) => { frame.hidden = index !== 0; });
+    play.textContent = motion.matches ? 'Sonraki sahne' : 'Hikâyeyi izle';
+  }
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) pause();
@@ -51,6 +68,6 @@
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) pause();
   });
-  reducedMotion.addEventListener('change', reset);
+  motion.addEventListener('change', reset);
   reset();
 })();
