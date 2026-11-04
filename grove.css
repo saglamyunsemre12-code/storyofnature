@@ -14,13 +14,31 @@
   overflow: hidden;
 }
 
-.grove-video {
-  display: block;
-  width: 100%;
+.grove-art {
+  position: relative;
+  margin: 0;
   min-width: 0;
   height: 245px;
-  object-fit: cover;
   background: #25392e;
+}
+
+.grove-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 90%;
+}
+
+.grove-art figcaption {
+  position: absolute;
+  bottom: 13px;
+  left: 13px;
+  color: #fff7e6;
+  background: #17251de6;
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-size: 11px;
 }
 
 .grove-copy { padding: 22px 28px; color: #234034; }
@@ -35,11 +53,10 @@
   margin: 8px 0 12px;
 }
 .grove-copy h2 em { color: #8a6937; }
-.grove-copy .grove-program { margin-top: 8px; font-size: 11px; }
 
 @media (max-width: 640px) {
   .section.grove-section { padding-block: 16px; }
   .grove-layout { grid-template-columns: 1fr; }
-  .grove-video { height: 180px; }
+  .grove-art { height: 180px; }
   .grove-copy { padding: 16px 18px; }
 }
