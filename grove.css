@@ -1,5 +1,5 @@
 .section.grove-section {
-  max-width: 1050px;
+  max-width: 620px;
   margin-inline: auto;
   padding-block: 24px;
 }
@@ -7,9 +7,7 @@
 .grove-photo {
   display: block;
   width: 100%;
-  height: clamp(180px, 31vw, 280px);
-  object-fit: cover;
-  object-position: 50% 90%;
+  height: auto;
   border-radius: 16px;
 }
 
